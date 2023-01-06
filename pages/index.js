@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { PageTitle } from '../components/atoms/typography'
+import { PageTitle } from '../components/atoms/typography.tsx'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <PageTitle>Quisque ultricies erat eget quam viverra interdum.</PageTitle> 
+        <PageTitle>Page title using the styling from typography.ts.</PageTitle> 
       </main>
 
       <footer className={styles.footer}>
