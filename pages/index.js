@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { PageTitle } from '../components/atoms/typography.tsx'
 import styles from '../styles/Home.module.css'
-
+import { IonIcon } from '@ionic/react'
+import { bowlingBallOutline } from 'ionicons'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -17,6 +18,7 @@ export default function Home() {
 
       <main>
         <PageTitle>Page title using the styling from typography.ts.</PageTitle> 
+        <IonIcon icon={ bowlingBallOutline }/>
       </main>
 
       <footer className={styles.footer}>
