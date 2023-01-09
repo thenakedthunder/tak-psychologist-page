@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { PageTitle } from '../components/atoms/typography.tsx'
+import { PageTitle } from '../components/atoms/typography.styles.ts'
 import styles from '../styles/Home.module.css'
 import { IoIosFitness } from "react-icons/io";
 
