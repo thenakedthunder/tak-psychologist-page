@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Grey010, Grey100 } from './colors';
+import { Grey010, Grey100 } from '../styling/colors';
 
 export const PageTitle = styled.h1`
         font-family: 'Figtree', sans-serif;
