@@ -5,17 +5,15 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard-with-typescript",
-        "plugin:@typescript-eslint/recommended",
-        "eslint:recommended"
+        "airbnb",
+        "plugin:@typescript-eslint/recommended"
     ],
-    "overrides": [
-    ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": "latest",
+        "ecmaVersion": 12,
         "sourceType": "module"
     },
     "plugins": [
@@ -23,6 +21,8 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
         "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
         "import/extensions": [
             "error",
@@ -31,6 +31,14 @@
                 "ts": "never",
                 "tsx": "never"
             }
-        ]
+        ],
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": ["error"],
+        "react/react-in-jsx-scope": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
     }
 }
