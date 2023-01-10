@@ -63,4 +63,3 @@ export const SmallParagraph = styled.p`
     line-height: 140%;
     color: ${Grey010};
 `;
-

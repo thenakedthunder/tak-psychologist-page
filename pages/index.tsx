@@ -1,8 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { PageTitle } from '../components/atoms/typography.styles'
-import styles from '../styles/Home.module.css'
-import { IoIosFitness } from "react-icons/io";
+import Head from 'next/head';
+import Image from 'next/image';
+
+import { IoIosFitness } from 'react-icons/io';
+
+import NavBar from '../components/organisms/NavBar';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <PageTitle>Page title using the styling from typography.ts.</PageTitle> 
+        <NavBar />
         <IoIosFitness />
       </main>
 
@@ -27,12 +29,13 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by
+          {' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

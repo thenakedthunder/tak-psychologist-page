@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import { PrismicProvider } from '@prismicio/react'
-import { PrismicPreview } from '@prismicio/next'
-import { repositoryName } from '../prismicio'
+import Link from 'next/link';
+import { PrismicProvider } from '@prismicio/react';
+import { PrismicPreview } from '@prismicio/next';
+import { repositoryName } from '../prismicio.js';
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: any) {
   return (
     <PrismicProvider
       internalLinkComponent={({ href, ...props }) => (
@@ -16,5 +16,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>
-  )
+  );
 }
