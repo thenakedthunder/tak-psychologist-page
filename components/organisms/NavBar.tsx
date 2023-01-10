@@ -1,8 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
-import { IoIosMenu } from 'react-icons/io';
 
 import { Grey010 } from 'components/styling/colors';
-import LogoAndName from 'components/molecules/LogoAndName';
+import MobileNavBar from './MobileNavbar';
 
 const NavBarMobile = styled.div`
     box-sizing: border-box;
@@ -13,17 +13,9 @@ const NavBarMobile = styled.div`
     grid-template-columns: 1fr 1fr; 
 `;
 
-const MobileRightDiv = styled.div`
-    justify-self: end;
-    padding: 8px 0;
-`;
-
 const NavBar = () => (
   <NavBarMobile>
-    <LogoAndName />
-    <MobileRightDiv>
-      <IoIosMenu size={28} />
-    </MobileRightDiv>
+    <MobileNavBar />
   </NavBarMobile>
 );
 
