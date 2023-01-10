@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { IoIosRose, IoIosMenu } from 'react-icons/io';
- 
+
 import { Grey010 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 
@@ -37,24 +37,24 @@ const MobileRightDiv = styled.div`
 `;
 
 const NavBar = () => (
-    <InnerNavBarMobileDiv>
-        <NavBarMobile>
-            <MobileLeftDiv>
-                <LogoDiv><IoIosRose size={28} /></LogoDiv>
-                <div>
-                    <div>
-                        <NameParagraph>Hont-Gáspár Anita</NameParagraph>
-                    </div>
-                    <div>
-                        <DefaultParagraph>Pszichológus</DefaultParagraph>
-                    </div>
-                </div>
-            </MobileLeftDiv>
-            <MobileRightDiv>
-                <IoIosMenu size={28} />
-            </MobileRightDiv>
-        </NavBarMobile>
-    </InnerNavBarMobileDiv>
+  <InnerNavBarMobileDiv>
+    <NavBarMobile>
+      <MobileLeftDiv>
+        <LogoDiv><IoIosRose size={28} /></LogoDiv>
+        <div>
+          <div>
+            <NameParagraph>Hont-Gáspár Anita</NameParagraph>
+          </div>
+          <div>
+            <DefaultParagraph>Pszichológus</DefaultParagraph>
+          </div>
+        </div>
+      </MobileLeftDiv>
+      <MobileRightDiv>
+        <IoIosMenu size={28} />
+      </MobileRightDiv>
+    </NavBarMobile>
+  </InnerNavBarMobileDiv>
 );
 
 export default NavBar;
