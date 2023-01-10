@@ -52,7 +52,7 @@ export const DefaultParagraph = styled.p`
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: ${Grey010};
+    margin: 0;
 `;
 
 export const SmallParagraph = styled.p`
