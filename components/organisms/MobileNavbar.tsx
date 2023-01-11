@@ -16,7 +16,7 @@ const NavBarMobile = styled.div`
   background-color: ${Grey010};
   padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   color: ${Green050};
 `;
 
