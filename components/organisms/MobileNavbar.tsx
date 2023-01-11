@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 import styled from 'styled-components';
@@ -8,6 +8,7 @@ import { VscClose } from 'react-icons/vsc';
 import LogoAndName from 'components/molecules/LogoAndName';
 import { Grey010, Green050 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
+import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
 
 const NavBarMobile = styled.div`
   box-sizing: border-box;
@@ -31,7 +32,7 @@ const MobileMenu = styled.div`
   background-color: ${Grey010};
   padding: 30px 40px 40px;
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr) 92px;
   row-gap: 20px;
   color: ${Green050};
 `;
@@ -51,8 +52,6 @@ const MobileNavBar = () => {
   const toggleIsMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  console.log(isMenuOpen);
 
   return (
     <>
@@ -102,6 +101,13 @@ const MobileNavBar = () => {
                 </StyledLink>
               </Link>
             </MobileMenuItem>
+            <div>
+              <PrimaryCTAButton
+                text="Kapcsolat"
+                color={Grey010}
+                backgroundColor={Green050}
+              />
+            </div>
           </MobileMenu>
         )}
     </>

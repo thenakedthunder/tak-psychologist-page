@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Grey010, Grey100 } from '../styling/colors';
 
+export interface TypographyStyleProps {
+    color?: string;
+}
+
 export const PageTitle = styled.h1`
         font-family: 'Figtree', sans-serif;
         font-style: normal;
@@ -53,6 +57,7 @@ export const DefaultParagraph = styled.p`
     font-size: 16px;
     line-height: 140%;
     margin: 0;
+    color: ${(props: TypographyStyleProps) => props.color};
 `;
 
 export const SmallParagraph = styled.p`
