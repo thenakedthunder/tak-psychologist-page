@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 
 import styled from 'styled-components';
@@ -45,54 +46,66 @@ const StyledLink = styled.a`
   text-decoration: none;
 `;
 
-const MobileNavBar = () => (
-  <>
-    <NavBarMobile>
-      <LogoAndName />
-      <MobileRightDiv>
-        {/* TO DO: write logic to interactively change between these icons */}
-        {/* <IoIosMenu size={28} /> */}
-        <VscClose size={28} />
-      </MobileRightDiv>
-    </NavBarMobile>
-    <MobileMenu>
-      <MobileMenuItem>
-        <Link href="/" passHref>
-          <StyledLink>
-            Magamról
-          </StyledLink>
-        </Link>
-      </MobileMenuItem>
-      <MobileMenuItem>
-        <Link href="/" passHref>
-          <StyledLink>
-            Amiben segíteni tudok
-          </StyledLink>
-        </Link>
-      </MobileMenuItem>
-      <MobileMenuItem>
-        <Link href="/" passHref>
-          <StyledLink>
-            Árak
-          </StyledLink>
-        </Link>
-      </MobileMenuItem>
-      <MobileMenuItem>
-        <Link href="/" passHref>
-          <StyledLink>
-            Friss hírek
-          </StyledLink>
-        </Link>
-      </MobileMenuItem>
-      <MobileMenuItem>
-        <Link href="/" passHref>
-          <StyledLink>
-            Gyakran Ismételt Kérdések
-          </StyledLink>
-        </Link>
-      </MobileMenuItem>
-    </MobileMenu>
-  </>
-);
+const MobileNavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleIsMenuOpen = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  console.log(isMenuOpen);
+
+  return (
+    <>
+      <NavBarMobile>
+        <LogoAndName />
+        <MobileRightDiv>
+          {isMenuOpen
+            ? <VscClose size={28} onClick={toggleIsMenuOpen} />
+            : <IoIosMenu size={28} onClick={toggleIsMenuOpen} />}
+        </MobileRightDiv>
+      </NavBarMobile>
+      {isMenuOpen
+        && (
+          <MobileMenu>
+            <MobileMenuItem>
+              <Link href="/" passHref>
+                <StyledLink>
+                  Magamról
+                </StyledLink>
+              </Link>
+            </MobileMenuItem>
+            <MobileMenuItem>
+              <Link href="/" passHref>
+                <StyledLink>
+                  Amiben segíteni tudok
+                </StyledLink>
+              </Link>
+            </MobileMenuItem>
+            <MobileMenuItem>
+              <Link href="/" passHref>
+                <StyledLink>
+                  Árak
+                </StyledLink>
+              </Link>
+            </MobileMenuItem>
+            <MobileMenuItem>
+              <Link href="/" passHref>
+                <StyledLink>
+                  Friss hírek
+                </StyledLink>
+              </Link>
+            </MobileMenuItem>
+            <MobileMenuItem>
+              <Link href="/" passHref>
+                <StyledLink>
+                  Gyakran Ismételt Kérdések
+                </StyledLink>
+              </Link>
+            </MobileMenuItem>
+          </MobileMenu>
+        )}
+    </>
+  );
+};
 
 export default MobileNavBar;
