@@ -9,14 +9,14 @@ import { Grey010, Green050 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 
 const NavBarMobile = styled.div`
-    box-sizing: border-box;
-    height: 84px;
-    background-color: ${Grey010};
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    color: ${Green050};
-    `;
+  box-sizing: border-box;
+  height: 84px;
+  background-color: ${Grey010};
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: ${Green050};
+`;
 
 const MobileRightDiv = styled.div`
   justify-self: end;
@@ -24,7 +24,7 @@ const MobileRightDiv = styled.div`
   &:hover {
     cursor: pointer;
   }
-  `;
+`;
 
 const MobileMenu = styled.div`
   background-color: ${Grey010};
@@ -72,16 +72,16 @@ const MobileNavBar = () => (
       </MobileMenuItem>
       <MobileMenuItem>
         <Link href="/" passHref>
-        <StyledLink>
+          <StyledLink>
             Árak
           </StyledLink>
         </Link>
       </MobileMenuItem>
       <MobileMenuItem>
         <Link href="/" passHref>
-        <StyledLink>
-          Friss hírek
-        </StyledLink>
+          <StyledLink>
+            Friss hírek
+          </StyledLink>
         </Link>
       </MobileMenuItem>
       <MobileMenuItem>
