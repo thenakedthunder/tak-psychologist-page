@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 
 interface PrimaryCTAButtonStyledProps {
-  backgroundColor: string;
+    backgroundColor: string;
 }
 
 const PrimaryCTAButtonStyled = styled.button`
@@ -17,9 +17,9 @@ const PrimaryCTAButtonStyled = styled.button`
 `;
 
 interface PrimaryCTAButtonProps {
-  text: string;
-  color: string;
-  backgroundColor: string;
+    text: string;
+    color: string;
+    backgroundColor: string;
 }
 
 const PrimaryCTAButton = ({ text, color, backgroundColor }: PrimaryCTAButtonProps) => (

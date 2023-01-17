@@ -9,9 +9,9 @@ import { Green050 } from 'components/styling/colors';
 import StyledLink from 'components/atoms/StyledLink.styles';
 
 const DesktopMenuContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  height: 28px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    height: 28px;
 `;
 
 const DesktopMenuItem = styled(DefaultParagraph)`
