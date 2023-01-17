@@ -25,6 +25,7 @@ const ChevronContainer = styled.span`
     position: relative;
     top: 8px;
     padding-left: 8px;
+    cursor: pointer;
 `;
 
 const DesktopMenu = () => (

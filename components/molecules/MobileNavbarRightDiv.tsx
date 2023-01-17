@@ -12,12 +12,10 @@ interface MobileRightDivProps {
 const MobileRightDivContainer = styled.div`
   justify-self: end;
   padding: 8px 0;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
-const MobileRightDiv = ({ isMenuOpen, toggleIsMenuOpen }: MobileRightDivProps) => (
+const MobileNavbarRightDiv = ({ isMenuOpen, toggleIsMenuOpen }: MobileRightDivProps) => (
   <MobileRightDivContainer>
     {isMenuOpen
       ? <VscClose size={28} onClick={toggleIsMenuOpen} />
@@ -25,4 +23,4 @@ const MobileRightDiv = ({ isMenuOpen, toggleIsMenuOpen }: MobileRightDivProps) =
   </MobileRightDivContainer>
 );
 
-export default MobileRightDiv;
+export default MobileNavbarRightDiv;

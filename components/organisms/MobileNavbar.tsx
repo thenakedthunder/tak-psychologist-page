@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import LogoAndNameMobile from 'components/molecules/LogoAndNameMobile';
 import { Grey010, Green050 } from 'components/styling/colors';
-import MobileRightDiv from 'components/molecules/MobileRightDiv';
+import MobileNavbarRightDiv from 'components/molecules/MobileNavbarRightDiv';
 import MobileMenu from './MobileMenu';
 
 const MobileNavbarContainer = styled.div`
@@ -27,7 +27,7 @@ const MobileNavBar = () => {
     <>
       <MobileNavbarContainer>
         <LogoAndNameMobile />
-        <MobileRightDiv isMenuOpen={isMenuOpen} toggleIsMenuOpen={toggleIsMenuOpen} />
+        <MobileNavbarRightDiv isMenuOpen={isMenuOpen} toggleIsMenuOpen={toggleIsMenuOpen} />
       </MobileNavbarContainer>
       {isMenuOpen
         && (

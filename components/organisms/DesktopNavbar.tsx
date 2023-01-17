@@ -9,10 +9,14 @@ import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
 import DesktopMenu from './DesktopMenu';
 
 const ContainerDiv = styled.div`
-  padding: 40px 130px;
+  padding: 40px;
   display: grid;
   grid-template-columns: auto auto 150px;
   background-color: ${Grey010};
+
+  @media screen and (min-width: 1400px) {
+    padding: 40px 130px;
+  }
 `;
 
 const ContactButtonDiv = styled.div`

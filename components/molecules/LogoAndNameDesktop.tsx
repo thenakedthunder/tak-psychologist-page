@@ -7,8 +7,9 @@ import { Blue100, Green050 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 
 const LogoAndNameDesktopContainer = styled.div`
-  display: grid;
-  grid-template-columns: 36px auto;
+    display: grid;
+    grid-template-columns: 36px auto;
+    cursor: pointer;
 `;
 
 const LogoDiv = styled.div`

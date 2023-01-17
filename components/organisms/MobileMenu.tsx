@@ -13,48 +13,56 @@ const MobileMenuContainer = styled.div`
     display: grid;
     grid-template-rows: repeat(5, 1fr) 92px;
     row-gap: 20px;
-    color: ${Green050};
 `;
 
 const MobileMenuItem = styled(DefaultParagraph)`
     font-size: 20px;
+
+    @media screen and (min-width: 576px) {
+      margin: auto;
+    }
 `;
 
 const ContactButtonDiv = styled.div`
-    padding-top: 30px;
+  padding-top: 30px;
+
+  @media screen and (min-width: 576px) {
+    width: 496px;
+    margin: auto;
+  }
 `;
 
 const MobileMenu = () => (
   <MobileMenuContainer>
-    <MobileMenuItem>
+    <MobileMenuItem color={Green050}>
       <Link href="/" passHref>
         <StyledLink>
           Magamról
         </StyledLink>
       </Link>
     </MobileMenuItem>
-    <MobileMenuItem>
+    <MobileMenuItem color={Green050}>
       <Link href="/" passHref>
         <StyledLink>
           Amiben segíteni tudok
         </StyledLink>
       </Link>
     </MobileMenuItem>
-    <MobileMenuItem>
+    <MobileMenuItem color={Green050}>
       <Link href="/" passHref>
         <StyledLink>
           Árak
         </StyledLink>
       </Link>
     </MobileMenuItem>
-    <MobileMenuItem>
+    <MobileMenuItem color={Green050}>
       <Link href="/" passHref>
         <StyledLink>
           Friss hírek
         </StyledLink>
       </Link>
     </MobileMenuItem>
-    <MobileMenuItem>
+    <MobileMenuItem color={Green050}>
       <Link href="/" passHref>
         <StyledLink>
           Gyakran Ismételt Kérdések

@@ -10,6 +10,7 @@ const MobileLeftDiv = styled.div`
     background-color: ${Grey010};
     display: grid;
     grid-template-columns: 36px 1fr; 
+    cursor: pointer;
 `;
 
 const LogoDiv = styled.div`

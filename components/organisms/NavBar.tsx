@@ -6,7 +6,7 @@ import { useViewport } from './ViewportProvider';
 
 const NavBar = () => {
   const width = useViewport();
-  const breakpoint = 1480;
+  const breakpoint = 1200;
 
   return (width !== undefined && width < breakpoint) ? <MobileNavBar /> : <DesktopNavbar />;
 };
