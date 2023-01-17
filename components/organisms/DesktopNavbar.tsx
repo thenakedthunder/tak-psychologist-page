@@ -1,42 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
-
-import { IoChevronDownCircleOutline } from 'react-icons/io5';
 
 import LogoAndNameDesktop from 'components/molecules/LogoAndNameDesktop';
 import {
-  Green050, Grey010, Grey100, Black050,
+  Grey010, Grey100, Black050,
 } from 'components/styling/colors';
-import { DefaultParagraph } from 'components/atoms/typography.styles';
-import StyledLink from 'components/atoms/StyledLink.styles';
 import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
+import DesktopMenu from './DesktopMenu';
 
 const ContainerDiv = styled.div`
   padding: 40px 130px;
   display: grid;
   grid-template-columns: auto auto 150px;
   background-color: ${Grey010};
-`;
-
-const DesktopMenu = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  /* column-gap: min(36px); */
-  height: 28px;
-`;
-
-const DesktopMenuItem = styled(DefaultParagraph)`
-  height: 62px;
-  line-height: 62px;
-  align-self: center;
-`;
-
-const ChevronContainer = styled.span`
-  height: 62px;
-  position: relative;
-  top: 8px;
-  padding-left: 8px;
 `;
 
 const ContactButtonDiv = styled.div`
@@ -68,46 +44,7 @@ const getColorWithOpacity = (color: string, opacity: string) => {
 const DesktopNavbar = () => (
   <ContainerDiv>
     <LogoAndNameDesktop />
-    <DesktopMenu>
-      <DesktopMenuItem color={Green050}>
-        <Link href="/" passHref>
-          <StyledLink>
-            Magamról
-          </StyledLink>
-        </Link>
-      </DesktopMenuItem>
-      <DesktopMenuItem color={Green050}>
-        <Link href="/" passHref>
-          <StyledLink>
-            Amiben segíteni tudok
-          </StyledLink>
-        </Link>
-        <ChevronContainer>
-          <IoChevronDownCircleOutline size={28} />
-        </ChevronContainer>
-      </DesktopMenuItem>
-      <DesktopMenuItem color={Green050}>
-        <Link href="/" passHref>
-          <StyledLink>
-            Árak
-          </StyledLink>
-        </Link>
-      </DesktopMenuItem>
-      <DesktopMenuItem color={Green050}>
-        <Link href="/" passHref>
-          <StyledLink>
-            Friss hírek
-          </StyledLink>
-        </Link>
-      </DesktopMenuItem>
-      <DesktopMenuItem color={Green050}>
-        <Link href="/" passHref>
-          <StyledLink>
-            GYIK
-          </StyledLink>
-        </Link>
-      </DesktopMenuItem>
-    </DesktopMenu>
+    <DesktopMenu />
     <ContactButtonDiv>
       <PrimaryCTAButton
         text="Kapcsolat"
