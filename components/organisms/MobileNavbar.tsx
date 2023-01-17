@@ -5,10 +5,11 @@ import styled from 'styled-components';
 import { IoIosMenu } from 'react-icons/io';
 import { VscClose } from 'react-icons/vsc';
 
-import LogoAndName from 'components/molecules/LogoAndName';
+import LogoAndNameMobile from 'components/molecules/LogoAndNameMobile';
 import { Grey010, Green050 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
+import StyledLink from 'components/atoms/StyledLink.styles';
 
 const NavBarMobile = styled.div`
   box-sizing: border-box;
@@ -41,10 +42,8 @@ const MobileMenuItem = styled(DefaultParagraph)`
   font-size: 20px;
 `;
 
-const StyledLink = styled.a`
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
+const ContactButtonDiv = styled.div`
+  padding-top: 30px;
 `;
 
 const MobileNavBar = () => {
@@ -56,7 +55,7 @@ const MobileNavBar = () => {
   return (
     <>
       <NavBarMobile>
-        <LogoAndName />
+        <LogoAndNameMobile />
         <MobileRightDiv>
           {isMenuOpen
             ? <VscClose size={28} onClick={toggleIsMenuOpen} />
@@ -101,13 +100,13 @@ const MobileNavBar = () => {
                 </StyledLink>
               </Link>
             </MobileMenuItem>
-            <div>
+            <ContactButtonDiv>
               <PrimaryCTAButton
                 text="Kapcsolat"
                 color={Grey010}
                 backgroundColor={Green050}
               />
-            </div>
+            </ContactButtonDiv>
           </MobileMenu>
         )}
     </>

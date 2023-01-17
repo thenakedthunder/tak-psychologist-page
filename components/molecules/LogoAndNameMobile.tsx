@@ -20,7 +20,7 @@ const NameParagraph = styled(DefaultParagraph)`
     font-weight: 700;
 `;
 
-const LogoAndName = () => (
+const LogoAndNameMobile = () => (
   <MobileLeftDiv>
     <LogoDiv><IoIosRose size={28} /></LogoDiv>
     <div>
@@ -34,4 +34,4 @@ const LogoAndName = () => (
   </MobileLeftDiv>
 );
 
-export default LogoAndName;
+export default LogoAndNameMobile;

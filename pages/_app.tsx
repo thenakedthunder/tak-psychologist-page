@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import ViewportProvider from 'components/organisms/ViewportProvider';
+import '../styles/globals.css';
 
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';

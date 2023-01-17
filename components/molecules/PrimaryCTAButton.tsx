@@ -10,10 +10,10 @@ const PrimaryCTAButtonStyled = styled.button`
     background-color: ${(props: PrimaryCTAButtonStyledProps) => props.backgroundColor};
     width: 100%;
     height: 62px;
-    margin-top: 30px;
     padding: 0;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 `;
 
 interface PrimaryCTAButtonProps {
