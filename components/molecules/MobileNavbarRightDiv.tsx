@@ -5,14 +5,14 @@ import { IoIosMenu } from 'react-icons/io';
 import { VscClose } from 'react-icons/vsc';
 
 interface MobileRightDivProps {
-    isMenuOpen: boolean;
-    toggleIsMenuOpen: () => void;
+  isMenuOpen: boolean;
+  toggleIsMenuOpen: () => void;
 }
 
 const MobileRightDivContainer = styled.div`
-    justify-self: end;
-    padding: 8px 0;
-    cursor: pointer;
+  justify-self: end;
+  padding: 8px 0;
+  cursor: pointer;
 `;
 
 const MobileNavbarRightDiv = ({ isMenuOpen, toggleIsMenuOpen }: MobileRightDivProps) => (

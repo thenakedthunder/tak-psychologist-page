@@ -9,23 +9,23 @@ import { Green050 } from 'components/styling/colors';
 import StyledLink from 'components/atoms/StyledLink.styles';
 
 const DesktopMenuContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    height: 28px;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  height: 28px;
 `;
 
 const DesktopMenuItem = styled(DefaultParagraph)`
-    height: 62px;
-    line-height: 62px;
-    align-self: center;
+  height: 62px;
+  line-height: 62px;
+  align-self: center;
 `;
 
 const ChevronContainer = styled.span`
-    height: 62px;
-    position: relative;
-    top: 8px;
-    padding-left: 8px;
-    cursor: pointer;
+  height: 62px;
+  position: relative;
+  top: 8px;
+  padding-left: 8px;
+  cursor: pointer;
 `;
 
 const DesktopMenu = () => (
