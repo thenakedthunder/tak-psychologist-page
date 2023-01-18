@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import { IoIosMenu } from 'react-icons/io';
@@ -15,7 +14,7 @@ const MobileRightDivContainer = styled.div`
   cursor: pointer;
 `;
 
-const MobileNavbarRightDiv = ({ isMenuOpen, toggleIsMenuOpen }: MobileRightDivProps) => (
+const MobileNavbarRight = ({ isMenuOpen, toggleIsMenuOpen }: MobileRightDivProps) => (
   <MobileRightDivContainer>
     {isMenuOpen
       ? <VscClose size={28} onClick={toggleIsMenuOpen} />
@@ -23,4 +22,4 @@ const MobileNavbarRightDiv = ({ isMenuOpen, toggleIsMenuOpen }: MobileRightDivPr
   </MobileRightDivContainer>
 );
 
-export default MobileNavbarRightDiv;
+export default MobileNavbarRight;

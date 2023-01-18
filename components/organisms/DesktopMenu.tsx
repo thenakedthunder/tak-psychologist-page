@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
@@ -7,6 +6,9 @@ import { IoChevronDownCircleOutline } from 'react-icons/io5';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
 import StyledLink from 'components/atoms/StyledLink.styles';
+import { menuItemsDesktop } from 'contents/menuItems';
+
+const chevronIndex = 1;
 
 const DesktopMenuContainer = styled.div`
   display: grid;
@@ -30,44 +32,22 @@ const ChevronContainer = styled.span`
 
 const DesktopMenu = () => (
   <DesktopMenuContainer>
-    <DesktopMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Magamról
-        </StyledLink>
-      </Link>
-    </DesktopMenuItem>
-    <DesktopMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Amiben segíteni tudok
-        </StyledLink>
-      </Link>
-      <ChevronContainer>
-        <IoChevronDownCircleOutline size={28} />
-      </ChevronContainer>
-    </DesktopMenuItem>
-    <DesktopMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Árak
-        </StyledLink>
-      </Link>
-    </DesktopMenuItem>
-    <DesktopMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Friss hírek
-        </StyledLink>
-      </Link>
-    </DesktopMenuItem>
-    <DesktopMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          GYIK
-        </StyledLink>
-      </Link>
-    </DesktopMenuItem>
+    {menuItemsDesktop.map((item, index) => (
+      <DesktopMenuItem key={index} color={Green050}>
+        <Link href="/" passHref>
+          <StyledLink>
+            {item}
+          </StyledLink>
+        </Link>
+        {/* TO DO: implement logic so that chevron always appears next to the current page */}
+        {(index === chevronIndex)
+          && (
+            <ChevronContainer>
+              <IoChevronDownCircleOutline size={28} />
+            </ChevronContainer>
+          )}
+      </DesktopMenuItem>
+    ))}
   </DesktopMenuContainer>
 );
 

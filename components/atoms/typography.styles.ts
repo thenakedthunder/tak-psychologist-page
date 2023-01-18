@@ -57,7 +57,7 @@ export const DefaultParagraph = styled.p`
     font-size: 16px;
     line-height: 140%;
     margin: 0;
-    color: ${(props: TypographyStyleProps) => props.color};
+    color: ${({ color }) => color};
 `;
 
 export const SmallParagraph = styled.p`
