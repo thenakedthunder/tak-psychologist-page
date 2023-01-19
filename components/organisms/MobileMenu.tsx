@@ -5,6 +5,7 @@ import StyledLink from 'components/atoms/StyledLink.styles';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
 import { Green050, Grey010 } from 'components/styling/colors';
+import { menuItemsMobile } from 'contents/menuItems';
 
 const MobileMenuContainer = styled.div`
     background-color: ${Grey010};
@@ -33,41 +34,15 @@ const ContactButtonDiv = styled.div`
 
 const MobileMenu = () => (
   <MobileMenuContainer>
-    <MobileMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Magamról
-        </StyledLink>
-      </Link>
-    </MobileMenuItem>
-    <MobileMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Amiben segíteni tudok
-        </StyledLink>
-      </Link>
-    </MobileMenuItem>
-    <MobileMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Árak
-        </StyledLink>
-      </Link>
-    </MobileMenuItem>
-    <MobileMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Friss hírek
-        </StyledLink>
-      </Link>
-    </MobileMenuItem>
-    <MobileMenuItem color={Green050}>
-      <Link href="/" passHref>
-        <StyledLink>
-          Gyakran Ismételt Kérdések
-        </StyledLink>
-      </Link>
-    </MobileMenuItem>
+    {menuItemsMobile.map((item, index) => (
+      <MobileMenuItem key={index} color={Green050}>
+        <Link href="/" passHref>
+          <StyledLink>
+            {item}
+          </StyledLink>
+        </Link>
+      </MobileMenuItem>
+    ))}
     <ContactButtonDiv>
       <PrimaryCTAButton
         text="Kapcsolat"
