@@ -22,13 +22,7 @@ const ContactButtonDiv = styled.div`
   width: 150px;
 `;
 
-const isHexadecimal = (str: string) => {
-  if (/^[0-9a-fA-F]+$/.test(str)) {
-    return true;
-  }
-
-  return false;
-};
+const isHexadecimal = (str: string) => /^[0-9a-fA-F]+$/.test(str);
 
 const getColorWithOpacity = (color: string, opacity: string) => {
   if (color.length !== 7 || !color.startsWith('#') || !isHexadecimal(color.slice(1))) {
