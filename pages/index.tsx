@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { IoIosFitness } from 'react-icons/io';
-
 import NavBar from '../components/organisms/NavBar';
 import styles from '../styles/Home.module.css';
 
@@ -20,7 +18,6 @@ export default function Home() {
 
       <main>
         <NavBar />
-        <IoIosFitness />
       </main>
 
       <footer className={styles.footer}>
