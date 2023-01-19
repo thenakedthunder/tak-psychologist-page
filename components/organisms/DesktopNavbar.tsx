@@ -23,9 +23,7 @@ const ContactButtonDiv = styled.div`
 `;
 
 const isHexadecimal = (str: string) => {
-  const regExp = /^[0-9a-fA-F]+$/;
-
-  if (regExp.test(str)) {
+  if (/^[0-9a-fA-F]+$/.test(str)) {
     return true;
   }
 
