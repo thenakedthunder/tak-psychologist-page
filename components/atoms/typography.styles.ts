@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { Grey010, Grey100 } from '../styling/colors';
 
-export interface TypographyStyleProps {
-    color?: string;
-}
-
 export const PageTitle = styled.h1`
         font-family: 'Figtree', sans-serif;
         font-style: normal;
@@ -29,7 +25,8 @@ export const H2 = styled.h2`
     font-weight: 700;
     font-size: 36px;
     line-height: 120%;
-    color: ${Grey010};
+    color: ${({ color }) => color};
+    margin: 0;
 `;
 
 export const H3 = styled.h3`
@@ -47,7 +44,7 @@ export const LargeParagraph = styled.p`
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
-    color: ${Grey010};
+    color: ${({ color }) => color};
 `;
 
 export const DefaultParagraph = styled.p`
