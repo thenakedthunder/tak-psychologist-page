@@ -8,6 +8,10 @@ import {
 const HeroContainer = styled.div`
   background-color: ${Green100};
   padding: 40px 40px 75px;
+
+  @media screen and (min-width: 768px) {
+    padding: 80px 130px;
+  }
 `;
 
 const QuoteText = styled(H2)`
@@ -16,6 +20,10 @@ const QuoteText = styled(H2)`
 
   .highlighted {
     color: ${Green050};
+  }
+  
+  @media screen and (min-width: 1200px) {
+    font-size: 48px;
   }
 `;
 
