@@ -45,6 +45,7 @@ export const LargeParagraph = styled.p`
     font-size: 20px;
     line-height: 140%;
     color: ${({ color }) => color};
+    margin: 0;
 `;
 
 export const DefaultParagraph = styled.p`
@@ -63,5 +64,6 @@ export const SmallParagraph = styled.p`
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
-    color: ${Grey010};
+    color: ${({ color }) => color};
+    margin: 0;
 `;
