@@ -10,9 +10,7 @@ const Container = styled.div`
 
 const WhatICanHelpYouWith = () => (
   <Container>
-    <div>
-      <WhatICanHelpYouWithUnit />
-    </div>
+    <WhatICanHelpYouWithUnit />
   </Container>
 );
 

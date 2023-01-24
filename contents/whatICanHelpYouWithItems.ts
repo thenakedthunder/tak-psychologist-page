@@ -32,14 +32,14 @@ export const whatICanHelpYouWithItems: WhatICanHelpYouWithItemData[] = [
   {
     icon: IoBrushOutline,
     title: "Művészetterápia",
-    description: "a kográntok banája: az alig laszér serves különcékre is a meteres hajtás metleneit pincolták meg a fejszervek.",
+    description: "A kográntok banája: az alig laszér serves különcékre is a meteres hajtás metleneit pincolták meg a fejszervek.",
     leftPositioning: "4px",
     bottomPositioning: "-1px" 
   },
   {
     icon: SlChart,
     title: "Szervezetfejlesztés, tréning",
-    description: " vetőzte sublick spis pegezős és tudott tezet a páteg „opoly tontás” forzális cseményén.",
+    description: "Vetőzte sublick spis pegezős és tudott tezet a páteg „opoly tontás” forzális cseményén.",
     leftPositioning: "6px",
     bottomPositioning: "2px" 
   },
