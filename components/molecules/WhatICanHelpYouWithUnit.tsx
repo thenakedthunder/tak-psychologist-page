@@ -22,10 +22,15 @@ const LightGreySquare = styled.div`
   left: 0;
 `;
 
-const IconContainer = styled.div`
+type PositionedContainer = {
+  left?: string;
+  bottom?: string;
+};
+
+const IconContainer = styled.div<PositionedContainer>`
   position: absolute;
-  left: 3px;
-  bottom: 0px;
+  left: ${({ left }) => left};
+  bottom: ${({ bottom }) => bottom};
 `;
 
 const TitleContainer = styled.div`
@@ -53,8 +58,8 @@ const WhatICanHelpYouWithUnit = () => (
       <>
         <WhatICanHelpYouWithIconContainer key={index}>
           <LightGreySquare />
-          <IconContainer>
-            <item.icon size={40} />
+          <IconContainer left={item.leftPositioning} bottom={item.bottomPositioning}>
+            <item.icon size={36} />
           </IconContainer>
         </WhatICanHelpYouWithIconContainer>
         <TitleContainer>
