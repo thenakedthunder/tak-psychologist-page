@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import LogoAndNameMobile from 'components/molecules/LogoAndNameMobile';
+import LogoAndNameMobile from 'components/NavBar/molecules/LogoAndNameMobile';
 import { Grey010, Green050 } from 'components/styling/colors';
-import MobileNavbarRight from 'components/molecules/MobileNavbarRight';
+import MobileNavbarRight from 'components/NavBar/molecules/MobileNavbarRight';
 import MobileMenu from './MobileMenu';
 
 const MobileNavbarContainer = styled.div`

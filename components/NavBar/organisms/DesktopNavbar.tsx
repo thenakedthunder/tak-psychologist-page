@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import LogoAndNameDesktop from 'components/molecules/LogoAndNameDesktop';
+import LogoAndNameDesktop from 'components/NavBar/molecules/LogoAndNameDesktop';
 import {
   Grey010, Grey100, Black050,
 } from 'components/styling/colors';

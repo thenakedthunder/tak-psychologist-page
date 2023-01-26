@@ -5,7 +5,7 @@ import StyledLink from 'components/atoms/StyledLink.styles';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
 import { Green050, Grey010 } from 'components/styling/colors';
-import { menuItemsMobile } from 'contents/menuItems';
+import { menuItemsMobile } from 'components/NavBar/content/menuItems';
 
 const MobileMenuContainer = styled.div`
     background-color: ${Grey010};

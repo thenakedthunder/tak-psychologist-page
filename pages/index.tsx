@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import WhatICanHelpYouWith from 'components/organisms/WhatICanHelpYouWith';
-import NavBar from '../components/organisms/NavBar';
+import NavBar from '../components/NavBar/organisms/NavBar';
 import Hero from '../components/organisms/Hero';
 import styles from '../styles/Home.module.css';
 

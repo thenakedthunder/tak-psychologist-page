@@ -6,7 +6,7 @@ import { IoChevronDownCircleOutline } from 'react-icons/io5';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
 import StyledLink from 'components/atoms/StyledLink.styles';
-import { menuItemsDesktop } from 'contents/menuItems';
+import { menuItemsDesktop } from 'components/NavBar/content/menuItems';
 
 const chevronIndex = 1;
 
