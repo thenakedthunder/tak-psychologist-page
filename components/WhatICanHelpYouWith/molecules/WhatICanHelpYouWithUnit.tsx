@@ -29,7 +29,7 @@ const WhatICanHelpYouWithUnit = ({ item, index }: WhatICanHelpYouWithItemProps) 
     <WhatICanHelpYouWithIconContainer key={index}>
       <LightGreySquare />
       <IconContainer left={item.leftPositioning} bottom={item.bottomPositioning}>
-        <item.icon size={36} color={Green100} />
+        <item.icon size={50} color={Green100} />
       </IconContainer>
     </WhatICanHelpYouWithIconContainer>
     <TitleContainer>

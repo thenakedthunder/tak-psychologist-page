@@ -6,12 +6,12 @@ export const Container = styled.div`
   padding: 40px;
 
   @media screen and (min-width: 992px) {
-    padding: 80px 130px;
+    padding: 80px 130px 185px;
   }
 `;
 
 export const LowerContainer = styled.div`
-  padding-top: 20px;
+  padding-top: 30px;
 
   @media screen and (min-width: 768px) {
     display: grid;
@@ -27,9 +27,10 @@ export const LowerContainer = styled.div`
 `;
 
 export const MobileCTAContainer = styled.div`
-  padding-top: 40px;
+  padding-top: 30px;
   
   @media screen and (min-width: 576px) {
+    padding-top: 10px;
     width: 496px;
     margin: auto;
   }

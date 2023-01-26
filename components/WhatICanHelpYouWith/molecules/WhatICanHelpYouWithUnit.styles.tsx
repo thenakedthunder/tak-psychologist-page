@@ -4,7 +4,11 @@ import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Grey010 } from 'components/styling/colors';
 
 export const WhatICanHelpYouWithItemContainer = styled.div`
-  padding-bottom: 35px;
+  padding-bottom: 45px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 0px;
+  }
 `;
 
 export const WhatICanHelpYouWithIconContainer = styled.div`
