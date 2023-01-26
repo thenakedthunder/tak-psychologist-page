@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import StyledLink from 'components/atoms/StyledLink.styles';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
-import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
+import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import { Green050, Grey010 } from 'components/styling/colors';
 import { menuItemsMobile } from 'components/NavBar/content/menuItems';
 

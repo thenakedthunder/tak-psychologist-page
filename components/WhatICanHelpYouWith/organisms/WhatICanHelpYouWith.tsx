@@ -4,9 +4,9 @@ import { H2 } from 'components/atoms/typography.styles';
 import {
   Blue010, Green050, Green100, Grey010,
 } from 'components/styling/colors';
-import WhatICanHelpYouWithUnit from 'components/molecules/WhatICanHelpYouWithUnit';
-import { whatICanHelpYouWithItems } from 'contents/whatICanHelpYouWithItems';
-import PrimaryCTAButton from '../molecules/PrimaryCTAButton';
+import WhatICanHelpYouWithUnit from 'components/WhatICanHelpYouWith/molecules/WhatICanHelpYouWithUnit';
+import { whatICanHelpYouWithItems } from 'components/WhatICanHelpYouWith/content/whatICanHelpYouWithItems';
+import PrimaryCTAButton from '../../atoms/PrimaryCTAButton';
 
 const Container = styled.div`
   background-color: ${Blue010};

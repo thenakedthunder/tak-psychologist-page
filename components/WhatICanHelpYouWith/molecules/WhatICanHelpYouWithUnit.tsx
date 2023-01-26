@@ -7,7 +7,7 @@ import StyledLink from 'components/atoms/StyledLink.styles';
 import {
   Black050, Green100, Green050,
 } from 'components/styling/colors';
-import { WhatICanHelpYouWithItemData } from 'contents/whatICanHelpYouWithItems';
+import { WhatICanHelpYouWithItemData } from 'components/WhatICanHelpYouWith/content/whatICanHelpYouWithItems';
 import {
   WhatICanHelpYouWithItemContainer,
   WhatICanHelpYouWithIconContainer,
