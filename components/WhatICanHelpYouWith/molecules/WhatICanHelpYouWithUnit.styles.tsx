@@ -43,6 +43,10 @@ export const TitleContainer = styled.div`
 
 export const StyledDefaultParagraph = styled(DefaultParagraph)`
   padding-right: 15px;
+
+  @media screen and (min-width: 768px) {
+    padding-right: 0px;
+  }
 `;
 
 export const LinkContainer = styled.div`
@@ -56,6 +60,6 @@ export const LinkContainer = styled.div`
 
 export const ArrowIconContainer = styled.div`
   position: absolute;
-  bottom: 1px;
+  bottom: 0px;
   right: 0px;
 `;

@@ -49,7 +49,11 @@ const WhatICanHelpYouWithUnit = ({ item, index }: WhatICanHelpYouWithItemProps) 
         </Link>
       </SmallParagraph>
       <ArrowIconContainer>
-        <VscArrowRight size={10} color={Green050} />
+        <Link href="/" passHref>
+          <StyledLink>
+            <VscArrowRight size={10} color={Green050} />
+          </StyledLink>
+        </Link>
       </ArrowIconContainer>
     </LinkContainer>
   </WhatICanHelpYouWithItemContainer>

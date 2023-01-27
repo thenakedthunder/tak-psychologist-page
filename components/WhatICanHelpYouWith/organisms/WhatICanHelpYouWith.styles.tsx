@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding: 40px;
 
   @media screen and (min-width: 992px) {
-    padding: 80px 130px 185px;
+    padding: 70px 130px 185px;
   }
 `;
 
@@ -16,13 +16,14 @@ export const LowerContainer = styled.div`
   @media screen and (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
-    padding-top: 75px;
+    grid-gap: 64px;
+    padding-top: 64px;
   }
-
+  
   @media screen and (min-width: 1200px) {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;
+    padding-top: 85px;
   }
 `;
 
