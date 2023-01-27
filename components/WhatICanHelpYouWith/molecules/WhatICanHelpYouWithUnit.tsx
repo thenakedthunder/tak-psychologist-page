@@ -1,9 +1,7 @@
-import Link from 'next/link';
-
 import { VscArrowRight } from 'react-icons/vsc';
 
 import { LargeParagraph, SmallParagraph } from 'components/atoms/typography.styles';
-import StyledLink from 'components/atoms/StyledLink.styles';
+import PsychoLink from 'components/atoms/PsychoLink';
 import {
   Black050, Green100, Green050,
 } from 'components/styling/colors';
@@ -42,18 +40,14 @@ const WhatICanHelpYouWithUnit = ({ item, index }: WhatICanHelpYouWithItemProps) 
     </StyledDefaultParagraph>
     <LinkContainer>
       <SmallParagraph color={Green050}>
-        <Link href="/" passHref>
-          <StyledLink>
-            Tudjon meg többet
-          </StyledLink>
-        </Link>
+        <PsychoLink>
+          Tudjon meg többet
+        </PsychoLink>
       </SmallParagraph>
       <ArrowIconContainer>
-        <Link href="/" passHref>
-          <StyledLink>
-            <VscArrowRight size={10} color={Green050} />
-          </StyledLink>
-        </Link>
+        <PsychoLink>
+          <VscArrowRight size={10} color={Green050} />
+        </PsychoLink>
       </ArrowIconContainer>
     </LinkContainer>
   </WhatICanHelpYouWithItemContainer>

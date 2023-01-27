@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 
 import { IoChevronDownCircleOutline } from 'react-icons/io5';
 
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
-import StyledLink from 'components/atoms/StyledLink.styles';
+import PsychoLink from 'components/atoms/PsychoLink';
 import { menuItemsDesktop } from 'components/NavBar/content/menuItems';
 
 const chevronIndex = 1;
@@ -34,11 +33,9 @@ const DesktopMenu = () => (
   <DesktopMenuContainer>
     {menuItemsDesktop.map((item, index) => (
       <DesktopMenuItem key={index} color={Green050}>
-        <Link href="/" passHref>
-          <StyledLink>
-            {item}
-          </StyledLink>
-        </Link>
+        <PsychoLink>
+          {item}
+        </PsychoLink>
         {/* TO DO: implement logic so that chevron always appears next to the current page */}
         {(index === chevronIndex)
           && (
