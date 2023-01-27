@@ -12,6 +12,8 @@ const MobileMenuContainer = styled.div`
     display: grid;
     grid-template-rows: repeat(5, 1fr) 92px;
     row-gap: 20px;
+    position: fixed;
+    width: 100%;
 `;
 
 const MobileMenuItem = styled(DefaultParagraph)`

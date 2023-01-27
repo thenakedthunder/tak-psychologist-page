@@ -4,6 +4,10 @@ import MobileNavBar from './MobileNavbar';
 import DesktopNavbar from './DesktopNavbar';
 
 const NavbarContainer = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
   .navbar-desktop { display: none;  }
   .navbar-mobile  { display: block; }
 
