@@ -20,7 +20,7 @@ const DesktopCTAContainer = styled.div`
   }
 `;
 
-const WhatICanHelpYouWithTop = () => (
+const Top = () => (
   <TopContainer>
     <H2 color={Green100}>Amiben segíteni tudok</H2>
     <DesktopCTAContainer>
@@ -33,4 +33,4 @@ const WhatICanHelpYouWithTop = () => (
   </TopContainer>
 );
 
-export default WhatICanHelpYouWithTop;
+export default Top;

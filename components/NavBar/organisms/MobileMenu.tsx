@@ -37,7 +37,7 @@ const MobileMenu = () => (
   <MobileMenuContainer>
     {menuItemsMobile.map((item, index) => (
       <MobileMenuItem key={index} color={Green050}>
-        <PsychoLink>
+        <PsychoLink href="/">
           {item}
         </PsychoLink>
       </MobileMenuItem>

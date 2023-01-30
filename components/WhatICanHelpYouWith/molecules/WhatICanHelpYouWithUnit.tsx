@@ -7,8 +7,8 @@ import {
 } from 'components/styling/colors';
 import { WhatICanHelpYouWithItemData } from 'components/WhatICanHelpYouWith/content/whatICanHelpYouWithItems';
 import {
-  WhatICanHelpYouWithItemContainer,
-  WhatICanHelpYouWithIconContainer,
+  ItemContainer,
+  OuterIconContainer,
   LightGreySquare,
   IconContainer,
   TitleContainer,
@@ -19,17 +19,16 @@ import {
 
 type WhatICanHelpYouWithItemProps = {
   item: WhatICanHelpYouWithItemData;
-  index: number;
 }
 
-const WhatICanHelpYouWithUnit = ({ item, index }: WhatICanHelpYouWithItemProps) => (
-  <WhatICanHelpYouWithItemContainer>
-    <WhatICanHelpYouWithIconContainer key={index}>
+const WhatICanHelpYouWithUnit = ({ item }: WhatICanHelpYouWithItemProps) => (
+  <ItemContainer>
+    <OuterIconContainer>
       <LightGreySquare />
       <IconContainer left={item.leftPositioning} bottom={item.bottomPositioning}>
         <item.icon size={50} color={Green100} />
       </IconContainer>
-    </WhatICanHelpYouWithIconContainer>
+    </OuterIconContainer>
     <TitleContainer>
       <LargeParagraph color={Green100}>
         {item.title}
@@ -40,17 +39,17 @@ const WhatICanHelpYouWithUnit = ({ item, index }: WhatICanHelpYouWithItemProps) 
     </StyledDefaultParagraph>
     <LinkContainer>
       <SmallParagraph color={Green050}>
-        <PsychoLink>
+        <PsychoLink href="/">
           Tudjon meg többet
         </PsychoLink>
       </SmallParagraph>
       <ArrowIconContainer>
-        <PsychoLink>
+        <PsychoLink href="/">
           <VscArrowRight size={10} color={Green050} />
         </PsychoLink>
       </ArrowIconContainer>
     </LinkContainer>
-  </WhatICanHelpYouWithItemContainer>
+  </ItemContainer>
 );
 
 export default WhatICanHelpYouWithUnit;

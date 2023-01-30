@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Grey010 } from 'components/styling/colors';
 
-export const WhatICanHelpYouWithItemContainer = styled.div`
+export const ItemContainer = styled.div`
   padding-bottom: 45px;
 
   @media screen and (min-width: 768px) {
@@ -11,7 +11,7 @@ export const WhatICanHelpYouWithItemContainer = styled.div`
   }
 `;
 
-export const WhatICanHelpYouWithIconContainer = styled.div`
+export const OuterIconContainer = styled.div`
   height: 50px;
   width: 50px;
   position: relative;

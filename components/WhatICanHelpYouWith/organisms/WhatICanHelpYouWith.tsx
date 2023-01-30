@@ -5,7 +5,7 @@ import {
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import { whatICanHelpYouWithItems } from 'components/WhatICanHelpYouWith/content/whatICanHelpYouWithItems';
 import WhatICanHelpYouWithUnit from 'components/WhatICanHelpYouWith/molecules/WhatICanHelpYouWithUnit';
-import WhatICanHelpYouWithTop from '../molecules/WhatICanHelpYouWithTop';
+import Top from '../molecules/Top';
 
 import {
   Container,
@@ -15,10 +15,10 @@ import {
 
 const WhatICanHelpYouWith = () => (
   <Container>
-    <WhatICanHelpYouWithTop />
+    <Top />
     <LowerContainer>
       {whatICanHelpYouWithItems.map(
-        (item, index) => <WhatICanHelpYouWithUnit item={item} index={index} />,
+        (item, index) => <WhatICanHelpYouWithUnit item={item} key={index} />,
       )}
     </LowerContainer>
     <MobileCTAContainer>

@@ -8,12 +8,12 @@ const StyledLink = styled.a`
 `;
 
 interface PsychoLinkProps {
-  href?: string;
+  href: string;
   children: string | JSX.Element;
 }
 
 const PsychoLink = ({ href, children }: PsychoLinkProps) => (
-  <Link href={href ?? '/'} passHref>
+  <Link href={href} passHref>
     <StyledLink>
       {children}
     </StyledLink>

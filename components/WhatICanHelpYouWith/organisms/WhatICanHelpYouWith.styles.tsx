@@ -28,10 +28,9 @@ export const LowerContainer = styled.div`
 `;
 
 export const MobileCTAContainer = styled.div`
-  padding-top: 30px;
+  padding-top: 10px;
   
   @media screen and (min-width: 576px) {
-    padding-top: 10px;
     width: 496px;
     margin: auto;
   }

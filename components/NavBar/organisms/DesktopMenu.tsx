@@ -33,7 +33,7 @@ const DesktopMenu = () => (
   <DesktopMenuContainer>
     {menuItemsDesktop.map((item, index) => (
       <DesktopMenuItem key={index} color={Green050}>
-        <PsychoLink>
+        <PsychoLink href="/">
           {item}
         </PsychoLink>
         {/* TO DO: implement logic so that chevron always appears next to the current page */}
