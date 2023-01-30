@@ -1,15 +1,20 @@
-export const menuItemsDesktop = [
-  'Magamról',
-  'Amiben segíteni tudok',
-  'Árak',
-  'Friss hírek',
-  'GYIK',
+interface MenuItem {
+  title: string;
+  link: string;
+}
+
+export const menuItemsDesktop: MenuItem[] = [
+  { title: 'Magamról', link: '/' },
+  { title: 'Amiben segíteni tudok', link: '/' },
+  { title: 'Árak', link: '/' },
+  { title: 'Friss hírek', link: '/' },
+  { title: 'GYIK', link: '/' },
 ];
 
-export const menuItemsMobile = [
-  'Magamról',
-  'Amiben segíteni tudok',
-  'Árak',
-  'Friss hírek',
-  'Gyakran Ismételt Kérdések',
+export const menuItemsMobile: MenuItem[] = [
+  { title: 'Magamról', link: '/' },
+  { title: 'Amiben segíteni tudok', link: '/' },
+  { title: 'Árak', link: '/' },
+  { title: 'Friss hírek', link: '/' },
+  { title: 'Gyakran Ismételt Kérdések', link: '/' },
 ];
