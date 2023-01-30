@@ -4,7 +4,7 @@ interface MenuItem {
 }
 
 export const menuItemsDesktop: MenuItem[] = [
-  { title: 'Magamról', link: '/' },
+  { title: 'Magamról', link: '/rolam' },
   { title: 'Amiben segíteni tudok', link: '/' },
   { title: 'Árak', link: '/' },
   { title: 'Friss hírek', link: '/' },
@@ -12,7 +12,7 @@ export const menuItemsDesktop: MenuItem[] = [
 ];
 
 export const menuItemsMobile: MenuItem[] = [
-  { title: 'Magamról', link: '/' },
+  { title: 'Magamról', link: '/rolam' },
   { title: 'Amiben segíteni tudok', link: '/' },
   { title: 'Árak', link: '/' },
   { title: 'Friss hírek', link: '/' },
