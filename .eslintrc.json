@@ -42,7 +42,8 @@
         "jsx-a11y/anchor-has-content": "off",
         "react/jsx-props-no-spreading": "off",
         "jsx-wrap-multilines": "off",
-        "react/no-array-index-key" : "off"
+        "react/no-array-index-key" : "off",
+        "react/require-default-props" : "off"
     },
     "settings": {
         "import/resolver": {

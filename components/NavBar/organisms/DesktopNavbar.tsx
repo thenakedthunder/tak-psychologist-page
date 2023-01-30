@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import LogoAndNameDesktop from 'components/molecules/LogoAndNameDesktop';
+import LogoAndNameDesktop from 'components/NavBar/molecules/LogoAndNameDesktop';
 import {
   Grey010, Grey100, Black050,
 } from 'components/styling/colors';
-import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
-import DesktopMenu from './DesktopMenu';
+import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
+import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
 
 const ContainerDiv = styled.div`
   padding: 40px;

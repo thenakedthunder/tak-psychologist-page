@@ -1,11 +1,10 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 
-import StyledLink from 'components/atoms/StyledLink.styles';
+import PsychoLink from 'components/atoms/PsychoLink';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
-import PrimaryCTAButton from 'components/molecules/PrimaryCTAButton';
+import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import { Green050, Grey010 } from 'components/styling/colors';
-import { menuItemsMobile } from 'contents/menuItems';
+import { menuItemsMobile } from 'components/NavBar/content/menuItems';
 
 const MobileMenuContainer = styled.div`
     background-color: ${Grey010};
@@ -13,6 +12,9 @@ const MobileMenuContainer = styled.div`
     display: grid;
     grid-template-rows: repeat(5, 1fr) 92px;
     row-gap: 20px;
+    position: fixed;
+    top: 83px;
+    width: 100%;
 `;
 
 const MobileMenuItem = styled(DefaultParagraph)`
@@ -36,11 +38,9 @@ const MobileMenu = () => (
   <MobileMenuContainer>
     {menuItemsMobile.map((item, index) => (
       <MobileMenuItem key={index} color={Green050}>
-        <Link href="/" passHref>
-          <StyledLink>
-            {item}
-          </StyledLink>
-        </Link>
+        <PsychoLink href="/">
+          {item}
+        </PsychoLink>
       </MobileMenuItem>
     ))}
     <ContactButtonDiv>
