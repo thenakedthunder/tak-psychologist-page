@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import MobileNavBar from './MobileNavbar';
-import DesktopNavbar from './DesktopNavbar';
+import MobileNavBar from 'components/NavBar/organisms/MobileNavbar';
+import DesktopNavbar from 'components/NavBar/organisms/DesktopNavbar';
 
 const NavbarContainer = styled.div`
   position: sticky;

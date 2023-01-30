@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import LogoAndNameMobile from 'components/NavBar/molecules/LogoAndNameMobile';
 import { Grey010, Green050 } from 'components/styling/colors';
 import MobileNavbarRight from 'components/NavBar/molecules/MobileNavbarRight';
-import MobileMenu from './MobileMenu';
+import MobileMenu from 'components/NavBar/organisms/MobileMenu';
 
 const MobileNavbarContainer = styled.div`
   box-sizing: border-box;

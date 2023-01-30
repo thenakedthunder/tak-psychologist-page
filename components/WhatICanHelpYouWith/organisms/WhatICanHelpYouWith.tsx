@@ -5,7 +5,7 @@ import {
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import { whatICanHelpYouWithItems } from 'components/WhatICanHelpYouWith/content/whatICanHelpYouWithItems';
 import WhatICanHelpYouWithUnit from 'components/WhatICanHelpYouWith/molecules/WhatICanHelpYouWithUnit';
-import Top from '../molecules/Top';
+import Top from 'components/WhatICanHelpYouWith/molecules/Top';
 
 import {
   Container,
