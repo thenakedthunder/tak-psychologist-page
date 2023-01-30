@@ -3,7 +3,7 @@ import {
 } from 'components/styling/colors';
 
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
-import { whatICanHelpYouWithItems } from 'components/WhatICanHelpYouWith/content/whatICanHelpYouWithItems';
+import { items } from 'components/WhatICanHelpYouWith/content/items';
 import WhatICanHelpYouWithUnit from 'components/WhatICanHelpYouWith/molecules/WhatICanHelpYouWithUnit';
 import Top from 'components/WhatICanHelpYouWith/molecules/Top';
 
@@ -17,7 +17,7 @@ const WhatICanHelpYouWith = () => (
   <Container>
     <Top />
     <LowerContainer>
-      {whatICanHelpYouWithItems.map(
+      {items.map(
         (item, index) => <WhatICanHelpYouWithUnit item={item} key={index} />,
       )}
     </LowerContainer>

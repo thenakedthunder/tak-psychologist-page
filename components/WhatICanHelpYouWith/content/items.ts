@@ -4,7 +4,7 @@ import { MdPeopleOutline } from 'react-icons/md';
 import { IoBrushOutline } from 'react-icons/io5';
 import { SlChart } from 'react-icons/sl';
 
-export interface WhatICanHelpYouWithItemData {
+export interface ItemData {
   icon: IconType;
   title: string;
   description: string;
@@ -12,7 +12,7 @@ export interface WhatICanHelpYouWithItemData {
   bottomPositioning?: string;
 }
 
-export const whatICanHelpYouWithItems: WhatICanHelpYouWithItemData[] = [
+export const items: ItemData[] = [
   {
     icon: TfiThumbUp,
     title: 'Egyéni konzultáció',

@@ -5,7 +5,7 @@ import PsychoLink from 'components/atoms/PsychoLink';
 import {
   Black050, Green100, Green050,
 } from 'components/styling/colors';
-import { WhatICanHelpYouWithItemData } from 'components/WhatICanHelpYouWith/content/whatICanHelpYouWithItems';
+import { ItemData } from 'components/WhatICanHelpYouWith/content/items';
 import {
   ItemContainer,
   OuterIconContainer,
@@ -15,13 +15,13 @@ import {
   StyledDefaultParagraph,
   LinkContainer,
   ArrowIconContainer,
-} from './WhatICanHelpYouWithUnit.styles';
+} from 'components/WhatICanHelpYouWith/molecules/Unit.styles';
 
 type WhatICanHelpYouWithItemProps = {
-  item: WhatICanHelpYouWithItemData;
+  item: ItemData;
 }
 
-const WhatICanHelpYouWithUnit = ({ item }: WhatICanHelpYouWithItemProps) => (
+const Unit = ({ item }: WhatICanHelpYouWithItemProps) => (
   <ItemContainer>
     <OuterIconContainer>
       <LightGreySquare />
@@ -52,4 +52,4 @@ const WhatICanHelpYouWithUnit = ({ item }: WhatICanHelpYouWithItemProps) => (
   </ItemContainer>
 );
 
-export default WhatICanHelpYouWithUnit;
+export default Unit;
