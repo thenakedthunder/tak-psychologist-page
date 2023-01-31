@@ -1,20 +1,17 @@
-interface MenuItem {
-  title: string;
-  link: string;
-}
+import { LinkType } from 'types/LinkType';
 
-export const menuItemsDesktop: MenuItem[] = [
-  { title: 'Magamról', link: '/rolam' },
-  { title: 'Amiben segíteni tudok', link: '/' },
-  { title: 'Árak', link: '/' },
-  { title: 'Friss hírek', link: '/' },
-  { title: 'GYIK', link: '/' },
+export const menuItemsDesktop: LinkType[] = [
+  { linkText: 'Magamról', linkHref: '/rolam' },
+  { linkText: 'Amiben segíteni tudok', linkHref: '/' },
+  { linkText: 'Árak', linkHref: '/' },
+  { linkText: 'Friss hírek', linkHref: '/' },
+  { linkText: 'GYIK', linkHref: '/' },
 ];
 
-export const menuItemsMobile: MenuItem[] = [
-  { title: 'Magamról', link: '/rolam' },
-  { title: 'Amiben segíteni tudok', link: '/' },
-  { title: 'Árak', link: '/' },
-  { title: 'Friss hírek', link: '/' },
-  { title: 'Gyakran Ismételt Kérdések', link: '/' },
+export const menuItemsMobile: LinkType[] = [
+  { linkText: 'Magamról', linkHref: '/rolam' },
+  { linkText: 'Amiben segíteni tudok', linkHref: '/' },
+  { linkText: 'Árak', linkHref: '/' },
+  { linkText: 'Friss hírek', linkHref: '/' },
+  { linkText: 'Gyakran Ismételt Kérdések', linkHref: '/' },
 ];
