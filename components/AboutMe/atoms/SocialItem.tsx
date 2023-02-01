@@ -11,12 +11,11 @@ const ItemContainer = styled.div`
 `;
 
 interface SocialItemProps {
-  key: number;
   linkText: string;
 }
 
-const SocialItem = ({ key, linkText }: SocialItemProps) => (
-  <ItemContainer key={key}>
+const SocialItem = ({ linkText }: SocialItemProps) => (
+  <ItemContainer>
     <TfiPlus size={16} color={Green050} />
     <SmallParagraph color={Green050}>
       {linkText}

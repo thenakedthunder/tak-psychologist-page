@@ -18,8 +18,8 @@ const Container = styled.div`
 const SocialContainer = () => (
   <Container>
     {socialMediaItems.map((item, index) => (
-      <PsychoLink href={item.linkHref}>
-        <SocialItem key={index} linkText={item.linkText} />
+      <PsychoLink key={index} href={item.linkHref}>
+        <SocialItem linkText={item.linkText} />
       </PsychoLink>
     ))}
   </Container>
