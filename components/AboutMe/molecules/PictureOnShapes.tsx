@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import Image from 'next/image';
 
-import { Green100, Green010 } from "components/styling/colors";
-import ProfileImage from "@/public/assets/about-me.png";
+import { Green100, Green010 } from 'components/styling/colors';
+import ProfileImage from '@/public/assets/about-me.png';
 
 const GeometryContainer = styled.div`
   height: 325px;
@@ -47,6 +47,6 @@ const PictureOnShapes = () => (
     </LargeGreenSquare>
     <SmallGreenSquare />
   </GeometryContainer>
-)
+);
 
 export default PictureOnShapes;
