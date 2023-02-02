@@ -16,7 +16,7 @@ const LargeGreenSquare = styled.div`
   height: 250px;
   width: 250px;
   position: absolute;
-  right: -40px;
+  right: -55px;
 `;
 
 const SmallGreenSquare = styled.div`
@@ -25,7 +25,7 @@ const SmallGreenSquare = styled.div`
   width: 150px;
   position: absolute;
   z-index: 1;
-  right: -40px;
+  right: -55px;
   bottom: 0;
 `;
 
