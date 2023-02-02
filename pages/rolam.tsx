@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 import NavBar from 'components/NavBar/organisms/NavBar';
-import { DefaultParagraph, H2, H3, LargeParagraph, SmallParagraph } from 'components/atoms/typography.styles';
+import {
+  DefaultParagraph, H2, H3, LargeParagraph, SmallParagraph,
+} from 'components/atoms/typography.styles';
 import { Green050, Green100 } from 'components/styling/colors';
 import SocialContainer from 'components/AboutMe/molecules/Social';
 import PictureOnShapes from 'components/AboutMe/molecules/PictureOnShapes';
@@ -52,13 +54,24 @@ export default function AboutMe() {
         <BiographyContainer>
           <H3 color={Green050}>Életút</H3>
           <LargeParagraph color={Green100}>
-            Lórum ipse feltehetőleg hadt, de gatag, hogy nem a megzetles pozmus van beállítva. Az itt nyúlánc, cserepej mámlás szépes sápott kölönyökökért, fidásokért villaj tark kulását is a binaság pulldon henségzése, illetve annak nyerségei aszták. De ők nekelték - kivált a tark remes belgőjének dítése után - a bikák, így elsősorban a fejteli erin minden kozását is.
+            Lórum ipse feltehetőleg hadt, de gatag, hogy nem a megzetles pozmus van beállítva. Az
+            itt nyúlánc, cserepej mámlás szépes sápott kölönyökökért, fidásokért villaj tark
+            kulását is a binaság pulldon henségzése, illetve annak nyerségei aszták. De ők nekelték
+            - kivált a tark remes belgőjének dítése után - a bikák, így elsősorban a fejteli erin
+            minden kozását is.
           </LargeParagraph>
           <DefaultParagraph color={Green100}>
-            Rozott keresztül lentniük, hogy a kriff csíkságok tetkerzőjét a binaságtól sziszertegték s a binasággal szemben jövesztő rantyúkászot redtek. Ennek a jövesztő rantyúkásznak a goványában volt azután a fejteli erin, az oszta, a gránok, a konom, slás, stb.
+            Rozott keresztül lentniük, hogy a kriff csíkságok tetkerzőjét a binaságtól
+            sziszertegték s a binasággal szemben jövesztő rantyúkászot redtek. Ennek a jövesztő
+            rantyúkásznak a goványában volt azután a fejteli erin, az oszta, a gránok, a konom,
+            slás, stb.
           </DefaultParagraph>
           <DefaultParagraph color={Green100}>
-            Zsalmában emiatt semmi mendás nem volt, mert alig volt a binaságban más, mint aki aszta a ménát. Így egy ideig a kriff reményeket is a binaság vizetette s a csíkság nevezhető rozodásként kartatott. A hatony kezék bécésén azonban retesek azzal durrogtak elő, hogy a binaság henségzését már nem csak azok redik, akik a kriff ménát aszták s így a kriff csíkság nem az egész binaságot, hanem csak a ménát risták nyerségeit kodja meg.
+            Zsalmában emiatt semmi mendás nem volt, mert alig volt a binaságban más, mint aki aszta
+            a ménát. Így egy ideig a kriff reményeket is a binaság vizetette s a csíkság nevezhető
+            rozodásként kartatott. A hatony kezék bécésén azonban retesek azzal durrogtak elő, hogy
+            a binaság henségzését már nem csak azok redik, akik a kriff ménát aszták s így a kriff
+            csíkság nem az egész binaságot, hanem csak a ménát risták nyerségeit kodja meg.
           </DefaultParagraph>
         </BiographyContainer>
         <EducationContainer>
@@ -86,13 +99,24 @@ export default function AboutMe() {
         <BiographyContainer>
           <H3 color={Green050}>Misszió</H3>
           <LargeParagraph color={Green100}>
-            Lórum ipse feltehetőleg hadt, de gatag, hogy nem a megzetles pozmus van beállítva. Az itt nyúlánc, cserepej mámlás szépes sápott kölönyökökért, fidásokért villaj tark kulását is a binaság pulldon henségzése, illetve annak nyerségei aszták. De ők nekelték - kivált a tark remes belgőjének dítése után - a bikák, így elsősorban a fejteli erin minden kozását is.
+            Lórum ipse feltehetőleg hadt, de gatag, hogy nem a megzetles pozmus van beállítva. Az
+            itt nyúlánc, cserepej mámlás szépes sápott kölönyökökért, fidásokért villaj tark
+            kulását is a binaság pulldon henségzése, illetve annak nyerségei aszták. De ők nekelték
+            - kivált a tark remes belgőjének dítése után - a bikák, így elsősorban a fejteli erin
+            minden kozását is.
           </LargeParagraph>
           <DefaultParagraph color={Green100}>
-            Rozott keresztül lentniük, hogy a kriff csíkságok tetkerzőjét a binaságtól sziszertegték s a binasággal szemben jövesztő rantyúkászot redtek. Ennek a jövesztő rantyúkásznak a goványában volt azután a fejteli erin, az oszta, a gránok, a konom, slás, stb.
+            Rozott keresztül lentniük, hogy a kriff csíkságok tetkerzőjét a binaságtól
+            sziszertegték s a binasággal szemben jövesztő rantyúkászot redtek. Ennek a jövesztő
+            rantyúkásznak a goványában volt azután a fejteli erin, az oszta, a gránok, a konom,
+            slás, stb.
           </DefaultParagraph>
           <DefaultParagraph color={Green100}>
-            Zsalmában emiatt semmi mendás nem volt, mert alig volt a binaságban más, mint aki aszta a ménát. Így egy ideig a kriff reményeket is a binaság vizetette s a csíkság nevezhető rozodásként kartatott. A hatony kezék bécésén azonban retesek azzal durrogtak elő, hogy a binaság henségzését már nem csak azok redik, akik a kriff ménát aszták s így a kriff csíkság nem az egész binaságot, hanem csak a ménát risták nyerségeit kodja meg.
+            Zsalmában emiatt semmi mendás nem volt, mert alig volt a binaságban más, mint aki aszta
+            a ménát. Így egy ideig a kriff reményeket is a binaság vizetette s a csíkság nevezhető
+            rozodásként kartatott. A hatony kezék bécésén azonban retesek azzal durrogtak elő, hogy
+            a binaság henségzését már nem csak azok redik, akik a kriff ménát aszták s így a kriff
+            csíkság nem az egész binaságot, hanem csak a ménát risták nyerségeit kodja meg.
           </DefaultParagraph>
         </BiographyContainer>
         <EducationContainer>
@@ -107,7 +131,9 @@ export default function AboutMe() {
               <SmallParagraph color={Green100}>2014</SmallParagraph>
               <Title color={Green100}>Bájitaltan</Title>
               <Institute color={Green100}>ELTE Eötvös Loránd Tudományegyetem</Institute>
-              <DefaultParagraph color={Green100}>Az egyetem boszorkánytannal foglalkozó kurzusainak közkedvelt tankönyve</DefaultParagraph>
+              <DefaultParagraph color={Green100}>
+                Az egyetem boszorkánytannal foglalkozó kurzusainak közkedvelt tankönyve
+              </DefaultParagraph>
             </ListItem>
             <ListItem>
               <SmallParagraph color={Green100}>2020</SmallParagraph>
