@@ -9,6 +9,10 @@ const GeometryContainer = styled.div`
   width: 100%;
   position: relative;
   margin-top: 30px;
+
+  @media screen and (min-width: 650px) {
+    height: 650px;
+  }
 `;
 
 const LargeGreenSquare = styled.div`
@@ -17,6 +21,11 @@ const LargeGreenSquare = styled.div`
   width: 250px;
   position: absolute;
   right: -55px;
+
+  @media screen and (min-width: 650px) {
+    height: 510px;
+    width: 510px;
+  }
 `;
 
 const SmallGreenSquare = styled.div`
@@ -27,6 +36,11 @@ const SmallGreenSquare = styled.div`
   z-index: 1;
   right: -55px;
   bottom: 0;
+
+  @media screen and (min-width: 650px) {
+    height: 305px;
+    width: 305px;
+  }
 `;
 
 const ProfileImageContainer = styled.div`
@@ -36,13 +50,30 @@ const ProfileImageContainer = styled.div`
     bottom: 5px;
     z-index: 2;
     left: -50px;
+
+    @media screen and (min-width: 650px) {
+      width: 480px;
+      height: 312px;
+      left: -100px;
+      bottom: 9px;
+    }
+`;
+
+const ProfileImageSized = styled(Image)`
+  width: 240px;
+  height: 156px;
+   
+  @media screen and (min-width: 650px) {
+    width: 480px;
+    height: 312px;
+  }
 `;
 
 const PictureOnShapes = () => (
   <GeometryContainer>
     <LargeGreenSquare>
       <ProfileImageContainer>
-        <Image src={ProfileImage} width={240} height={156} />
+        <ProfileImageSized src={ProfileImage} />
       </ProfileImageContainer>
     </LargeGreenSquare>
     <SmallGreenSquare />
