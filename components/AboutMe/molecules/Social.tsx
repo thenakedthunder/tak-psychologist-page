@@ -5,17 +5,23 @@ import socialMediaItems from 'components/AboutMe/content/socialMedia';
 import SocialItem from 'components/AboutMe/atoms/SocialItem';
 
 const Container = styled.div`
-  padding-top: 30px;
+  display: none;
 
   @media screen and (min-width: 576px) {
     display: grid;
     grid-template-columns: repeat(4, auto);
     margin: auto;
-    padding-top: 30px;
+    padding-top: 8px;
+    column-gap: 28px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    position: relative;
+    right: -148px;  
   }
 `;
 
-const SocialContainer = () => (
+const Social = () => (
   <Container>
     {socialMediaItems.map((item, index) => (
       <PsychoLink key={index} href={item.linkHref}>
@@ -25,4 +31,4 @@ const SocialContainer = () => (
   </Container>
 );
 
-export default SocialContainer;
+export default Social;

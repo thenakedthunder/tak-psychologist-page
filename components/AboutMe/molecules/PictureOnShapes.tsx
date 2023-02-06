@@ -13,6 +13,13 @@ const GeometryContainer = styled.div`
   @media screen and (min-width: 650px) {
     height: 650px;
   }
+  
+  @media screen and (min-width: 1200px) {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    position: relative;
+    /* top: -96px; */
+  }
 `;
 
 const LargeGreenSquare = styled.div`

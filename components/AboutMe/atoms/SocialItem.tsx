@@ -6,8 +6,13 @@ import { SmallParagraph } from 'components/atoms/typography.styles';
 
 const ItemContainer = styled.div`
   display: grid;
-  grid-template-columns: 32px auto;
+  grid-template-columns: 12px auto;
   align-items: center;
+  column-gap: 4px;
+
+  @media screen and (min-width: 768px) {
+    column-gap: 16px;
+  }
 `;
 
 interface SocialItemProps {
@@ -16,7 +21,7 @@ interface SocialItemProps {
 
 const SocialItem = ({ linkText }: SocialItemProps) => (
   <ItemContainer>
-    <TfiPlus size={16} color={Green050} />
+    <TfiPlus size={12} color={Green050} />
     <SmallParagraph color={Green050}>
       {linkText}
     </SmallParagraph>
