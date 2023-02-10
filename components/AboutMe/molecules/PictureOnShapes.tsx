@@ -10,7 +10,7 @@ const GeometryContainer = styled.div`
   position: relative;
   margin-top: 30px;
 
-  @media screen and (min-width: 650px) {
+  @media screen and (min-width: 768px) {
     height: 650px;
   }
   
@@ -18,6 +18,7 @@ const GeometryContainer = styled.div`
     grid-row: 1 / span 2;
     grid-column: 2;
     position: relative;
+    width: 555px;
     /* top: -96px; */
   }
 `;
@@ -29,9 +30,16 @@ const LargeGreenSquare = styled.div`
   position: absolute;
   right: -55px;
 
-  @media screen and (min-width: 650px) {
+  @media screen and (min-width: 576px) {
+    position: relative;
+    left: 50px;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
     height: 510px;
     width: 510px;
+    margin-right: 0;
   }
 `;
 
@@ -44,9 +52,18 @@ const SmallGreenSquare = styled.div`
   right: -55px;
   bottom: 0;
 
-  @media screen and (min-width: 650px) {
+  @media screen and (min-width: 576px) {
+    position: relative;
+    left: 101px;
+    bottom: 75px;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
     height: 305px;
     width: 305px;
+    bottom: 157px;
+    margin-right: 51px;
   }
 `;
 
@@ -54,15 +71,15 @@ const ProfileImageContainer = styled.div`
     width: 240px;
     height: 156px;
     position: absolute;
-    bottom: 5px;
+    bottom: 16px;
     z-index: 2;
     left: -50px;
 
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: 768px) {
       width: 480px;
       height: 312px;
       left: -100px;
-      bottom: 9px;
+      bottom: 24px;
     }
 `;
 
@@ -70,10 +87,10 @@ const ProfileImageSized = styled(Image)`
   width: 240px;
   height: 156px;
    
-  @media screen and (min-width: 650px) {
+  /* @media screen and (min-width: 650px) {
     width: 480px;
     height: 312px;
-  }
+  } */
 `;
 
 const PictureOnShapes = () => (
