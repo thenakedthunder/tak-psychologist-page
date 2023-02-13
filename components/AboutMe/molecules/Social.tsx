@@ -14,11 +14,6 @@ const Container = styled.div`
     padding-top: 8px;
     column-gap: 28px;
   }
-
-  @media screen and (min-width: 1200px) {
-    position: relative;
-    right: -148px;  
-  }
 `;
 
 const Social = () => (

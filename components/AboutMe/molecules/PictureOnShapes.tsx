@@ -15,11 +15,7 @@ const GeometryContainer = styled.div`
   }
   
   @media screen and (min-width: 1200px) {
-    grid-row: 1 / span 2;
-    grid-column: 2;
-    position: relative;
-    width: 555px;
-    /* top: -96px; */
+    display: none;
   }
 `;
 
@@ -28,15 +24,16 @@ const LargeGreenSquare = styled.div`
   height: 250px;
   width: 250px;
   position: absolute;
-  right: -55px;
+  right: -40px;
 
   @media screen and (min-width: 576px) {
     position: relative;
     left: 50px;
     margin: auto;
   }
-
+  
   @media screen and (min-width: 768px) {
+    left: 40px;
     height: 510px;
     width: 510px;
     margin-right: 0;
@@ -49,9 +46,9 @@ const SmallGreenSquare = styled.div`
   width: 150px;
   position: absolute;
   z-index: 1;
-  right: -55px;
+  right: -40px;
   bottom: 0;
-
+  
   @media screen and (min-width: 576px) {
     position: relative;
     left: 101px;
@@ -63,7 +60,7 @@ const SmallGreenSquare = styled.div`
     height: 305px;
     width: 305px;
     bottom: 157px;
-    margin-right: 51px;
+    margin-right: 61px;
   }
 `;
 
