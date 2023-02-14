@@ -5,7 +5,7 @@ import { Green050, Green100 } from 'components/styling/colors';
 import { ListType } from 'components/AboutMe/content/aboutMeContent';
 
 const ListContainer = styled.div`
-  padding-top: 30px;
+  padding-top: 60px;
 `;
 
 const ListItemsContainer = styled.div`
@@ -40,7 +40,7 @@ const List = ({ content }: ListProps) => (
           <Title color={Green100}>{item.title}</Title>
           <ListMoreDetails>
             {item.otherDetails?.map((detailItem, detailIndex) => (
-              <DefaultParagraph key={detailIndex}>{detailItem}</DefaultParagraph>
+              <DefaultParagraph color={Green100} key={detailIndex}>{detailItem}</DefaultParagraph>
             ))}
           </ListMoreDetails>
         </div>

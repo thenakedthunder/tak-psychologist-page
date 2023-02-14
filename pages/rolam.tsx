@@ -27,13 +27,19 @@ const MainContainer = styled.div`
   }
 `;
 
+const ProseWrapperForCustomTopPadding = styled.div`
+  padding-top: 30px;
+`;
+
 export default function AboutMe() {
   return (
     <>
       <NavBar />
       <MainContainer>
         <TopGrid />
-        <Prose content={mission} />
+        <ProseWrapperForCustomTopPadding>
+          <Prose content={mission} />
+        </ProseWrapperForCustomTopPadding>
         <List content={publicationsAndMemberships} />
       </MainContainer>
     </>
