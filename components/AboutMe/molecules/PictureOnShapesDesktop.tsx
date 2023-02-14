@@ -1,9 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import Image from 'next/image';
 
 import ProfileImage from '@/public/assets/about-me.png';
-
-
 
 export const MainContainer = styled.div`
   display: none;
@@ -18,7 +16,6 @@ export const MainContainer = styled.div`
     align-items: center;
   }
 `;
-
 
 export const ProfileImageContainer = styled.div`
   width: 280px;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { Green050, Green100 } from 'components/styling/colors';
 import { H3, LargeParagraph, DefaultParagraph } from 'components/atoms/typography.styles';
-import { ProseItemType } from '../content/aboutMeContent';
+import { Green050, Green100 } from 'components/styling/colors';
+import { ProseItemType } from 'components/AboutMe/content/aboutMeContent';
 
 const ProseContainer = styled.div`
   display: grid;

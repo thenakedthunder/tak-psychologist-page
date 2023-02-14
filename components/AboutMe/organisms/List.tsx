@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { DefaultParagraph, H3, SmallParagraph } from 'components/atoms/typography.styles';
 import { Green050, Green100 } from 'components/styling/colors';
-import { ListType } from '../content/aboutMeContent';
+import { ListType } from 'components/AboutMe/content/aboutMeContent';
 
 const ListContainer = styled.div`
   padding-top: 30px;

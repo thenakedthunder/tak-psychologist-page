@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { TfiPlus } from 'react-icons/tfi';
 
-import { Green050 } from 'components/styling/colors';
 import { SmallParagraph } from 'components/atoms/typography.styles';
+import { Green050 } from 'components/styling/colors';
 
 const ItemContainer = styled.div`
   display: grid;

@@ -1,10 +1,11 @@
+import styled from 'styled-components';
+
 import { biographyContent, education } from 'components/AboutMe/content/aboutMeContent';
+import Header from 'components/AboutMe/molecules/Header';
+import PictureOnShapesDesktop from 'components/AboutMe/molecules/PictureOnShapesDesktop';
 import PictureOnShapesMobile from 'components/AboutMe/molecules/PictureOnShapesMobile';
 import List from 'components/AboutMe/organisms/List';
 import Prose from 'components/AboutMe/organisms/Prose';
-import styled from 'styled-components';
-import Header from '../molecules/Header';
-import PictureOnShapesDesktop from '../molecules/PictureOnShapesDesktop';
 
 const GridContainer = styled.div`
   @media screen and (min-width: 1200px) {

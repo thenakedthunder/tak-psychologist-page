@@ -1,6 +1,6 @@
 import ProfileImage from '@/public/assets/about-me.png';
 import {
-  Container as Container,
+  Container,
   LargeGreenSquare,
   ProfileImageContainer,
   ProfileImageSized,

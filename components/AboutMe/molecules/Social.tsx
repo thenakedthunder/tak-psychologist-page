@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import PsychoLink from 'components/atoms/PsychoLink';
-import socialMediaItems from 'components/AboutMe/content/socialMedia';
 import SocialItem from 'components/AboutMe/atoms/SocialItem';
+import socialMediaItems from 'components/AboutMe/content/socialMedia';
 
 const Container = styled.div`
   display: none;

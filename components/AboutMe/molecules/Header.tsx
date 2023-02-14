@@ -1,7 +1,8 @@
+import styled from 'styled-components';
+
 import { H2 } from 'components/atoms/typography.styles';
 import { Green100 } from 'components/styling/colors';
-import styled from 'styled-components';
-import Social from './Social';
+import Social from 'components/AboutMe/molecules/Social';
 
 const HeaderContainer = styled.div`
   grid-area: header;
@@ -15,6 +16,6 @@ const Header = () => (
     <H2 color={Green100}>Rólam</H2>
     <Social />
   </HeaderContainer>
-)
+);
 
 export default Header;
