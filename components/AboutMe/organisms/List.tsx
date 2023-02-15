@@ -4,9 +4,6 @@ import { DefaultParagraph, H3, SmallParagraph } from 'components/atoms/typograph
 import { Green050, Green100 } from 'components/styling/colors';
 import { ListType } from 'components/AboutMe/content/aboutMeContent';
 
-const ListContainer = styled.div`
-  padding-top: 60px;
-`;
 
 const ListItemsContainer = styled.div`
   display: grid;
@@ -31,7 +28,7 @@ interface ListProps {
 }
 
 const List = ({ content }: ListProps) => (
-  <ListContainer>
+  <>
     <H3 color={Green050}>{content.header}</H3>
     <ListItemsContainer>
       {content.items.map((item, index) => (
@@ -46,7 +43,7 @@ const List = ({ content }: ListProps) => (
         </div>
       ))}
     </ListItemsContainer>
-  </ListContainer>
+  </>
 );
 
 export default List;

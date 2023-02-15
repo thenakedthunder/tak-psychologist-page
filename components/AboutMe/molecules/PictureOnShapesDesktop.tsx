@@ -9,7 +9,6 @@ export const MainContainer = styled.div`
   @media screen and (min-width: 1200px) {
     display: block;
     background-image: none;
-    padding: 0 0 320px;
     margin: 0;
     grid-area: image;
     display: flex;
@@ -23,14 +22,14 @@ export const ProfileImageContainer = styled.div`
   
   @media screen and (min-width: 1200px) {
     width: 90%; 
-    bottom: -16px;
+    bottom: 8vh;
     right: -10%;
   }
   
   @media screen and (min-width: 1400px) {
     left: 0;
     width: 100%;
-    bottom: -16px;
+    bottom: 13vh;
     padding-left: 28px;
   }
 `;

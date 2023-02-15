@@ -20,13 +20,20 @@ const GridContainer = styled.div`
   }
 `;
 
-const StyledList = styled.div`
-  grid-area: list;
-`;
-
 const Life = styled.div`
   grid-area: life;
+  padding-top: 30px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 72px;
+  }
 `;
+
+const StyledList = styled.div`
+  grid-area: list;
+  padding-top: 60px;
+`;
+
 
 const TopGrid = () => (
   <GridContainer>
