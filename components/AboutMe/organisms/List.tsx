@@ -4,7 +4,6 @@ import { DefaultParagraph, H3, SmallParagraph } from 'components/atoms/typograph
 import { Green050, Green100 } from 'components/styling/colors';
 import { ListType } from 'components/AboutMe/content/aboutMeContent';
 
-
 const ListItemsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;

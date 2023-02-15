@@ -8,7 +8,7 @@ const ProseContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 20px;
-`; 
+`;
 
 interface ProseProbs {
   content: ProseItemType;

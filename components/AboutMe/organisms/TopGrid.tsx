@@ -34,7 +34,6 @@ const StyledList = styled.div`
   padding-top: 60px;
 `;
 
-
 const TopGrid = () => (
   <GridContainer>
     <Header />
