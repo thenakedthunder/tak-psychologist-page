@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import ProfileImage from '@/public/assets/about-me.png';
+import ProfileImage from '@/public/assets/rolam.png';
 
 export const MainContainer = styled.div`
   display: none;
