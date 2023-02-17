@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { IoChevronUpCircleOutline } from 'react-icons/io5';
 
 import NavBar from 'components/NavBar/organisms/NavBar';
-import { DefaultParagraph, H2, LargeParagraph, SmallParagraph } from 'components/atoms/typography.styles';
-import { Blue050, Green010, Green050, Green100, Grey010 } from 'components/styling/colors';
+import {
+  DefaultParagraph, H2, LargeParagraph, SmallParagraph,
+} from 'components/atoms/typography.styles';
+import {
+  Blue050, Green010, Green050, Green100, Grey010, Grey050,
+} from 'components/styling/colors';
 import FaqImage from 'public/assets/gyik.png';
 import QAndAContents from 'components/FAQ/content/QAndAContents';
 
@@ -52,8 +57,19 @@ const TopicHeading = styled(SmallParagraph)`
 `;
 
 const QAndAItem = styled.div`
+`;
+
+const QuestionHeader = styled.div`
   display: grid;
-  row-gap: 20px;
+  grid-template-columns: auto 28px;
+  column-gap: 28px;
+  padding-bottom: 20px;
+`;
+
+const DividerLine = styled.div`
+  height: 1px;
+  background-color: ${Grey050};
+  margin: 40px 0 30px;
 `;
 
 export default function FAQ() {
@@ -78,11 +94,14 @@ export default function FAQ() {
               <TopicHeading color={Blue050}>{item.name}</TopicHeading>
               {item.topicContent.map((topicItem, topicIndex) => (
                 <QAndAItem key={topicIndex}>
-                  <LargeParagraph color={Green100}>{topicItem.question}</LargeParagraph>
+                  <QuestionHeader>
+                    <LargeParagraph color={Green100}>{topicItem.question}</LargeParagraph>
+                    <IoChevronUpCircleOutline size={28} />
+                  </QuestionHeader>
                   <DefaultParagraph color={Green050}>{topicItem.answer}</DefaultParagraph>
+                  {topicIndex !== item.topicContent.length - 1 && <DividerLine />}
                 </QAndAItem>
-              )
-              )}
+              ))}
             </div>
           ))}
         </QAndASection>
