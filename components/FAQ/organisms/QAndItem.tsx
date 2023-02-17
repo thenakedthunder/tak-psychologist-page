@@ -1,0 +1,39 @@
+import styled from 'styled-components';
+import { IoChevronUpCircleOutline } from 'react-icons/io5';
+
+import { Green050, Green100, Grey050 } from 'components/styling/colors';
+import { DefaultParagraph, LargeParagraph } from 'components/atoms/typography.styles';
+
+const QuestionHeader = styled.div`
+  display: grid;
+  grid-template-columns: auto 28px;
+  column-gap: 28px;
+  padding-bottom: 20px;
+`;
+
+const DividerLine = styled.div`
+  height: 1px;
+  background-color: ${Grey050};
+  margin: 40px 0 30px;
+`;
+
+interface Props {
+  item: {
+    question: string;
+    answer: string;
+  };
+  isLastItem: boolean;
+}
+
+const QAndAItem = ({ item, isLastItem }: Props) => (
+  <div>
+    <QuestionHeader>
+      <LargeParagraph color={Green100}>{item.question}</LargeParagraph>
+      <IoChevronUpCircleOutline size={28} />
+    </QuestionHeader>
+    <DefaultParagraph color={Green050}>{item.answer}</DefaultParagraph>
+    {!isLastItem && <DividerLine />}
+  </div>
+);
+
+export default QAndAItem;

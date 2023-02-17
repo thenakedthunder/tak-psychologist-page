@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import { IoChevronUpCircleOutline } from 'react-icons/io5';
 
 import NavBar from 'components/NavBar/organisms/NavBar';
 import {
-  DefaultParagraph, H2, LargeParagraph, SmallParagraph,
+  H2, SmallParagraph,
 } from 'components/atoms/typography.styles';
 import {
-  Blue050, Green010, Green050, Green100, Grey010, Grey050,
+  Blue050, Green010, Green100, Grey010,
 } from 'components/styling/colors';
 import FaqImage from 'public/assets/gyik.png';
 import QAndAContents from 'components/FAQ/content/QAndAContents';
+import QAndAItem from 'components/FAQ/organisms/QAndItem';
 
 const MainContainer = styled.div`
   padding: 40px;
@@ -56,22 +56,6 @@ const TopicHeading = styled(SmallParagraph)`
   padding: 30px 0 28px;
 `;
 
-const QAndAItem = styled.div`
-`;
-
-const QuestionHeader = styled.div`
-  display: grid;
-  grid-template-columns: auto 28px;
-  column-gap: 28px;
-  padding-bottom: 20px;
-`;
-
-const DividerLine = styled.div`
-  height: 1px;
-  background-color: ${Grey050};
-  margin: 40px 0 30px;
-`;
-
 export default function FAQ() {
   return (
     <>
@@ -93,14 +77,11 @@ export default function FAQ() {
             <div key={index}>
               <TopicHeading color={Blue050}>{item.name}</TopicHeading>
               {item.topicContent.map((topicItem, topicIndex) => (
-                <QAndAItem key={topicIndex}>
-                  <QuestionHeader>
-                    <LargeParagraph color={Green100}>{topicItem.question}</LargeParagraph>
-                    <IoChevronUpCircleOutline size={28} />
-                  </QuestionHeader>
-                  <DefaultParagraph color={Green050}>{topicItem.answer}</DefaultParagraph>
-                  {topicIndex !== item.topicContent.length - 1 && <DividerLine />}
-                </QAndAItem>
+                <QAndAItem
+                  key={topicIndex}
+                  item={topicItem}
+                  isLastItem={topicIndex === item.topicContent.length - 1}
+                />
               ))}
             </div>
           ))}
