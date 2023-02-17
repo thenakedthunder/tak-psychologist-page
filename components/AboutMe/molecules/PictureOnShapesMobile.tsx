@@ -1,4 +1,4 @@
-import ProfileImage from 'public/assets/rolam.png';
+import ProfileImage from '@/public/assets/rolam.png';
 import {
   Container,
   LargeGreenSquare,
