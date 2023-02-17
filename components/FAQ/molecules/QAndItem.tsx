@@ -9,13 +9,16 @@ const QuestionHeader = styled.div`
   display: grid;
   grid-template-columns: auto 28px;
   column-gap: 28px;
-  padding-bottom: 20px;
 `;
 
 const DividerLine = styled.div`
   height: 1px;
   background-color: ${Grey050};
   margin: 40px 0 30px;
+`;
+
+const DefaultParagraphWithTopPadding = styled(DefaultParagraph)`
+  padding-top:20px;
 `;
 
 interface Props {
@@ -40,7 +43,12 @@ const QAndAItem = ({ item, isLastItem }: Props) => {
             : <IoChevronDownCircleOutline size={28} />}
         </div>
       </QuestionHeader>
-      { isOpen && <DefaultParagraph color={Green050}>{item.answer}</DefaultParagraph> }
+      { isOpen
+        && (
+          <DefaultParagraphWithTopPadding color={Green050}>
+            {item.answer}
+          </DefaultParagraphWithTopPadding>
+        )}
       {!isLastItem && <DividerLine />}
     </div>
   );
