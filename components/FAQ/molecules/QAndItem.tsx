@@ -26,17 +26,16 @@ interface Props {
   isLastItem: boolean;
 }
 
-const QAndAItem = ({ item, isLastItem }: Props) => 
-{
-  const [ isOpen, setIsOpen ] = useState(false);
+const QAndAItem = ({ item, isLastItem }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const toggleIsOpen = () => setIsOpen(!isOpen);
 
   return (
     <div>
       <QuestionHeader>
         <LargeParagraph color={Green100}>{item.question}</LargeParagraph>
-        <div onClick={toggleIsOpen}>
-          {isOpen 
+        <div onClick={toggleIsOpen} onKeyPress={toggleIsOpen} role="button" tabIndex={0}>
+          {isOpen
             ? <IoChevronUpCircleOutline size={28} />
             : <IoChevronDownCircleOutline size={28} />}
         </div>
@@ -45,6 +44,6 @@ const QAndAItem = ({ item, isLastItem }: Props) =>
       {!isLastItem && <DividerLine />}
     </div>
   );
-}
-  
+};
+
 export default QAndAItem;
