@@ -9,16 +9,28 @@ const QuestionHeader = styled.div`
   display: grid;
   grid-template-columns: auto 28px;
   column-gap: 28px;
+
+  @media screen and (min-width: 1200px) {
+    column-gap: 68px;
+  }
 `;
 
 const DividerLine = styled.div`
   height: 1px;
   background-color: ${Grey050};
   margin: 40px 0 30px;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 40px;
+  }
 `;
 
 const DefaultParagraphWithTopPadding = styled(DefaultParagraph)`
-  padding-top:20px;
+  padding-top: 20px;
+  
+  @media screen and (min-width: 1200px) {
+      padding-top: 16px;
+  }
 `;
 
 interface Props {

@@ -6,15 +6,17 @@ import {
 } from 'components/styling/colors';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
+import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
 const ContainerDiv = styled.div`
   padding: 40px;
   display: grid;
   grid-template-columns: auto auto 150px;
-  background-color: ${Grey010};
+  max-width: 1440px;
 
   @media screen and (min-width: 1400px) {
     padding: 40px 130px;
+    margin: 0 auto;
   }
 `;
 
@@ -37,17 +39,19 @@ const getColorWithOpacity = (color: string, opacity: string) => {
 };
 
 const DesktopNavbar = () => (
-  <ContainerDiv>
-    <LogoAndNameDesktop />
-    <DesktopMenu />
-    <ContactButtonDiv>
-      <PrimaryCTAButton
-        text="Kapcsolat"
-        color={Black050}
-        backgroundColor={getColorWithOpacity(Grey100, '20')}
-      />
-    </ContactButtonDiv>
-  </ContainerDiv>
+  <BackgroundWrapper color={Grey010}>
+    <ContainerDiv>
+      <LogoAndNameDesktop />
+      <DesktopMenu />
+      <ContactButtonDiv>
+        <PrimaryCTAButton
+          text="Kapcsolat"
+          color={Black050}
+          backgroundColor={getColorWithOpacity(Grey100, '20')}
+        />
+      </ContactButtonDiv>
+    </ContainerDiv>
+  </BackgroundWrapper>
 );
 
 export default DesktopNavbar;
