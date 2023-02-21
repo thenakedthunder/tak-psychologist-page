@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-// import FaqImage from 'public/assets/gyik.png';
+import FaqImage from 'public/assets/gyik.png';
 import {
   CollageContainer,
   LargerSquare,
@@ -13,7 +13,7 @@ const Collage = () => (
     <LargerSquare>
       <SmallerSquare />
       <ImageContainer>
-        {/* <Image src={FaqImage} objectFit="contain" /> */}
+        <Image src={FaqImage} objectFit="contain" />
       </ImageContainer>
     </LargerSquare>
   </CollageContainer>

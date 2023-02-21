@@ -1,4 +1,4 @@
-// import ProfileImage from '@/public/assets/rolam.png';
+import ProfileImage from '@/public/assets/rolam.png';
 import {
   Container,
   LargeGreenSquare,
@@ -11,7 +11,7 @@ const PictureOnShapesMobile = () => (
   <Container>
     <LargeGreenSquare>
       <ProfileImageContainer>
-        {/* <ProfileImageSized src={ProfileImage} /> */}
+        <ProfileImageSized src={ProfileImage} />
       </ProfileImageContainer>
     </LargeGreenSquare>
     <SmallGreenSquare />
