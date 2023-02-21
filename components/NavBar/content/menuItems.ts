@@ -6,6 +6,7 @@ export const menuItemsDesktop: LinkType[] = [
   { linkText: 'Árak', linkHref: '/' },
   { linkText: 'Friss hírek', linkHref: '/' },
   { linkText: 'GYIK', linkHref: '/gyik' },
+
 ];
 
 export const menuItemsMobile: LinkType[] = [
