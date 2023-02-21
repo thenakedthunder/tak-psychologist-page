@@ -35,7 +35,8 @@ export const H3 = styled.h3`
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
-    color: ${Grey010};
+    color: ${({ color }) => color};
+    margin: 0;
 `;
 
 export const LargeParagraph = styled.p`
