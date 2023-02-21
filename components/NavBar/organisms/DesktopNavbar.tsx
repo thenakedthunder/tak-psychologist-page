@@ -12,6 +12,7 @@ const ContainerDiv = styled.div`
   padding: 40px;
   display: grid;
   grid-template-columns: auto auto 150px;
+  background-color: ${Grey010};
   max-width: 1440px;
 
   @media screen and (min-width: 1400px) {
