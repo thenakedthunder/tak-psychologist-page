@@ -7,6 +7,7 @@ import {
   Green010, Green050, Green100, Grey010,
 } from 'components/styling/colors';
 import NavBar from 'components/NavBar/organisms/NavBar';
+import ImageSlider from 'components/Contact/molecules/ImageSlider';
 
 const MainContainer = styled.div`
   padding: 40px;
@@ -67,6 +68,10 @@ const Contact = () => (
           színézett a venítő bardasara.
         </SmallParagraph>
       </BulletedInfo>
+      <SubHeader color={Green050}>
+        A konzultációk helyszíne
+      </SubHeader>
+      <ImageSlider />
     </MainContainer>
   </>
 );
