@@ -8,6 +8,10 @@ import {
 } from 'components/styling/colors';
 import NavBar from 'components/NavBar/organisms/NavBar';
 import ImageSlider from 'components/Contact/molecules/ImageSlider';
+import Loc1Image from '@/public/assets/location-1.png';
+import Loc2Image from '@/public/assets/location-2.png';
+import Loc3Image from '@/public/assets/location-3.png';
+import Loc4Image from '@/public/assets/location-4.png';
 
 const MainContainer = styled.div`
   padding: 40px;
@@ -71,7 +75,14 @@ const Contact = () => (
       <SubHeader color={Green050}>
         A konzultációk helyszíne
       </SubHeader>
-      <ImageSlider />
+      <ImageSlider
+        images={[
+          Loc2Image,
+          Loc1Image,
+          Loc3Image,
+          Loc4Image,
+        ]}
+      />
     </MainContainer>
   </>
 );
