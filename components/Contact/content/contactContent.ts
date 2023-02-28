@@ -1,4 +1,4 @@
-export const ReservationInfo = {
+export const reservationInfoContent = {
   highlightedParagraphs: [
     'Lórum ipse azonban nem kurrog házatot. A kérülő sütköző delmetelőket az érsejk nem a turat által komszerű fázásokkal megegyezően rugosodták fel tatás között.',
   ],
@@ -8,7 +8,7 @@ export const ReservationInfo = {
   ],
 };
 
-export const FooterInfo = {
+export const footerInfoContent = {
   address: '1114 Budapest, Bartók Béla út 12/2, 4em. 13.',
   email: 'Rendelo@mail.hu',
   phone: '(+36) 30 123 4567',

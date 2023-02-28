@@ -68,3 +68,7 @@ export const SmallParagraph = styled.p`
     color: ${({ color }) => color};
     margin: 0;
 `;
+
+export const BoldSmallParagraph = styled(SmallParagraph)`
+  font-weight: 700;
+`;

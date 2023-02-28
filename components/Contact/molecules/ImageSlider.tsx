@@ -7,10 +7,6 @@ import Loc2Image from '@/public/assets/location-2.png';
 import Loc3Image from '@/public/assets/location-3.png';
 import Loc4Image from '@/public/assets/location-4.png';
 
-// interface Props {
-//   children: React.ReactNode;
-// }
-
 const PsychoSlider = styled(Slider)`
   overflow-x: hidden;
   margin: 0 -40px;
