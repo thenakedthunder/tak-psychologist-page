@@ -12,8 +12,7 @@ import Loc4Image from '@/public/assets/location-4.png';
 // }
 
 const PsychoSlider = styled(Slider)`
-  display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 0 -40px;
 
   .slick-track {
@@ -32,16 +31,19 @@ const ImageSlider = () => {
   const settings: SlickSettings = {
     dots: false,
     arrows: false,
+    // Value of true causes glitching slide while variableWidth is true
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    swipeToSlide: true,
-    // responsive: [
-    //   { breakpoint: 700, settings: { slidesToShow: 1, slidesToScroll: 1, } }, // 0-700
-    //   { breakpoint: 900, settings: { slidesToShow: 2, slidesToScroll: 2, } }, // 700-900
-    //   { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3, } }, // 900-1200
-    // ]
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    // So that items are displayed even when only part of it is visible
+    variableWidth: true,
+    focusOnSelect: true,
+    responsive: [
+      { breakpoint: 700, settings: { slidesToShow: 2, slidesToScroll: 1 } }, // 0-700
+      { breakpoint: 900, settings: { slidesToShow: 2, slidesToScroll: 2 } }, // 700-900
+      { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } }, // 900-1200
+    ],
   };
 
   return (

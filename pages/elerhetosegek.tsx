@@ -8,6 +8,7 @@ import {
 } from 'components/styling/colors';
 import NavBar from 'components/NavBar/organisms/NavBar';
 import ImageSlider from 'components/Contact/molecules/ImageSlider';
+import PsychoLink from 'components/atoms/PsychoLink';
 
 const MainContainer = styled.div`
   padding: 40px;
@@ -36,6 +37,18 @@ const BulletPoint = styled.div`
 
   background-color: ${Green010};
   border-radius: 50%;
+`;
+
+const Location = styled.div`
+  padding: 20px 0;
+
+  a {
+    text-decoration: underline
+  }
+`;
+
+const BolderText = styled(SmallParagraph)`
+  font-weight: 700;
 `;
 
 const Contact = () => (
@@ -72,6 +85,28 @@ const Contact = () => (
         A konzultációk helyszíne
       </SubHeader>
       <ImageSlider />
+      <Location>
+        <BolderText color={Green050}>Szervezet neve</BolderText>
+        <SmallParagraph color={Green050}>
+          1114 Budapest, Bartók Béla út 12/2, 4em. 13.
+        </SmallParagraph>
+        <SmallParagraph color={Green050}>
+          <PsychoLink href="https://www.google.com/maps/place/Budapest,+Bart%C3%B3k+B%C3%A9la+%C3%BAt+12-em.+13,+1111/@47.4822872,19.0529605,17z/data=!4m5!3m4!1s0x4741dc4d9518da53:0x6bccd46420204e21!8m2!3d47.4822872!4d19.0529605">
+            Mutasd térképen
+          </PsychoLink>
+        </SmallParagraph>
+      </Location>
+      <Location>
+        <BolderText color={Green050}>Elérhetőség</BolderText>
+        <SmallParagraph color={Green050}>
+          <PsychoLink href="mailto:Rendelo@mail.hu">
+            Rendelo@mail.hu
+          </PsychoLink>
+        </SmallParagraph>
+        <SmallParagraph color={Green050}>
+          (+36) 30 123 4567
+        </SmallParagraph>
+      </Location>
     </MainContainer>
   </>
 );
