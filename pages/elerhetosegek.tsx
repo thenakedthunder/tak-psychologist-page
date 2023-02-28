@@ -40,8 +40,14 @@ const BulletPoint = styled.div`
 `;
 
 const Location = styled.div`
-  padding: 20px 0;
+  padding: 16px 0 30px;
 
+  a {
+    text-decoration: underline
+  }
+`;
+
+const ContactDetails = styled.div`
   a {
     text-decoration: underline
   }
@@ -96,7 +102,7 @@ const Contact = () => (
           </PsychoLink>
         </SmallParagraph>
       </Location>
-      <Location>
+      <ContactDetails>
         <BolderText color={Green050}>Elérhetőség</BolderText>
         <SmallParagraph color={Green050}>
           <PsychoLink href="mailto:Rendelo@mail.hu">
@@ -106,7 +112,7 @@ const Contact = () => (
         <SmallParagraph color={Green050}>
           (+36) 30 123 4567
         </SmallParagraph>
-      </Location>
+      </ContactDetails>
     </MainContainer>
   </>
 );
