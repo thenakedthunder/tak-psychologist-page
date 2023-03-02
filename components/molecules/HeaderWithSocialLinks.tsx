@@ -11,11 +11,16 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
 `;
 
-const Header = () => (
+interface Props {
+  title: string;
+  breakPoint: number;
+}
+
+const HeaderWithSocialLinks = ({ title, breakPoint }: Props) => (
   <HeaderContainer>
-    <H2 color={Green100}>Rólam</H2>
-    <Social />
+    <H2 color={Green100}>{title}</H2>
+    <Social breakPoint={breakPoint} />
   </HeaderContainer>
 );
 
-export default Header;
+export default HeaderWithSocialLinks;

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-import {
-  Grey010,
-} from 'components/styling/colors';
+import { Grey010 } from 'components/styling/colors';
 import NavBar from 'components/NavBar/organisms/NavBar';
 import ImageSlider from 'components/Contact/molecules/ImageSlider';
 import ContactFooter from 'components/Contact/organisms/ContactFooter';
 import ReservationInfo from 'components/Contact/organisms/ReservationInfo';
+import HeaderWithSocialLinks from 'components/molecules/HeaderWithSocialLinks';
 
 const MainContainer = styled.div`
   padding: 40px;
@@ -17,6 +16,7 @@ const Contact = () => (
   <>
     <NavBar />
     <MainContainer>
+      <HeaderWithSocialLinks title="Elérhetőségek" breakPoint={768} />
       <ReservationInfo />
       <ImageSlider />
       <ContactFooter />

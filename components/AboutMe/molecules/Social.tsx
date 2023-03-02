@@ -4,10 +4,14 @@ import PsychoLink from 'components/atoms/PsychoLink';
 import SocialItem from 'components/AboutMe/atoms/SocialItem';
 import socialMediaItems from 'components/AboutMe/content/socialMedia';
 
+interface Props {
+  breakPoint: number;
+}
+
 const Container = styled.div`
   display: none;
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: ${({ breakPoint }: Props) => breakPoint}px) {
     display: grid;
     grid-template-columns: repeat(4, auto);
     margin: auto;
@@ -16,8 +20,8 @@ const Container = styled.div`
   }
 `;
 
-const Social = () => (
-  <Container>
+const Social = ({ breakPoint }: Props) => (
+  <Container breakPoint={breakPoint}>
     {socialMediaItems.map((item, index) => (
       <PsychoLink key={index} href={item.linkHref}>
         <SocialItem linkText={item.linkText} />
