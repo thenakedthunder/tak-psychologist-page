@@ -8,6 +8,9 @@ const BulletedInfoContainer = styled.div`
   padding: 30px 0 40px;
   display: grid;
   row-gap: 30px;
+
+  @media screen and (min-width: 1200px) {
+    row-gap: 20px;
 `;
 
 const BulletedInfoItem = styled.div`

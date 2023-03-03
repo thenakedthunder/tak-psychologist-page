@@ -15,6 +15,13 @@ const PsychoSlider = styled(Slider)`
     display: flex;
     justify-content: center;
   }
+  
+  @media screen and (min-width: 664px) {
+    margin: 0;
+
+    .slick-track {
+      justify-content: start;
+    }
 `;
 
 const ImageWrapper = styled.div`
@@ -27,18 +34,16 @@ const ImageSlider = () => {
   const settings: SlickSettings = {
     dots: false,
     arrows: false,
-    // Value of true causes glitching slide while variableWidth is true
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToShow: 4,
+    slidesToScroll: 0,
     // So that items are displayed even when only part of it is visible
     variableWidth: true,
     focusOnSelect: true,
     responsive: [
-      { breakpoint: 700, settings: { slidesToShow: 2, slidesToScroll: 1 } }, // 0-700
-      { breakpoint: 900, settings: { slidesToShow: 2, slidesToScroll: 2 } }, // 700-900
-      { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } }, // 900-1200
+      { breakpoint: 437, settings: { slidesToShow: 2, slidesToScroll: 1 } }, // 0-437
+      { breakpoint: 579, settings: { slidesToShow: 3, slidesToScroll: 1 } }, // 438-579
     ],
   };
 
