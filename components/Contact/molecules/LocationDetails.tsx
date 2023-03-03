@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PsychoLink from 'components/atoms/PsychoLink';
 import { SmallParagraph, BoldSmallParagraph } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
-import { footerInfoContent } from '../content/contactContent';
+import { footerInfoContent } from 'components/Contact/content/contactContent';
 
 const Location = styled.div`
   padding: 16px 0 20px;
