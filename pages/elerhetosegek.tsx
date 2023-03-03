@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-import { Grey010, Green050 } from 'components/styling/colors';
+import { Grey010 } from 'components/styling/colors';
 import NavBar from 'components/NavBar/organisms/NavBar';
-import ImageSlider from 'components/Contact/molecules/ImageSlider';
-import ContactFooter from 'components/Contact/organisms/ContactFooter';
 import ReservationInfo from 'components/Contact/organisms/ReservationInfo';
 import HeaderWithSocialLinks from 'components/molecules/HeaderWithSocialLinks';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
-import SubHeader from 'components/Contact/atoms/SubHeader';
+import RightSide from 'components/Contact/organisms/RightSide';
 
 const MainContainer = styled.div`
   padding: 40px;
@@ -39,13 +37,7 @@ const Contact = () => (
         <HeaderWithSocialLinks title="Elérhetőségek" breakPoint={768} />
         <ContentContainer>
           <ReservationInfo />
-          <div>
-            <SubHeader color={Green050}>
-              A konzultációk helyszíne
-            </SubHeader>
-            <ImageSlider />
-            <ContactFooter />
-          </div>
+          <RightSide />
         </ContentContainer>
       </MainContainer>
     </BackgroundWrapper>
