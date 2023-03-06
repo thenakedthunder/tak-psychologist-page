@@ -21,7 +21,7 @@ interface PrimaryCTAButtonProps {
   text: string;
   color: string;
   backgroundColor: string;
-  linkHref?: string;
+  linkHref: string;
 }
 
 const PrimaryCTAButton = ({
@@ -29,7 +29,7 @@ const PrimaryCTAButton = ({
 }: PrimaryCTAButtonProps) => (
   <PrimaryCTAButtonStyled backgroundColor={backgroundColor}>
     <DefaultParagraph color={color}>
-      {linkHref && <PsychoLink href={linkHref}>{text}</PsychoLink>}
+      <PsychoLink href={linkHref}>{text}</PsychoLink>
     </DefaultParagraph>
   </PrimaryCTAButtonStyled>
 );

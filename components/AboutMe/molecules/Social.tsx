@@ -11,6 +11,7 @@ interface Props {
 const Container = styled.div`
   display: none;
 
+  // breakpoint is to ensure the title besides the element fits on smaller screens
   @media screen and (min-width: ${({ breakPoint }: Props) => breakPoint}px) {
     display: grid;
     grid-template-columns: repeat(4, auto);

@@ -22,6 +22,7 @@ const PsychoSlider = styled(Slider)`
     .slick-track {
       justify-content: start;
     }
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -30,31 +31,29 @@ const ImageWrapper = styled.div`
   margin-right: 4px;
 `;
 
-const ImageSlider = () => {
-  const settings: SlickSettings = {
-    dots: false,
-    arrows: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 0,
-    // So that items are displayed even when only part of it is visible
-    variableWidth: true,
-    focusOnSelect: true,
-    responsive: [
-      { breakpoint: 437, settings: { slidesToShow: 2, slidesToScroll: 1 } }, // 0-437
-      { breakpoint: 579, settings: { slidesToShow: 3, slidesToScroll: 1 } }, // 438-579
-    ],
-  };
-
-  return (
-    <PsychoSlider {...settings}>
-      <ImageWrapper><Image src={Loc1Image} objectFit="contain" /></ImageWrapper>
-      <ImageWrapper><Image src={Loc2Image} objectFit="contain" /></ImageWrapper>
-      <ImageWrapper><Image src={Loc3Image} objectFit="contain" /></ImageWrapper>
-      <ImageWrapper><Image src={Loc4Image} objectFit="contain" /></ImageWrapper>
-    </PsychoSlider>
-  );
+const settings: SlickSettings = {
+  dots: false,
+  arrows: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 0,
+  // So that items are displayed even when only part of it is visible
+  variableWidth: true,
+  focusOnSelect: true,
+  responsive: [
+    { breakpoint: 437, settings: { slidesToShow: 2, slidesToScroll: 1 } }, // 0-437
+    { breakpoint: 579, settings: { slidesToShow: 3, slidesToScroll: 1 } }, // 438-579
+  ],
 };
+
+const ImageSlider = () => (
+  <PsychoSlider {...settings}>
+    <ImageWrapper><Image src={Loc1Image} objectFit="contain" /></ImageWrapper>
+    <ImageWrapper><Image src={Loc2Image} objectFit="contain" /></ImageWrapper>
+    <ImageWrapper><Image src={Loc3Image} objectFit="contain" /></ImageWrapper>
+    <ImageWrapper><Image src={Loc4Image} objectFit="contain" /></ImageWrapper>
+  </PsychoSlider>
+);
 
 export default ImageSlider;
