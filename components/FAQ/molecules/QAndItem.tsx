@@ -1,37 +1,15 @@
-import styled from 'styled-components';
 import { IoChevronUpCircleOutline, IoChevronDownCircleOutline } from 'react-icons/io5';
 import { useState } from 'react';
+import AnimateHeight, { Height } from 'react-animate-height';
 
-import { Green050, Green100, Grey050 } from 'components/styling/colors';
-import { DefaultParagraph, LargeParagraph } from 'components/atoms/typography.styles';
-
-const QuestionHeader = styled.div`
-  display: grid;
-  grid-template-columns: auto 28px;
-  column-gap: 28px;
-
-  @media screen and (min-width: 1200px) {
-    column-gap: 68px;
-  }
-`;
-
-const DividerLine = styled.div`
-  height: 1px;
-  background-color: ${Grey050};
-  margin: 40px 0 30px;
-
-  @media screen and (min-width: 1200px) {
-    margin-bottom: 40px;
-  }
-`;
-
-const DefaultParagraphWithTopPadding = styled(DefaultParagraph)`
-  padding-top: 20px;
-  
-  @media screen and (min-width: 1200px) {
-      padding-top: 16px;
-  }
-`;
+import { Green050, Green100 } from 'components/styling/colors';
+import { LargeParagraph } from 'components/atoms/typography.styles';
+import {
+  QuestionHeader,
+  DividerLine,
+  DefaultParagraphWithTopPadding,
+  OpenToggle,
+} from 'components/FAQ/molecules/QAndItem.styles';
 
 interface Props {
   item: {
@@ -42,25 +20,34 @@ interface Props {
 }
 
 const QAndAItem = ({ item, isLastItem }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleIsOpen = () => setIsOpen(!isOpen);
+  const [height, setHeight] = useState<Height>(0);
+  const toggleIsOpen = () => setHeight(height === 0 ? 'auto' : 0);
 
   return (
     <div>
       <QuestionHeader>
         <LargeParagraph color={Green100}>{item.question}</LargeParagraph>
-        <div onClick={toggleIsOpen} onKeyPress={toggleIsOpen} role="button" tabIndex={0}>
-          {isOpen
+        <OpenToggle
+          onClick={toggleIsOpen}
+          onKeyPress={toggleIsOpen}
+          role="button"
+          tabIndex={0}
+          aria-expanded={height !== 0}
+          aria-controls="example-panel"
+        >
+          {height !== 0
             ? <IoChevronUpCircleOutline size={28} />
             : <IoChevronDownCircleOutline size={28} />}
-        </div>
+        </OpenToggle>
       </QuestionHeader>
-      { isOpen
-        && (
-          <DefaultParagraphWithTopPadding color={Green050}>
-            {item.answer}
-          </DefaultParagraphWithTopPadding>
-        )}
+      <AnimateHeight
+        duration={500}
+        height={height}
+      >
+        <DefaultParagraphWithTopPadding color={Green050}>
+          {item.answer}
+        </DefaultParagraphWithTopPadding>
+      </AnimateHeight>
       {!isLastItem && <DividerLine />}
     </div>
   );
