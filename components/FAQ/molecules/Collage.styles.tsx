@@ -12,6 +12,11 @@ export const LargerSquare = styled.div`
   width: 246px;
   background-color: ${Grey010};
 
+  @media screen and (min-width: 768px) {
+    height: 400px;
+    width: 400px;
+  }
+
   @media screen and (min-width: 1200px) {
     height: 510px;
     width: 510px;
@@ -30,6 +35,12 @@ export const SmallerSquare = styled.div`
   position: relative;
   top: 124px;
   
+  @media screen and (min-width: 768px) {
+    height: 240px;
+    width: 240px;
+    top: 190px;
+  }
+
   @media screen and (min-width: 1200px) {
     height: 305px;
     width: 305px;
@@ -44,11 +55,16 @@ export const ImageContainer = styled.div`
   left: 64px;
   bottom: 113px;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
     width: 480px;
     height: 312px;
+    left: 64px;
+    bottom: 196px;
+  }
+
+  @media screen and (min-width: 1200px) {
     left: 80px;
-    bottom: 206px;    
+    bottom: 206px;
   }
   
   @media screen and (min-width: 1400px) {
