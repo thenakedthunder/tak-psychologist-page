@@ -10,16 +10,12 @@ import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 const MainContainer = styled.div`
   padding: 40px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     display: grid;
     grid-template-areas:
     ". header"
     "collage ."
     "collage content";
-    grid-template-columns: 296px auto;
-    column-gap: 64px;
-  }
-  @media screen and (min-width: 1200px) {
     grid-template-columns: 520px auto;
     column-gap: 120px;
     max-width: 1440px;
