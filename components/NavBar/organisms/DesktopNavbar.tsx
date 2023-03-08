@@ -49,6 +49,7 @@ const DesktopNavbar = () => (
           text="Kapcsolat"
           color={Black050}
           backgroundColor={getColorWithOpacity(Grey100, '20')}
+          linkHref="/elerhetosegek"
         />
       </ContactButtonDiv>
     </ContainerDiv>

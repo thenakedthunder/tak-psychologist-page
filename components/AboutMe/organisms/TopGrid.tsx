@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { biographyContent, education } from 'components/AboutMe/content/aboutMeContent';
-import Header from 'components/AboutMe/molecules/Header';
+import HeaderWithSocialLinks from 'components/molecules/HeaderWithSocialLinks';
 import PictureOnShapesDesktop from 'components/AboutMe/molecules/PictureOnShapesDesktop';
 import PictureOnShapesMobile from 'components/AboutMe/molecules/PictureOnShapesMobile';
 import List from 'components/AboutMe/organisms/List';
@@ -36,7 +36,7 @@ const StyledList = styled.div`
 
 const TopGrid = () => (
   <GridContainer>
-    <Header />
+    <HeaderWithSocialLinks title="Rólam" breakPoint={576} />
     <PictureOnShapesMobile />
     <PictureOnShapesDesktop />
     <Life>

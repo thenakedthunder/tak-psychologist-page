@@ -28,6 +28,7 @@ const Top = () => (
         text="Árlista megtekintése"
         color={Grey010}
         backgroundColor={Green050}
+        linkHref=""
       />
     </DesktopCTAContainer>
   </TopContainer>

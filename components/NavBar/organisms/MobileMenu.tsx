@@ -48,6 +48,7 @@ const MobileMenu = () => (
         text="Kapcsolat"
         color={Grey010}
         backgroundColor={Green050}
+        linkHref="/elerhetosegek"
       />
     </ContactButtonDiv>
   </MobileMenuContainer>
