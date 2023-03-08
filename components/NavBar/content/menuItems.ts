@@ -5,7 +5,8 @@ export const menuItemsDesktop: LinkType[] = [
   { linkText: 'Amiben segíteni tudok', linkHref: '/' },
   { linkText: 'Árak', linkHref: '/' },
   { linkText: 'Friss hírek', linkHref: '/' },
-  { linkText: 'GYIK', linkHref: '/' },
+  { linkText: 'GYIK', linkHref: '/gyik' },
+
 ];
 
 export const menuItemsMobile: LinkType[] = [
@@ -13,5 +14,5 @@ export const menuItemsMobile: LinkType[] = [
   { linkText: 'Amiben segíteni tudok', linkHref: '/' },
   { linkText: 'Árak', linkHref: '/' },
   { linkText: 'Friss hírek', linkHref: '/' },
-  { linkText: 'Gyakran Ismételt Kérdések', linkHref: '/' },
+  { linkText: 'Gyakran Ismételt Kérdések', linkHref: '/gyik' },
 ];
