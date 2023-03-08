@@ -5,9 +5,10 @@ import { DefaultParagraph } from 'components/atoms/typography.styles';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import { Green050, Grey010 } from 'components/styling/colors';
 import { menuItemsMobile } from 'components/NavBar/content/menuItems';
+import { NavBarProps } from './NavBar';
 
 const MobileMenuContainer = styled.div`
-    background-color: ${Grey010};
+    background-color: ${(props: NavBarProps) => props.backgroundColor ?? Grey010};
     padding: 30px 40px 40px;
     display: grid;
     grid-template-rows: repeat(5, 1fr) 92px;
@@ -34,8 +35,8 @@ const ContactButtonDiv = styled.div`
   }
 `;
 
-const MobileMenu = () => (
-  <MobileMenuContainer>
+const MobileMenu = ({ backgroundColor }: NavBarProps) => (
+  <MobileMenuContainer backgroundColor={backgroundColor}>
     {menuItemsMobile.map((item, index) => (
       <MobileMenuItem key={index} color={Green050}>
         <PsychoLink href={item.linkHref}>

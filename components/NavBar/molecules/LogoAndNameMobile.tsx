@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-
 import { IoIosRose } from 'react-icons/io';
 
-import { Grey010 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 
 const MobileLeftDiv = styled.div`
-    background-color: ${Grey010};
+    background-color: inherit;
     display: grid;
     grid-template-columns: 36px 1fr; 
     cursor: pointer;
