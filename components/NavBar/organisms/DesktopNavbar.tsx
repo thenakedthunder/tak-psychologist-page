@@ -6,6 +6,7 @@ import {
 } from 'components/styling/colors';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
+import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
 const ContainerDiv = styled.div`
   padding: 40px;
@@ -39,17 +40,19 @@ const getColorWithOpacity = (color: string, opacity: string) => {
 };
 
 const DesktopNavbar = () => (
-  <ContainerDiv>
-    <LogoAndNameDesktop />
-    <DesktopMenu />
-    <ContactButtonDiv>
-      <PrimaryCTAButton
-        text="Kapcsolat"
-        color={Black050}
-        backgroundColor={getColorWithOpacity(Grey100, '20')}
-      />
-    </ContactButtonDiv>
-  </ContainerDiv>
+  <BackgroundWrapper color={Grey010}>
+    <ContainerDiv>
+      <LogoAndNameDesktop />
+      <DesktopMenu />
+      <ContactButtonDiv>
+        <PrimaryCTAButton
+          text="Kapcsolat"
+          color={Black050}
+          backgroundColor={getColorWithOpacity(Grey100, '20')}
+        />
+      </ContactButtonDiv>
+    </ContainerDiv>
+  </BackgroundWrapper>
 );
 
 export default DesktopNavbar;

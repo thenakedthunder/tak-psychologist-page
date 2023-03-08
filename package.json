@@ -18,13 +18,16 @@
     "@prismicio/slice-simulator-react": "^0.2.2",
     "next": "12.3.1",
     "react": "18.2.0",
+    "react-animate-height": "^3.1.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "react-slick": "^0.29.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
+    "@types/react-slick": "^0.23.10",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "eslint": "^8.0.1",
