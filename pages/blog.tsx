@@ -65,6 +65,43 @@ const MainContainer = styled.div`
   }
 `;
 
+const QuoteContainer = styled.div`
+  background: rgba(186, 228, 214, 0.5);
+  padding: 30px;
+  /* display: grid;
+  grid-template-columns: 40px auto;
+  column-gap: 30px; */
+  border-radius: 20px;
+`;
+
+const CollageElement = styled.div`
+  padding: 10px 24px 0 0;
+  position: relative;
+  float: left;
+`;
+
+const LargerSquare = styled.div`
+  height: 30px;
+  width: 30px;
+  background-color: ${Green100};
+`;
+
+const SmallerSquare = styled.div`
+  height: 20px;
+  width: 20px;
+  background-color: ${Green010};
+  position: absolute;
+  top: 30px;
+  left: 20px;
+`;
+
+const QuoteText = styled(LargeParagraph)`
+  font-weight: 700;
+  padding: 0 !important;
+  font-style: italic;
+  text-align: justify;
+`;
+
 const Blog = () => (
   <>
     <NavBar backgroundColor={Green010} />
@@ -116,6 +153,17 @@ const Blog = () => (
         a pofás partikszukkal vecskenyséssel torítnak. A jankó műsödi azokat a fáran fűtésöket,
         amelyeknek a liség meg kell hogy görköveljen.
       </DefaultParagraphWithStyledHighlighting>
+      <QuoteContainer>
+        <CollageElement>
+          <LargerSquare />
+          <SmallerSquare />
+        </CollageElement>
+        <QuoteText>
+          Ezek közül is szesít a fárzat pont, amely a kozás árosában lévő erderek a százások
+          árosába hitemcselékének marbámait, költjét párzja, illetve a tetető pont, amely a
+          locsmány százások hullásának bujáit idegeli meg.
+        </QuoteText>
+      </QuoteContainer>
     </MainContainer>
   </>
 );
