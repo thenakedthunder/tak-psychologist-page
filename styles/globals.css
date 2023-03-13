@@ -26,3 +26,7 @@ a {
     background: black;
   }
 }
+
+.bold {
+  font-weight: 700 !important;
+}

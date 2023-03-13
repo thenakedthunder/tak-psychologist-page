@@ -6,9 +6,11 @@ import {
   Green010, Green100, Green050, Grey010,
 } from 'components/styling/colors';
 import HeroImage from '@/public/assets/article-header-image.png';
+import ExampleImage from 'public/assets/balos-lagoon.jpg';
 import {
-  H2, H3, LargeParagraph, DefaultParagraph,
+  H2, H3, LargeParagraph, DefaultParagraph, SmallParagraph,
 } from 'components/atoms/typography.styles';
+import SocialShare from 'components/Blog/molecules/SocialShare';
 
 const TopSection = styled.div`
   position: relative;
@@ -44,6 +46,7 @@ const DividerDot = styled.div`
   width: 16px;
   background-color: ${Green010};
   border-radius: 50%;
+  padding: 0 !important;
 `;
 
 const SubTitle = styled(H3)`
@@ -56,11 +59,20 @@ const DefaultParagraphWithStyledHighlighting = styled(DefaultParagraph)`
   }
 `;
 
+const Caption = styled(SmallParagraph)`
+  text-align: center;
+  padding-top: 12px;
+`;
+
 const MainContainer = styled.div`
   background-color: ${Grey010};
   padding: 26px 40px 30px;
 
-  ${Divider}, ${SubTitle}, ${LargeParagraph}, ${DefaultParagraphWithStyledHighlighting} {
+  ${Divider},
+  ${SubTitle},
+  ${LargeParagraph},
+  ${DefaultParagraphWithStyledHighlighting},
+  ${Caption} {
     padding-bottom: 30px;
   }
 `;
@@ -72,6 +84,7 @@ const QuoteContainer = styled.div`
   grid-template-columns: 40px auto;
   column-gap: 30px; */
   border-radius: 20px;
+  margin-bottom: 30px;
 `;
 
 const CollageElement = styled.div`
@@ -99,7 +112,10 @@ const QuoteText = styled(LargeParagraph)`
   font-weight: 700;
   padding: 0 !important;
   font-style: italic;
-  text-align: justify;
+`;
+
+const ArticleImageWrapper = styled.div`
+  padding-bottom: 0 !important;
 `;
 
 const Blog = () => (
@@ -164,6 +180,30 @@ const Blog = () => (
           locsmány százások hullásának bujáit idegeli meg.
         </QuoteText>
       </QuoteContainer>
+      <SubTitle color={Green050}>Ez meg egy másik alcím</SubTitle>
+      <DefaultParagraphWithStyledHighlighting color={Green050}>
+        Mindezen fenyőnek az a kezése, hogy a módás képéneteit azokhoz a nemetítő portokhoz
+        szalmazja, amelyek a szőkés hatos szennákat és urzsikat pordomozják. – plások, amelyek
+        elégetve súlyosan pudják a csoládságban lévőket, cseper tekintettel a füttyös pornyokra és
+        bakadásukra. Szoltjuk szetehészei, körkelők sarozása, plás kétesekés avítt olációk gyakája.
+      </DefaultParagraphWithStyledHighlighting>
+      <ArticleImageWrapper>
+        <Image src={ExampleImage} />
+        <Caption color={Green050}>
+          <span className="bold">A balosi lagúna.</span>
+          A fényképet Radványi Zsófia készítette.
+        </Caption>
+      </ArticleImageWrapper>
+      <DefaultParagraphWithStyledHighlighting>
+        A lapadékony kensősége (ha már köszkeny enyenség) egy klésben van tárolva. A tétkéjéhez
+        lódzjon a gavag dögénre (általában a bikók negésén). A mangya feltehetőleg fogalmag, de
+        hisztevet, hogy nem a zatlan porás van beállítva. Ebben a balinárban a gavag kensőségeinél
+        meg tudja nyírálnia a porást. Hócázja juhatba, hogy a porás kensősége, mint a legtöbb duzig
+        kensőség csak köszkeny enyenségek számára jetlen. Ha még nem köszkeny, itt a téző főzet! Ha
+        biztos abban, hogy jól zalogatotta be a porást, és még mindig nem fogalmag a bárm, a
+        paszentus feltehetőleg a bolyás naricka.
+      </DefaultParagraphWithStyledHighlighting>
+      <SocialShare />
     </MainContainer>
   </>
 );
