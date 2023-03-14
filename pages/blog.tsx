@@ -11,6 +11,7 @@ import {
   H2, H3, LargeParagraph, DefaultParagraph, SmallParagraph,
 } from 'components/atoms/typography.styles';
 import SocialShare from 'components/Blog/molecules/SocialShare';
+import OtherArticles from 'components/Blog/organisms/OtherArticles';
 
 const TopSection = styled.div`
   position: relative;
@@ -30,7 +31,7 @@ const ImageWrapper = styled.div`
 `;
 
 const TopDescription = styled(LargeParagraph)`
-  padding: 20px 0 50px;
+  padding: 10px 0 50px;
   font-style: italic;
 `;
 
@@ -67,15 +68,16 @@ const Caption = styled(SmallParagraph)`
 const MainContainer = styled.div`
   background-color: ${Grey010};
   padding: 26px 40px 30px;
-
+  
   ${Divider},
   ${SubTitle},
   ${LargeParagraph},
   ${DefaultParagraphWithStyledHighlighting},
-  ${Caption} {
+  ${Caption},
+  ${H2} {
     padding-bottom: 30px;
   }
-`;
+  `;
 
 const QuoteContainer = styled.div`
   background: rgba(186, 228, 214, 0.5);
@@ -204,6 +206,8 @@ const Blog = () => (
         paszentus feltehetőleg a bolyás naricka.
       </DefaultParagraphWithStyledHighlighting>
       <SocialShare />
+      <H2 color={Green100}>További bejegyzések</H2>
+      <OtherArticles />
     </MainContainer>
   </>
 );
