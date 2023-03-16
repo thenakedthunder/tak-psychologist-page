@@ -23,8 +23,8 @@ const ImageWrapper = styled.div`
 
 const OtherArticles = () => (
   <>
-    {articles.map((item) => (
-      <ArticleContainer>
+    {articles.map((item, index) => (
+      <ArticleContainer key={index}>
         <ImageWrapper>
           <Image src={item.image} width={295} height={165} />
         </ImageWrapper>

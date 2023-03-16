@@ -19,13 +19,15 @@ const QuoteText = styled(LargeParagraph)`
   font-style: italic;
 `;
 
-const Quote = () => (
+interface Props {
+  content: string;
+}
+
+const Quote = ({ content }: Props) => (
   <QuoteContainer>
     <Collage />
     <QuoteText>
-      Ezek közül is szesít a fárzat pont, amely a kozás árosában lévő erderek a százások
-      árosába hitemcselékének marbámait, költjét párzja, illetve a tetető pont, amely a
-      locsmány százások hullásának bujáit idegeli meg.
+      {content}
     </QuoteText>
   </QuoteContainer>
 );

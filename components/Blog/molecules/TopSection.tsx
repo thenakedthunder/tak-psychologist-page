@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import { Green010 } from 'components/styling/colors';
-import HeroImage from '@/public/assets/article-header-image.png';
 
 const SectionContainer = styled.div`
   position: relative;
@@ -21,11 +20,15 @@ const ImageWrapper = styled.div`
   padding: 0px 20px;
 `;
 
-const TopSection = () => (
+interface Props {
+  heroImage: StaticImageData
+}
+
+const TopSection = ({ heroImage }: Props) => (
   <SectionContainer>
     <BackgroundStripe />
     <ImageWrapper>
-      <Image src={HeroImage} />
+      <Image src={heroImage} />
     </ImageWrapper>
   </SectionContainer>
 );

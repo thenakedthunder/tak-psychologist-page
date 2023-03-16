@@ -1,7 +1,6 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import styled from 'styled-components';
 
-import ExampleImage from 'public/assets/balos-lagoon.jpg';
 import { SmallParagraph } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
 
@@ -14,9 +13,13 @@ const Caption = styled(SmallParagraph)`
   padding: 12px 0 30px;
 `;
 
-const ArticleImage = () => (
+interface Props {
+  imageSource: StaticImageData;
+}
+
+const ArticleImage = ({ imageSource }: Props) => (
   <ArticleImageWrapper>
-    <Image src={ExampleImage} />
+    <Image src={imageSource} />
     <Caption color={Green050}>
       <span className="bold">A balosi lagúna.</span>
       A fényképet Radványi Zsófia készítette.
