@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { IoIosRose } from 'react-icons/io';
 
 import { DefaultParagraph } from 'components/atoms/typography.styles';
+import { Blue100, Green050 } from 'components/styling/colors';
 
 const MobileLeftDiv = styled.div`
     background-color: inherit;
@@ -20,13 +21,13 @@ const NameParagraph = styled(DefaultParagraph)`
 
 const LogoAndNameMobile = () => (
   <MobileLeftDiv>
-    <LogoDiv><IoIosRose size={28} /></LogoDiv>
+    <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
     <div>
       <div>
-        <NameParagraph>Hont-Gáspár Anita</NameParagraph>
+        <NameParagraph color={Green050}>Hont-Gáspár Anita</NameParagraph>
       </div>
       <div>
-        <DefaultParagraph>Pszichológus</DefaultParagraph>
+        <DefaultParagraph color={Green050}>Pszichológus</DefaultParagraph>
       </div>
     </div>
   </MobileLeftDiv>

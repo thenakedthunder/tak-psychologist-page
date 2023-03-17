@@ -3,10 +3,18 @@ import { StaticImageData } from 'next/image';
 import HeroImage from '@/public/assets/article-header-image.png';
 import ExampleImage from '@/public/assets/balos-lagoon.jpg';
 
-export interface ContentBlock {
-  type: 'heading' | 'paragraph' | 'largeParagraph' | 'quote' | 'image';
-  content: string | StaticImageData;
+interface TextContentBlock {
+  type: 'heading' | 'paragraph' | 'largeParagraph' | 'quote';
+  content: string;
 }
+
+interface ImageContentBlock {
+  type: 'image';
+  content: StaticImageData;
+  caption: string;
+}
+
+export type ContentBlock = TextContentBlock | ImageContentBlock;
 
 interface ContentType {
   articleTitle: string;
@@ -51,6 +59,7 @@ const content: ContentType = {
     {
       type: 'image',
       content: ExampleImage,
+      caption: '<span class="bold">A balosi lagúna.</span> A fényképet Radványi Zsófia készítette.',
     },
     {
       type: 'paragraph',

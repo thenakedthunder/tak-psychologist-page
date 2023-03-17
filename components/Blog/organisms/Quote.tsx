@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { LargeParagraph } from 'components/atoms/typography.styles';
 import Collage from 'components/Blog/molecules/Collage';
+import { Green100 } from 'components/styling/colors';
 
 const QuoteContainer = styled.div`
   background: rgba(186, 228, 214, 0.5);
@@ -10,7 +11,7 @@ const QuoteContainer = styled.div`
   grid-template-columns: 40px auto;
   column-gap: 30px; */
   border-radius: 20px;
-  margin-bottom: 30px;
+  margin: 10px 0 50px;
 `;
 
 const QuoteText = styled(LargeParagraph)`
@@ -26,7 +27,7 @@ interface Props {
 const Quote = ({ content }: Props) => (
   <QuoteContainer>
     <Collage />
-    <QuoteText>
+    <QuoteText color={Green100}>
       {content}
     </QuoteText>
   </QuoteContainer>

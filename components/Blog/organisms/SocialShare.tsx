@@ -8,11 +8,15 @@ const Container = styled.div`
   padding-bottom: 30px;
 `;
 
+const DefaultParagraphWithCustomPadding = styled(DefaultParagraph)`
+  padding-bottom: 0px !important;
+`;
+
 const SocialShare = () => (
   <Container>
-    <DefaultParagraph className="bold" color={Green050}>
+    <DefaultParagraphWithCustomPadding className="bold" color={Green050}>
       Tetszik amit olvasol? Oszd meg!
-    </DefaultParagraph>
+    </DefaultParagraphWithCustomPadding>
     <SocialLinks />
   </Container>
 );

@@ -15,7 +15,6 @@ const DividerDot = styled.div`
   width: 16px;
   background-color: ${Green010};
   border-radius: 50%;
-  padding: 0 !important;
 `;
 
 const DividingDots = () => (

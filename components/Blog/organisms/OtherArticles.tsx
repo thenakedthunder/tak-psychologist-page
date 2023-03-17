@@ -15,6 +15,11 @@ export interface ArticleProps {
 const ArticleContainer = styled.div`
   display: grid;
   row-gap: 8px;
+
+  ${H3},
+  ${DefaultParagraph} {
+    padding-bottom: 0px !important;
+  }
 `;
 
 const ImageWrapper = styled.div`

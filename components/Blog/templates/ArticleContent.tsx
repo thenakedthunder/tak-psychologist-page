@@ -39,7 +39,13 @@ const ArticleContent = ({ blocks }: Props) => (
             </LargeParagraph>
           );
         case 'image':
-          return <ArticleImage key={index} imageSource={block.content as StaticImageData} />;
+          return (
+            <ArticleImage
+              key={index}
+              imageSource={block.content as StaticImageData}
+              caption={block.caption}
+            />
+          );
         case 'quote':
           return <Quote key={index} content={block.content as string} />;
         default:

@@ -15,8 +15,12 @@ import content from 'components/Blog/content/exampleArticle';
 import ArticleContent from 'components/Blog/templates/ArticleContent';
 
 const TopDescription = styled(LargeParagraph)`
-  padding: 10px 0 50px;
+  padding-bottom: 50px !important;
   font-style: italic;
+`;
+
+const MainTitle = styled(H2)`
+  padding-bottom: 20px !important; 
 `;
 
 const MainContainer = styled.div`
@@ -36,7 +40,7 @@ const Blog = () => (
     <NavBar backgroundColor={Green010} />
     <TopSection heroImage={content.heroImage} />
     <MainContainer>
-      <H2 color={Green050}>{content.articleTitle}</H2>
+      <MainTitle color={Green050}>{content.articleTitle}</MainTitle>
       <TopDescription color={Green100}>
         {content.topDescription}
       </TopDescription>
