@@ -7,11 +7,16 @@ import { Green100 } from 'components/styling/colors';
 const QuoteContainer = styled.div`
   background: rgba(186, 228, 214, 0.5);
   padding: 30px;
-  /* display: grid;
-  grid-template-columns: 40px auto;
-  column-gap: 30px; */
   border-radius: 20px;
-  margin: 10px 0 50px;
+  margin: 10px auto 50px;
+  max-width: 580px;
+
+  @media screen and (min-width: 768px) {
+    margin: 50px auto 80px;
+    display: grid;
+    grid-template-columns: 83px auto;
+    column-gap: 30px;
+  }
 `;
 
 const QuoteText = styled(LargeParagraph)`

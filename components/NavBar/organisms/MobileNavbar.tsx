@@ -2,10 +2,10 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import LogoAndNameMobile from 'components/NavBar/molecules/LogoAndNameMobile';
-import { Grey010, Green050 } from 'components/styling/colors';
+import { Grey010 } from 'components/styling/colors';
 import MobileNavbarRight from 'components/NavBar/molecules/MobileNavbarRight';
 import MobileMenu from 'components/NavBar/organisms/MobileMenu';
-import { NavBarProps } from './NavBar';
+import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 
 const MobileNavbarContainer = styled.div`
   box-sizing: border-box;

@@ -6,14 +6,22 @@ import { Green050 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 
 const LinkContainer = styled.div`
-  padding: 8px 0 24px;
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 4px;
+  padding-bottom: 24px;
 
   svg {
     position: relative;
     bottom: 4px;
+  }
+
+  ${DefaultParagraph} {
+    padding-bottom: 0px !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 0px;
   }
 `;
 

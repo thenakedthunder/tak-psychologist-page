@@ -4,6 +4,7 @@ import WhatICanHelpYouWith from 'components/WhatICanHelpYouWith/organisms/WhatIC
 import NavBar from 'components/NavBar/organisms/NavBar';
 import Hero from 'components/organisms/Hero';
 import styles from 'styles/Home.module.css';
+import { Grey010 } from 'components/styling/colors';
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <NavBar />
+        <NavBar backgroundColor={Grey010} />
         <Hero />
         <WhatICanHelpYouWith />
       </main>

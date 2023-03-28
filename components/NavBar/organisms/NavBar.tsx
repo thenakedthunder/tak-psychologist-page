@@ -24,7 +24,7 @@ export interface NavBarProps {
 const NavBar = ({ backgroundColor }: NavBarProps) => (
   <NavbarContainer>
     <div className="navbar-mobile"><MobileNavBar backgroundColor={backgroundColor} /></div>
-    <div className="navbar-desktop"><DesktopNavbar /></div>
+    <div className="navbar-desktop"><DesktopNavbar backgroundColor={backgroundColor} /></div>
   </NavbarContainer>
 );
 

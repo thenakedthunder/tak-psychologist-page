@@ -12,6 +12,11 @@ const LargerSquare = styled.div`
   height: 30px;
   width: 30px;
   background-color: ${Green100};
+
+  @media screen and (min-width: 768px) {
+    height: 63px;
+    width: 63px;
+  }
 `;
 
 const SmallerSquare = styled.div`
@@ -21,6 +26,13 @@ const SmallerSquare = styled.div`
   position: absolute;
   top: 30px;
   left: 20px;
+
+  @media screen and (min-width: 768px) {
+    height: 38px;
+    width: 38px;
+    top: 51px;
+    left: 44px;
+  }
 `;
 
 const Collage = () => (

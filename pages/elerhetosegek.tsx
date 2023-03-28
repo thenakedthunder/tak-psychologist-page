@@ -31,7 +31,7 @@ padding-top: 30px;
 
 const Contact = () => (
   <>
-    <NavBar />
+    <NavBar backgroundColor={Grey010} />
     <BackgroundWrapper color={Grey010}>
       <MainContainer>
         <HeaderWithSocialLinks title="Elérhetőségek" breakPoint={768} />

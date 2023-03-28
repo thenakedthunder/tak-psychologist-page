@@ -36,7 +36,7 @@ const PaddingWrapper = styled.div`
 export default function AboutMe() {
   return (
     <>
-      <NavBar />
+      <NavBar backgroundColor={Grey010} />
       <MainContainer>
         <TopGrid />
         <PaddingWrapper>
