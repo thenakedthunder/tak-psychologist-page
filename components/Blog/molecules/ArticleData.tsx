@@ -7,6 +7,11 @@ import { ArticleProps } from 'components/Blog/organisms/OtherArticles';
 
 const Container = styled.div`
   align-self: center;
+  max-width: 295px;
+
+  @media screen and (min-width: 768px) {    
+    max-width: 100%;
+  }
 `;
 
 const ArticleTitle = styled(H3)`

@@ -38,13 +38,12 @@ const MainTitle = styled(H2)`
 `;
 
 const MainContainer = styled.div`
-  background-color: ${Grey010};
   padding: 30px 40px;
   max-width: 860px;
   margin: 0 auto;
   
   @media screen and (min-width: 768px) {
-    padding: 60px 40px;
+    padding: 60px 40px 0;
   }
 
   ${H3},
@@ -53,7 +52,6 @@ const MainContainer = styled.div`
   ${H2} {
     padding-bottom: 30px;
   }
-
 `;
 
 const SocialShareOnlyOnDesktopWrapper = styled.div`
@@ -89,9 +87,8 @@ const Blog = () => (
         <BottomSocialShareWrapper>
           <SocialShare />
         </BottomSocialShareWrapper>
-        <H2 color={Green100}>További bejegyzések</H2>
-        <OtherArticles />
       </MainContainer>
+      <OtherArticles />
     </BackgroundWrapper>
   </>
 );
