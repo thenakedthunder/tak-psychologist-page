@@ -7,12 +7,12 @@ import { items } from 'components/WhatICanHelpYouWith/content/items';
 import Unit from 'components/WhatICanHelpYouWith/molecules/Unit';
 import Top from 'components/WhatICanHelpYouWith/molecules/Top';
 
+import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import {
   Container,
   LowerContainer,
   MobileCTAContainer,
-} from './WhatICanHelpYouWith.styles';
-import BackgroundWrapper from 'components/styling/BackgroundWrapper';
+} from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
 
 const WhatICanHelpYouWith = () => (
   <BackgroundWrapper color={Blue010}>
@@ -21,7 +21,7 @@ const WhatICanHelpYouWith = () => (
       <LowerContainer>
         {items.map(
           (item, index) => <Unit item={item} key={index} />,
-          )}
+        )}
       </LowerContainer>
       <MobileCTAContainer>
         <PrimaryCTAButton
@@ -29,7 +29,7 @@ const WhatICanHelpYouWith = () => (
           color={Grey010}
           backgroundColor={Green050}
           linkHref=""
-          />
+        />
       </MobileCTAContainer>
     </Container>
   </BackgroundWrapper>
