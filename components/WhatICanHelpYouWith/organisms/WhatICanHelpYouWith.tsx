@@ -1,5 +1,5 @@
 import {
-  Green050, Grey010,
+  Blue010, Green050, Grey010,
 } from 'components/styling/colors';
 
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
@@ -12,24 +12,27 @@ import {
   LowerContainer,
   MobileCTAContainer,
 } from './WhatICanHelpYouWith.styles';
+import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
 const WhatICanHelpYouWith = () => (
-  <Container>
-    <Top />
-    <LowerContainer>
-      {items.map(
-        (item, index) => <Unit item={item} key={index} />,
-      )}
-    </LowerContainer>
-    <MobileCTAContainer>
-      <PrimaryCTAButton
-        text="Árlista megtekintése"
-        color={Grey010}
-        backgroundColor={Green050}
-        linkHref=""
-      />
-    </MobileCTAContainer>
-  </Container>
+  <BackgroundWrapper color={Blue010}>
+    <Container>
+      <Top />
+      <LowerContainer>
+        {items.map(
+          (item, index) => <Unit item={item} key={index} />,
+          )}
+      </LowerContainer>
+      <MobileCTAContainer>
+        <PrimaryCTAButton
+          text="Árlista megtekintése"
+          color={Grey010}
+          backgroundColor={Green050}
+          linkHref=""
+          />
+      </MobileCTAContainer>
+    </Container>
+  </BackgroundWrapper>
 );
 
 export default WhatICanHelpYouWith;

@@ -39,7 +39,7 @@ const getColorWithOpacity = (color: string, opacity: string) => {
 
 const DesktopNavbar = ({ backgroundColor }: NavBarProps) => (
   <BackgroundWrapper color={backgroundColor}>
-    <ContainerDiv color={backgroundColor}>
+    <ContainerDiv>
       <LogoAndNameDesktop />
       <DesktopMenu />
       <ContactButtonDiv>

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Image, { StaticImageData } from 'next/image';
 
 import { Green010, Grey010 } from 'components/styling/colors';
+import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
 const SectionContainer = styled.div`
   position: relative;
@@ -46,9 +47,11 @@ interface Props {
 const TopSection = ({ heroImage }: Props) => (
   <SectionContainer>
     <BackgroundStripe />
-    <ImageWrapper>
-      <Image src={heroImage} layout="responsive" />
-    </ImageWrapper>
+    <BackgroundWrapper>
+      <ImageWrapper>
+        <Image src={heroImage} layout="responsive" />
+      </ImageWrapper>
+    </BackgroundWrapper>
   </SectionContainer>
 );
 

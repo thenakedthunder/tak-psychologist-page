@@ -24,7 +24,7 @@ export const MainTitle = styled(H2)`
 
   @media screen and (min-width: 768px) {
     font-size: 48px;
-    line-height: 57.6px;
+    line-height: 120%;
     padding-bottom: 40px !important;
   }
 `;
