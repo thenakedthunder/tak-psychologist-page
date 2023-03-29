@@ -8,7 +8,7 @@ import { DefaultParagraph } from 'components/atoms/typography.styles';
 const LinkContainer = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 4px;
+  column-gap: 8px;
   padding-bottom: 24px;
 
   svg {

@@ -7,7 +7,11 @@ const Divider = styled.div`
   grid-template-columns: repeat(3, 16px);
   column-gap: 20px;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
+  
+  @media screen and (min-width: 768px) {    
+    padding-bottom: 30px;    
+  }
 `;
 
 const DividerDot = styled.div`

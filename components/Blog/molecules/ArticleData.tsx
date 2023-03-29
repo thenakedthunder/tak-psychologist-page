@@ -6,8 +6,10 @@ import ReadOnLink from 'components/Blog/molecules/ReadOnLink';
 import { ArticleProps } from 'components/Blog/organisms/OtherArticles';
 
 const Container = styled.div`
-  align-self: center;
+  margin: 0 auto;
   max-width: 295px;
+  text-align: left;
+  align-self: center;
 
   @media screen and (min-width: 768px) {    
     max-width: 100%;
@@ -19,7 +21,7 @@ const ArticleTitle = styled(H3)`
 `;
 
 const ArticleDescription = styled(DefaultParagraph)`
-  padding-bottom: 22px !important;
+  padding-bottom: 25px !important;
 `;
 
 interface Props {
