@@ -1,31 +1,26 @@
 import styled from 'styled-components';
 
-import {
-  LargeParagraph,
-  H2,
-  H3,
-  DefaultParagraph,
-} from 'components/atoms/typography.styles';
+import { LargeParagraph, H2 } from 'components/atoms/typography.styles';
 
 export const TopDescription = styled(LargeParagraph)`
-  padding-bottom: 50px !important;
+  padding-bottom: 50px;
   font-style: italic;
 
   @media screen and (min-width: 768px) {
     font-size: 36px;
     line-height: 120%;
     font-weight: 400;
-    padding-bottom: 55px !important;
+    padding-bottom: 55px;
   }
 `;
 
 export const MainTitle = styled(H2)`
-  padding-bottom: 20px !important;
+  padding-bottom: 20px;
 
   @media screen and (min-width: 768px) {
     font-size: 48px;
     line-height: 120%;
-    padding-bottom: 40px !important;
+    padding-bottom: 40px;
   }
 `;
 
@@ -36,13 +31,6 @@ export const MainContainer = styled.div`
   
   @media screen and (min-width: 768px) {
     padding: 60px 40px 0;
-  }
-
-  ${H3},
-  ${LargeParagraph},
-  ${DefaultParagraph},
-  ${H2} {
-    padding-bottom: 30px;
   }
 `;
 

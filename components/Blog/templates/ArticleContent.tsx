@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 import { ContentBlock } from 'components/Blog/content/exampleArticle';
-import { H3, DefaultParagraph, LargeParagraph } from 'components/atoms/typography.styles';
+import {
+  H2, H3, DefaultParagraph, LargeParagraph,
+} from 'components/atoms/typography.styles';
 import { Green050, Green100 } from 'components/styling/colors';
 import ArticleImage from 'components/Blog/molecules/ArticleImage';
 import Quote from 'components/Blog/organisms/Quote';
@@ -11,6 +13,15 @@ interface Props {
   blocks: ContentBlock[];
 }
 
+const Container = styled.div`
+  ${H3},
+  ${LargeParagraph},
+  ${DefaultParagraph},
+  ${H2} {
+    padding-bottom: 30px;
+  }
+`;
+
 const DefaultParagraphWithStyledHighlighting = styled(DefaultParagraph)`
   .highlighted {
     font-weight: 700;
@@ -19,7 +30,7 @@ const DefaultParagraphWithStyledHighlighting = styled(DefaultParagraph)`
 `;
 
 const ArticleContent = ({ blocks }: Props) => (
-  <>
+  <Container>
     {blocks.map((block, index) => {
       switch (block.type) {
         case 'heading':
@@ -52,7 +63,7 @@ const ArticleContent = ({ blocks }: Props) => (
           throw new Error('could not recopgnize the input content type');
       }
     })}
-  </>
+  </Container>
 );
 
 export default ArticleContent;
