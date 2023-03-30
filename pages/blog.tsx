@@ -10,7 +10,7 @@ import content from 'components/Blog/content/exampleArticle';
 import ArticleContent from 'components/Blog/templates/ArticleContent';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import {
-  MainContainer,
+  BlogMainContentContainer as Container,
   MainTitle,
   TopDescription,
   SocialShareOnlyOnDesktopWrapper,
@@ -22,7 +22,7 @@ const Blog = () => (
     <NavBar backgroundColor={Green010} />
     <TopSection heroImage={content.heroImage} />
     <BackgroundWrapper color={Grey010}>
-      <MainContainer>
+      <Container>
         <MainTitle color={Green050}>{content.articleTitle}</MainTitle>
         <TopDescription color={Green100}>
           {content.topDescription}
@@ -36,7 +36,7 @@ const Blog = () => (
         <BottomSocialShareWrapper>
           <SocialShare />
         </BottomSocialShareWrapper>
-      </MainContainer>
+      </Container>
       <OtherArticles />
     </BackgroundWrapper>
   </>

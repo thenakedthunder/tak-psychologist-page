@@ -7,7 +7,7 @@ import Collage from 'components/FAQ/molecules/Collage';
 import QAndASection from 'components/FAQ/organisms/QAndASection';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
-const MainContainer = styled.div`
+const FAQMainContainer = styled.div`
   padding: 40px;
 
   @media screen and (min-width: 1200px) {
@@ -36,13 +36,13 @@ export default function FAQ() {
     <>
       <NavBar backgroundColor={Grey010} />
       <BackgroundWrapper color={Green010}>
-        <MainContainer>
+        <FAQMainContainer>
           <Header color={Green100}>
             Gyakran Ismételt Kérdések
           </Header>
           <Collage />
           <QAndASection />
-        </MainContainer>
+        </FAQMainContainer>
       </BackgroundWrapper>
     </>
   );

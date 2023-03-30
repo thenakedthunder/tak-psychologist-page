@@ -8,7 +8,7 @@ import TopGrid from 'components/AboutMe/organisms/TopGrid';
 import { Grey010 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
-const MainContainer = styled.div`
+const AboutMeMainContainer = styled.div`
   padding: 40px;
   max-width: 1440px;
   background-color: ${Grey010};
@@ -39,7 +39,7 @@ export default function AboutMe() {
     <>
       <NavBar backgroundColor={Grey010} />
       <BackgroundWrapper>
-        <MainContainer>
+        <AboutMeMainContainer>
           <TopGrid />
           <PaddingWrapper>
             <Prose content={mission} />
@@ -47,7 +47,7 @@ export default function AboutMe() {
           <PaddingWrapper>
             <List content={publicationsAndMemberships} />
           </PaddingWrapper>
-        </MainContainer>
+        </AboutMeMainContainer>
       </BackgroundWrapper>
     </>
   );

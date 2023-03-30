@@ -7,7 +7,7 @@ import HeaderWithSocialLinks from 'components/molecules/HeaderWithSocialLinks';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import RightSide from 'components/Contact/organisms/RightSide';
 
-const MainContainer = styled.div`
+const ContactMainContainer = styled.div`
   padding: 40px;
   background-color: ${Grey010};
   max-width: 1440px;
@@ -33,13 +33,13 @@ const Contact = () => (
   <>
     <NavBar backgroundColor={Grey010} />
     <BackgroundWrapper color={Grey010}>
-      <MainContainer>
+      <ContactMainContainer>
         <HeaderWithSocialLinks title="Elérhetőségek" breakPoint={768} />
         <ContentContainer>
           <ReservationInfo />
           <RightSide />
         </ContentContainer>
-      </MainContainer>
+      </ContactMainContainer>
     </BackgroundWrapper>
   </>
 );

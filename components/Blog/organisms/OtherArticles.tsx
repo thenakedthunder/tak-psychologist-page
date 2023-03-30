@@ -3,7 +3,7 @@ import { StaticImageData } from 'next/image';
 import articles from 'components/Blog/content/articles';
 import { Green100 } from 'components/styling/colors';
 import ListedArticle from 'components/Blog/molecules/ListedArticle';
-import { MainContainerWithBackGround, ContentContainer, Header } from 'components/Blog/organisms/OtherArticles.styles';
+import { OtherArticlesContainer as Container, ContentContainer, Header } from 'components/Blog/organisms/OtherArticles.styles';
 
 export interface ArticleProps {
   image: StaticImageData,
@@ -12,12 +12,12 @@ export interface ArticleProps {
 }
 
 const OtherArticles = () => (
-  <MainContainerWithBackGround>
+  <Container>
     <ContentContainer>
       <Header color={Green100}>További bejegyzések</Header>
       {articles.map((item, index) => <ListedArticle key={index} item={item} />)}
     </ContentContainer>
-  </MainContainerWithBackGround>
+  </Container>
 );
 
 export default OtherArticles;

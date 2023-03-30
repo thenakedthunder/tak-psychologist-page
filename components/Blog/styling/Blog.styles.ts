@@ -24,7 +24,7 @@ export const MainTitle = styled(H2)`
   }
 `;
 
-export const MainContainer = styled.div`
+export const BlogMainContentContainer = styled.div`
   padding: 30px 40px;
   max-width: 860px;
   margin: 0 auto;
