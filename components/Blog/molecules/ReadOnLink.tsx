@@ -17,7 +17,7 @@ const LinkContainer = styled.div`
   }
 
   ${DefaultParagraph} {
-    padding-bottom: 0px !important;
+    padding-bottom: 0px;
   }
 
   @media screen and (min-width: 768px) {

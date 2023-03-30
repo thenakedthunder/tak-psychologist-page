@@ -17,11 +17,11 @@ const Container = styled.div`
 `;
 
 const ArticleTitle = styled(H3)`
-  padding-bottom: 8px !important;
+  padding-bottom: 8px;
 `;
 
 const ArticleDescription = styled(DefaultParagraph)`
-  padding-bottom: 25px !important;
+  padding-bottom: 25px;
 `;
 
 interface Props {
