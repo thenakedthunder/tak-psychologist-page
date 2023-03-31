@@ -13,26 +13,30 @@ import {
   LowerContainer,
   MobileCTAContainer,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
+import Form from 'components/Form/Form';
 
 const WhatICanHelpYouWith = () => (
-  <BackgroundWrapper color={Blue010}>
-    <Container>
-      <Top />
-      <LowerContainer>
-        {items.map(
-          (item, index) => <Unit item={item} key={index} />,
-        )}
-      </LowerContainer>
-      <MobileCTAContainer>
-        <PrimaryCTAButton
-          text="Árlista megtekintése"
-          color={Grey010}
-          backgroundColor={Green050}
-          linkHref=""
-        />
-      </MobileCTAContainer>
-    </Container>
-  </BackgroundWrapper>
+  <>
+    <BackgroundWrapper color={Blue010}>
+      <Container>
+        <Top />
+        <LowerContainer>
+          {items.map(
+            (item, index) => <Unit item={item} key={index} />,
+          )}
+        </LowerContainer>
+        <MobileCTAContainer>
+          <PrimaryCTAButton
+            text="Árlista megtekintése"
+            color={Grey010}
+            backgroundColor={Green050}
+            linkHref=""
+          />
+        </MobileCTAContainer>
+      </Container>
+    </BackgroundWrapper>
+    <Form />
+  </>
 );
 
 export default WhatICanHelpYouWith;
