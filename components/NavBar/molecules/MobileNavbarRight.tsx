@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { IoIosMenu } from 'react-icons/io';
 import { VscClose } from 'react-icons/vsc';
+import { Green050 } from 'components/styling/colors';
 
 interface MobileRightDivProps {
   isMenuOpen: boolean;
@@ -17,8 +18,8 @@ const MobileRightDivContainer = styled.div`
 const MobileNavbarRight = ({ isMenuOpen, toggleIsMenuOpen }: MobileRightDivProps) => (
   <MobileRightDivContainer>
     {isMenuOpen
-      ? <VscClose size={28} onClick={toggleIsMenuOpen} />
-      : <IoIosMenu size={28} onClick={toggleIsMenuOpen} />}
+      ? <VscClose size={28} onClick={toggleIsMenuOpen} color={Green050} />
+      : <IoIosMenu size={28} onClick={toggleIsMenuOpen} color={Green050} />}
   </MobileRightDivContainer>
 );
 

@@ -15,13 +15,20 @@ const ItemContainer = styled.div`
   }
 `;
 
+const IconContainer = styled.div`
+  position: relative;
+  bottom: 1px;
+`;
+
 interface SocialItemProps {
   linkText: string;
 }
 
 const SocialItem = ({ linkText }: SocialItemProps) => (
   <ItemContainer>
-    <TfiPlus size={12} color={Green050} />
+    <IconContainer>
+      <TfiPlus size={12} color={Green050} />
+    </IconContainer>
     <SmallParagraph color={Green050}>
       {linkText}
     </SmallParagraph>

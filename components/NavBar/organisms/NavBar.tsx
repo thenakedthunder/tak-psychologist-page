@@ -17,10 +17,14 @@ const NavbarContainer = styled.div`
   }
 `;
 
-const NavBar = () => (
+export interface NavBarProps {
+  backgroundColor?: string;
+}
+
+const NavBar = ({ backgroundColor }: NavBarProps) => (
   <NavbarContainer>
-    <div className="navbar-mobile"><MobileNavBar /></div>
-    <div className="navbar-desktop"><DesktopNavbar /></div>
+    <div className="navbar-mobile"><MobileNavBar backgroundColor={backgroundColor} /></div>
+    <div className="navbar-desktop"><DesktopNavbar backgroundColor={backgroundColor} /></div>
   </NavbarContainer>
 );
 

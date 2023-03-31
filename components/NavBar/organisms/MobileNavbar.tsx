@@ -2,9 +2,10 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import LogoAndNameMobile from 'components/NavBar/molecules/LogoAndNameMobile';
-import { Grey010, Green050 } from 'components/styling/colors';
+import { Grey010 } from 'components/styling/colors';
 import MobileNavbarRight from 'components/NavBar/molecules/MobileNavbarRight';
 import MobileMenu from 'components/NavBar/organisms/MobileMenu';
+import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 
 const MobileNavbarContainer = styled.div`
   box-sizing: border-box;
@@ -13,10 +14,10 @@ const MobileNavbarContainer = styled.div`
   padding: 20px;
   display: grid;
   grid-template-columns: auto 1fr;
-  color: ${Green050};
+  background-color: ${(props: NavBarProps) => props.backgroundColor ?? Grey010};
 `;
 
-const MobileNavBar = () => {
+const MobileNavBar = ({ backgroundColor }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleIsMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -24,13 +25,13 @@ const MobileNavBar = () => {
 
   return (
     <>
-      <MobileNavbarContainer>
+      <MobileNavbarContainer backgroundColor={backgroundColor}>
         <LogoAndNameMobile />
         <MobileNavbarRight isMenuOpen={isMenuOpen} toggleIsMenuOpen={toggleIsMenuOpen} />
       </MobileNavbarContainer>
       {isMenuOpen
         && (
-          <MobileMenu />
+          <MobileMenu backgroundColor={backgroundColor} />
         )}
     </>
   );

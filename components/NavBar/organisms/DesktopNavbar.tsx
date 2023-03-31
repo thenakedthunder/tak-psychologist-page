@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 
 import LogoAndNameDesktop from 'components/NavBar/molecules/LogoAndNameDesktop';
-import {
-  Grey010, Grey100, Black050,
-} from 'components/styling/colors';
+import { Grey100, Black050 } from 'components/styling/colors';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
+import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 
 const ContainerDiv = styled.div`
   padding: 40px;
   display: grid;
   grid-template-columns: auto auto 150px;
-  background-color: ${Grey010};
   max-width: 1440px;
 
   @media screen and (min-width: 1400px) {
@@ -39,8 +37,8 @@ const getColorWithOpacity = (color: string, opacity: string) => {
   return color + opacity;
 };
 
-const DesktopNavbar = () => (
-  <BackgroundWrapper color={Grey010}>
+const DesktopNavbar = ({ backgroundColor }: NavBarProps) => (
+  <BackgroundWrapper color={backgroundColor}>
     <ContainerDiv>
       <LogoAndNameDesktop />
       <DesktopMenu />

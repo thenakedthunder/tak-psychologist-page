@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 import NavBar from 'components/NavBar/organisms/NavBar';
 import { H2 } from 'components/atoms/typography.styles';
-import { Green010, Green100 } from 'components/styling/colors';
+import { Green010, Green100, Grey010 } from 'components/styling/colors';
 import Collage from 'components/FAQ/molecules/Collage';
 import QAndASection from 'components/FAQ/organisms/QAndASection';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
-const MainContainer = styled.div`
+const FAQMainContainer = styled.div`
   padding: 40px;
 
   @media screen and (min-width: 1200px) {
@@ -34,15 +34,15 @@ const Header = styled(H2)`
 export default function FAQ() {
   return (
     <>
-      <NavBar />
+      <NavBar backgroundColor={Grey010} />
       <BackgroundWrapper color={Green010}>
-        <MainContainer>
+        <FAQMainContainer>
           <Header color={Green100}>
             Gyakran Ismételt Kérdések
           </Header>
           <Collage />
           <QAndASection />
-        </MainContainer>
+        </FAQMainContainer>
       </BackgroundWrapper>
     </>
   );

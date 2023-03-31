@@ -4,6 +4,8 @@ import { Blue010 } from 'components/styling/colors';
 export const Container = styled.div`
   background-color: ${Blue010};
   padding: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
 
   @media screen and (min-width: 992px) {
     padding: 70px 130px 185px;

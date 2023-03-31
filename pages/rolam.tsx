@@ -6,8 +6,9 @@ import Prose from 'components/AboutMe/organisms/Prose';
 import List from 'components/AboutMe/organisms/List';
 import TopGrid from 'components/AboutMe/organisms/TopGrid';
 import { Grey010 } from 'components/styling/colors';
+import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
-const MainContainer = styled.div`
+const AboutMeMainContainer = styled.div`
   padding: 40px;
   max-width: 1440px;
   background-color: ${Grey010};
@@ -36,16 +37,18 @@ const PaddingWrapper = styled.div`
 export default function AboutMe() {
   return (
     <>
-      <NavBar />
-      <MainContainer>
-        <TopGrid />
-        <PaddingWrapper>
-          <Prose content={mission} />
-        </PaddingWrapper>
-        <PaddingWrapper>
-          <List content={publicationsAndMemberships} />
-        </PaddingWrapper>
-      </MainContainer>
+      <NavBar backgroundColor={Grey010} />
+      <BackgroundWrapper>
+        <AboutMeMainContainer>
+          <TopGrid />
+          <PaddingWrapper>
+            <Prose content={mission} />
+          </PaddingWrapper>
+          <PaddingWrapper>
+            <List content={publicationsAndMemberships} />
+          </PaddingWrapper>
+        </AboutMeMainContainer>
+      </BackgroundWrapper>
     </>
   );
 }
