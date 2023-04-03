@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import { IoChevronDownCircleOutline } from 'react-icons/io5';
+import Select, { components, DropdownIndicatorProps, Option } from 'react-select';
 
-import { DefaultParagraph, H2, SmallParagraph } from 'components/atoms/typography.styles';
-import { Green010, Green050, Green100 } from 'components/styling/colors';
+import { H2, SmallParagraph } from 'components/atoms/typography.styles';
+import {
+  Green010, Green050, Green100, Grey010,
+} from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { useState } from 'react';
+import serviceOptions from 'components/Form/content/serviceOptions';
 
 const FormContainer = styled.div`
   padding: 80px 40px 40px;
@@ -19,7 +23,7 @@ const FormFields = styled.form`
   row-gap: 20px;
   padding: 57px 0 0;
 
-  input[type=text], select {
+  input[type=text] {
     height: 52px;
     padding: 15px 20px;
   }
@@ -29,12 +33,8 @@ const FormFields = styled.form`
     padding: 15px 20px 30px;
   }
 
-  select {
-    appearance: none;
-  }
-
-  input[type=text], select, textarea {
-    background: #FFFFF5;
+  input[type=text], textarea {
+    background: ${Grey010};
     border: none;
     border-bottom: 1px solid ${Green050};
     border-radius: 14px 14px 0px 0px;
@@ -80,18 +80,79 @@ const FormFields = styled.form`
   }
 `;
 
-const Option = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
-`;
-
 const Counter = styled(SmallParagraph)`
   position: relative;
   bottom: 34px;
   text-align: end;
   right: 20px;
 `;
+
+const colourStyles = {
+  control: (styles: object) => ({
+    ...styles,
+    backgroundColor: Grey010,
+    border: 'none',
+    borderBottom: `1px solid ${Green050}`,
+    borderRadius: '14px 14px 0px 0px',
+    height: '52px',
+    padding: '15px 2px 15px 20px',
+    '&:active': {
+      borderBottom: `1px solid ${Green050}`,
+    },
+    '&:focus': {
+      borderBottom: `1px solid ${Green050}`,
+    },
+    '&:focus-within': {
+      borderBottom: `1px solid ${Green050}`,
+    },
+    '&:target': {
+      borderBottom: `1px solid ${Green050}`,
+    },
+    '&:hover': {
+      borderBottom: `1px solid ${Green050}`,
+    },
+    '&:visited': {
+      borderBottom: `1px solid ${Green050}`,
+    },
+    '&:focus-visible': {
+      borderBottom: `1px solid ${Green050}`,
+    },
+  }),
+  singleValue: (styles: object) => ({
+    ...styles,
+    color: Green050,
+    fontFamily: '"Figtree" sans-serif',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: '16px',
+    lineHeight: '140%',
+    margin: '0',
+  }),
+  valueContainer: (styles: object) => ({
+    ...styles,
+    padding: '0',
+    display: 'block',
+  }),
+  input: (styles: object) => ({
+    ...styles,
+    display: 'grid',
+  }),
+  indicatorSeparator: (styles: object) => ({
+    ...styles,
+    display: 'none',
+  }),
+  indicatorsContainer: (styles: object) => ({
+    ...styles,
+    height: '22px',
+    padding: '0',
+  }),
+};
+
+const DropdownIndicator = (props: DropdownIndicatorProps<Option, false>) => (
+  <components.DropdownIndicator {...props}>
+    <IoChevronDownCircleOutline color={Green050} size={22} />
+  </components.DropdownIndicator>
+);
 
 const Form = () => {
   const [messageCharacterCount, setMessageCharacterCount] = useState(0);
@@ -111,14 +172,15 @@ const Form = () => {
           <input type="text" id="name" name="name" placeholder="Teljes név" />
           <input type="text" id="email" name="email" placeholder="Email cím" />
           <input type="text" id="phone" name="phone" placeholder="Telefonszám" />
-          <select name="service" id="service">
-            <option value="none">
-              Szolgáltatás kiválasztása <IoChevronDownCircleOutline color={Green100} size={32} />
-            </option>
-            <option value="chase-the-demon">Rontás levétele</option>
-            <option value="exercise-book">Egzörszájzbuk!</option>
-            <option value="aura-massage">Auramasszász</option>
-          </select>
+          <Select
+            name="service"
+            id="service"
+            options={serviceOptions}
+            defaultValue={serviceOptions[0]}
+            placeholder={serviceOptions[0].label}
+            styles={colourStyles}
+            components={{ DropdownIndicator }}
+          />
           <textarea
             id="message"
             name="message"
