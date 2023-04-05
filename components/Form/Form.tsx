@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import { IoChevronDownCircleOutline } from 'react-icons/io5';
 import Select, {
-  components, DropdownIndicatorProps, GroupBase, Option,
+  components, DropdownIndicatorProps, GroupBase,
 } from 'react-select';
 
 import { H2, SmallParagraph } from 'components/atoms/typography.styles';
 import {
-  Green010, Green050, Green100, Grey010,
+  Green010, Green050, Green100, Grey010, Grey100,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { useState } from 'react';
-import serviceOptions from 'components/Form/content/serviceOptions';
+import serviceOptions, { ServiceOption } from 'components/Form/content/serviceOptions';
 
 const FormContainer = styled.div`
   padding: 80px 40px 40px;
@@ -89,18 +89,25 @@ const Counter = styled(SmallParagraph)`
   right: 20px;
 `;
 
-// interface FaszomStateType {
-
+// {
+//   control: (styles, state) => ({
+//     ...styles,
+//     borderColor: state.isFocused ? 'grey' : 'red',
+//   }),
 // }
 
-const colourStyles = {
-  control: (styles: object) => ({
+interface FaszomState {
+  menuIsOpen: boolean;
+}
+
+const baseStyles = {
+  control: (styles: object, state: FaszomState) => ({
     ...styles,
     backgroundColor: Grey010,
     border: '0',
     '&:focus-within': {
       border: `1px solid ${Green050}`,
-      borderBottom: '0px',
+      borderBottom: `${state.menuIsOpen ? 'none' : `1px solid ${Green050}`}`,
     },
     '&:focus': {
       border: `1px solid ${Green050}`,
@@ -158,12 +165,18 @@ const colourStyles = {
     height: '22px',
     padding: '0',
   }),
+  placeholder: (styles: object) => ({
+    ...styles,
+    color: Grey100,
+  }),
 };
 
-const DropdownIndicator = (props: DropdownIndicatorProps<Option, false, GroupBase<any>>) => (
-  <components.DropdownIndicator {...props}>
-    <IoChevronDownCircleOutline color={Green050} size={22} />
-  </components.DropdownIndicator>
+const DropdownIndicator = (props: DropdownIndicatorProps<
+  ServiceOption, false, GroupBase<ServiceOption>
+  >) => (
+    <components.DropdownIndicator {...props}>
+      <IoChevronDownCircleOutline color={Green050} size={22} />
+    </components.DropdownIndicator>
 );
 
 const Form = () => {
@@ -188,11 +201,10 @@ const Form = () => {
             name="service"
             id="service"
             options={serviceOptions}
-            defaultValue={serviceOptions[0]}
-            placeholder={serviceOptions[0].label}
-            styles={colourStyles}
+            placeholder="Szolgáltatás kiválasztása"
             components={{ DropdownIndicator }}
             isSearchable={false}
+            styles={baseStyles}
           />
           <textarea
             id="message"
