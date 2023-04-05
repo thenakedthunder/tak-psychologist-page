@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { IoChevronDownCircleOutline } from 'react-icons/io5';
-import Select, { components, DropdownIndicatorProps, Option } from 'react-select';
+import Select, {
+  components, DropdownIndicatorProps, GroupBase, Option,
+} from 'react-select';
 
 import { H2, SmallParagraph } from 'components/atoms/typography.styles';
 import {
@@ -30,7 +32,7 @@ const FormFields = styled.form`
   
   textarea {
     height: 132px;
-    padding: 15px 20px 30px;
+    padding: 15px 20px 40px;
   }
 
   input[type=text], textarea {
@@ -87,36 +89,46 @@ const Counter = styled(SmallParagraph)`
   right: 20px;
 `;
 
+// interface FaszomStateType {
+
+// }
+
 const colourStyles = {
   control: (styles: object) => ({
     ...styles,
     backgroundColor: Grey010,
-    border: 'none',
-    borderBottom: `1px solid ${Green050}`,
-    borderRadius: '14px 14px 0px 0px',
-    height: '52px',
-    padding: '15px 2px 15px 20px',
-    '&:active': {
-      borderBottom: `1px solid ${Green050}`,
+    border: '0',
+    '&:focus-within': {
+      border: `1px solid ${Green050}`,
+      borderBottom: '0px',
     },
     '&:focus': {
-      borderBottom: `1px solid ${Green050}`,
-    },
-    '&:focus-within': {
-      borderBottom: `1px solid ${Green050}`,
-    },
-    '&:target': {
-      borderBottom: `1px solid ${Green050}`,
+      border: `1px solid ${Green050}`,
     },
     '&:hover': {
       borderBottom: `1px solid ${Green050}`,
     },
-    '&:visited': {
-      borderBottom: `1px solid ${Green050}`,
-    },
-    '&:focus-visible': {
-      borderBottom: `1px solid ${Green050}`,
-    },
+    boxShadow: 'none',
+    borderBottom: `1px solid ${Green050}`,
+    borderRadius: '14px 14px 0px 0px',
+    height: '52px',
+    padding: '15px 2px 15px 20px',
+  }),
+  option: (styles: object) => ({
+    ...styles,
+    backgroundColor: Grey010,
+    color: Green050,
+    padding: '15px 2px 15px 20px',
+    borderRadius: '0px 0px 14px 14px',
+    borderBottom: '0px',
+  }),
+  menu: (styles: object) => ({
+    ...styles,
+    borderRadius: '0px 0px 14px 14px',
+    marginTop: '0px',
+    border: `1px solid ${Green050}`,
+    borderTop: '0px',
+    boxShadow: 'none',
   }),
   singleValue: (styles: object) => ({
     ...styles,
@@ -148,7 +160,7 @@ const colourStyles = {
   }),
 };
 
-const DropdownIndicator = (props: DropdownIndicatorProps<Option, false>) => (
+const DropdownIndicator = (props: DropdownIndicatorProps<Option, false, GroupBase<any>>) => (
   <components.DropdownIndicator {...props}>
     <IoChevronDownCircleOutline color={Green050} size={22} />
   </components.DropdownIndicator>
@@ -180,6 +192,7 @@ const Form = () => {
             placeholder={serviceOptions[0].label}
             styles={colourStyles}
             components={{ DropdownIndicator }}
+            isSearchable={false}
           />
           <textarea
             id="message"
