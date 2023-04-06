@@ -3,14 +3,16 @@ import { IoChevronDownCircleOutline } from 'react-icons/io5';
 import Select, {
   components, DropdownIndicatorProps, GroupBase,
 } from 'react-select';
+import { AiOutlineCheck } from 'react-icons/ai';
+import { useState } from 'react';
 
 import { H2, SmallParagraph } from 'components/atoms/typography.styles';
 import {
-  Green010, Green050, Green100, Grey010, Grey100,
+  Blue050, Green010, Green050, Green100, Grey010, Grey100,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
-import { useState } from 'react';
 import serviceOptions, { ServiceOption } from 'components/Form/content/serviceOptions';
+import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 
 const FormContainer = styled.div`
   padding: 80px 40px 40px;
@@ -88,13 +90,6 @@ const Counter = styled(SmallParagraph)`
   text-align: end;
   right: 20px;
 `;
-
-// {
-//   control: (styles, state) => ({
-//     ...styles,
-//     borderColor: state.isFocused ? 'grey' : 'red',
-//   }),
-// }
 
 interface FaszomState {
   menuIsOpen: boolean;
@@ -179,6 +174,35 @@ const DropdownIndicator = (props: DropdownIndicatorProps<
     </components.DropdownIndicator>
 );
 
+const FormBottom = styled.div`
+  padding-top: 12px;
+
+  display: grid;
+  grid-template-columns: 25px auto;
+  column-gap: 20px;
+`;
+
+const CheckBox = styled.div`
+  height: 25px;
+  width: 25px;
+  border: 1px solid ${Green050};
+  border-radius: 7px;
+  `;
+
+interface CheckMarkProps {
+  checked: boolean
+}
+
+const CheckMark = styled.div<CheckMarkProps>`
+  padding: 2px 2px;
+  visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
+`;
+
+const ButtonContainer = styled.div`
+  padding-top: 30px;
+  width: 295px;
+`;
+
 const Form = () => {
   const [messageCharacterCount, setMessageCharacterCount] = useState(0);
   const messageMaxCharacterCount = 300;
@@ -188,6 +212,9 @@ const Form = () => {
     setMessageCharacterCount(event.target.value.length);
     input.scrollTop = input.scrollHeight;
   };
+
+  const [checked, setIsChecked] = useState(false);
+  const toggleIsChecked = () => setIsChecked(!checked);
 
   return (
     <BackgroundWrapper color={Green010}>
@@ -219,6 +246,20 @@ const Form = () => {
           /
           {messageMaxCharacterCount}
         </Counter>
+        <FormBottom>
+          <CheckBox onClick={toggleIsChecked}>
+            <CheckMark checked={checked}>
+              <AiOutlineCheck size={19} color={Green050} />
+            </CheckMark>
+          </CheckBox>
+          <SmallParagraph color={Green100}>
+            Elismerem, hogy Radványi Balázs a legnagyobb király, és mindenben igaza van.
+            Ha korábban nem értettem volna vele egyet valamiben, akkor ott én tévedtem.
+          </SmallParagraph>
+          <ButtonContainer>
+            <PrimaryCTAButton color={Grey010} backgroundColor={Blue050} text="Küldés" linkHref="" />
+          </ButtonContainer>
+        </FormBottom>
       </FormContainer>
     </BackgroundWrapper>
   );
