@@ -14,6 +14,7 @@ import {
   MobileCTAContainer,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
 import Form from 'components/Form/Form';
+import PsychoLink from 'components/atoms/PsychoLink';
 
 const WhatICanHelpYouWith = () => (
   <>
@@ -26,12 +27,13 @@ const WhatICanHelpYouWith = () => (
           )}
         </LowerContainer>
         <MobileCTAContainer>
-          <PrimaryCTAButton
-            text="Árlista megtekintése"
-            color={Grey010}
-            backgroundColor={Green050}
-            linkHref=""
-          />
+          <PsychoLink href="google.com">
+            <PrimaryCTAButton
+              text="Árlista megtekintése"
+              color={Grey010}
+              backgroundColor={Green050}
+            />
+          </PsychoLink>
         </MobileCTAContainer>
       </Container>
     </BackgroundWrapper>

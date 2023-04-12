@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { DefaultParagraph } from 'components/atoms/typography.styles';
-import PsychoLink from './PsychoLink';
 
 interface PrimaryCTAButtonStyledProps {
   backgroundColor: string;
@@ -21,15 +20,14 @@ interface PrimaryCTAButtonProps {
   text: string;
   color: string;
   backgroundColor: string;
-  linkHref: string;
 }
 
 const PrimaryCTAButton = ({
-  text, color, backgroundColor, linkHref,
+  text, color, backgroundColor,
 }: PrimaryCTAButtonProps) => (
   <PrimaryCTAButtonStyled backgroundColor={backgroundColor}>
     <DefaultParagraph color={color}>
-      <PsychoLink href={linkHref}>{text}</PsychoLink>
+      {text}
     </DefaultParagraph>
   </PrimaryCTAButtonStyled>
 );
