@@ -381,6 +381,8 @@ interface FormStateType {
   touched: Set<string>;
 }
 
+const emailRegExp = /[^@]+@[^@]+\.[^@]{2,}/;
+
 const Form = () => {
   const [checked, setIsChecked] = useState(false);
 
@@ -407,8 +409,6 @@ const Form = () => {
     const touchedCopy = formState.touched;
     touchedCopy.add(key);
 
-    console.log('update', formState);
-
     setFormState({
       ...formState,
       data: { ...formState.data, [key]: value },
@@ -426,13 +426,14 @@ const Form = () => {
 
   const carryOutValidations = (stateToValidate: FormStateType = formState) => {
     const errors = { ...stateToValidate.errors };
-    console.log(stateToValidate);
+
     if (isTouched('name', stateToValidate) && stateToValidate.data.name.length < 3) {
       errors.name = 'Kérem, adja meg, hogy szólíthatom! (Legalább 3 karakter)';
     } else {
       errors.name = '';
     }
-    if (isTouched('email', stateToValidate) && !/[^@]+@[^@]+\.[^@]{2,}/.test(stateToValidate.data.email)) {
+
+    if (isTouched('email', stateToValidate) && !emailRegExp.test(stateToValidate.data.email)) {
       errors.email = 'Kérem adjon meg valós e-mail címet!';
     } else {
       errors.email = '';
@@ -453,7 +454,6 @@ const Form = () => {
 
   const validateForm = (stateToValidate: FormStateType) => {
     const errors = carryOutValidations(stateToValidate);
-    console.log(stateToValidate);
     const hasInputErrors = Object.values(errors).filter((item) => item !== '').length > 0;
 
     const requiredFieldsNotTouched = Object.keys(stateToValidate.data)
@@ -462,7 +462,6 @@ const Form = () => {
       .some((key) => isTouched(key, stateToValidate) === false);
 
     const hasErrors = hasInputErrors || requiredFieldsNotTouched;
-    console.log(hasErrors);
 
     setFormState({
       ...stateToValidate,
@@ -470,15 +469,12 @@ const Form = () => {
       hasErrors,
     });
 
-    console.log(formState);
-
     return !hasErrors;
   };
 
   useEffect(
     () => {
       validateForm(formState);
-      console.log(formState);
     },
     [formState.data],
   );
