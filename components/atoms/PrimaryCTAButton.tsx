@@ -14,18 +14,24 @@ const PrimaryCTAButtonStyled = styled.button`
   border: none;
   border-radius: 20px;
   cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.7; 
+  }
 `;
 
 interface PrimaryCTAButtonProps {
   text: string;
   color: string;
   backgroundColor: string;
+  isDisabled?: boolean;
 }
 
 const PrimaryCTAButton = ({
-  text, color, backgroundColor,
+  text, color, backgroundColor, isDisabled = false,
 }: PrimaryCTAButtonProps) => (
-  <PrimaryCTAButtonStyled backgroundColor={backgroundColor}>
+  <PrimaryCTAButtonStyled backgroundColor={backgroundColor} disabled={isDisabled}>
     <DefaultParagraph color={color}>
       {text}
     </DefaultParagraph>
