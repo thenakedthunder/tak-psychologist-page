@@ -38,7 +38,7 @@ const BackgroundWrapperForForm = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    background-size: 650px;
+    background-size: 600px 650px;
   }
 
   @media screen and (min-width: 1400px) {
@@ -57,7 +57,7 @@ const FormContainer = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    padding-bottom: 120px;
+    padding: 80px 230px 120px 130px;
     margin: 0;
     max-width: none;
   }
