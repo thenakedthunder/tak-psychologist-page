@@ -20,6 +20,7 @@ import TextInput from 'components/Footer/Form/molecules/TextInput';
 import MessageInput from 'components/Footer/Form/molecules/MessageInput';
 import ErrorMessage from 'components/Footer/Form/atoms/ErrorMessage';
 import ServiceSelector from 'components/Footer/Form/molecules/ServiceSelector';
+import labelTexts from 'components/Footer/Form/content/labelTexts';
 
 interface FormStateType {
   hasErrors: boolean;
@@ -87,23 +88,23 @@ const Form = () => {
     const errors = { ...stateToValidate.errors };
 
     if (isTouched('name', stateToValidate) && stateToValidate.data.name.length < 3) {
-      errors.name = 'Kérem, adja meg, hogy szólíthatom! (Legalább 3 karakter)';
+      errors.name = labelTexts.nameInputError;
     } else {
       errors.name = '';
     }
 
     if (isTouched('email', stateToValidate) && !emailRegExp.test(stateToValidate.data.email)) {
-      errors.email = 'Kérem adjon meg valós e-mail címet!';
+      errors.email = labelTexts.emailInputError;
     } else {
       errors.email = '';
     }
     if (isTouched('message', stateToValidate) && stateToValidate.data.message.length < 3) {
-      errors.message = 'Kérem, írja le, hogy miben segíthetek! (Legalább 3 karakter)';
+      errors.message = labelTexts.messageError;
     } else {
       errors.message = '';
     }
     if ((isTouched('dataHandlingCheckBox', stateToValidate)) && !stateToValidate.data.dataHandlingCheckBox) {
-      errors.dataHandlingCheckBox = 'Kérem egyezzen bele a fenti nyilatkozattételbe!';
+      errors.dataHandlingCheckBox = labelTexts.checkBoxUncheckedError;
     } else {
       errors.dataHandlingCheckBox = '';
     }
@@ -145,7 +146,7 @@ const Form = () => {
           id="name"
           name="name"
           className={formState.errors.name ? 'has-error' : ''}
-          placeholder="Teljes név"
+          placeholder={labelTexts.nameInputPlaceHolder}
           value={formState.data.name}
           error={formState.errors.name}
           onChanged={(input) => updateData('name', input)}
@@ -154,20 +155,20 @@ const Form = () => {
           id="email"
           name="email"
           className={formState.errors.email ? 'has-error' : ''}
-          placeholder="Email cím"
+          placeholder={labelTexts.emailInputPlaceHolder}
           value={formState.data.email}
           error={formState.errors.email}
           onChanged={(input) => updateData('email', input)}
         />
-        <input type="text" id="phone" name="phone" placeholder="Telefonszám" />
+        <input type="text" id="phone" name="phone" placeholder={labelTexts.phoneNumberPlaceHolder} />
         <ServiceSelector
           name="service"
           id="service"
-          placeholder="Szolgáltatás kiválasztása"
+          placeholder={labelTexts.serviceSelectionPlaceHolder}
         />
         <MessageInput
           className={formState.errors.message ? 'has-error' : ''}
-          placeholder="Üzenet, maximum 300 karakterben"
+          placeholder={labelTexts.messagePlaceHolder}
           value={formState.data.message}
           error={formState.errors.message}
           onChanged={(input) => updateData('message', input)}
@@ -181,8 +182,7 @@ const Form = () => {
             </CheckMark>
           </CheckBox>
           <SmallParagraph color={Green100}>
-            Elismerem, hogy Radványi Balázs a legnagyobb király, és mindenben igaza van.
-            Ha korábban nem értettem volna vele egyet valamiben, akkor ott én tévedtem.
+            {labelTexts.checkboxStatement}
           </SmallParagraph>
           {formState.errors.dataHandlingCheckBox
             && (
