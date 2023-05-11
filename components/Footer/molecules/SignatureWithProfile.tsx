@@ -18,15 +18,20 @@ const ProfilePictureContainer = styled.div`
   width: 80px;
 `;
 
-const SignatureWithProfile = () => (
+interface Props {
+  name: string;
+  title: string;
+}
+
+const SignatureWithProfile = ({ name, title }: Props) => (
   <SignatureContainer>
     <ProfilePictureContainer>
       <Image src={AvatarImage} />
     </ProfilePictureContainer>
     <DefaultParagraph color={Green100}>
-      Hont Gáspár Anita
+      {name}
       <br />
-      Klinikai szakpszichológus
+      {title}
     </DefaultParagraph>
   </SignatureContainer>
 );

@@ -4,6 +4,7 @@ import { LargeParagraph, DefaultParagraph } from 'components/atoms/typography.st
 import BulletedInfoItem from 'components/molecules/BulletedInfoItem';
 import { Green050, Green100 } from 'components/styling/colors';
 import SignatureWithProfile from 'components/Footer/molecules/SignatureWithProfile';
+import { FooterContents } from 'components/Footer/content/footerContents';
 
 const LeftInformationContainer = styled.div`
   display: none;
@@ -14,8 +15,8 @@ const LeftInformationContainer = styled.div`
   }
 `;
 
-const LeftInfoLargeParagraph = styled(LargeParagraph)`
-  padding: 72px 0 20px;
+const LeftInfoDefaultParagraph = styled(DefaultParagraph)`
+  padding-top: 20px;
 `;
 
 const BulletPointsContainer = styled.div`
@@ -24,24 +25,44 @@ const BulletPointsContainer = styled.div`
   row-gap: 20px;
 `;
 
-const LeftInformationDiv = () => (
+interface LeftInformationDivProps {
+  content: FooterContents;
+}
+
+const LeftInformationDiv = ({ content }: LeftInformationDivProps) => (
   <LeftInformationContainer>
-    <LeftInfoLargeParagraph>Lorem ipsum dolor sitamet</LeftInfoLargeParagraph>
-    <DefaultParagraph>
-      Suspendisse neque leo, venenatis ut varius in, aliquam in nisl. Nam nisi velit,
-      maximus nec augue ullamcorper, tincidunt accumsan magna.
-    </DefaultParagraph>
-    <BulletPointsContainer>
-      <BulletedInfoItem bulletPointColor={Green050} textColor={Green100}>
-        Mauris sit amet eros sapien. In nec tincidunt sapien. Sed tristique risus non
-        augue elementum venenatis. Curabitur sapien arcu, ultrices non vehicula non.
-      </BulletedInfoItem>
-      <BulletedInfoItem bulletPointColor={Green050} textColor={Green100}>
-        Pellentesque et lorem. Integer interdum cursus mi. In in est porttitor, ornare
-        urna ut, dignissim dui. Pellentesque finibus tempus ligula, tincidunt tempor orci.
-      </BulletedInfoItem>
-    </BulletPointsContainer>
-    <SignatureWithProfile />
+    {content.texts.map(
+      (item) => {
+        switch (item.type) {
+          case 'highlightedText':
+            return (
+              <LargeParagraph>{item.texts}</LargeParagraph>
+            );
+
+          case 'paragraph':
+            return (
+              <LeftInfoDefaultParagraph>{item.texts}</LeftInfoDefaultParagraph>
+            );
+
+          case 'bulletPoints':
+            return (
+              <BulletPointsContainer>
+                {item.texts.map(
+                  (bulletPoint) => (
+                    <BulletedInfoItem bulletPointColor={Green050} textColor={Green100}>
+                      {bulletPoint}
+                    </BulletedInfoItem>
+                  ),
+                )}
+              </BulletPointsContainer>
+            );
+
+          default: throw new Error('could not recognize the input content type');
+        }
+      },
+    )}
+
+    <SignatureWithProfile name={content.name} title={content.professionalTitle} />
   </LeftInformationContainer>
 );
 

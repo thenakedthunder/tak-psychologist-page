@@ -59,4 +59,7 @@ export const FooterContainer = styled.div`
 
 export const FooterHeader = styled(H2)`
   grid-area: header;
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 72px;
+  }
 `;
