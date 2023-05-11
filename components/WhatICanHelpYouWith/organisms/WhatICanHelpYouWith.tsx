@@ -13,8 +13,8 @@ import {
   LowerContainer,
   MobileCTAContainer,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
-import Form from 'components/Form/Form';
 import PsychoLink from 'components/atoms/PsychoLink';
+import Footer from 'components/Footer/Footer';
 
 const WhatICanHelpYouWith = () => (
   <>
@@ -37,7 +37,7 @@ const WhatICanHelpYouWith = () => (
         </MobileCTAContainer>
       </Container>
     </BackgroundWrapper>
-    <Form />
+    <Footer />
   </>
 );
 

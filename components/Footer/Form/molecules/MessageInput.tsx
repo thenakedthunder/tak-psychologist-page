@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { SmallParagraph } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
-import ErrorMessage from 'components/Form/atoms/ErrorMessage';
+import ErrorMessage from 'components/Footer/Form/atoms/ErrorMessage';
 
 interface MessageInputProps {
   className?: string;
@@ -32,10 +32,11 @@ const MessageInput = ({
   className = '', placeholder, value, onChanged, error,
 }: MessageInputProps) => {
   const [messageCharacterCount, setMessageCharacterCount] = useState(0);
-  const messageMaxCharacterCount = 300;
+  const maxMessageCharacterCount = 300;
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChanged(event.target?.value);
+
     const input = event.target;
     setMessageCharacterCount(input.value.length);
     input.scrollTop = input.scrollHeight;
@@ -54,11 +55,11 @@ const MessageInput = ({
           maxLength={300}
         />
         <Counter
-          color={(error || messageCharacterCount === 300) ? '#FF3030' : Green050}
+          color={(error || messageCharacterCount === maxMessageCharacterCount) ? '#FF3030' : Green050}
         >
           {messageCharacterCount}
           /
-          {messageMaxCharacterCount}
+          {maxMessageCharacterCount}
         </Counter>
       </TextAreaWrapper>
 
