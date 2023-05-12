@@ -36,12 +36,12 @@ const LeftInformationDiv = ({ content }: LeftInformationDivProps) => (
         switch (item.type) {
           case 'highlightedText':
             return (
-              <LargeParagraph>{item.texts}</LargeParagraph>
+              <LargeParagraph color={Green100}>{item.texts}</LargeParagraph>
             );
 
           case 'paragraph':
             return (
-              <LeftInfoDefaultParagraph>{item.texts}</LeftInfoDefaultParagraph>
+              <LeftInfoDefaultParagraph color={Green100}>{item.texts}</LeftInfoDefaultParagraph>
             );
 
           case 'bulletPoints':
