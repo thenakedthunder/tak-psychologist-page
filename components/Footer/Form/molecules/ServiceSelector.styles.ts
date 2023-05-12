@@ -67,7 +67,7 @@ const baseStyles = {
   indicatorsContainer: (styles: object) => ({
     ...styles,
     height: '22px',
-    padding: '0',
+    paddingRight: '12px',
   }),
   placeholder: (styles: object) => ({
     ...styles,

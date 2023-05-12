@@ -113,7 +113,7 @@ export const FormBottom = styled.div`
   
   display: grid;
   
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 576px) {
     padding-top: 30px;
     grid-template-columns: auto 128px;
     grid-column-gap: 44px;
@@ -155,11 +155,7 @@ export const ButtonContainer = styled.div`
   width: 100%;
 
   @media screen and (min-width: 576px) {
-    max-width: 496px;
     margin: 0 auto;
-  }
-
-  @media screen and (min-width: 768px) {
     width: 128px;
     padding-top: 0px;
   }

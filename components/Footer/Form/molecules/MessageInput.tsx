@@ -15,6 +15,10 @@ interface MessageInputProps {
 
 const TextAreaWrapper = styled.div`
   position: relative;
+
+  textarea {
+    resize: none;
+  }
 `;
 
 const Counter = styled(SmallParagraph)`

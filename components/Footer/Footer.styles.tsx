@@ -28,7 +28,7 @@ export const WrapperForCollageBackground = styled.div`
 `;
 
 export const FooterContainer = styled.div`
-  padding: 80px 40px 40px;
+  padding: 80px 40px 30px;
   margin: 0 auto;
   
   @media screen and (min-width: 768px) {
