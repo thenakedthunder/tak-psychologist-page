@@ -16,6 +16,7 @@ import {
   SocialShareOnlyOnDesktopWrapper,
   BottomSocialShareWrapper,
 } from 'components/Blog/styling/Blog.styles';
+import Footer from 'components/Footer/Footer';
 
 const Blog = () => (
   <>
@@ -39,6 +40,7 @@ const Blog = () => (
       </Container>
       <OtherArticles />
     </BackgroundWrapper>
+    <Footer />
   </>
 );
 

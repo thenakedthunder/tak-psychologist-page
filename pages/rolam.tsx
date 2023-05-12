@@ -7,6 +7,7 @@ import List from 'components/AboutMe/organisms/List';
 import TopGrid from 'components/AboutMe/organisms/TopGrid';
 import { Grey010 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
+import Footer from 'components/Footer/Footer';
 
 const AboutMeMainContainer = styled.div`
   padding: 40px;
@@ -49,6 +50,7 @@ export default function AboutMe() {
           </PaddingWrapper>
         </AboutMeMainContainer>
       </BackgroundWrapper>
+      <Footer />
     </>
   );
 }
