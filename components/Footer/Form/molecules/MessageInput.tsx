@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 import { SmallParagraph } from 'components/atoms/typography.styles';
-import { Green050 } from 'components/styling/colors';
+import { ErrorRed, Green050 } from 'components/styling/colors';
 import ErrorMessage from 'components/Footer/Form/atoms/ErrorMessage';
 
 interface MessageInputProps {
@@ -47,7 +47,7 @@ const MessageInput = ({
   };
 
   return (
-    <div>
+    <>
       <TextAreaWrapper>
         <textarea
           id="message"
@@ -59,7 +59,9 @@ const MessageInput = ({
           maxLength={300}
         />
         <Counter
-          color={(error || messageCharacterCount === maxMessageCharacterCount) ? '#FF3030' : Green050}
+          color={
+            (error || messageCharacterCount === maxMessageCharacterCount) ? ErrorRed : Green050
+          }
         >
           {messageCharacterCount}
           /
@@ -73,7 +75,7 @@ const MessageInput = ({
             <ErrorMessage error={error} />
           </ErrorMessageWrapper>
         )}
-    </div>
+    </>
   );
 };
 

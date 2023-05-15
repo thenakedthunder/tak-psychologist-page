@@ -1,4 +1,5 @@
 import { DefaultParagraph } from 'components/atoms/typography.styles';
+import { ErrorRed } from 'components/styling/colors';
 import styled from 'styled-components';
 
 const StyledDefaultParagraph = styled(DefaultParagraph)`
@@ -10,7 +11,7 @@ interface Props {
 }
 
 const ErrorMessage = ({ error }: Props) => (
-  <StyledDefaultParagraph color="#FF3030">
+  <StyledDefaultParagraph color={ErrorRed}>
     {error}
   </StyledDefaultParagraph>
 );

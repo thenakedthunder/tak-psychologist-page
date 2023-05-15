@@ -13,3 +13,5 @@ export const Green010 = '#BAE4D6';
 export const Grey100 = '#646B7B';
 export const Grey050 = '#8E8E8E';
 export const Grey010 = '#FFFFF5';
+
+export const ErrorRed = '#FF3030';

@@ -14,7 +14,6 @@ import {
   MobileCTAContainer,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
 import PsychoLink from 'components/atoms/PsychoLink';
-import Footer from 'components/Footer/Footer';
 
 const WhatICanHelpYouWith = () => (
   <>
@@ -37,7 +36,6 @@ const WhatICanHelpYouWith = () => (
         </MobileCTAContainer>
       </Container>
     </BackgroundWrapper>
-    <Footer />
   </>
 );
 

@@ -1,5 +1,5 @@
 import { AiOutlineCheck } from 'react-icons/ai';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 import { SmallParagraph } from 'components/atoms/typography.styles';
 import {
@@ -85,28 +85,27 @@ const Form = () => {
     stateToValidate.touched.has(key);
 
   const carryOutValidations = (stateToValidate: FormStateType = formState) => {
-    const errors = { ...stateToValidate.errors };
+    const errors = {
+      name: '',
+      email: '',
+      message: '',
+      dataHandlingCheckBox: '',
+    };
 
-    if (isTouched('name', stateToValidate) && stateToValidate.data.name.length < 3) {
-      errors.name = labelTexts.nameInputError;
-    } else {
-      errors.name = '';
+    if (isTouched('name', stateToValidate) && stateToValidate.data.name.trim().length < 3) {
+      errors.name = labelTexts.name.error;
     }
 
-    if (isTouched('email', stateToValidate) && !emailRegExp.test(stateToValidate.data.email)) {
-      errors.email = labelTexts.emailInputError;
-    } else {
-      errors.email = '';
+    if (isTouched('email', stateToValidate) && !emailRegExp.test(stateToValidate.data.email.trim())) {
+      errors.email = labelTexts.email.error;
     }
-    if (isTouched('message', stateToValidate) && stateToValidate.data.message.length < 3) {
-      errors.message = labelTexts.messageError;
-    } else {
-      errors.message = '';
+
+    if (isTouched('message', stateToValidate) && stateToValidate.data.message.trim().length < 3) {
+      errors.message = labelTexts.message.error;
     }
+
     if ((isTouched('dataHandlingCheckBox', stateToValidate)) && !stateToValidate.data.dataHandlingCheckBox) {
       errors.dataHandlingCheckBox = labelTexts.checkBoxUncheckedError;
-    } else {
-      errors.dataHandlingCheckBox = '';
     }
 
     return errors;
@@ -139,14 +138,23 @@ const Form = () => {
     [formState.data],
   );
 
+  const submit = () => {
+    validateForm(formState);
+    if (!formState.hasErrors) sendForm();
+  }
+
+  const sendForm = () => {
+    console.log("TO DO");
+  }
+
   return (
-    <StyledForm onSubmit={() => validateForm(formState)}>
+    <StyledForm onSubmit={() => submit()}>
       <FormFields>
         <TextInput
           id="name"
           name="name"
           className={formState.errors.name ? 'has-error' : ''}
-          placeholder={labelTexts.nameInputPlaceHolder}
+          placeholder={labelTexts.name.placeholder}
           value={formState.data.name}
           error={formState.errors.name}
           onChanged={(input) => updateData('name', input)}
@@ -155,20 +163,20 @@ const Form = () => {
           id="email"
           name="email"
           className={formState.errors.email ? 'has-error' : ''}
-          placeholder={labelTexts.emailInputPlaceHolder}
+          placeholder={labelTexts.email.placeholder}
           value={formState.data.email}
           error={formState.errors.email}
           onChanged={(input) => updateData('email', input)}
         />
-        <input type="text" id="phone" name="phone" placeholder={labelTexts.phoneNumberPlaceHolder} />
+        <input type="text" id="phone" name="phone" placeholder={labelTexts.phoneNumber.placeholder} />
         <ServiceSelector
           name="service"
           id="service"
-          placeholder={labelTexts.serviceSelectionPlaceHolder}
+          placeholder={labelTexts.serviceSelection.placeholder}
         />
         <MessageInput
           className={formState.errors.message ? 'has-error' : ''}
-          placeholder={labelTexts.messagePlaceHolder}
+          placeholder={labelTexts.message.placeholder}
           value={formState.data.message}
           error={formState.errors.message}
           onChanged={(input) => updateData('message', input)}

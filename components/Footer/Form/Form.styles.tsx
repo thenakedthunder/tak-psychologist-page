@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-import { Grey010, Green050, Green100 } from 'components/styling/colors';
+import {
+  Grey010, Green050, Green100, ErrorRed,
+} from 'components/styling/colors';
 
 export const StyledForm = styled.form`
   padding: 57px 0 0;
@@ -34,26 +36,26 @@ export const StyledForm = styled.form`
     width: 100%;
 
     &.has-error {
-      border-bottom: 1px solid #FF3030;
-      color: #FF3030;
+      border-bottom: 1px solid ${ErrorRed};
+      color: ${ErrorRed};
       
       ::placeholder {
-        color: #FF3030;
+        color: ${ErrorRed};
         /* Firefox */
       }
       
       :-ms-input-placeholder {
-        color: #FF3030;
+        color: ${ErrorRed};
         /* Internet Explorer 10-11 */
       }
       
       ::-ms-input-placeholder {
-        color: #FF3030;
+        color: ${ErrorRed};
         /* Microsoft Edge */
       }
 
       &:focus-visible {
-        border: 1px solid #FF3030;
+        border: 1px solid ${ErrorRed};
       }
     }
     
@@ -81,7 +83,7 @@ export const StyledForm = styled.form`
       line-height: 140%;
 
       &.has-error {
-        color: #FF3030;
+        color: ${ErrorRed};
       }
       /* Internet Explorer 10-11 */
     }
@@ -95,7 +97,7 @@ export const StyledForm = styled.form`
       line-height: 140%;
 
       &.has-error {
-        color: #FF3030;
+        color: ${ErrorRed};
       }
       /* Microsoft Edge */
     }
@@ -133,7 +135,7 @@ interface CheckBoxProps {
 export const CheckBox = styled.div`
   height: 25px;
   width: 25px;
-  border: ${(props: CheckBoxProps) => (props.error ? '1px solid #FF3030' : `1px solid ${Green050}`)};
+  border: ${(props: CheckBoxProps) => (props.error ? `1px solid ${ErrorRed}` : `1px solid ${Green050}`)};
   border-radius: 7px;
   `;
 

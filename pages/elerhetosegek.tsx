@@ -6,7 +6,6 @@ import ReservationInfo from 'components/Contact/organisms/ReservationInfo';
 import HeaderWithSocialLinks from 'components/molecules/HeaderWithSocialLinks';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import RightSide from 'components/Contact/organisms/RightSide';
-import Footer from 'components/Footer/Footer';
 
 const ContactMainContainer = styled.div`
   padding: 40px;
@@ -42,7 +41,6 @@ const Contact = () => (
         </ContentContainer>
       </ContactMainContainer>
     </BackgroundWrapper>
-    <Footer />
   </>
 );
 
