@@ -24,7 +24,7 @@ const DefaultParagraphWithCustomPadding = styled(DefaultParagraph)`
 
 const SocialShare = () => (
   <Container>
-    <DefaultParagraphWithCustomPadding className="bold" color={Green050}>
+    <DefaultParagraphWithCustomPadding className="bold" textColor={Green050}>
       Tetszik amit olvasol? Oszd meg!
     </DefaultParagraphWithCustomPadding>
     <SocialLinks />

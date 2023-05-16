@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 import ProfileImage from 'public/assets/rolam.png';
 
@@ -37,7 +37,7 @@ export const ProfileImageContainer = styled.div`
 const PictureOnShapesDesktop = () => (
   <MainContainer>
     <ProfileImageContainer>
-      <Image src={ProfileImage} objectFit="contain" />
+      <Image src={ProfileImage} objectFit="contain" alt="profile" />
     </ProfileImageContainer>
   </MainContainer>
 );

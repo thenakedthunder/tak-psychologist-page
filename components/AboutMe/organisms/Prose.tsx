@@ -16,14 +16,14 @@ interface ProseProbs {
 
 const Prose = ({ content }: ProseProbs) => (
   <ProseContainer>
-    <H3 color={Green050}>{content.header}</H3>
+    <H3 textColor={Green050}>{content.header}</H3>
     {content.highlightedItems?.map((item, index) => (
-      <LargeParagraph color={Green100} key={index}>
+      <LargeParagraph textColor={Green100} key={index}>
         {item}
       </LargeParagraph>
     ))}
     {content.defaultTextItems?.map((item, index) => (
-      <DefaultParagraph color={Green100} key={index}>
+      <DefaultParagraph textColor={Green100} key={index}>
         {item}
       </DefaultParagraph>
     ))}

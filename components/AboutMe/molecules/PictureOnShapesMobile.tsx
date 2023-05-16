@@ -11,7 +11,7 @@ const PictureOnShapesMobile = () => (
   <Container>
     <LargeGreenSquare>
       <ProfileImageContainer>
-        <ProfileImageSized src={ProfileImage} />
+        <ProfileImageSized src={ProfileImage} alt="profile" />
       </ProfileImageContainer>
     </LargeGreenSquare>
     <SmallGreenSquare />

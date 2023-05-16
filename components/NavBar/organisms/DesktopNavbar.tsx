@@ -39,7 +39,7 @@ const getColorWithOpacity = (color: string, opacity: string) => {
 };
 
 const DesktopNavbar = ({ backgroundColor }: NavBarProps) => (
-  <BackgroundWrapper color={backgroundColor}>
+  <BackgroundWrapper bgColor={backgroundColor}>
     <ContainerDiv>
       <LogoAndNameDesktop />
       <DesktopMenu />
@@ -47,7 +47,7 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => (
         <PsychoLink href="/elerhetosegek">
           <PrimaryCTAButton
             text="Kapcsolat"
-            color={Black050}
+            textColor={Black050}
             backgroundColor={getColorWithOpacity(Grey100, '20')}
           />
         </PsychoLink>

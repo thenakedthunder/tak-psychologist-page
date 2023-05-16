@@ -1,11 +1,4 @@
-import styled from 'styled-components';
 import Link from 'next/link';
-
-const StyledLink = styled.a`
-    color: inherit;
-    cursor: pointer;
-    text-decoration: none;
-`;
 
 interface PsychoLinkProps {
   href: string;
@@ -14,9 +7,7 @@ interface PsychoLinkProps {
 
 const PsychoLink = ({ href, children }: PsychoLinkProps) => (
   <Link href={href} passHref>
-    <StyledLink>
-      {children}
-    </StyledLink>
+    {children}
   </Link>
 );
 

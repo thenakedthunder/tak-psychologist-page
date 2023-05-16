@@ -11,7 +11,7 @@ interface Props {
 }
 
 const ErrorMessage = ({ error }: Props) => (
-  <StyledDefaultParagraph color={ErrorRed}>
+  <StyledDefaultParagraph textColor={ErrorRed}>
     {error}
   </StyledDefaultParagraph>
 );

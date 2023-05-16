@@ -1,6 +1,6 @@
 import NavBar from 'components/NavBar/organisms/NavBar';
 import {
-  Green010, Green100, Green050, Grey010,
+  Green010, Green100, Green050,
 } from 'components/styling/colors';
 import SocialShare from 'components/Blog/organisms/SocialShare';
 import OtherArticles from 'components/Blog/organisms/OtherArticles';
@@ -21,10 +21,10 @@ const Blog = () => (
   <>
     <NavBar backgroundColor={Green010} />
     <TopSection heroImage={content.heroImage} />
-    <BackgroundWrapper color={Grey010}>
+    <BackgroundWrapper>
       <Container>
-        <MainTitle color={Green050}>{content.articleTitle}</MainTitle>
-        <TopDescription color={Green100}>
+        <MainTitle textColor={Green050}>{content.articleTitle}</MainTitle>
+        <TopDescription textColor={Green100}>
           {content.topDescription}
         </TopDescription>
         <SocialShareOnlyOnDesktopWrapper>

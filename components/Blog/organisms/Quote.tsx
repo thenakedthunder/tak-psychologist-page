@@ -32,7 +32,7 @@ interface Props {
 const Quote = ({ content }: Props) => (
   <QuoteContainer>
     <Collage />
-    <QuoteText color={Green100}>
+    <QuoteText textColor={Green100}>
       {content}
     </QuoteText>
   </QuoteContainer>

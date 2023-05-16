@@ -14,7 +14,7 @@ export interface ArticleProps {
 const OtherArticles = () => (
   <Container>
     <ContentContainer>
-      <Header color={Green100}>További bejegyzések</Header>
+      <Header textColor={Green100}>További bejegyzések</Header>
       {articles.map((item, index) => <ListedArticle key={index} item={item} />)}
     </ContentContainer>
   </Container>

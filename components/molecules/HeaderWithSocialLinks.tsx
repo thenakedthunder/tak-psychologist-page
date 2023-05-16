@@ -18,7 +18,7 @@ interface Props {
 
 const HeaderWithSocialLinks = ({ title, breakPoint }: Props) => (
   <HeaderContainer>
-    <H2 color={Green100}>{title}</H2>
+    <H2 textColor={Green100}>{title}</H2>
     <Social breakPoint={breakPoint} />
   </HeaderContainer>
 );

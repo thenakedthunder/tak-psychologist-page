@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Image, { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/legacy/image';
 
 import { Green010, Grey010 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
@@ -49,7 +49,7 @@ const TopSection = ({ heroImage }: Props) => (
     <BackgroundStripe />
     <BackgroundWrapper>
       <ImageWrapper>
-        <Image src={heroImage} layout="responsive" />
+        <Image src={heroImage} layout="responsive" alt="hero" />
       </ImageWrapper>
     </BackgroundWrapper>
   </SectionContainer>

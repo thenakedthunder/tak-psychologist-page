@@ -35,9 +35,9 @@ export default function FAQ() {
   return (
     <>
       <NavBar backgroundColor={Grey010} />
-      <BackgroundWrapper color={Green010}>
+      <BackgroundWrapper bgColor={Green010}>
         <FAQMainContainer>
-          <Header color={Green100}>
+          <Header textColor={Green100}>
             Gyakran Ismételt Kérdések
           </Header>
           <Collage />

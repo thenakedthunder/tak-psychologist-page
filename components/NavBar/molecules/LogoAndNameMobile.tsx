@@ -20,14 +20,14 @@ const NameParagraph = styled(DefaultParagraph)`
 `;
 
 const LogoAndNameMobile = () => (
-  <MobileLeftDiv>
+  <MobileLeftDiv id="mobile">
     <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
     <div>
       <div>
-        <NameParagraph color={Green050}>Hont-Gáspár Anita</NameParagraph>
+        <NameParagraph textColor={Green050}>Hont-Gáspár Anita</NameParagraph>
       </div>
       <div>
-        <DefaultParagraph color={Green050}>Pszichológus</DefaultParagraph>
+        <DefaultParagraph textColor={Green050}>Pszichológus</DefaultParagraph>
       </div>
     </div>
   </MobileLeftDiv>

@@ -32,7 +32,7 @@ const ChevronContainer = styled.span`
 const DesktopMenu = () => (
   <DesktopMenuContainer>
     {menuItemsDesktop.map((item, index) => (
-      <DesktopMenuItem key={index} color={Green050}>
+      <DesktopMenuItem key={index} textColor={Green050}>
         <PsychoLink href={item.linkHref}>
           {item.linkText}
         </PsychoLink>

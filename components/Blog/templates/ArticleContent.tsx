@@ -34,18 +34,18 @@ const ArticleContent = ({ blocks }: Props) => (
     {blocks.map((block, index) => {
       switch (block.type) {
         case 'heading':
-          return <H3 key={index} color={Green050}>{block.content as string}</H3>;
+          return <H3 key={index} textColor={Green050}>{block.content as string}</H3>;
         case 'paragraph':
           return (
             <DefaultParagraphWithStyledHighlighting
               key={index}
-              color={Green050}
+              textColor={Green050}
               dangerouslySetInnerHTML={{ __html: block.content as string }}
             />
           );
         case 'largeParagraph':
           return (
-            <LargeParagraph key={index} color={Green100}>
+            <LargeParagraph key={index} textColor={Green100}>
               {block.content as string}
             </LargeParagraph>
           );

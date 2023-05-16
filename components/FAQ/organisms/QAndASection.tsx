@@ -23,7 +23,7 @@ const QAndASection = () => (
   <Container>
     {QAndAContents.map((item, index) => (
       <div key={index}>
-        <TopicHeading color={Blue050}>{item.name}</TopicHeading>
+        <TopicHeading textColor={Blue050}>{item.name}</TopicHeading>
         {item.topicContent.map((topicItem, topicIndex) => (
           <QAndAItem
             key={topicIndex}

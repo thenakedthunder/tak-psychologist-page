@@ -1,5 +1,5 @@
 import { AiOutlineCheck } from 'react-icons/ai';
-import { FormEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { SmallParagraph } from 'components/atoms/typography.styles';
 import {
@@ -19,7 +19,6 @@ import {
 import TextInput from 'components/Footer/Form/molecules/TextInput';
 import MessageInput from 'components/Footer/Form/molecules/MessageInput';
 import ErrorMessage from 'components/Footer/Form/atoms/ErrorMessage';
-import ServiceSelector from 'components/Footer/Form/molecules/ServiceSelector';
 import labelTexts from 'components/Footer/Form/content/labelTexts';
 
 interface FormStateType {
@@ -138,14 +137,14 @@ const Form = () => {
     [formState.data],
   );
 
+  const sendForm = () => {
+    console.log('TO DO');
+  };
+
   const submit = () => {
     validateForm(formState);
-    if (!formState.hasErrors) sendForm();
-  }
-
-  const sendForm = () => {
-    console.log("TO DO");
-  }
+    if (!formState.hasErrors) { sendForm(); }
+  };
 
   return (
     <StyledForm onSubmit={() => submit()}>
@@ -169,11 +168,11 @@ const Form = () => {
           onChanged={(input) => updateData('email', input)}
         />
         <input type="text" id="phone" name="phone" placeholder={labelTexts.phoneNumber.placeholder} />
-        <ServiceSelector
+        {/* <ServiceSelector
           name="service"
           id="service"
           placeholder={labelTexts.serviceSelection.placeholder}
-        />
+        /> */}
         <MessageInput
           className={formState.errors.message ? 'has-error' : ''}
           placeholder={labelTexts.message.placeholder}
@@ -189,7 +188,7 @@ const Form = () => {
               <AiOutlineCheck size={19} color={Green050} />
             </CheckMark>
           </CheckBox>
-          <SmallParagraph color={Green100}>
+          <SmallParagraph textColor={Green100}>
             {labelTexts.checkboxStatement}
           </SmallParagraph>
           {formState.errors.dataHandlingCheckBox
@@ -201,7 +200,7 @@ const Form = () => {
         </CheckBoxWrapper>
         <ButtonContainer>
           <PrimaryCTAButton
-            color={Grey010}
+            textColor={Grey010}
             backgroundColor={Blue050}
             text="Küldés"
             isDisabled={formState.hasErrors}

@@ -6,10 +6,10 @@ import LeftInformationDiv from 'components/Footer/organisms/LeftInformationDiv';
 import footerContent from 'components/Footer/content/footerContents';
 
 const Footer = () => (
-  <BackgroundWrapper color={Green010}>
+  <BackgroundWrapper bgColor={Green010}>
     <WrapperForCollageBackground>
       <FooterContainer>
-        <FooterHeader color={Green100}>{footerContent.header}</FooterHeader>
+        <FooterHeader textColor={Green100}>{footerContent.header}</FooterHeader>
         <LeftInformationDiv content={footerContent} />
         <Form />
       </FooterContainer>

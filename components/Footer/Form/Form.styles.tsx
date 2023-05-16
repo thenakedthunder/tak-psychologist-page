@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
+import { Figtree } from 'next/font/google';
+
 import {
   Grey010, Green050, Green100, ErrorRed,
 } from 'components/styling/colors';
+
+const figtree = Figtree({ subsets: ['latin-ext'], style: ['normal', 'italic'], weight: ['400', '600'] });
 
 export const StyledForm = styled.form`
   padding: 57px 0 0;
@@ -28,7 +32,7 @@ export const StyledForm = styled.form`
     border-bottom: 1px solid ${Green050};
     border-radius: 14px 14px 0px 0px;
     color: ${Green100};
-    font-family: 'Figtree', sans-serif;
+    font-family: ${figtree.style.fontFamily}, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -66,7 +70,7 @@ export const StyledForm = styled.form`
     ::placeholder {
       color: ${Green050};
       opacity: 1; 
-      font-family: 'Figtree', sans-serif;
+      font-family: ${figtree.style.fontFamily}, sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -76,7 +80,7 @@ export const StyledForm = styled.form`
 
     :-ms-input-placeholder {
       color: ${Green050};
-      font-family: 'Figtree', sans-serif;
+      font-family: ${figtree.style.fontFamily}, sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -90,7 +94,7 @@ export const StyledForm = styled.form`
 
     ::-ms-input-placeholder {
       color: ${Green050};
-      font-family: 'Figtree', sans-serif;
+      font-family: ${figtree.style.fontFamily}, sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
