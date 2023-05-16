@@ -17,7 +17,7 @@ interface BulletedInfoItemProps {
 
 const BulletedInfoItem = ({ bulletPointColor, textColor, children }: BulletedInfoItemProps) => (
   <BulletedInfoItemStyled>
-    <BulletPoint textColor={bulletPointColor} />
+    <BulletPoint color={bulletPointColor} />
     <SmallParagraph textColor={textColor}>
       {children}
     </SmallParagraph>

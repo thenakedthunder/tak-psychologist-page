@@ -10,7 +10,7 @@ const DropdownIndicator = (props: DropdownIndicatorProps<
   ServiceOption, false, GroupBase<ServiceOption>
 >) => (
   <components.DropdownIndicator {...props}>
-    <IoChevronDownCircleOutline textColor={Green050} size={26} />
+    <IoChevronDownCircleOutline color={Green050} size={26} />
   </components.DropdownIndicator>
 );
 

@@ -36,7 +36,7 @@ const QuoteAuthor = styled(DefaultParagraph)`
 `;
 
 const Hero = () => (
-  <BackgroundWrapper textColor={Green100}>
+  <BackgroundWrapper bgColor={Green100}>
     <HeroContainer>
       <QuoteText textColor={Green010}>
         A lélek éppúgy lehet beteg, mint a test.
