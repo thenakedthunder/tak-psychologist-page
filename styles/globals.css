@@ -30,3 +30,7 @@ a {
 .bold {
   font-weight: 700 !important;
 }
+
+input:focus-visible, textarea, select:focus-visible {
+  outline: none;
+}

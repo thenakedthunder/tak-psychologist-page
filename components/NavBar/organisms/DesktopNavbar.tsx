@@ -6,6 +6,7 @@ import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
+import PsychoLink from 'components/atoms/PsychoLink';
 
 const ContainerDiv = styled.div`
   padding: 40px;
@@ -43,12 +44,13 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => (
       <LogoAndNameDesktop />
       <DesktopMenu />
       <ContactButtonDiv>
-        <PrimaryCTAButton
-          text="Kapcsolat"
-          color={Black050}
-          backgroundColor={getColorWithOpacity(Grey100, '20')}
-          linkHref="/elerhetosegek"
-        />
+        <PsychoLink href="/elerhetosegek">
+          <PrimaryCTAButton
+            text="Kapcsolat"
+            color={Black050}
+            backgroundColor={getColorWithOpacity(Grey100, '20')}
+          />
+        </PsychoLink>
       </ContactButtonDiv>
     </ContainerDiv>
   </BackgroundWrapper>

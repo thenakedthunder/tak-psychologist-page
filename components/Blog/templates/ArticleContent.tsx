@@ -60,7 +60,7 @@ const ArticleContent = ({ blocks }: Props) => (
         case 'quote':
           return <Quote key={index} content={block.content as string} />;
         default:
-          throw new Error('could not recopgnize the input content type');
+          throw new Error('could not recognize the input content type');
       }
     })}
   </Container>

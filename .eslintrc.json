@@ -43,7 +43,9 @@
         "react/jsx-props-no-spreading": "off",
         "jsx-wrap-multilines": "off",
         "react/no-array-index-key" : "off",
-        "react/require-default-props" : "off"
+        "react/require-default-props" : "off",
+        "implicit-arrow-linebreak": "off",
+        "allowImportingTsExtensions": "true"
     },
     "settings": {
         "import/resolver": {

@@ -13,26 +13,30 @@ import {
   LowerContainer,
   MobileCTAContainer,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
+import PsychoLink from 'components/atoms/PsychoLink';
 
 const WhatICanHelpYouWith = () => (
-  <BackgroundWrapper color={Blue010}>
-    <Container>
-      <Top />
-      <LowerContainer>
-        {items.map(
-          (item, index) => <Unit item={item} key={index} />,
-        )}
-      </LowerContainer>
-      <MobileCTAContainer>
-        <PrimaryCTAButton
-          text="Árlista megtekintése"
-          color={Grey010}
-          backgroundColor={Green050}
-          linkHref=""
-        />
-      </MobileCTAContainer>
-    </Container>
-  </BackgroundWrapper>
+  <>
+    <BackgroundWrapper color={Blue010}>
+      <Container>
+        <Top />
+        <LowerContainer>
+          {items.map(
+            (item, index) => <Unit item={item} key={index} />,
+          )}
+        </LowerContainer>
+        <MobileCTAContainer>
+          <PsychoLink href="google.com">
+            <PrimaryCTAButton
+              text="Árlista megtekintése"
+              color={Grey010}
+              backgroundColor={Green050}
+            />
+          </PsychoLink>
+        </MobileCTAContainer>
+      </Container>
+    </BackgroundWrapper>
+  </>
 );
 
 export default WhatICanHelpYouWith;

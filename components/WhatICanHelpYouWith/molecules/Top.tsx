@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { H2 } from 'components/atoms/typography.styles';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import { Green050, Green100, Grey010 } from 'components/styling/colors';
+import PsychoLink from 'components/atoms/PsychoLink';
 
 const TopContainer = styled.div`  
   @media screen and (min-width: 768px) {
@@ -24,12 +25,13 @@ const Top = () => (
   <TopContainer>
     <H2 color={Green100}>Amiben segíteni tudok</H2>
     <DesktopCTAContainer>
-      <PrimaryCTAButton
-        text="Árlista megtekintése"
-        color={Grey010}
-        backgroundColor={Green050}
-        linkHref=""
-      />
+      <PsychoLink href="">
+        <PrimaryCTAButton
+          text="Árlista megtekintése"
+          color={Grey010}
+          backgroundColor={Green050}
+        />
+      </PsychoLink>
     </DesktopCTAContainer>
   </TopContainer>
 );

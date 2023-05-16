@@ -45,12 +45,13 @@ const MobileMenu = ({ backgroundColor }: NavBarProps) => (
       </MobileMenuItem>
     ))}
     <ContactButtonDiv>
-      <PrimaryCTAButton
-        text="Kapcsolat"
-        color={Grey010}
-        backgroundColor={Green050}
-        linkHref="/elerhetosegek"
-      />
+      <PsychoLink href="/elerhetosegek">
+        <PrimaryCTAButton
+          text="Kapcsolat"
+          color={Grey010}
+          backgroundColor={Green050}
+        />
+      </PsychoLink>
     </ContactButtonDiv>
   </MobileMenuContainer>
 );
