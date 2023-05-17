@@ -12,8 +12,8 @@ interface SelectProps {
 
 const ServiceSelector = ({ id, name, placeholder }: SelectProps) => (
   <Select
+    instanceId={id}
     name={name}
-    id={id}
     options={serviceOptions}
     placeholder={placeholder}
     components={{ DropdownIndicator }}
