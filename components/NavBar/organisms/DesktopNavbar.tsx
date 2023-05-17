@@ -21,6 +21,13 @@ const ContainerDiv = styled.div`
   }
 `;
 
+const LogoAndNameDesktopWrapper = styled.div`
+  display: grid;
+  align-items: center;
+  position: relative;
+  top: 1px;
+`;
+
 const ContactButtonDiv = styled.div`
   width: 150px;
 `;
@@ -42,25 +49,21 @@ const getColorWithOpacity = (color: string, opacity: string) => {
 const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
   const [chevronPosition, changeChevronPosition] = useState(1);
 
-  const notAMenuItemClickedHandler = (
-    event: React.MouseEvent<HTMLHeadingElement>
-  ) => {
-    event.stopPropagation();
-
-    changeChevronPosition(-1);
+  const setChevronToPosition = (newPosition: number) => {
+    changeChevronPosition(newPosition);
   };
   
   return (
     <BackgroundWrapper color={backgroundColor}>
       <ContainerDiv>
-        <div onClick={notAMenuItemClickedHandler}>
+        <LogoAndNameDesktopWrapper onClick={e => setChevronToPosition(1)}>
           <LogoAndNameDesktop />
-        </div>
+        </LogoAndNameDesktopWrapper>
         <DesktopMenu
           chevronIndex={chevronPosition!!} 
           changeChevronIndex={changeChevronPosition}
         />
-        <ContactButtonDiv onClick={notAMenuItemClickedHandler}>
+        <ContactButtonDiv onClick={e => setChevronToPosition(-1)}>
           <PsychoLink href="/elerhetosegek">
             <PrimaryCTAButton
               text="Kapcsolat"
