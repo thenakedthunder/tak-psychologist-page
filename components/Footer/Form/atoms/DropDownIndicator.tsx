@@ -8,10 +8,14 @@ import { Green050 } from 'components/styling/colors';
 
 const DropdownIndicator = (props: DropdownIndicatorProps<
   ServiceOption, false, GroupBase<ServiceOption>
->) => (
-  <components.DropdownIndicator {...props}>
-    <IoChevronDownCircleOutline color={Green050} size={26} />
-  </components.DropdownIndicator>
-);
+>) => {
+  const Indicator = components.DropdownIndicator;
+
+  return (
+    <Indicator {...props}>
+      <IoChevronDownCircleOutline color={Green050} size={26} />
+    </Indicator>
+  );
+};
 
 export default DropdownIndicator;

@@ -20,6 +20,7 @@ import TextInput from 'components/Footer/Form/molecules/TextInput';
 import MessageInput from 'components/Footer/Form/molecules/MessageInput';
 import ErrorMessage from 'components/Footer/Form/atoms/ErrorMessage';
 import labelTexts from 'components/Footer/Form/content/labelTexts';
+import ServiceSelector from './molecules/ServiceSelector';
 
 interface FormStateType {
   hasErrors: boolean;
@@ -168,11 +169,11 @@ const Form = () => {
           onChanged={(input) => updateData('email', input)}
         />
         <input type="text" id="phone" name="phone" placeholder={labelTexts.phoneNumber.placeholder} />
-        {/* <ServiceSelector
+        <ServiceSelector
           name="service"
           id="service"
           placeholder={labelTexts.serviceSelection.placeholder}
-        /> */}
+        />
         <MessageInput
           className={formState.errors.message ? 'has-error' : ''}
           placeholder={labelTexts.message.placeholder}
