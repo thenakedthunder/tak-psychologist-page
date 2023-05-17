@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { Grey010 } from 'components/styling/colors';
-import NavBar from 'components/NavBar/organisms/NavBar';
 import ReservationInfo from 'components/Contact/organisms/ReservationInfo';
 import HeaderWithSocialLinks from 'components/molecules/HeaderWithSocialLinks';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
@@ -31,7 +30,6 @@ padding-top: 30px;
 
 const Contact = () => (
   <>
-    <NavBar backgroundColor={Grey010} />
     <BackgroundWrapper color={Grey010}>
       <ContactMainContainer>
         <HeaderWithSocialLinks title="Elérhetőségek" breakPoint={768} />

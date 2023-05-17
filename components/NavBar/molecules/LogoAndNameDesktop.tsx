@@ -9,10 +9,11 @@ const LogoAndNameDesktopContainer = styled.div`
     display: grid;
     grid-template-columns: 36px auto;
     cursor: pointer;
+    padding-top: 14px;
 `;
 
 const LogoDiv = styled.div`
-    padding: 16px 8px 0 0;
+    padding-right: 8px;
 `;
 
 const NameParagraph = styled(DefaultParagraph)`

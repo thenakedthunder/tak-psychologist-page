@@ -7,8 +7,6 @@ import { Green050 } from 'components/styling/colors';
 import PsychoLink from 'components/atoms/PsychoLink';
 import { menuItemsDesktop } from 'components/NavBar/content/menuItems';
 
-const chevronIndex = 1;
-
 const DesktopMenuContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, auto);
@@ -29,10 +27,15 @@ const ChevronContainer = styled.span`
   cursor: pointer;
 `;
 
-const DesktopMenu = () => (
+interface DesktopMenuProps {
+  chevronIndex: number;
+  changeChevronIndex: (newIndex: number) => void;
+}
+
+const DesktopMenu = ({ chevronIndex, changeChevronIndex }: DesktopMenuProps) => (
   <DesktopMenuContainer>
     {menuItemsDesktop.map((item, index) => (
-      <DesktopMenuItem key={index} color={Green050}>
+      <DesktopMenuItem key={index} color={Green050} onClick={e => changeChevronIndex(index)}>
         <PsychoLink href={item.linkHref}>
           {item.linkText}
         </PsychoLink>

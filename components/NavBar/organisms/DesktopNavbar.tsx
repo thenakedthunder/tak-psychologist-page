@@ -7,6 +7,7 @@ import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 import PsychoLink from 'components/atoms/PsychoLink';
+import { useState } from 'react';
 
 const ContainerDiv = styled.div`
   padding: 40px;
@@ -38,22 +39,39 @@ const getColorWithOpacity = (color: string, opacity: string) => {
   return color + opacity;
 };
 
-const DesktopNavbar = ({ backgroundColor }: NavBarProps) => (
-  <BackgroundWrapper color={backgroundColor}>
-    <ContainerDiv>
-      <LogoAndNameDesktop />
-      <DesktopMenu />
-      <ContactButtonDiv>
-        <PsychoLink href="/elerhetosegek">
-          <PrimaryCTAButton
-            text="Kapcsolat"
-            color={Black050}
-            backgroundColor={getColorWithOpacity(Grey100, '20')}
-          />
-        </PsychoLink>
-      </ContactButtonDiv>
-    </ContainerDiv>
-  </BackgroundWrapper>
-);
+const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
+  const [chevronPosition, changeChevronPosition] = useState(1);
+
+  const notAMenuItemClickedHandler = (
+    event: React.MouseEvent<HTMLHeadingElement>
+  ) => {
+    event.stopPropagation();
+
+    changeChevronPosition(-1);
+  };
+  
+  return (
+    <BackgroundWrapper color={backgroundColor}>
+      <ContainerDiv>
+        <div onClick={notAMenuItemClickedHandler}>
+          <LogoAndNameDesktop />
+        </div>
+        <DesktopMenu
+          chevronIndex={chevronPosition!!} 
+          changeChevronIndex={changeChevronPosition}
+        />
+        <ContactButtonDiv onClick={notAMenuItemClickedHandler}>
+          <PsychoLink href="/elerhetosegek">
+            <PrimaryCTAButton
+              text="Kapcsolat"
+              color={Black050}
+              backgroundColor={getColorWithOpacity(Grey100, '20')}
+            />
+          </PsychoLink>
+        </ContactButtonDiv>
+      </ContainerDiv>
+    </BackgroundWrapper>
+  );
+};
 
 export default DesktopNavbar;
