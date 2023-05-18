@@ -6,7 +6,7 @@ import LeftInformationDiv from 'components/Footer/organisms/LeftInformationDiv';
 import footerContent from 'components/Footer/content/footerContents';
 
 const Footer = () => (
-  <BackgroundWrapper bgColor={Green010}>
+  <BackgroundWrapper backgroundColor={Green010}>
     <WrapperForCollageBackground>
       <FooterContainer>
         <FooterHeader textColor={Green100}>{footerContent.header}</FooterHeader>

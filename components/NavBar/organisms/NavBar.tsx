@@ -18,9 +18,17 @@ const NavBar = ({ backgroundColor }: NavBarProps) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== undefined) {
+    const handleResize = () => {
       setIsMobile(window.innerWidth < 1200);
+    };
+
+    if (typeof window !== undefined) {
+      window.addEventListener('resize', handleResize);
     }
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (

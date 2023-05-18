@@ -16,7 +16,7 @@ import {
 import PsychoLink from 'components/atoms/PsychoLink';
 
 const WhatICanHelpYouWith = () => (
-  <BackgroundWrapper bgColor={Blue010}>
+  <BackgroundWrapper backgroundColor={Blue010}>
     <Container>
       <Top />
       <LowerContainer>
