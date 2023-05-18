@@ -23,6 +23,7 @@ const NavBar = ({ backgroundColor }: NavBarProps) => {
     };
 
     if (typeof window !== undefined) {
+      handleResize();
       window.addEventListener('resize', handleResize);
     }
 
