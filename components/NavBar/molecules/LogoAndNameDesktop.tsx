@@ -4,34 +4,35 @@ import { IoIosRose } from 'react-icons/io';
 
 import { Blue100, Green050 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
+import PsychoLink from 'components/atoms/PsychoLink';
 
 const LogoAndNameDesktopContainer = styled.div`
-    display: grid;
-    grid-template-columns: 36px auto;
-    cursor: pointer;
+  display: grid;
+  grid-template-columns: 36px auto;
 `;
 
 const LogoDiv = styled.div`
-    padding: 16px 8px 0 0;
+  padding-right: 8px;
 `;
 
 const NameParagraph = styled(DefaultParagraph)`
-    font-size: 20px;
-    align-self: center;
+  font-size: 20px;
 `;
 
 const BoldSpan = styled.span`
-    font-weight: 700;
+  font-weight: 700;
 `;
 
 const LogoAndNameDesktop = () => (
-  <LogoAndNameDesktopContainer>
-    <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
-    <NameParagraph textColor={Green050}>
-      <BoldSpan>Hont-Gáspár Anita - </BoldSpan>
-      Pszichológus
-    </NameParagraph>
-  </LogoAndNameDesktopContainer>
+  <PsychoLink href="/">
+    <LogoAndNameDesktopContainer>
+      <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
+      <NameParagraph textColor={Green050}>
+        <BoldSpan>Hont-Gáspár Anita - </BoldSpan>
+        Pszichológus
+      </NameParagraph>
+    </LogoAndNameDesktopContainer>
+  </PsychoLink>
 );
 
 export default LogoAndNameDesktop;

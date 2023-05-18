@@ -19,7 +19,6 @@ import {
 
 const Blog = () => (
   <>
-    <NavBar backgroundColor={Green010} />
     <TopSection heroImage={content.heroImage} />
     <BackgroundWrapper>
       <Container>

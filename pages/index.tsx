@@ -1,7 +1,5 @@
 import WhatICanHelpYouWith from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith';
-import NavBar from 'components/NavBar/organisms/NavBar';
 import Hero from 'components/organisms/Hero';
-import { Grey010 } from 'components/styling/colors';
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
 
@@ -15,7 +13,6 @@ export default function Home() {
       </Head>
 
       <main>
-        <NavBar backgroundColor={Grey010} />
         <Hero />
         <WhatICanHelpYouWith />
       </main>
