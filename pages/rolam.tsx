@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { mission, publicationsAndMemberships } from 'components/AboutMe/content/aboutMeContent';
-import NavBar from 'components/NavBar/organisms/NavBar';
 import Prose from 'components/AboutMe/organisms/Prose';
 import List from 'components/AboutMe/organisms/List';
 import TopGrid from 'components/AboutMe/organisms/TopGrid';
@@ -37,7 +36,6 @@ const PaddingWrapper = styled.div`
 export default function AboutMe() {
   return (
     <>
-      <NavBar backgroundColor={Grey010} />
       <BackgroundWrapper>
         <AboutMeMainContainer>
           <TopGrid />

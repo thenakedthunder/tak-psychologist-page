@@ -7,6 +7,7 @@ import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 import PsychoLink from 'components/atoms/PsychoLink';
+import { useState } from 'react';
 
 const ContainerDiv = styled.div`
   padding: 40px;
@@ -18,6 +19,13 @@ const ContainerDiv = styled.div`
     padding: 40px 130px;
     margin: 0 auto;
   }
+`;
+
+const LogoAndNameDesktopWrapper = styled.div`
+  display: grid;
+  align-items: center;
+  position: relative;
+  top: 1px;
 `;
 
 const ContactButtonDiv = styled.div`
@@ -38,22 +46,35 @@ const getColorWithOpacity = (color: string, opacity: string) => {
   return color + opacity;
 };
 
-const DesktopNavbar = ({ backgroundColor }: NavBarProps) => (
-  <BackgroundWrapper color={backgroundColor}>
-    <ContainerDiv>
-      <LogoAndNameDesktop />
-      <DesktopMenu />
-      <ContactButtonDiv>
-        <PsychoLink href="/elerhetosegek">
-          <PrimaryCTAButton
-            text="Kapcsolat"
-            color={Black050}
-            backgroundColor={getColorWithOpacity(Grey100, '20')}
-          />
-        </PsychoLink>
-      </ContactButtonDiv>
-    </ContainerDiv>
-  </BackgroundWrapper>
-);
+const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
+  const [chevronPosition, changeChevronPosition] = useState(1);
+
+  const setChevronToPosition = (newPosition: number) => {
+    changeChevronPosition(newPosition);
+  };
+  
+  return (
+    <BackgroundWrapper color={backgroundColor}>
+      <ContainerDiv>
+        <LogoAndNameDesktopWrapper onClick={e => setChevronToPosition(1)}>
+          <LogoAndNameDesktop />
+        </LogoAndNameDesktopWrapper>
+        <DesktopMenu
+          chevronIndex={chevronPosition!!} 
+          changeChevronIndex={changeChevronPosition}
+        />
+        <ContactButtonDiv onClick={e => setChevronToPosition(-1)}>
+          <PsychoLink href="/elerhetosegek">
+            <PrimaryCTAButton
+              text="Kapcsolat"
+              color={Black050}
+              backgroundColor={getColorWithOpacity(Grey100, '20')}
+            />
+          </PsychoLink>
+        </ContactButtonDiv>
+      </ContainerDiv>
+    </BackgroundWrapper>
+  );
+};
 
 export default DesktopNavbar;

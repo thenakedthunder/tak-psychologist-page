@@ -18,7 +18,7 @@ const NavbarContainer = styled.div`
 `;
 
 export interface NavBarProps {
-  backgroundColor?: string;
+  backgroundColor: string;
 }
 
 const NavBar = ({ backgroundColor }: NavBarProps) => (
