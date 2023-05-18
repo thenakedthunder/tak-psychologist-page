@@ -1,3 +1,3 @@
-const Prices = () => "TO DO";
+const Prices = () => 'TO DO';
 
 export default Prices;
