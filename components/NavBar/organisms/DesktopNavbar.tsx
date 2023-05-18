@@ -52,22 +52,22 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
   const setChevronToPosition = (newPosition: number) => {
     changeChevronPosition(newPosition);
   };
-  
+
   return (
     <BackgroundWrapper color={backgroundColor}>
       <ContainerDiv>
-        <LogoAndNameDesktopWrapper onClick={e => setChevronToPosition(1)}>
+        <LogoAndNameDesktopWrapper onClick={(e) => setChevronToPosition(1)}>
           <LogoAndNameDesktop />
         </LogoAndNameDesktopWrapper>
         <DesktopMenu
-          chevronIndex={chevronPosition!!} 
+          chevronIndex={chevronPosition}
           changeChevronIndex={changeChevronPosition}
         />
-        <ContactButtonDiv onClick={e => setChevronToPosition(-1)}>
+        <ContactButtonDiv onClick={(e) => setChevronToPosition(-1)}>
           <PsychoLink href="/elerhetosegek">
             <PrimaryCTAButton
               text="Kapcsolat"
-              color={Black050}
+              textColor={Black050}
               backgroundColor={getColorWithOpacity(Grey100, '20')}
             />
           </PsychoLink>

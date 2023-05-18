@@ -23,12 +23,12 @@ const DesktopCTAContainer = styled.div`
 
 const Top = () => (
   <TopContainer>
-    <H2 color={Green100}>Amiben segíteni tudok</H2>
+    <H2 textColor={Green100}>Amiben segíteni tudok</H2>
     <DesktopCTAContainer>
       <PsychoLink href="">
         <PrimaryCTAButton
           text="Árlista megtekintése"
-          color={Grey010}
+          textColor={Grey010}
           backgroundColor={Green050}
         />
       </PsychoLink>

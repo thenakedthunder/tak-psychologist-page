@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 import { ArticleProps } from 'components/Blog/organisms/OtherArticles';
 import ArticleData from 'components/Blog/molecules/ArticleData';
@@ -23,7 +23,7 @@ interface Props {
 const ListedArticle = ({ item }: Props) => (
   <ArticleContainer>
     <div>
-      <Image src={item.image} width={295} height={165} />
+      <Image src={item.image} width={295} height={165} alt={item.shortDescription} />
     </div>
     <ArticleData data={item} />
   </ArticleContainer>

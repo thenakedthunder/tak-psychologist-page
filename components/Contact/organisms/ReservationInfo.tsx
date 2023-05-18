@@ -6,12 +6,12 @@ import BulletedInfo from 'components/Contact/molecules/BulletedInfo';
 
 const ReservationInfo = () => (
   <div>
-    <SubHeader color={Green050}>
+    <SubHeader textColor={Green050}>
       Bejelentkezési információk
     </SubHeader>
     {
       reservationInfoContent.highlightedParagraphs.map((item, index) => (
-        <DefaultParagraph key={index} color={Green050}>
+        <DefaultParagraph key={index} textColor={Green050}>
           {item}
         </DefaultParagraph>
       ))

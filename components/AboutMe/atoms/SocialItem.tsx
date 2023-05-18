@@ -29,7 +29,7 @@ const SocialItem = ({ linkText }: SocialItemProps) => (
     <IconContainer>
       <TfiPlus size={12} color={Green050} />
     </IconContainer>
-    <SmallParagraph color={Green050}>
+    <SmallParagraph textColor={Green050}>
       {linkText}
     </SmallParagraph>
   </ItemContainer>

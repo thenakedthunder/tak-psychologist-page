@@ -38,7 +38,7 @@ const ContactButtonDiv = styled.div`
 const MobileMenu = ({ backgroundColor }: NavBarProps) => (
   <MobileMenuContainer backgroundColor={backgroundColor}>
     {menuItemsMobile.map((item, index) => (
-      <MobileMenuItem key={index} color={Green050}>
+      <MobileMenuItem key={index} textColor={Green050}>
         <PsychoLink href={item.linkHref}>
           {item.linkText}
         </PsychoLink>
@@ -48,7 +48,7 @@ const MobileMenu = ({ backgroundColor }: NavBarProps) => (
       <PsychoLink href="/elerhetosegek">
         <PrimaryCTAButton
           text="Kapcsolat"
-          color={Grey010}
+          textColor={Grey010}
           backgroundColor={Green050}
         />
       </PsychoLink>

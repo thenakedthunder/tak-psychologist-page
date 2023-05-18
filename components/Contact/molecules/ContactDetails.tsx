@@ -13,13 +13,13 @@ const Container = styled.div`
 
 const ContactDetails = () => (
   <Container>
-    <BoldSmallParagraph color={Green050}>Elérhetőség</BoldSmallParagraph>
-    <SmallParagraph color={Green050}>
+    <BoldSmallParagraph textColor={Green050}>Elérhetőség</BoldSmallParagraph>
+    <SmallParagraph textColor={Green050}>
       <PsychoLink href="mailto:Rendelo@mail.hu">
         {footerInfoContent.email}
       </PsychoLink>
     </SmallParagraph>
-    <SmallParagraph color={Green050}>
+    <SmallParagraph textColor={Green050}>
       {footerInfoContent.phone}
     </SmallParagraph>
   </Container>

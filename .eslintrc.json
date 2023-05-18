@@ -44,8 +44,7 @@
         "jsx-wrap-multilines": "off",
         "react/no-array-index-key" : "off",
         "react/require-default-props" : "off",
-        "implicit-arrow-linebreak": "off",
-        "allowImportingTsExtensions": "true"
+        "implicit-arrow-linebreak": "off"
     },
     "settings": {
         "import/resolver": {

@@ -29,17 +29,15 @@ padding-top: 30px;
 `;
 
 const Contact = () => (
-  <>
-    <BackgroundWrapper color={Grey010}>
-      <ContactMainContainer>
-        <HeaderWithSocialLinks title="Elérhetőségek" breakPoint={768} />
-        <ContentContainer>
-          <ReservationInfo />
-          <RightSide />
-        </ContentContainer>
-      </ContactMainContainer>
-    </BackgroundWrapper>
-  </>
+  <BackgroundWrapper backgroundColor={Grey010}>
+    <ContactMainContainer>
+      <HeaderWithSocialLinks title="Elérhetőségek" breakPoint={768} />
+      <ContentContainer>
+        <ReservationInfo />
+        <RightSide />
+      </ContentContainer>
+    </ContactMainContainer>
+  </BackgroundWrapper>
 );
 
 export default Contact;

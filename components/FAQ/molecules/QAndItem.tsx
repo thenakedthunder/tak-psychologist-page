@@ -26,7 +26,7 @@ const QAndAItem = ({ item, isLastItem }: Props) => {
   return (
     <div>
       <QuestionHeader>
-        <LargeParagraph color={Green100}>{item.question}</LargeParagraph>
+        <LargeParagraph textColor={Green100}>{item.question}</LargeParagraph>
         <OpenToggle
           onClick={toggleIsOpen}
           onKeyPress={toggleIsOpen}
@@ -44,7 +44,7 @@ const QAndAItem = ({ item, isLastItem }: Props) => {
         duration={500}
         height={height}
       >
-        <DefaultParagraphWithTopPadding color={Green050}>
+        <DefaultParagraphWithTopPadding textColor={Green050}>
           {item.answer}
         </DefaultParagraphWithTopPadding>
       </AnimateHeight>

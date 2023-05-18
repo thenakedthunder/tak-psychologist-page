@@ -35,18 +35,16 @@ const PaddingWrapper = styled.div`
 
 export default function AboutMe() {
   return (
-    <>
-      <BackgroundWrapper>
-        <AboutMeMainContainer>
-          <TopGrid />
-          <PaddingWrapper>
-            <Prose content={mission} />
-          </PaddingWrapper>
-          <PaddingWrapper>
-            <List content={publicationsAndMemberships} />
-          </PaddingWrapper>
-        </AboutMeMainContainer>
-      </BackgroundWrapper>
-    </>
+    <BackgroundWrapper>
+      <AboutMeMainContainer>
+        <TopGrid />
+        <PaddingWrapper>
+          <Prose content={mission} />
+        </PaddingWrapper>
+        <PaddingWrapper>
+          <List content={publicationsAndMemberships} />
+        </PaddingWrapper>
+      </AboutMeMainContainer>
+    </BackgroundWrapper>
   );
 }

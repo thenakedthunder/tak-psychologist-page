@@ -24,10 +24,10 @@ const BoldSpan = styled.span`
 `;
 
 const LogoAndNameDesktop = () => (
-  <PsychoLink href='/'>
+  <PsychoLink href="/">
     <LogoAndNameDesktopContainer>
       <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
-      <NameParagraph color={Green050}>
+      <NameParagraph textColor={Green050}>
         <BoldSpan>Hont-Gáspár Anita - </BoldSpan>
         Pszichológus
       </NameParagraph>

@@ -30,8 +30,8 @@ interface Props {
 
 const ArticleData = ({ data }: Props) => (
   <Container>
-    <ArticleTitle color={Green050}>{data.title}</ArticleTitle>
-    <ArticleDescription color={Green050}>
+    <ArticleTitle textColor={Green050}>{data.title}</ArticleTitle>
+    <ArticleDescription textColor={Green050}>
       {data.shortDescription}
     </ArticleDescription>
     <ReadOnLink />

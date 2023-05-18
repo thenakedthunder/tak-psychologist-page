@@ -28,15 +28,17 @@ interface ListProps {
 
 const List = ({ content }: ListProps) => (
   <>
-    <H3 color={Green050}>{content.header}</H3>
+    <H3 textColor={Green050}>{content.header}</H3>
     <ListItemsContainer>
       {content.items.map((item, index) => (
         <div key={index}>
-          <SmallParagraph color={Green100}>{item.date}</SmallParagraph>
-          <Title color={Green100}>{item.title}</Title>
+          <SmallParagraph textColor={Green100}>{item.date}</SmallParagraph>
+          <Title textColor={Green100}>{item.title}</Title>
           <ListMoreDetails>
             {item.otherDetails?.map((detailItem, detailIndex) => (
-              <DefaultParagraph color={Green100} key={detailIndex}>{detailItem}</DefaultParagraph>
+              <DefaultParagraph textColor={Green100} key={detailIndex}>
+                {detailItem}
+              </DefaultParagraph>
             ))}
           </ListMoreDetails>
         </div>

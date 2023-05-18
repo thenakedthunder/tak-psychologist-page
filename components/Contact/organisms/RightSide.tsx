@@ -5,7 +5,7 @@ import { Green050 } from 'components/styling/colors';
 
 const RightSide = () => (
   <div>
-    <SubHeader color={Green050}>
+    <SubHeader textColor={Green050}>
       A konzultációk helyszíne
     </SubHeader>
     <ImageSlider />

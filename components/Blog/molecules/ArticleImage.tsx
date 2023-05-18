@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/legacy/image';
 import styled from 'styled-components';
 
 import { SmallParagraph } from 'components/atoms/typography.styles';
@@ -25,8 +25,8 @@ interface Props {
 
 const ArticleImage = ({ imageSource, caption }: Props) => (
   <Container>
-    <Image src={imageSource} />
-    <Caption color={Green050} dangerouslySetInnerHTML={{ __html: caption }} />
+    <Image src={imageSource} alt={caption} />
+    <Caption textColor={Green050} dangerouslySetInnerHTML={{ __html: caption }} />
   </Container>
 );
 

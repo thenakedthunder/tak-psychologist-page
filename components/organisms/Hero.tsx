@@ -36,9 +36,9 @@ const QuoteAuthor = styled(DefaultParagraph)`
 `;
 
 const Hero = () => (
-  <BackgroundWrapper color={Green100}>
+  <BackgroundWrapper backgroundColor={Green100}>
     <HeroContainer>
-      <QuoteText color={Green010}>
+      <QuoteText textColor={Green010}>
         A lélek éppúgy lehet beteg, mint a test.
         <span className="highlighted">
           {' '}
@@ -48,7 +48,7 @@ const Hero = () => (
         mint a test; a test nem támogatja a lelket, mint ahogy a lélek
         támogatja a testet.
       </QuoteText>
-      <QuoteAuthor color={Grey100}>
+      <QuoteAuthor textColor={Grey100}>
         — Honoré de Balzac
       </QuoteAuthor>
     </HeroContainer>

@@ -16,27 +16,25 @@ import {
 import PsychoLink from 'components/atoms/PsychoLink';
 
 const WhatICanHelpYouWith = () => (
-  <>
-    <BackgroundWrapper color={Blue010}>
-      <Container>
-        <Top />
-        <LowerContainer>
-          {items.map(
-            (item, index) => <Unit item={item} key={index} />,
-          )}
-        </LowerContainer>
-        <MobileCTAContainer>
-          <PsychoLink href="google.com">
-            <PrimaryCTAButton
-              text="Árlista megtekintése"
-              color={Grey010}
-              backgroundColor={Green050}
-            />
-          </PsychoLink>
-        </MobileCTAContainer>
-      </Container>
-    </BackgroundWrapper>
-  </>
+  <BackgroundWrapper backgroundColor={Blue010}>
+    <Container>
+      <Top />
+      <LowerContainer>
+        {items.map(
+          (item, index) => <Unit item={item} key={index} />,
+        )}
+      </LowerContainer>
+      <MobileCTAContainer>
+        <PsychoLink href="google.com">
+          <PrimaryCTAButton
+            text="Árlista megtekintése"
+            textColor={Grey010}
+            backgroundColor={Green050}
+          />
+        </PsychoLink>
+      </MobileCTAContainer>
+    </Container>
+  </BackgroundWrapper>
 );
 
 export default WhatICanHelpYouWith;

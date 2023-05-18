@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 import AvatarImage from 'public/assets/signature-profile.png';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
@@ -26,9 +26,9 @@ interface Props {
 const SignatureWithProfile = ({ name, title }: Props) => (
   <SignatureContainer>
     <ProfilePictureContainer>
-      <Image src={AvatarImage} />
+      <Image src={AvatarImage} alt="avatar" />
     </ProfilePictureContainer>
-    <DefaultParagraph color={Green100}>
+    <DefaultParagraph textColor={Green100}>
       {name}
       <br />
       {title}

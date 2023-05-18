@@ -59,7 +59,7 @@ const MessageInput = ({
           maxLength={300}
         />
         <Counter
-          color={
+          textColor={
             (error || messageCharacterCount === maxMessageCharacterCount) ? ErrorRed : Green050
           }
         >

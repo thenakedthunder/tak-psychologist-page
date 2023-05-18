@@ -32,16 +32,14 @@ const Header = styled(H2)`
 
 export default function FAQ() {
   return (
-    <>
-      <BackgroundWrapper color={Green010}>
-        <FAQMainContainer>
-          <Header color={Green100}>
-            Gyakran Ismételt Kérdések
-          </Header>
-          <Collage />
-          <QAndASection />
-        </FAQMainContainer>
-      </BackgroundWrapper>
-    </>
+    <BackgroundWrapper backgroundColor={Green010}>
+      <FAQMainContainer>
+        <Header textColor={Green100}>
+          Gyakran Ismételt Kérdések
+        </Header>
+        <Collage />
+        <QAndASection />
+      </FAQMainContainer>
+    </BackgroundWrapper>
   );
 }

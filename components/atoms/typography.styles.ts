@@ -1,17 +1,14 @@
 import styled from 'styled-components';
-import { Grey010, Grey100 } from 'components/styling/colors';
+import { Grey010 } from 'components/styling/colors';
 
-export const PageTitle = styled.h1`
-        font-family: 'Figtree', sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 64px;
-        line-height: 120%;
-        color: ${Grey100};
-    `;
+// eslint-disable-next-line camelcase
+import { Gentium_Book_Plus, Figtree } from 'next/font/google';
+
+const figtree = Figtree({ subsets: ['latin-ext'], style: ['normal', 'italic'], weight: ['400', '600'] });
+const gentium = Gentium_Book_Plus({ subsets: ['latin-ext'], weight: ['400', '700'], display: 'swap' });
 
 export const H1 = styled.h1`
-    font-family: 'Gentium Book Basic', serif;
+    font-family: ${gentium.style.fontFamily}, serif;
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
@@ -19,53 +16,53 @@ export const H1 = styled.h1`
     color: ${Grey010};
 `;
 
-export const H2 = styled.h2`
-    font-family: 'Gentium Book Basic', serif;
+export const H2 = styled.h2<{textColor: string}>`
+    font-family: ${gentium.style.fontFamily}, serif;
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
     line-height: 120%;
-    color: ${({ color }) => color};
+    color: ${({ textColor }) => textColor};
     margin: 0;
 `;
 
-export const H3 = styled.h3`
-    font-family: 'Figtree', sans-serif;
+export const H3 = styled.h3<{ textColor: string }>`
+    font-family: ${figtree.style.fontFamily}, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
-    color: ${({ color }) => color};
+    color: ${({ textColor }) => textColor};
     margin: 0;
 `;
 
-export const LargeParagraph = styled.p`
-    font-family: 'Gentium Book Basic', serif;
+export const LargeParagraph = styled.p<{ textColor: string }>`
+    font-family: ${gentium.style.fontFamily}, serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
-    color: ${({ color }) => color};
+    color: ${({ textColor }) => textColor};
     margin: 0;
 `;
 
-export const DefaultParagraph = styled.p`
-    font-family: 'Figtree', sans-serif;
+export const DefaultParagraph = styled.p<{ textColor: string }>`
+    font-family: ${figtree.style.fontFamily}, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
     margin: 0;
-    color: ${({ color }) => color};
+    color: ${({ textColor }) => textColor};
 `;
 
-export const SmallParagraph = styled.p`
-    font-family: 'Figtree', sans-serif;
+export const SmallParagraph = styled.p<{ textColor: string }>`
+    font-family: ${figtree.style.fontFamily}, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 140%;
-    color: ${({ color }) => color};
+    color: ${({ textColor }) => textColor};
     margin: 0;
 `;
 

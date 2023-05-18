@@ -32,24 +32,26 @@ interface LeftInformationDivProps {
 const LeftInformationDiv = ({ content }: LeftInformationDivProps) => (
   <LeftInformationContainer>
     {content.texts.map(
-      (item) => {
+      (item, index) => {
         switch (item.type) {
           case 'highlightedText':
             return (
-              <LargeParagraph color={Green100}>{item.texts}</LargeParagraph>
+              <LargeParagraph key={index} textColor={Green100}>{item.texts}</LargeParagraph>
             );
 
           case 'paragraph':
             return (
-              <LeftInfoDefaultParagraph color={Green100}>{item.texts}</LeftInfoDefaultParagraph>
+              <LeftInfoDefaultParagraph key={index} textColor={Green100}>
+                {item.texts}
+              </LeftInfoDefaultParagraph>
             );
 
           case 'bulletPoints':
             return (
-              <BulletPointsContainer>
+              <BulletPointsContainer key={index}>
                 {item.texts.map(
-                  (bulletPoint) => (
-                    <BulletedInfoItem bulletPointColor={Green050} textColor={Green100}>
+                  (bulletPoint, itemIndex) => (
+                    <BulletedInfoItem key={`${index}_${itemIndex}`} bulletPointColor={Green050} textColor={Green100}>
                       {bulletPoint}
                     </BulletedInfoItem>
                   ),

@@ -28,7 +28,7 @@ const LinkContainer = styled.div`
 const ReadOnLink = () => (
   <LinkContainer>
     <PsychoLink href="">
-      <DefaultParagraph color={Green050}>Tovább</DefaultParagraph>
+      <DefaultParagraph textColor={Green050}>Tovább</DefaultParagraph>
     </PsychoLink>
     <IoChevronDownCircleOutline size={28} color={Green050} />
   </LinkContainer>

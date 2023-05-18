@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Slider, { Settings as SlickSettings } from 'react-slick';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 import Loc1Image from '@/public/assets/location-1.png';
 import Loc2Image from '@/public/assets/location-2.png';
@@ -49,10 +49,10 @@ const settings: SlickSettings = {
 
 const ImageSlider = () => (
   <PsychoSlider {...settings}>
-    <ImageWrapper><Image src={Loc1Image} objectFit="contain" /></ImageWrapper>
-    <ImageWrapper><Image src={Loc2Image} objectFit="contain" /></ImageWrapper>
-    <ImageWrapper><Image src={Loc3Image} objectFit="contain" /></ImageWrapper>
-    <ImageWrapper><Image src={Loc4Image} objectFit="contain" /></ImageWrapper>
+    <ImageWrapper><Image src={Loc1Image} objectFit="contain" alt="location-1" /></ImageWrapper>
+    <ImageWrapper><Image src={Loc2Image} objectFit="contain" alt="location-2" /></ImageWrapper>
+    <ImageWrapper><Image src={Loc3Image} objectFit="contain" alt="location-3" /></ImageWrapper>
+    <ImageWrapper><Image src={Loc4Image} objectFit="contain" alt="location-4" /></ImageWrapper>
   </PsychoSlider>
 );
 

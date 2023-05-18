@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 import FaqImage from 'public/assets/gyik.png';
 import {
@@ -13,7 +13,7 @@ const Collage = () => (
     <LargerSquare>
       <SmallerSquare />
       <ImageContainer>
-        <Image src={FaqImage} objectFit="contain" />
+        <Image src={FaqImage} objectFit="contain" alt="faq" />
       </ImageContainer>
     </LargerSquare>
   </CollageContainer>
