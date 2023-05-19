@@ -1,21 +1,22 @@
+import Image from 'next/legacy/image';
+
 import ProfileImage from 'public/assets/rolam.png';
 import {
-  Container,
-  LargeGreenSquare,
-  ProfileImageContainer,
-  ProfileImageSized,
-  SmallGreenSquare,
+  CollageContainer,
+  LargerSquare,
+  SmallerSquare,
+  ImageContainer,
 } from 'components/AboutMe/molecules/PictureOnShapesMobile.styles';
 
 const PictureOnShapesMobile = () => (
-  <Container>
-    <LargeGreenSquare>
-      <ProfileImageContainer>
-        <ProfileImageSized src={ProfileImage} alt="profile" />
-      </ProfileImageContainer>
-    </LargeGreenSquare>
-    <SmallGreenSquare />
-  </Container>
+  <CollageContainer>
+    <LargerSquare>
+      <SmallerSquare />
+      <ImageContainer>
+        <Image src={ProfileImage} objectFit="contain" alt="profile" />
+      </ImageContainer>
+    </LargerSquare>
+  </CollageContainer>
 );
 
 export default PictureOnShapesMobile;
