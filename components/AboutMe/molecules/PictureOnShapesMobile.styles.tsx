@@ -89,25 +89,40 @@ import styled from 'styled-components';
 import { Green010, Green100 } from 'components/styling/colors';
 
 export const CollageContainer = styled.div`
-  margin: 30px 0;
+  margin: 30px -40px 26px 0;
   grid-area: collage;
+  display: grid;
+  justify-items: end;
+
+  @media screen and (min-width: 576px) {
+    margin-bottom: 56px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 30px auto 90px;
+    justify-items: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
 `;
 
 export const LargerSquare = styled.div`
   height: 246px;
   width: 246px;
   background-color: ${Green100};
-  position: relative;
-  right: -89px;
 
-  @media screen and (min-width: 768px) {
-    height: 400px;
-    width: 400px;
+  @media screen and (min-width: 576px) {
+    height: 320px;
+    width: 320px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
     height: 510px;
     width: 510px;
+    position: relative;
+    left: 89px;
   }
 
   @media screen and (min-width: 1400px) {
@@ -122,38 +137,53 @@ export const SmallerSquare = styled.div`
   background-color: ${Green010};
   position: relative;
   top: 124px;
-  right: -98px;
+  left: 98px;
   
-  @media screen and (min-width: 768px) {
-    height: 240px;
-    width: 240px;
-    top: 190px;
+  @media screen and (min-width: 576px) {
+    height: 256px;
+    width: 256px;
+    top: 120px;
+    left: 64px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
+    height: 360px;
+    width: 360px;
+    top: 240px;
+    left: 151px;
+  }
+
+  /* @media screen and (min-width: 768px) {
     height: 305px;
     width: 305px;
     top: 255px;
-  }
+    left: 205px;
+  } */
 `;
 
 export const ImageContainer = styled.div`
   width: 272px;
   height: 160px;
   position: relative;
-  right: 64px;
+  right: 90px;
   bottom: 113px;
 
-  @media screen and (min-width: 768px) {
-    width: 480px;
-    height: 312px;
-    left: 64px;
-    bottom: 196px;
+  @media screen and (min-width: 576px) {
+    width: 400px;
+    right: 218px;
+    bottom: 220px;
   }
 
+  @media screen and (min-width: 768px) {
+    right: 178px;
+    bottom: 220px;
+    width: 500px;
+  }
+  
   @media screen and (min-width: 1200px) {
     left: 80px;
     bottom: 206px;
+    width: 640px;
   }
   
   @media screen and (min-width: 1400px) {
