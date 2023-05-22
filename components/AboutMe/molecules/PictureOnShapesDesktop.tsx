@@ -21,9 +21,9 @@ export const ProfileImageContainer = styled.div`
   position: relative;
   
   @media screen and (min-width: 1200px) {
-    width: 90%; 
-    bottom: 8vh;
-    right: -10%;
+    width: 80%;
+    bottom: 13vh;
+    right: -20%;
   }
   
   @media screen and (min-width: 1400px) {
