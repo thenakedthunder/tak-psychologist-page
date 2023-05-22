@@ -7,7 +7,7 @@ import MobileNavbarRight from 'components/NavBar/molecules/MobileNavbarRight';
 import MobileMenu from 'components/NavBar/organisms/MobileMenu';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 
-const MobileNavbarContainer = styled.div`
+const MobileNavbarContainer = styled.div<NavBarProps & { isMenuOpen: boolean }>`
   box-sizing: border-box;
   height: 84px;
   background-color: ${Grey010};
@@ -15,6 +15,8 @@ const MobileNavbarContainer = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   background-color: ${(props: NavBarProps) => props.backgroundColor ?? Grey010};
+  position: ${({ isMenuOpen }) => (isMenuOpen ? 'fixed' : 'static')};
+  width: 100%;
 `;
 
 const MobileNavBar = ({ backgroundColor }: NavBarProps) => {
@@ -25,7 +27,7 @@ const MobileNavBar = ({ backgroundColor }: NavBarProps) => {
 
   return (
     <>
-      <MobileNavbarContainer backgroundColor={backgroundColor}>
+      <MobileNavbarContainer backgroundColor={backgroundColor} isMenuOpen={isMenuOpen}>
         <LogoAndNameMobile />
         <MobileNavbarRight isMenuOpen={isMenuOpen} toggleIsMenuOpen={toggleIsMenuOpen} />
       </MobileNavbarContainer>
