@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import DividerLine from 'components/atoms/DividerLine';
 import {
   DefaultParagraph,
@@ -13,10 +15,10 @@ import {
   Green050,
   Green100,
 } from 'components/styling/colors';
-import styled from 'styled-components';
+import priceListContent from 'components/Prices/content/priceList';
 
 const PricesContainer = styled.div`
-  padding: 40px;
+  padding: 40px 40px 80px;
 `;
 
 const PriceList = styled.div`
@@ -28,112 +30,47 @@ const PriceAndOrder = styled.div`
   grid-template-columns: auto auto;
   padding-top: 4px;
   justify-content: space-between;
+  align-items: baseline;
 `;
 
 const ServiceUnit = styled.div`
-  padding-bottom: 8px;
+  padding-top: 20px;
 `;
 
 const PricesSubTitle = styled(H3)`
-  padding-bottom: 20px;
+  /* padding-bottom: 8px; */
 `;
+
+const OrderButton = styled(SmallParagraph)`
+  cursor: pointer;
+`;
+
+const purchaseService = () => {
+  console.log('Not Implemented (yet).');
+};
 
 const Prices = () => (
   <BackgroundWrapper backgroundColor={Blue010}>
     <PricesContainer>
       <H2 textColor={Green100}>Árak</H2>
       <PriceList>
-        <PricesSubTitle textColor={Green050}>Rontással kapcsolatos dolgok</PricesSubTitle>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás levétele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás felvitele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás levétele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <DividerLine />
-        <PricesSubTitle textColor={Green050}>Rontással kapcsolatos dolgok</PricesSubTitle>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás levétele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás felvitele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás levétele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <DividerLine />
-        <PricesSubTitle textColor={Green050}>Rontással kapcsolatos dolgok</PricesSubTitle>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás levétele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás felvitele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás levétele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <DividerLine />
-        <PricesSubTitle textColor={Green050}>Rontással kapcsolatos dolgok</PricesSubTitle>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás levétele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás felvitele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
-        <ServiceUnit>
-          <LargeParagraph className="bold" textColor={Green100}>Rontás levétele</LargeParagraph>
-          <PriceAndOrder>
-            <DefaultParagraph textColor={Black050}>16.000.-Ft</DefaultParagraph>
-            <SmallParagraph textColor={Green050}>Megrendelem</SmallParagraph>
-          </PriceAndOrder>
-        </ServiceUnit>
+        {priceListContent.map((priceListItem, priceListIndex) => (
+          <div key={priceListIndex}>
+            <PricesSubTitle textColor={Green050}>{priceListItem.categoryName}</PricesSubTitle>
+            {priceListItem.services.map((serviceItem, serviceItemIndex) => (
+              <ServiceUnit key={serviceItemIndex}>
+                <LargeParagraph className="bold" textColor={Green100}>{serviceItem.name}</LargeParagraph>
+                <PriceAndOrder>
+                  <DefaultParagraph textColor={Black050}>{serviceItem.price}</DefaultParagraph>
+                  <OrderButton textColor={Green050} onClick={purchaseService}>
+                    Megrendelem
+                  </OrderButton>
+                </PriceAndOrder>
+              </ServiceUnit>
+            ))}
+            { priceListIndex !== priceListContent.length - 1 && <DividerLine /> }
+          </div>
+        ))}
       </PriceList>
     </PricesContainer>
   </BackgroundWrapper>
