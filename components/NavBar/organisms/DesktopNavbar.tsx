@@ -54,7 +54,7 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
   };
 
   return (
-    <BackgroundWrapper color={backgroundColor}>
+    <BackgroundWrapper backgroundColor={backgroundColor}>
       <ContainerDiv>
         <LogoAndNameDesktopWrapper onClick={(e) => setChevronToPosition(1)}>
           <LogoAndNameDesktop />

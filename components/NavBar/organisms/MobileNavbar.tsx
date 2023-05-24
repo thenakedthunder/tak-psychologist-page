@@ -10,7 +10,6 @@ import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 const MobileNavbarContainer = styled.div<NavBarProps & { isMenuOpen: boolean }>`
   box-sizing: border-box;
   height: 84px;
-  background-color: ${Grey010};
   padding: 20px;
   display: grid;
   grid-template-columns: auto 1fr;
