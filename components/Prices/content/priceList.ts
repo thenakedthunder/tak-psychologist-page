@@ -1,4 +1,13 @@
-const priceListContent = [
+export interface ServiceItem {
+  name: string;
+  price: string;
+}
+interface PriceListContentType {
+  categoryName: string,
+  services: ServiceItem[]
+}
+
+const priceListContent: PriceListContentType[] = [
   {
     categoryName: 'Rontás',
     services: [
@@ -24,7 +33,7 @@ const priceListContent = [
     categoryName: 'Sötét varázslatok és kivédésük',
     services: [
       {
-        name: 'Avada kebabra!',
+        name: 'Baklava kebabra!',
         price: '24.000.-Ft',
       },
       {
@@ -37,16 +46,16 @@ const priceListContent = [
     categoryName: 'Ezotéria',
     services: [
       {
-        name: 'Ezokapu kinyitása',
-        price: '480.-Ft +ÁFA/perc',
+        name: 'Ezokapu kinyitása (percdíj)',
+        price: '480.-Ft +ÁFA',
       },
       {
-        name: 'Horoszkóp és aszcendens-tanácsadás',
-        price: '15.000.-Ft/alkalom (50 perc)',
+        name: 'Horoszkóp és aszcendens-tanácsadás 1 alkalom (50 perc)',
+        price: '15.000.-Ft',
       },
       {
-        name: 'Grabovoj-számsorok készítése (osztva Bősárkány és környéke)',
-        price: '5.000.-Ft/számsor',
+        name: 'Grabovoj-számsorok készítése/számsor (osztva Bősárkány és környéke)',
+        price: '5.000.-Ft',
       },
     ],
   },
