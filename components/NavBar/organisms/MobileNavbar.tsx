@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import LogoAndNameMobile from 'components/NavBar/molecules/LogoAndNameMobile';
@@ -6,6 +6,7 @@ import { Grey010 } from 'components/styling/colors';
 import MobileNavbarRight from 'components/NavBar/molecules/MobileNavbarRight';
 import MobileMenu from 'components/NavBar/organisms/MobileMenu';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
+import MobileNavbarOutsideClickWrapper from 'components/NavBar/organisms/OutsideClickWrapper';
 
 const MobileNavbarContainer = styled.div<NavBarProps & { isMenuOpen: boolean }>`
   box-sizing: border-box;
@@ -18,43 +19,14 @@ const MobileNavbarContainer = styled.div<NavBarProps & { isMenuOpen: boolean }>`
   width: 100%;
 `;
 
-interface MainContainerProps {
-  closeMenu: () => void;
-  children: JSX.Element;
-}
-
-const MainContainer = ({ closeMenu, children }: MainContainerProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleOutSideClick = (event: { target: any; }) => {
-      if (!ref.current) { return; }
-
-      if (!ref.current.contains(event.target)) {
-        closeMenu();
-      }
-    };
-
-    window.addEventListener('mousedown', handleOutSideClick);
-
-    return () => {
-      window.removeEventListener('mousedown', handleOutSideClick);
-    };
-  }, [ref]);
-
-  return <div ref={ref}>{children}</div>;
-};
-
 const MobileNavBar = ({ backgroundColor }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleIsMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log('segg');
-    console.log(isMenuOpen);
   };
 
   return (
-    <MainContainer closeMenu={() => setIsMenuOpen(false)}>
+    <MobileNavbarOutsideClickWrapper closeMenu={() => setIsMenuOpen(false)}>
       <>
         <MobileNavbarContainer backgroundColor={backgroundColor} isMenuOpen={isMenuOpen}>
           <LogoAndNameMobile onClicked={() => setIsMenuOpen(false)} />
@@ -65,7 +37,7 @@ const MobileNavBar = ({ backgroundColor }: NavBarProps) => {
             <MobileMenu backgroundColor={backgroundColor} onMenuItemClicked={toggleIsMenuOpen} />
           )}
       </>
-    </MainContainer>
+    </MobileNavbarOutsideClickWrapper>
   );
 };
 
