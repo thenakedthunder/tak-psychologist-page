@@ -35,9 +35,8 @@ interface DesktopMenuProps {
 const DesktopMenu = ({ chevronIndex, changeChevronIndex }: DesktopMenuProps) => (
   <DesktopMenuContainer>
     {menuItemsDesktop.map((item, index) => (
-      <PsychoLink href={item.linkHref}>
+      <PsychoLink href={item.linkHref} key={index}>
         <DesktopMenuItem
-          key={index}
           textColor={Green050}
           onClick={(e) => changeChevronIndex(index)}
         >

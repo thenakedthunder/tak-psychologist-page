@@ -26,6 +26,9 @@ const MobileMenuItem = styled(DefaultParagraph)`
     }
 `;
 
+const LinkWrapper = styled.span`
+`;
+
 const ContactButtonDiv = styled.div`
   padding-top: 30px;
 
@@ -35,23 +38,35 @@ const ContactButtonDiv = styled.div`
   }
 `;
 
-const MobileMenu = ({ backgroundColor }: NavBarProps) => (
+const ContactLinkWrapper = styled.div`
+  width: 100%;
+`;
+
+type MobileMenuProps = NavBarProps & {
+  onMenuItemClicked: () => void;
+}
+
+const MobileMenu = ({ backgroundColor, onMenuItemClicked }: MobileMenuProps) => (
   <MobileMenuContainer backgroundColor={backgroundColor}>
     {menuItemsMobile.map((item, index) => (
       <MobileMenuItem key={index} textColor={Green050}>
-        <PsychoLink href={item.linkHref}>
-          {item.linkText}
-        </PsychoLink>
+        <LinkWrapper onClick={onMenuItemClicked}>
+          <PsychoLink href={item.linkHref}>
+            {item.linkText}
+          </PsychoLink>
+        </LinkWrapper>
       </MobileMenuItem>
     ))}
     <ContactButtonDiv>
-      <PsychoLink href="/elerhetosegek">
-        <PrimaryCTAButton
-          text="Kapcsolat"
-          textColor={Grey010}
-          backgroundColor={Green050}
-        />
-      </PsychoLink>
+      <ContactLinkWrapper onClick={onMenuItemClicked}>
+        <PsychoLink href="/elerhetosegek">
+          <PrimaryCTAButton
+            text="Kapcsolat"
+            textColor={Grey010}
+            backgroundColor={Green050}
+          />
+        </PsychoLink>
+      </ContactLinkWrapper>
     </ContactButtonDiv>
   </MobileMenuContainer>
 );

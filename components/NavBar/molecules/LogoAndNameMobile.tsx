@@ -19,9 +19,13 @@ const NameParagraph = styled(DefaultParagraph)`
     font-weight: 700;
 `;
 
-const LogoAndNameMobile = () => (
+interface LogoAndNameMobileProps {
+  onClicked: () => void;
+}
+
+const LogoAndNameMobile = ({ onClicked }: LogoAndNameMobileProps) => (
   <PsychoLink href="/">
-    <MobileLeftDiv>
+    <MobileLeftDiv onClick={onClicked}>
       <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
       <div>
         <div>
