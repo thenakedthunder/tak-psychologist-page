@@ -6,10 +6,10 @@ import { Green050, Green100 } from 'components/styling/colors';
 import { LargeParagraph } from 'components/atoms/typography.styles';
 import {
   QuestionHeader,
-  DividerLine,
   DefaultParagraphWithTopPadding,
   OpenToggle,
 } from 'components/FAQ/molecules/QAndItem.styles';
+import DividerLine from 'components/atoms/DividerLine';
 
 interface Props {
   item: {
