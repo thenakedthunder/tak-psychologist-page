@@ -31,7 +31,6 @@ const Prices = () => (
             <H3 textColor={Green050}>{priceListItem.categoryName}</H3>
             {priceListItem.services.map((serviceItem, serviceItemIndex) => (
               <ServiceUnit key={serviceItemIndex} unit={serviceItem} />
-
             ))}
             { priceListIndex !== priceListContent.length - 1 && <DividerLine /> }
           </div>
