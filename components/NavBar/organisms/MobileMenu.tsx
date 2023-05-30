@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 import PsychoLink from 'components/atoms/PsychoLink';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
-import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import { Green050, Grey010 } from 'components/styling/colors';
 import { menuItemsMobile } from 'components/NavBar/content/menuItems';
-import { NavBarProps } from './NavBar';
+import { NavBarProps } from 'components/NavBar/organisms/NavBar';
+import ContactMenuButtonMobile from 'components/NavBar/molecules/ContactMenuButtonMobile';
 
 const MobileMenuContainer = styled.div`
     background-color: ${(props: NavBarProps) => props.backgroundColor ?? Grey010};
@@ -26,33 +26,25 @@ const MobileMenuItem = styled(DefaultParagraph)`
     }
 `;
 
-const ContactButtonDiv = styled.div`
-  padding-top: 30px;
-
-  @media screen and (min-width: 576px) {
-    width: 496px;
-    margin: auto;
-  }
+const LinkWrapper = styled.span`
 `;
 
-const MobileMenu = ({ backgroundColor }: NavBarProps) => (
+type MobileMenuProps = NavBarProps & {
+  onMenuItemClicked: () => void;
+}
+
+const MobileMenu = ({ backgroundColor, onMenuItemClicked }: MobileMenuProps) => (
   <MobileMenuContainer backgroundColor={backgroundColor}>
     {menuItemsMobile.map((item, index) => (
       <MobileMenuItem key={index} textColor={Green050}>
-        <PsychoLink href={item.linkHref}>
-          {item.linkText}
-        </PsychoLink>
+        <LinkWrapper onClick={onMenuItemClicked}>
+          <PsychoLink href={item.linkHref}>
+            {item.linkText}
+          </PsychoLink>
+        </LinkWrapper>
       </MobileMenuItem>
     ))}
-    <ContactButtonDiv>
-      <PsychoLink href="/elerhetosegek">
-        <PrimaryCTAButton
-          text="Kapcsolat"
-          textColor={Grey010}
-          backgroundColor={Green050}
-        />
-      </PsychoLink>
-    </ContactButtonDiv>
+    <ContactMenuButtonMobile onMenuItemClicked={onMenuItemClicked} />
   </MobileMenuContainer>
 );
 

@@ -6,6 +6,7 @@ import { Grey010 } from 'components/styling/colors';
 import MobileNavbarRight from 'components/NavBar/molecules/MobileNavbarRight';
 import MobileMenu from 'components/NavBar/organisms/MobileMenu';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
+import MobileNavbarOutsideClickWrapper from 'components/NavBar/organisms/OutsideClickWrapper';
 
 const MobileNavbarContainer = styled.div<NavBarProps & { isMenuOpen: boolean }>`
   box-sizing: border-box;
@@ -25,16 +26,18 @@ const MobileNavBar = ({ backgroundColor }: NavBarProps) => {
   };
 
   return (
-    <>
-      <MobileNavbarContainer backgroundColor={backgroundColor} isMenuOpen={isMenuOpen}>
-        <LogoAndNameMobile />
-        <MobileNavbarRight isMenuOpen={isMenuOpen} toggleIsMenuOpen={toggleIsMenuOpen} />
-      </MobileNavbarContainer>
-      {isMenuOpen
-        && (
-          <MobileMenu backgroundColor={backgroundColor} />
-        )}
-    </>
+    <MobileNavbarOutsideClickWrapper closeMenu={() => setIsMenuOpen(false)}>
+      <>
+        <MobileNavbarContainer backgroundColor={backgroundColor} isMenuOpen={isMenuOpen}>
+          <LogoAndNameMobile onClicked={() => setIsMenuOpen(false)} />
+          <MobileNavbarRight isMenuOpen={isMenuOpen} toggleIsMenuOpen={toggleIsMenuOpen} />
+        </MobileNavbarContainer>
+        {isMenuOpen
+          && (
+            <MobileMenu backgroundColor={backgroundColor} onMenuItemClicked={toggleIsMenuOpen} />
+          )}
+      </>
+    </MobileNavbarOutsideClickWrapper>
   );
 };
 
