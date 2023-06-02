@@ -3,6 +3,9 @@ import Hero from 'components/organisms/Hero';
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
 
+import { PrismicText, PrismicRichText } from '@prismicio/react';
+import { createClient } from '../prismicio';
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -18,4 +21,17 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  // Client used to fetch CMS content.
+  const client = createClient();
+
+  // Page document for our homepage from the CMS.
+  const page = await client.getByUID('index_page', 'home');
+
+  // Pass the homepage as prop to our page.
+  return {
+    props: { page },
+  };
 }
