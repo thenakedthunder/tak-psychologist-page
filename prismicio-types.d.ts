@@ -8,16 +8,16 @@ type Simplify<T> = {
 /** Content for index page documents */
 interface IndexPageDocumentData {
   /**
-   * a different field field in *index page*
+   * another field field in *index page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: index_page.a_different_field
+   * - **API ID Path**: index_page.another_field
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  a_different_field: prismic.KeyTextField;
+  another_field: prismic.KeyTextField;
   /**
    * hero field in *index page*
    *

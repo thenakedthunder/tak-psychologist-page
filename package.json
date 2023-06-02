@@ -39,7 +39,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.11",
-    "slice-machine-ui": "^1.1.0",
+    "slice-machine-ui": "1.1.1",
     "typescript": "*"
   }
 }
