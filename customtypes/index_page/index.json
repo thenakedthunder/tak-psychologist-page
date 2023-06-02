@@ -6,9 +6,13 @@
   "status": true,
   "json": {
     "Main": {
-      "a_different_field": {
+      "uid": {
+        "type": "UID",
+        "config": { "label": "page id", "placeholder": "" }
+      },
+      "another_field": {
         "type": "Text",
-        "config": { "label": "a different field", "placeholder": "" }
+        "config": { "label": "another field", "placeholder": "" }
       },
       "hero": {
         "type": "Group",
@@ -64,10 +68,6 @@
             }
           }
         }
-      },
-      "uid": {
-        "type": "UID",
-        "config": { "label": "page id", "placeholder": "" }
       }
     }
   }
