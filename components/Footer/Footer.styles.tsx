@@ -17,10 +17,6 @@ export const WrapperForCollageBackground = styled.div`
     background-position-y: center;
   }
 
-  @media screen and (min-width: 1200px) {
-    background-size: 600px 650px;
-  }
-
   @media screen and (min-width: 1400px) {
     max-width: 1440px;
     margin: 0 auto;
