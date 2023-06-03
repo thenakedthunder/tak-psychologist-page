@@ -19,6 +19,9 @@ export const OtherArticlesContainer = styled.div`
     background-position-x: 0px;
     background-position-y: 48%;
   }
+  @media screen and (min-width: 1400px) {
+    background-size: 36%;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -35,6 +38,6 @@ export const Header = styled(H2)`
   padding-bottom: 30px;
 
   @media screen and (min-width: 768px) {    
-    padding-bottom: 60px;
+    padding-bottom: 40px;
   }
 `;

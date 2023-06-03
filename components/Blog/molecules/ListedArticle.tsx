@@ -12,7 +12,7 @@ const ArticleContainer = styled.div`
   @media screen and (min-width: 768px) {
     grid-template-columns: 295px auto;
     column-gap: 23px;
-    padding-bottom: 20px;
+    padding-top: 20px;
   }
 `;
 
