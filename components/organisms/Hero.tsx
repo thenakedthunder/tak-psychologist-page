@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { H2, DefaultParagraph } from 'components/atoms/typography.styles';
 import {
-  Green010, Green100, Green050, Black100, Grey100,
+  Green100, Green050, Black100, Grey100,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
@@ -36,7 +36,7 @@ const QuoteAuthor = styled(DefaultParagraph)`
 `;
 
 const Hero = () => (
-  <BackgroundWrapper backgroundColor={Green010}>
+  <BackgroundWrapper backgroundColor={Grey100}>
     <HeroContainer>
       <QuoteText textColor={Green050}>
         A lélek éppúgy lehet beteg, mint a test.

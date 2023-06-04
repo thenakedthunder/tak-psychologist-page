@@ -1,5 +1,5 @@
-import { LargeParagraph, DefaultParagraph, SmallParagraph } from 'components/atoms/typography.styles';
-import { Green100, Black050, Green050 } from 'components/styling/colors';
+import { LargeParagraph, DefaultParagraph } from 'components/atoms/typography.styles';
+import { Green100, Black050 } from 'components/styling/colors';
 import styled from 'styled-components';
 import { ServiceItem } from 'components/Prices/content/priceList';
 
@@ -12,15 +12,8 @@ padding-top: 20px;
 }
 `;
 
-const OrderButton = styled(SmallParagraph)`
-  cursor: pointer;
-`;
-
 const PriceAndOrder = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
   padding-top: 6px;
-  justify-content: space-between;
   align-items: center;
 
   @media screen and (min-width: 576px) {
@@ -35,10 +28,6 @@ const PriceAndOrder = styled.div`
   }
 `;
 
-const purchaseService = () => {
-  console.log('Not Implemented (yet).');
-};
-
 interface ServiceUnitProps {
   unit: ServiceItem
 }
@@ -48,9 +37,6 @@ const ServiceUnit = ({ unit }: ServiceUnitProps) => (
     <LargeParagraph className="bold" textColor={Green100}>{unit.name}</LargeParagraph>
     <PriceAndOrder>
       <DefaultParagraph textColor={Black050}>{unit.price}</DefaultParagraph>
-      <OrderButton textColor={Green050} onClick={purchaseService}>
-        Megrendelem
-      </OrderButton>
     </PriceAndOrder>
   </ServiceUnitWrapper>
 );
