@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import { Blue010 } from 'components/styling/colors';
 
 export const Container = styled.div`
-  background-color: ${Blue010};
   padding: 40px;
   max-width: 1440px;
   margin: 0 auto;

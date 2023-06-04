@@ -8,6 +8,7 @@ import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 import PsychoLink from 'components/atoms/PsychoLink';
 import { useState } from 'react';
+import getColorWithOpacity from 'components/styling/StylingUtility';
 
 const ContainerDiv = styled.div`
   padding: 40px;
@@ -31,20 +32,6 @@ const LogoAndNameDesktopWrapper = styled.div`
 const ContactButtonDiv = styled.div`
   width: 150px;
 `;
-
-const isHexadecimal = (str: string) => /^[0-9a-fA-F]+$/.test(str);
-
-const getColorWithOpacity = (color: string, opacity: string) => {
-  if (color.length !== 7 || !color.startsWith('#') || !isHexadecimal(color.slice(1))) {
-    throw new Error('color should be given as a hex value, starting with the "#" character!');
-  }
-
-  if (opacity.length !== 2 || Number.isNaN(Number(opacity))) {
-    throw new Error('opacity should be given as a 2-digit number, without the "%" character!');
-  }
-
-  return color + opacity;
-};
 
 const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
   const [chevronPosition, changeChevronPosition] = useState(1);
