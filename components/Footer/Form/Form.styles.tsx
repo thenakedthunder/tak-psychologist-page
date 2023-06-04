@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Figtree } from 'next/font/google';
 
 import {
-  Grey010, Green050, Green100, ErrorRed,
+  Grey010, Green050, Blue100, ErrorRed,
 } from 'components/styling/colors';
 
 const figtree = Figtree({ subsets: ['latin-ext'], style: ['normal', 'italic'], weight: ['400', '600'] });
@@ -31,7 +31,7 @@ export const StyledForm = styled.form`
     border: none;
     border-bottom: 1px solid ${Green050};
     border-radius: 14px 14px 0px 0px;
-    color: ${Green100};
+    color: ${Green050};
     font-family: ${figtree.style.fontFamily}, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -68,7 +68,7 @@ export const StyledForm = styled.form`
     }
 
     ::placeholder {
-      color: ${Green050};
+      color: ${Blue100};
       opacity: 1; 
       font-family: ${figtree.style.fontFamily}, sans-serif;
       font-style: normal;

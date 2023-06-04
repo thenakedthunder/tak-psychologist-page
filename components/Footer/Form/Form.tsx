@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { SmallParagraph } from 'components/atoms/typography.styles';
 import {
-  Blue050, Green050, Green100, Grey010,
+  Green050, Green100, Grey010,
 } from 'components/styling/colors';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import {
@@ -202,7 +202,7 @@ const Form = () => {
         <ButtonContainer>
           <PrimaryCTAButton
             textColor={Grey010}
-            backgroundColor={Blue050}
+            backgroundColor={Green100}
             text="Küldés"
             isDisabled={formState.hasErrors}
           />
