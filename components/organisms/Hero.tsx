@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 import { H2, DefaultParagraph } from 'components/atoms/typography.styles';
 import {
-  Green010, Green100, Green050, Black100,
+  Green010, Green100, Green050, Black100, Grey100,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
 const HeroContainer = styled.div`
-  background-color: ${Green010};
+  background-color: ${Grey100};
   padding: 40px 40px 75px;
   max-width: 1440px;
   margin: 0 auto;
