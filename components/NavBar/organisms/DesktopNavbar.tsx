@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import LogoAndNameDesktop from 'components/NavBar/molecules/LogoAndNameDesktop';
-import { Grey100, Black050 } from 'components/styling/colors';
+import { Black050, Blue010 } from 'components/styling/colors';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
@@ -68,7 +68,7 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
             <PrimaryCTAButton
               text="Kapcsolat"
               textColor={Black050}
-              backgroundColor={getColorWithOpacity(Grey100, '20')}
+              backgroundColor={getColorWithOpacity(Blue010, '50')}
             />
           </PsychoLink>
         </ContactButtonDiv>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { IoIosRose } from 'react-icons/io';
 
-import { Blue100, Green050 } from 'components/styling/colors';
+import { Blue010, Green050 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import PsychoLink from 'components/atoms/PsychoLink';
 
@@ -26,7 +26,7 @@ const BoldSpan = styled.span`
 const LogoAndNameDesktop = () => (
   <PsychoLink href="/">
     <LogoAndNameDesktopContainer>
-      <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
+      <LogoDiv><IoIosRose size={28} color={Blue010} /></LogoDiv>
       <NameParagraph textColor={Green050}>
         <BoldSpan>Hont-Gáspár Anita - </BoldSpan>
         Pszichológus

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { IoIosRose } from 'react-icons/io';
 
 import { DefaultParagraph } from 'components/atoms/typography.styles';
-import { Blue100, Green050 } from 'components/styling/colors';
+import { Blue010, Green050 } from 'components/styling/colors';
 import PsychoLink from 'components/atoms/PsychoLink';
 
 const MobileLeftDiv = styled.div`
@@ -26,7 +26,7 @@ interface LogoAndNameMobileProps {
 const LogoAndNameMobile = ({ onClicked }: LogoAndNameMobileProps) => (
   <PsychoLink href="/">
     <MobileLeftDiv onClick={onClicked}>
-      <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
+      <LogoDiv><IoIosRose size={28} color={Blue010} /></LogoDiv>
       <div>
         <div>
           <NameParagraph textColor={Green050}>Hont-Gáspár Anita</NameParagraph>
