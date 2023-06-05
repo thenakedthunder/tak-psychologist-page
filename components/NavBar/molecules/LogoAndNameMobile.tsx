@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IoIosRose } from 'react-icons/io';
+import { GiMountainRoad } from 'react-icons/gi';
 
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Blue010, Green050 } from 'components/styling/colors';
@@ -28,7 +28,7 @@ const LogoAndNameMobile = ({ onClicked, colorScheme }: LogoAndNameMobileProps) =
   <PsychoLink href="/">
     <MobileLeftDiv onClick={onClicked}>
       <LogoDiv>
-        <IoIosRose
+        <GiMountainRoad
           size={28}
           color={colorScheme === 'light' ? Blue010 : Green050}
         />

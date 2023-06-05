@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { IoIosRose } from 'react-icons/io';
+import { GiMountainRoad } from 'react-icons/gi';
 
 import { Blue010, Green050 } from 'components/styling/colors';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
@@ -28,7 +28,7 @@ const LogoAndNameDesktop = ({ colorScheme } :NavBarProps) => (
   <PsychoLink href="/">
     <LogoAndNameDesktopContainer>
       <LogoDiv>
-        <IoIosRose
+        <GiMountainRoad
           size={28}
           color={colorScheme === 'light' ? Blue010 : Green050}
         />
