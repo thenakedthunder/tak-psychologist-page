@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import LogoAndNameMobile from 'components/NavBar/molecules/LogoAndNameMobile';
-import { Grey010 } from 'components/styling/colors';
+import { Green010, Grey010 } from 'components/styling/colors';
 import MobileNavbarRight from 'components/NavBar/molecules/MobileNavbarRight';
 import MobileMenu from 'components/NavBar/organisms/MobileMenu';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
@@ -14,12 +14,12 @@ const MobileNavbarContainer = styled.div<NavBarProps & { isMenuOpen: boolean }>`
   padding: 20px;
   display: grid;
   grid-template-columns: auto 1fr;
-  background-color: ${(props: NavBarProps) => props.backgroundColor ?? Grey010};
+  background-color: ${(props: NavBarProps) => (props.colorScheme === 'light' ? Grey010 : Green010)};
   position: ${({ isMenuOpen }) => (isMenuOpen ? 'fixed' : 'static')};
   width: 100%;
 `;
 
-const MobileNavBar = ({ backgroundColor }: NavBarProps) => {
+const MobileNavBar = ({ colorScheme }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleIsMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,13 +28,16 @@ const MobileNavBar = ({ backgroundColor }: NavBarProps) => {
   return (
     <MobileNavbarOutsideClickWrapper closeMenu={() => setIsMenuOpen(false)}>
       <>
-        <MobileNavbarContainer backgroundColor={backgroundColor} isMenuOpen={isMenuOpen}>
-          <LogoAndNameMobile onClicked={() => setIsMenuOpen(false)} />
+        <MobileNavbarContainer colorScheme={colorScheme} isMenuOpen={isMenuOpen}>
+          <LogoAndNameMobile
+            onClicked={() => setIsMenuOpen(false)}
+            colorScheme={colorScheme}
+          />
           <MobileNavbarRight isMenuOpen={isMenuOpen} toggleIsMenuOpen={toggleIsMenuOpen} />
         </MobileNavbarContainer>
         {isMenuOpen
           && (
-            <MobileMenu backgroundColor={backgroundColor} onMenuItemClicked={toggleIsMenuOpen} />
+            <MobileMenu colorScheme={colorScheme} onMenuItemClicked={toggleIsMenuOpen} />
           )}
       </>
     </MobileNavbarOutsideClickWrapper>

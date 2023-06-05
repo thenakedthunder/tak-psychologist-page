@@ -21,12 +21,18 @@ const NameParagraph = styled(DefaultParagraph)`
 
 interface LogoAndNameMobileProps {
   onClicked: () => void;
+  colorScheme: 'dark' | 'light';
 }
 
-const LogoAndNameMobile = ({ onClicked }: LogoAndNameMobileProps) => (
+const LogoAndNameMobile = ({ onClicked, colorScheme }: LogoAndNameMobileProps) => (
   <PsychoLink href="/">
     <MobileLeftDiv onClick={onClicked}>
-      <LogoDiv><IoIosRose size={28} color={Blue010} /></LogoDiv>
+      <LogoDiv>
+        <IoIosRose
+          size={28}
+          color={colorScheme === 'light' ? Blue010 : Green050}
+        />
+      </LogoDiv>
       <div>
         <div>
           <NameParagraph textColor={Green050}>Hont-Gáspár Anita</NameParagraph>

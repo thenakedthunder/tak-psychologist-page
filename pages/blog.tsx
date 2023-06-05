@@ -1,7 +1,4 @@
-import NavBar from 'components/NavBar/organisms/NavBar';
-import {
-  Green010, Green100, Green050,
-} from 'components/styling/colors';
+import { Green100, Green050 } from 'components/styling/colors';
 import SocialShare from 'components/Blog/organisms/SocialShare';
 import OtherArticles from 'components/Blog/organisms/OtherArticles';
 import TopSection from 'components/Blog/molecules/TopSection';

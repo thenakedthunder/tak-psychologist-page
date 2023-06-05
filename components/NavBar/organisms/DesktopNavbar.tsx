@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 import LogoAndNameDesktop from 'components/NavBar/molecules/LogoAndNameDesktop';
-import { Black050, Blue010 } from 'components/styling/colors';
+import {
+  Black050, Blue010, Blue050, Green010, Grey010,
+} from 'components/styling/colors';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
@@ -33,7 +35,7 @@ const ContactButtonDiv = styled.div`
   width: 150px;
 `;
 
-const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
+const DesktopNavbar = ({ colorScheme }: NavBarProps) => {
   const [chevronPosition, changeChevronPosition] = useState(1);
 
   const setChevronToPosition = (newPosition: number) => {
@@ -41,10 +43,10 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
   };
 
   return (
-    <BackgroundWrapper backgroundColor={backgroundColor}>
+    <BackgroundWrapper backgroundColor={colorScheme === 'light' ? Grey010 : Green010}>
       <ContainerDiv>
         <LogoAndNameDesktopWrapper onClick={(e) => setChevronToPosition(1)}>
-          <LogoAndNameDesktop />
+          <LogoAndNameDesktop colorScheme={colorScheme} />
         </LogoAndNameDesktopWrapper>
         <DesktopMenu
           chevronIndex={chevronPosition}
@@ -55,7 +57,7 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
             <PrimaryCTAButton
               text="Kapcsolat"
               textColor={Black050}
-              backgroundColor={getColorWithOpacity(Blue010, '50')}
+              backgroundColor={colorScheme === 'light' ? getColorWithOpacity(Blue010, '50') : Blue050}
             />
           </PsychoLink>
         </ContactButtonDiv>

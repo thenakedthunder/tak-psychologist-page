@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Green010, Green100 } from 'components/styling/colors';
+import { Blue010, Green010 } from 'components/styling/colors';
 
 const CollageElement = styled.div`
   padding: 10px 28px 0 0;
@@ -11,7 +11,7 @@ const CollageElement = styled.div`
 const LargerSquare = styled.div`
   height: 30px;
   width: 30px;
-  background-color: ${Green100};
+  background-color: ${Blue010};
   border-radius: 50%;
   
   @media screen and (min-width: 768px) {
