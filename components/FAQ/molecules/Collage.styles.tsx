@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Green100, Grey010 } from 'components/styling/colors';
+import { Blue010, Grey010 } from 'components/styling/colors';
 
 export const CollageContainer = styled.div`
   margin: 30px 0 30px -40px;
@@ -32,7 +32,7 @@ export const LargerCircle = styled.div`
 export const SmallerCircle = styled.div`
   height: 180px;
   width: 180px;
-  background-color: ${Green100};
+  background-color: ${Blue010};
   position: relative;
   top: 94px;
   border-radius: 50%;

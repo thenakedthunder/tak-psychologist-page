@@ -36,8 +36,8 @@ const QAndAItem = ({ item, isLastItem }: Props) => {
           aria-controls="example-panel"
         >
           {height !== 0
-            ? <IoChevronUpCircleOutline size={28} />
-            : <IoChevronDownCircleOutline size={28} />}
+            ? <IoChevronUpCircleOutline size={28} color={Green100} />
+            : <IoChevronDownCircleOutline size={28} color={Green100} />}
         </OpenToggle>
       </QuestionHeader>
       <AnimateHeight
