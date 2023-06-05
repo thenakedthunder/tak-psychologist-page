@@ -26,7 +26,7 @@ const WhatICanHelpYouWith = () => (
         )}
       </LowerContainer>
       <MobileCTAContainer>
-        <PsychoLink href="google.com">
+        <PsychoLink href="/arak">
           <PrimaryCTAButton
             text="Árlista megtekintése"
             textColor={Grey010}
