@@ -41,7 +41,7 @@ export const LargerCircle = styled.div`
   }
 `;
 
-export const SmallerSquare = styled.div`
+export const SmallerCircle = styled.div`
   height: 180px;
   width: 180px;
   border-radius: 50%;

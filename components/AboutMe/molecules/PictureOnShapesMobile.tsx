@@ -4,14 +4,14 @@ import ProfileImage from 'public/assets/rolam.png';
 import {
   CollageContainer,
   LargerCircle,
-  SmallerSquare,
+  SmallerCircle,
   ImageContainer,
 } from 'components/AboutMe/molecules/PictureOnShapesMobile.styles';
 
 const PictureOnShapesMobile = () => (
   <CollageContainer>
     <LargerCircle>
-      <SmallerSquare />
+      <SmallerCircle />
       <ImageContainer>
         <Image src={ProfileImage} layout="fill" objectFit="cover" alt="profile" />
       </ImageContainer>
