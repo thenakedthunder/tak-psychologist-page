@@ -8,7 +8,7 @@ const CollageElement = styled.div`
   float: left;
 `;
 
-const LargerSquare = styled.div`
+const LargerCircle = styled.div`
   height: 30px;
   width: 30px;
   background-color: ${Blue010};
@@ -20,7 +20,7 @@ const LargerSquare = styled.div`
   }
 `;
 
-const SmallerSquare = styled.div`
+const SmallerCircle = styled.div`
   height: 24px;
   width: 24px;
   background-color: ${Green010};
@@ -39,8 +39,8 @@ const SmallerSquare = styled.div`
 
 const Collage = () => (
   <CollageElement>
-    <LargerSquare />
-    <SmallerSquare />
+    <LargerCircle />
+    <SmallerCircle />
   </CollageElement>
 );
 
