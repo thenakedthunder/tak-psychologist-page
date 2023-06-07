@@ -5,7 +5,9 @@ import { useState } from 'react';
 
 import PsychoLink from 'components/atoms/PsychoLink';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
-import { Green010, Green050, Grey010, Green100 } from 'components/styling/colors';
+import {
+  Green010, Green050, Grey010, Green100,
+} from 'components/styling/colors';
 import { MenuItemWithSubItems, isLinkType, menuItemsMobile } from 'components/NavBar/content/menuItems';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 import ContactMenuButtonMobile from 'components/NavBar/molecules/ContactMenuButtonMobile';
