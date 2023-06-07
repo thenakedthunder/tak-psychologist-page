@@ -19,9 +19,12 @@ import {
 
 type WhatICanHelpYouWithItemProps = {
   item: ItemData;
+  title: string;
+  description: string;
+  linkText: string;
 }
 
-const Unit = ({ item }: WhatICanHelpYouWithItemProps) => {
+const Unit = ({ item, title, description, linkText }: WhatICanHelpYouWithItemProps) => {
   const ItemIcon = item.icon;
 
   return (
@@ -34,16 +37,16 @@ const Unit = ({ item }: WhatICanHelpYouWithItemProps) => {
       </OuterIconContainer>
       <TitleContainer>
         <LargeParagraph textColor={Green100}>
-          {item.title}
+          {title}
         </LargeParagraph>
       </TitleContainer>
       <StyledDefaultParagraph textColor={Black050}>
-        {item.description}
+        {description}
       </StyledDefaultParagraph>
       <LinkContainer>
         <SmallParagraph textColor={Green050}>
           <PsychoLink href="/">
-            Tudjon meg többet
+            {linkText}
           </PsychoLink>
         </SmallParagraph>
         <ArrowIconContainer>

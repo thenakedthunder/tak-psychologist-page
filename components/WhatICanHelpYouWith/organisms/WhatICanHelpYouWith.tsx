@@ -14,20 +14,38 @@ import {
   MobileCTAContainer,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
 import PsychoLink from 'components/atoms/PsychoLink';
+import { KeyTextField } from '@prismicio/client';
+import { IndexPageV2DocumentDataServiceGroupItem } from 'prismicio-types';
 
-const WhatICanHelpYouWith = () => (
+interface WhatICanHelpYouWithProps {
+  contentHeader: KeyTextField;
+  priceListButtonText: KeyTextField;
+  serviceGroups: IndexPageV2DocumentDataServiceGroupItem[];
+}
+
+const WhatICanHelpYouWith = ({
+  contentHeader, priceListButtonText, serviceGroups,
+}: WhatICanHelpYouWithProps) => (
   <BackgroundWrapper backgroundColor={Blue010}>
     <Container>
-      <Top />
+      <Top contentHeader={contentHeader} priceListButtonText={priceListButtonText} />
       <LowerContainer>
         {items.map(
-          (item, index) => <Unit item={item} key={index} />,
+          (item, index) => (
+            <Unit
+              key={index}
+              item={item}
+              title={serviceGroups[index].service_name ?? ''}
+              description={serviceGroups[index].service_description ?? ''}
+              linkText={serviceGroups[index].lean_more_button_text ?? '' }
+            />
+          ),
         )}
       </LowerContainer>
       <MobileCTAContainer>
         <PsychoLink href="google.com">
           <PrimaryCTAButton
-            text="Árlista megtekintése"
+            text={priceListButtonText ?? 'Árlista megtekintése'}
             textColor={Grey010}
             backgroundColor={Green050}
           />

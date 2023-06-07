@@ -1,19 +1,12 @@
 {
-  "id": "index_page",
-  "label": "index page",
+  "id": "index_page_v2",
+  "label": "homepage",
   "format": "custom",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "type": "UID",
-        "config": { "label": "page id", "placeholder": "" }
-      },
-      "another_field": {
-        "type": "Text",
-        "config": { "label": "another field", "placeholder": "" }
-      },
+      "uid": { "type": "UID", "config": { "label": "UID", "placeholder": "" } },
       "hero": {
         "type": "Group",
         "config": {
@@ -53,7 +46,7 @@
           "fields": {
             "service_name": {
               "type": "Text",
-              "config": { "label": "service name", "placeholder": "" }
+              "config": { "label": "service_name", "placeholder": "" }
             },
             "service_description": {
               "type": "Text",
@@ -62,9 +55,9 @@
                 "placeholder": "röviden, mert nem fog kifé"
               }
             },
-            "learn_more_button_text": {
+            "lean_more_button_text": {
               "type": "Text",
-              "config": { "label": "learn more button text", "placeholder": "" }
+              "config": { "label": "lean more button text", "placeholder": "" }
             }
           }
         }
