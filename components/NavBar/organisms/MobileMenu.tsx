@@ -91,6 +91,7 @@ const MobileMenu = ({ backgroundColor, onMenuItemClicked }: MobileMenuProps) => 
             ); 
           }
               <ContactMenuButtonMobile onMenuItemClicked={onMenuItemClicked} />
+          })}
             </MobileMenuContainer>
-})});
+);
       export default MobileMenu;
