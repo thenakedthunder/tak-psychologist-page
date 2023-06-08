@@ -46,7 +46,7 @@ interface HeroProps {
 }
 
 const Hero = ({ content }: HeroProps) => (
-  <BackgroundWrapper backgroundColor={Green100}>
+  <BackgroundWrapper backgroundColor={Grey100}>
     <HeroContainer>
       <QuoteText textColor={Green050}>
         <PrismicRichText field={content[0].quote_text} />
