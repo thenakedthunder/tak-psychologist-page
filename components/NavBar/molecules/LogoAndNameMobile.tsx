@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { IoIosRose } from 'react-icons/io';
+import { GiMountainRoad } from 'react-icons/gi';
 
 import { DefaultParagraph } from 'components/atoms/typography.styles';
-import { Blue100, Green050 } from 'components/styling/colors';
+import { Blue010, Green050 } from 'components/styling/colors';
 import PsychoLink from 'components/atoms/PsychoLink';
 
 const MobileLeftDiv = styled.div`
@@ -21,12 +21,18 @@ const NameParagraph = styled(DefaultParagraph)`
 
 interface LogoAndNameMobileProps {
   onClicked: () => void;
+  colorScheme: 'dark' | 'light';
 }
 
-const LogoAndNameMobile = ({ onClicked }: LogoAndNameMobileProps) => (
+const LogoAndNameMobile = ({ onClicked, colorScheme }: LogoAndNameMobileProps) => (
   <PsychoLink href="/">
     <MobileLeftDiv onClick={onClicked}>
-      <LogoDiv><IoIosRose size={28} color={Blue100} /></LogoDiv>
+      <LogoDiv>
+        <GiMountainRoad
+          size={28}
+          color={colorScheme === 'light' ? Blue010 : Green050}
+        />
+      </LogoDiv>
       <div>
         <div>
           <NameParagraph textColor={Green050}>Hont-Gáspár Anita</NameParagraph>

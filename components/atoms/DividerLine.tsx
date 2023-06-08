@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { Grey050 } from 'components/styling/colors';
+import { Green050 } from 'components/styling/colors';
 
 const DividerLine = styled.div`
   height: 1px;
-  background-color: ${Grey050};
+  background-color: ${Green050};
   margin: 40px 0 30px;
 
   @media screen and (min-width: 1200px) {

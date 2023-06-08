@@ -3,19 +3,19 @@ import Image from 'next/legacy/image';
 import ProfileImage from 'public/assets/rolam.png';
 import {
   CollageContainer,
-  LargerSquare,
-  SmallerSquare,
+  LargerCircle,
+  SmallerCircle,
   ImageContainer,
 } from 'components/AboutMe/molecules/PictureOnShapesMobile.styles';
 
 const PictureOnShapesMobile = () => (
   <CollageContainer>
-    <LargerSquare>
-      <SmallerSquare />
+    <LargerCircle>
+      <SmallerCircle />
       <ImageContainer>
-        <Image src={ProfileImage} objectFit="contain" alt="profile" />
+        <Image src={ProfileImage} layout="fill" objectFit="cover" alt="profile" />
       </ImageContainer>
-    </LargerSquare>
+    </LargerCircle>
   </CollageContainer>
 );
 

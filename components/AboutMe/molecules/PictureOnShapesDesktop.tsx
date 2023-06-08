@@ -8,7 +8,6 @@ export const MainContainer = styled.div`
   
   @media screen and (min-width: 1200px) {
     display: block;
-    background-image: none;
     margin: 0;
     grid-area: image;
     display: flex;
@@ -17,27 +16,29 @@ export const MainContainer = styled.div`
 `;
 
 export const ProfileImageContainer = styled.div`
-  width: 280px;
   position: relative;
+  overflow: hidden;
   
   @media screen and (min-width: 1200px) {
-    width: 80%;
-    bottom: 13vh;
-    right: -20%;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    bottom: 100px;
+    left: 105px;
   }
   
   @media screen and (min-width: 1400px) {
-    left: 0;
-    width: 100%;
-    bottom: 13vh;
-    padding-left: 28px;
+    width: 400px;
+    height: 400px;
+    left: 160px;
+    bottom: 14vh;
   }
 `;
 
 const PictureOnShapesDesktop = () => (
   <MainContainer>
     <ProfileImageContainer>
-      <Image src={ProfileImage} objectFit="contain" alt="profile" />
+      <Image src={ProfileImage} layout="fill" objectFit="cover" alt="profile" />
     </ProfileImageContainer>
   </MainContainer>
 );

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { Green010, Green100 } from 'components/styling/colors';
+import { Blue010, Green010 } from 'components/styling/colors';
 
 export const CollageContainer = styled.div`
-  margin: 30px -40px 26px 0;
+  margin: 30px -40px 74px 0;
   grid-area: collage;
   display: grid;
   justify-items: end;
@@ -13,7 +13,7 @@ export const CollageContainer = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    margin: 30px auto 90px;
+    margin: 30px auto 115px;
     justify-items: start;
   }
 
@@ -22,10 +22,11 @@ export const CollageContainer = styled.div`
   }
 `;
 
-export const LargerSquare = styled.div`
+export const LargerCircle = styled.div`
   height: 246px;
   width: 246px;
-  background-color: ${Green100};
+  border-radius: 50%;
+  background-color: ${Blue010};
 
   @media screen and (min-width: 576px) {
     height: 320px;
@@ -40,14 +41,15 @@ export const LargerSquare = styled.div`
   }
 `;
 
-export const SmallerSquare = styled.div`
-  height: 148px;
-  width: 148px;
+export const SmallerCircle = styled.div`
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
   background-color: ${Green010};
   position: relative;
-  top: 124px;
-  left: 98px;
-  
+  top: 140px;
+  left: 66px;
+
   @media screen and (min-width: 576px) {
     height: 256px;
     width: 256px;
@@ -56,26 +58,33 @@ export const SmallerSquare = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    height: 280px;
+    width: 280px;
     top: 235px;
-    left: 145px;
+    left: 120px;
   }
 `;
 
 export const ImageContainer = styled.div`
-  width: 272px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
   position: relative;
-  right: 90px;
-  bottom: 113px;
+  right: 50px;
+  bottom: 120px;
 
   @media screen and (min-width: 576px) {
-    width: 400px;
-    right: 218px;
+    height: 270px;
+    width: 270px;
+    right: 64px;
     bottom: 220px;
   }
 
   @media screen and (min-width: 768px) {
+    height: 340px;
+    width: 340px;
     right: 100px;
-    bottom: 140px;
+    bottom: 240px;
   }
 `;

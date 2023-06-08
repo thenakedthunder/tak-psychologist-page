@@ -1,5 +1,5 @@
 import {
-  Blue010, Green050, Grey010,
+  Blue010, Green100, Grey010,
 } from 'components/styling/colors';
 
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
@@ -14,9 +14,10 @@ import {
   MobileCTAContainer,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
 import PsychoLink from 'components/atoms/PsychoLink';
+import getColorWithOpacity from 'components/styling/StylingUtility';
 
 const WhatICanHelpYouWith = () => (
-  <BackgroundWrapper backgroundColor={Blue010}>
+  <BackgroundWrapper backgroundColor={getColorWithOpacity(Blue010, '50')}>
     <Container>
       <Top />
       <LowerContainer>
@@ -25,11 +26,11 @@ const WhatICanHelpYouWith = () => (
         )}
       </LowerContainer>
       <MobileCTAContainer>
-        <PsychoLink href="google.com">
+        <PsychoLink href="/arak">
           <PrimaryCTAButton
             text="Árlista megtekintése"
             textColor={Grey010}
-            backgroundColor={Green050}
+            backgroundColor={Green100}
           />
         </PsychoLink>
       </MobileCTAContainer>

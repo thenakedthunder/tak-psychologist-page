@@ -11,10 +11,10 @@ const NavbarContainer = styled.div`
 `;
 
 export interface NavBarProps {
-  backgroundColor: string;
+  colorScheme: 'dark' | 'light';
 }
 
-const NavBar = ({ backgroundColor }: NavBarProps) => {
+const NavBar = ({ colorScheme }: NavBarProps) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -35,8 +35,8 @@ const NavBar = ({ backgroundColor }: NavBarProps) => {
   return (
     <NavbarContainer>
       {isMobile
-        ? <MobileNavBar backgroundColor={backgroundColor} />
-        : <DesktopNavbar backgroundColor={backgroundColor} />}
+        ? <MobileNavBar colorScheme={colorScheme} />
+        : <DesktopNavbar colorScheme={colorScheme} />}
     </NavbarContainer>
   );
 };

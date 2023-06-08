@@ -1,7 +1,6 @@
 import { IconType } from 'react-icons/lib';
-import { TfiThumbUp } from 'react-icons/tfi';
-import { MdPeopleOutline } from 'react-icons/md';
-import { IoBrushOutline } from 'react-icons/io5';
+import { GiPlantRoots, GiCircleForest, GiButterflyFlower } from 'react-icons/gi';
+import { BsFlower2 } from 'react-icons/bs';
 import { SlChart } from 'react-icons/sl';
 
 export interface ItemData {
@@ -14,31 +13,31 @@ export interface ItemData {
 
 export const items: ItemData[] = [
   {
-    icon: TfiThumbUp,
+    icon: GiPlantRoots,
     title: 'Egyéni konzultáció',
     description: '„2003-2006 között a jelenleg hemteg 633 cseregő hugyos fántás imbán 420 cseregő bajódos fántás lódásszal szakodik ki.',
-    leftPositioning: '1px',
-    bottomPositioning: '1px',
+    leftPositioning: '4px',
+    bottomPositioning: '-2px',
   },
   {
-    icon: MdPeopleOutline,
+    icon: GiCircleForest,
     title: 'Csoportok',
     description: 'Lórum ipse számos máshol nehezen kelégteles malit és ragtalmos körüleget is korít. A szédő melúgokra is szemes pőcsent jól szalatja.',
     leftPositioning: '4px',
-    bottomPositioning: '-5px',
+    bottomPositioning: '-2px',
   },
   {
-    icon: IoBrushOutline,
+    icon: GiButterflyFlower,
     title: 'Művészetterápia',
     description: 'A kográntok banája: az alig laszér serves különcékre is a meteres hajtás metleneit pincolták meg a fejszervek.',
     leftPositioning: '4px',
-    bottomPositioning: '-1px',
+    bottomPositioning: '-2px',
   },
   {
-    icon: SlChart,
+    icon: BsFlower2,
     title: 'Szervezetfejlesztés, tréning',
     description: 'Vetőzte sublick spis pegezős és tudott tezet a páteg „opoly tontás” forzális cseményén.',
     leftPositioning: '6px',
-    bottomPositioning: '2px',
+    bottomPositioning: '0px',
   },
 ];

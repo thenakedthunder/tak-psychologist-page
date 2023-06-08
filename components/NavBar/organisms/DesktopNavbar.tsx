@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 import LogoAndNameDesktop from 'components/NavBar/molecules/LogoAndNameDesktop';
-import { Grey100, Black050 } from 'components/styling/colors';
+import {
+  Black050, Blue010, Blue050, Green010, Grey010,
+} from 'components/styling/colors';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import DesktopMenu from 'components/NavBar/organisms/DesktopMenu';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { NavBarProps } from 'components/NavBar/organisms/NavBar';
 import PsychoLink from 'components/atoms/PsychoLink';
 import { useState } from 'react';
+import getColorWithOpacity from 'components/styling/StylingUtility';
 
 const ContainerDiv = styled.div`
   padding: 40px;
@@ -32,21 +35,7 @@ const ContactButtonDiv = styled.div`
   width: 150px;
 `;
 
-const isHexadecimal = (str: string) => /^[0-9a-fA-F]+$/.test(str);
-
-const getColorWithOpacity = (color: string, opacity: string) => {
-  if (color.length !== 7 || !color.startsWith('#') || !isHexadecimal(color.slice(1))) {
-    throw new Error('color should be given as a hex value, starting with the "#" character!');
-  }
-
-  if (opacity.length !== 2 || Number.isNaN(Number(opacity))) {
-    throw new Error('opacity should be given as a 2-digit number, without the "%" character!');
-  }
-
-  return color + opacity;
-};
-
-const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
+const DesktopNavbar = ({ colorScheme }: NavBarProps) => {
   const [chevronPosition, changeChevronPosition] = useState(1);
 
   const setChevronToPosition = (newPosition: number) => {
@@ -54,10 +43,10 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
   };
 
   return (
-    <BackgroundWrapper backgroundColor={backgroundColor}>
+    <BackgroundWrapper backgroundColor={colorScheme === 'light' ? Grey010 : Green010}>
       <ContainerDiv>
         <LogoAndNameDesktopWrapper onClick={(e) => setChevronToPosition(1)}>
-          <LogoAndNameDesktop />
+          <LogoAndNameDesktop colorScheme={colorScheme} />
         </LogoAndNameDesktopWrapper>
         <DesktopMenu
           chevronIndex={chevronPosition}
@@ -68,7 +57,7 @@ const DesktopNavbar = ({ backgroundColor }: NavBarProps) => {
             <PrimaryCTAButton
               text="Kapcsolat"
               textColor={Black050}
-              backgroundColor={getColorWithOpacity(Grey100, '20')}
+              backgroundColor={colorScheme === 'light' ? getColorWithOpacity(Blue010, '50') : Blue050}
             />
           </PsychoLink>
         </ContactButtonDiv>

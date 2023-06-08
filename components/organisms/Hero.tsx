@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 import { H2, DefaultParagraph } from 'components/atoms/typography.styles';
 import {
-  Green010, Green100, Green050, Grey100,
+  Green100, Green050, Black100, Grey100,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
 const HeroContainer = styled.div`
-  background-color: ${Green100};
+  background-color: ${Grey100};
   padding: 40px 40px 75px;
   max-width: 1440px;
   margin: 0 auto;
@@ -22,7 +22,7 @@ const QuoteText = styled(H2)`
   font-style: italic;
 
   .highlighted {
-    color: ${Green050};
+    color: ${Black100};
   }
   
   @media screen and (min-width: 1200px) {
@@ -36,9 +36,9 @@ const QuoteAuthor = styled(DefaultParagraph)`
 `;
 
 const Hero = () => (
-  <BackgroundWrapper backgroundColor={Green100}>
+  <BackgroundWrapper backgroundColor={Grey100}>
     <HeroContainer>
-      <QuoteText textColor={Green010}>
+      <QuoteText textColor={Green050}>
         A lélek éppúgy lehet beteg, mint a test.
         <span className="highlighted">
           {' '}
@@ -48,7 +48,7 @@ const Hero = () => (
         mint a test; a test nem támogatja a lelket, mint ahogy a lélek
         támogatja a testet.
       </QuoteText>
-      <QuoteAuthor textColor={Grey100}>
+      <QuoteAuthor textColor={Green100}>
         — Honoré de Balzac
       </QuoteAuthor>
     </HeroContainer>

@@ -23,6 +23,7 @@ const FAQMainContainer = styled.div`
   @media screen and (min-width: 1400px) {
     padding: 80px 130px;
     margin: 0 auto;
+    grid-template-columns: 440px auto;
   }
 `;
 

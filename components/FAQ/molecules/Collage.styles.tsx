@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
-import { Green100, Grey010 } from 'components/styling/colors';
+import { Blue010, Grey010 } from 'components/styling/colors';
 
 export const CollageContainer = styled.div`
   margin: 30px 0 30px -40px;
   grid-area: collage;
 `;
 
-export const LargerSquare = styled.div`
+export const LargerCircle = styled.div`
   height: 246px;
   width: 246px;
   background-color: ${Grey010};
+  border-radius: 50%;
 
   @media screen and (min-width: 768px) {
     height: 400px;
@@ -28,12 +29,13 @@ export const LargerSquare = styled.div`
   }
 `;
 
-export const SmallerSquare = styled.div`
-  height: 148px;
-  width: 148px;
-  background-color: ${Green100};
+export const SmallerCircle = styled.div`
+  height: 180px;
+  width: 180px;
+  background-color: ${Blue010};
   position: relative;
-  top: 124px;
+  top: 94px;
+  border-radius: 50%;
   
   @media screen and (min-width: 768px) {
     height: 240px;
@@ -42,29 +44,33 @@ export const SmallerSquare = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    height: 305px;
-    width: 305px;
+    height: 360px;
+    width: 360px;
     top: 255px;
   }
 `;
 
 export const ImageContainer = styled.div`
-  width: 272px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   position: relative;
-  left: 64px;
-  bottom: 113px;
+  left: 84px;
+  bottom: 170px;
+  border-radius: 50%;
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
-    width: 480px;
-    height: 312px;
-    left: 64px;
-    bottom: 196px;
+    width: 320px;
+    height: 320px;
+    left: 130px;
+    bottom: 200px;
   }
 
   @media screen and (min-width: 1200px) {
-    left: 80px;
-    bottom: 206px;
+    width: 400px;
+    height: 400px;
+    left: 159px;
+    bottom: 305px;
   }
   
   @media screen and (min-width: 1400px) {

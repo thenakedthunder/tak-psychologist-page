@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { SmallParagraph } from 'components/atoms/typography.styles';
-import { Blue050 } from 'components/styling/colors';
+import { Black010 } from 'components/styling/colors';
 import QAndAContents from 'components/FAQ/content/QAndAContents';
 import QAndAItem from 'components/FAQ/molecules/QAndItem';
 
@@ -23,7 +23,7 @@ const QAndASection = () => (
   <Container>
     {QAndAContents.map((item, index) => (
       <div key={index}>
-        <TopicHeading textColor={Blue050}>{item.name}</TopicHeading>
+        <TopicHeading textColor={Black010}>{item.name}</TopicHeading>
         {item.topicContent.map((topicItem, topicIndex) => (
           <QAndAItem
             key={topicIndex}

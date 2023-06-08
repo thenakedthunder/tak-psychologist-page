@@ -25,7 +25,7 @@ const Top = () => (
   <TopContainer>
     <H2 textColor={Green100}>Amiben segíteni tudok</H2>
     <DesktopCTAContainer>
-      <PsychoLink href="">
+      <PsychoLink href="/arak">
         <PrimaryCTAButton
           text="Árlista megtekintése"
           textColor={Grey010}

@@ -6,6 +6,7 @@ import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { Blue010, Green050, Green100 } from 'components/styling/colors';
 import priceListContent from 'components/Prices/content/priceList';
 import ServiceUnit from 'components/Prices/molecules/ServiceUnit';
+import getColorWithOpacity from 'components/styling/StylingUtility';
 
 const PricesContainer = styled.div`
   padding: 40px 40px 80px;
@@ -22,7 +23,7 @@ const PriceList = styled.div`
 `;
 
 const Prices = () => (
-  <BackgroundWrapper backgroundColor={Blue010}>
+  <BackgroundWrapper backgroundColor={getColorWithOpacity(Blue010, '80')}>
     <PricesContainer>
       <H2 textColor={Green100}>Árak</H2>
       <PriceList>

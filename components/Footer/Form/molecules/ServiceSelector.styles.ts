@@ -1,4 +1,4 @@
-import { Green050, Green100, Grey010 } from 'components/styling/colors';
+import { Blue100, Green050, Grey010 } from 'components/styling/colors';
 
 interface SelectState {
   menuIsOpen: boolean;
@@ -28,7 +28,7 @@ const baseStyles = {
   option: (styles: object) => ({
     ...styles,
     backgroundColor: Grey010,
-    color: Green100,
+    color: Green050,
     padding: '15px 2px 15px 20px',
     borderRadius: '0px 0px 14px 14px',
     borderBottom: '0px',
@@ -43,7 +43,7 @@ const baseStyles = {
   }),
   singleValue: (styles: object) => ({
     ...styles,
-    color: Green100,
+    color: Green050,
     fontFamily: '"Figtree" sans-serif',
     fontStyle: 'normal',
     fontWeight: '400',
@@ -71,7 +71,7 @@ const baseStyles = {
   }),
   placeholder: (styles: object) => ({
     ...styles,
-    color: Green050,
+    color: Blue100,
   }),
 };
 

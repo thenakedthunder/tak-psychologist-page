@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import PsychoLink from 'components/atoms/PsychoLink';
-import { Grey010, Green050 } from 'components/styling/colors';
+import { Grey010, Green100 } from 'components/styling/colors';
 
 const ContactButtonDiv = styled.div`
   padding-top: 30px;
@@ -28,7 +28,7 @@ const ContactMenuButtonMobile = ({ onMenuItemClicked }: ContactMenuButtonMobileP
         <PrimaryCTAButton
           text="Kapcsolat"
           textColor={Grey010}
-          backgroundColor={Green050}
+          backgroundColor={Green100}
         />
       </PsychoLink>
     </ContactLinkWrapper>

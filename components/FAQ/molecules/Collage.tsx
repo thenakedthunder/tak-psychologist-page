@@ -3,19 +3,19 @@ import Image from 'next/legacy/image';
 import FaqImage from 'public/assets/gyik.png';
 import {
   CollageContainer,
-  LargerSquare,
-  SmallerSquare,
+  LargerCircle,
+  SmallerCircle,
   ImageContainer,
 } from 'components/FAQ/molecules/Collage.styles';
 
 const Collage = () => (
   <CollageContainer>
-    <LargerSquare>
-      <SmallerSquare />
+    <LargerCircle>
+      <SmallerCircle />
       <ImageContainer>
-        <Image src={FaqImage} objectFit="contain" alt="faq" />
+        <Image src={FaqImage} layout="fill" objectFit="cover" alt="faq" />
       </ImageContainer>
-    </LargerSquare>
+    </LargerCircle>
   </CollageContainer>
 );
 
