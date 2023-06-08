@@ -1,10 +1,10 @@
 import styled from 'styled-components';
+import { KeyTextField } from '@prismicio/client';
 
 import { H2 } from 'components/atoms/typography.styles';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import { Green050, Green100, Grey010 } from 'components/styling/colors';
 import PsychoLink from 'components/atoms/PsychoLink';
-import { KeyTextField } from '@prismicio/client';
 
 const TopContainer = styled.div`  
   @media screen and (min-width: 768px) {

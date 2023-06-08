@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IndexPageV2DocumentDataHeroItem } from 'prismicio-types';
 import { PrismicRichText } from '@prismicio/react';
 
 import { H2, DefaultParagraph } from 'components/atoms/typography.styles';
@@ -6,7 +7,6 @@ import {
   Green100, Green050, Grey100, Green010,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
-import { IndexPageV2DocumentDataHeroItem } from 'prismicio-types';
 
 const HeroContainer = styled.div`
   background-color: ${Grey100};
