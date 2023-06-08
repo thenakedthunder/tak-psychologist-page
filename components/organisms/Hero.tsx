@@ -1,13 +1,12 @@
 import styled from 'styled-components';
+import { IndexPageV2DocumentDataHeroItem } from 'prismicio-types';
+import { PrismicRichText } from '@prismicio/react';
 
 import { H2, DefaultParagraph } from 'components/atoms/typography.styles';
 import {
   Green010, Green100, Green050, Grey100,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
-import { GroupField } from '@prismicio/client';
-import { IndexPageV2DocumentDataHeroItem, Simplify } from 'prismicio-types';
-import { PrismicRichText, PrismicText } from '@prismicio/react';
 
 const HeroContainer = styled.div`
   background-color: ${Green100};

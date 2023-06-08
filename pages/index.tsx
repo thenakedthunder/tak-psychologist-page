@@ -1,10 +1,10 @@
+import Head from 'next/head';
+
+import { AllDocumentTypes } from 'prismicio-types.js';
 import WhatICanHelpYouWith from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith';
 import Hero from 'components/organisms/Hero';
-import Head from 'next/head';
 import styles from 'styles/Home.module.css';
 
-import { PrismicText, PrismicRichText } from '@prismicio/react';
-import { AllDocumentTypes } from 'prismicio-types.js';
 // @ts-ignore
 // eslint-disable-next-line import/extensions
 import { createClient } from '../prismicio.ts';
@@ -35,13 +35,9 @@ export default function Home({ page }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  // Client used to fetch CMS content.
   const client = createClient();
-
-  // Page document for our homepage from the CMS.
   const page = await client.getByUID('index_page_v2', 'index');
 
-  // Pass the homepage as prop to our page.
   return {
     props: { page },
   };
