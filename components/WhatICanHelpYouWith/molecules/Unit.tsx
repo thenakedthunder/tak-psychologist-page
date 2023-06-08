@@ -24,7 +24,9 @@ type WhatICanHelpYouWithItemProps = {
   linkText: string;
 }
 
-const Unit = ({ item, title, description, linkText }: WhatICanHelpYouWithItemProps) => {
+const Unit = ({
+  item, title, description, linkText,
+}: WhatICanHelpYouWithItemProps) => {
   const ItemIcon = item.icon;
 
   return (
