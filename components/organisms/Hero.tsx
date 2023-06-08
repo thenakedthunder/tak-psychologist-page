@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { PrismicRichText } from '@prismicio/react';
 
 import { H2, DefaultParagraph } from 'components/atoms/typography.styles';
 import {
-  Green100, Green050, Black100, Grey100,
+  Green100, Green050, Grey100, Green010,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
+import { IndexPageV2DocumentDataHeroItem } from 'prismicio-types';
 
 const HeroContainer = styled.div`
   background-color: ${Grey100};
@@ -21,8 +23,8 @@ const QuoteText = styled(H2)`
   font-size: 26px;
   font-style: italic;
 
-  .highlighted {
-    color: ${Black100};
+  strong {
+    color: ${Green050};
   }
   
   @media screen and (min-width: 1200px) {
@@ -35,21 +37,18 @@ const QuoteAuthor = styled(DefaultParagraph)`
   font-weight: 700;
 `;
 
-const Hero = () => (
-  <BackgroundWrapper backgroundColor={Grey100}>
+interface HeroProps {
+  content: IndexPageV2DocumentDataHeroItem[];
+}
+
+const Hero = ({ content }: HeroProps) => (
+  <BackgroundWrapper backgroundColor={Green100}>
     <HeroContainer>
-      <QuoteText textColor={Green050}>
-        A lélek éppúgy lehet beteg, mint a test.
-        <span className="highlighted">
-          {' '}
-          Csakhogy a lélek nem tűri oly bambán a szenvedést,
-          {' '}
-        </span>
-        mint a test; a test nem támogatja a lelket, mint ahogy a lélek
-        támogatja a testet.
+      <QuoteText textColor={Green010}>
+        <PrismicRichText field={content[0].quote_text} />
       </QuoteText>
-      <QuoteAuthor textColor={Green100}>
-        — Honoré de Balzac
+      <QuoteAuthor textColor={Grey100}>
+        {content[0].quote_author}
       </QuoteAuthor>
     </HeroContainer>
   </BackgroundWrapper>

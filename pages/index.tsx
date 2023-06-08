@@ -3,10 +3,16 @@ import Hero from 'components/organisms/Hero';
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
 
-import { PrismicText, PrismicRichText } from '@prismicio/react';
-import { createClient } from '../prismicio';
+import { AllDocumentTypes } from 'prismicio-types.js';
+// @ts-ignore
+// eslint-disable-next-line import/extensions
+import { createClient } from '../prismicio.ts';
 
-export default function Home() {
+interface HomeProps {
+  page: AllDocumentTypes
+}
+
+export default function Home({ page }: HomeProps) {
   return (
     <div className={styles.container}>
       <Head>
@@ -16,8 +22,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <Hero />
-        <WhatICanHelpYouWith />
+        <Hero content={page.data.hero} />
+        <WhatICanHelpYouWith
+          contentHeader={page.data.content_header}
+          priceListButtonText={page.data.pricelist_button_text}
+          serviceGroups={page.data.service_group}
+        />
       </main>
     </div>
   );
@@ -28,7 +38,7 @@ export async function getStaticProps() {
   const client = createClient();
 
   // Page document for our homepage from the CMS.
-  const page = await client.getByUID('index_page', 'home');
+  const page = await client.getByUID('index_page_v2', 'index');
 
   // Pass the homepage as prop to our page.
   return {
