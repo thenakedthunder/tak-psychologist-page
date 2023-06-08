@@ -16,8 +16,8 @@ export const items: ItemData[] = [
   },
   {
     icon: GiCircleForest,
-    leftPositioning: '4px',
-    bottomPositioning: '-2px',
+    leftPositioning: '1px',
+    bottomPositioning: '1px',
   },
   {
     icon: GiButterflyFlower,
