@@ -11,6 +11,7 @@ import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import {
   Container,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
+import getColorWithOpacity from 'components/styling/StylingUtility';
 
 interface WhatICanHelpYouWithProps {
   contentHeader: KeyTextField;
@@ -21,7 +22,7 @@ interface WhatICanHelpYouWithProps {
 const WhatICanHelpYouWith = ({
   contentHeader, priceListButtonText, serviceGroups,
 }: WhatICanHelpYouWithProps) => (
-  <BackgroundWrapper backgroundColor={Blue010}>
+  <BackgroundWrapper backgroundColor={getColorWithOpacity(Blue010, '50')}>
     <Container>
       <Top
         contentHeader={contentHeader}

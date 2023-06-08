@@ -4,7 +4,7 @@ import { PrismicRichText } from '@prismicio/react';
 
 import { H2, DefaultParagraph } from 'components/atoms/typography.styles';
 import {
-  Green100, Green050, Grey100, Green010,
+  Green100, Black100, Grey100, Green050,
 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 
@@ -24,9 +24,13 @@ const QuoteText = styled(H2)`
   font-style: italic;
 
   strong {
-    color: ${Green050};
+    color: ${Black100};
   }
   
+  p {
+    margin: 0;
+  }
+
   @media screen and (min-width: 1200px) {
     font-size: 48px;
   }
@@ -44,10 +48,10 @@ interface HeroProps {
 const Hero = ({ content }: HeroProps) => (
   <BackgroundWrapper backgroundColor={Green100}>
     <HeroContainer>
-      <QuoteText textColor={Green010}>
+      <QuoteText textColor={Green050}>
         <PrismicRichText field={content[0].quote_text} />
       </QuoteText>
-      <QuoteAuthor textColor={Grey100}>
+      <QuoteAuthor textColor={Green100}>
         {content[0].quote_author}
       </QuoteAuthor>
     </HeroContainer>

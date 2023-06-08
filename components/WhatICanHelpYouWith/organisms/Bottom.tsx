@@ -6,7 +6,7 @@ import { items } from 'components/WhatICanHelpYouWith/content/items';
 import Unit from 'components/WhatICanHelpYouWith/molecules/Unit';
 import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
 import PsychoLink from 'components/atoms/PsychoLink';
-import { Grey010, Green050 } from 'components/styling/colors';
+import { Grey010, Green100 } from 'components/styling/colors';
 
 interface BottomProps {
   serviceGroups: IndexPageV2DocumentDataServiceGroupItem[];
@@ -31,7 +31,7 @@ const Bottom = ({ serviceGroups, priceListButtonText }: BottomProps) => (
         <PrimaryCTAButton
           text={priceListButtonText ?? 'Árlista megtekintése'}
           textColor={Grey010}
-          backgroundColor={Green050}
+          backgroundColor={Green100}
         />
       </PsychoLink>
     </MobileCTAContainer>
