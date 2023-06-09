@@ -31,6 +31,11 @@ const MobileMenuItem = styled(DefaultParagraph)`
     }
     `;
 
+const SubItem = styled(DefaultParagraph)`
+  font-size: 20px;
+  padding-left: 8px; 
+`;
+
 const MenuItemWithSubItemsContainer = styled.div`
   display: grid;
   grid-template-columns: auto 28px;
