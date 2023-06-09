@@ -57,6 +57,8 @@ type MobileMenuProps = NavBarProps & {
 interface MenuItemWithSubItemsProps {
   item: MenuItemWithSubItems;
   onMenuItemClicked: () => void;
+  isOpen: boolean;
+  onClicked: () => void;
 }
 
 const MenuItemsContainer = styled(AnimateHeight)`
@@ -67,22 +69,23 @@ const MenuItemsContainer = styled(AnimateHeight)`
   }
 `;
 
-const MenuItemWithSubItemsComponent = ({ item, onMenuItemClicked }: MenuItemWithSubItemsProps) => {
-  const [height, setHeight] = useState<Height>(0);
-  const toggleIsOpen = () => setHeight(height === 0 ? 'auto' : 0);
+const MenuItemWithSubItemsComponent = ({
+  item, onMenuItemClicked, isOpen, onClicked,
+}: MenuItemWithSubItemsProps) => {
+  const height: Height = isOpen ? 'auto' : 0;
 
   return (
-    <MenuItemWithSubItemsContainer>
+    <MenuItemWithSubItemsContainer onClick={onClicked}>
       <MobileMenuItem
         textColor={Green050}
-        onClick={toggleIsOpen}
-        onKeyPress={toggleIsOpen}
+      // onClick={toggleIsOpen}
+      // onKeyPress={toggleIsOpen}
       >
         {(item as MenuItemWithSubItems).name}
       </MobileMenuItem>
       <OpenToggle
-        onClick={toggleIsOpen}
-        onKeyPress={toggleIsOpen}
+        // onClick={toggleIsOpen}
+        // onKeyPress={toggleIsOpen}
         role="button"
         tabIndex={0}
         aria-expanded={height !== 0}
@@ -112,28 +115,42 @@ const MenuItemWithSubItemsComponent = ({ item, onMenuItemClicked }: MenuItemWith
   );
 };
 
-const MobileMenu = ({ colorScheme, onMenuItemClicked }: MobileMenuProps) => (
-  <MobileMenuContainer colorScheme={colorScheme}>
-    {menuItemsMobile.map((item, index) => {
-      if (isLinkType(item)) {
-        return (
-          <MobileMenuItem key={index} textColor={Green050} onClick={onMenuItemClicked}>
-            <PsychoLink href={(item as LinkType).linkHref}>
-              {(item as LinkType).linkText}
-            </PsychoLink>
-          </MobileMenuItem>
-        );
-      }
+const MobileMenu = ({ colorScheme, onMenuItemClicked }: MobileMenuProps) => {
+  const [openSubMenuIndex, setOpenSubMenuIndex] = useState(-1);
 
-      return (
-        <MenuItemWithSubItemsComponent
-          item={item as MenuItemWithSubItems}
-          onMenuItemClicked={onMenuItemClicked}
-        />
-      );
-    })}
-    <ContactMenuButtonMobile onMenuItemClicked={onMenuItemClicked} />
-  </MobileMenuContainer>
-);
+  const handleSubMenuOpenAndClose = (indexOfItemClicked: number) => {
+    if (indexOfItemClicked === openSubMenuIndex) {
+      setOpenSubMenuIndex(-1);
+    } else {
+      setOpenSubMenuIndex(indexOfItemClicked);
+    }
+  };
+
+  return (
+    <MobileMenuContainer colorScheme={colorScheme}>
+      {menuItemsMobile.map((item, index) => {
+        if (isLinkType(item)) {
+          return (
+            <MobileMenuItem key={index} textColor={Green050} onClick={onMenuItemClicked}>
+              <PsychoLink href={(item as LinkType).linkHref}>
+                {(item as LinkType).linkText}
+              </PsychoLink>
+            </MobileMenuItem>
+          );
+        }
+
+        return (
+          <MenuItemWithSubItemsComponent
+            item={item as MenuItemWithSubItems}
+            onMenuItemClicked={onMenuItemClicked}
+            isOpen={index === openSubMenuIndex}
+            onClicked={() => handleSubMenuOpenAndClose(index)}
+          />
+        );
+      })}
+      <ContactMenuButtonMobile onMenuItemClicked={onMenuItemClicked} />
+    </MobileMenuContainer>
+  );
+};
 
 export default MobileMenu;
