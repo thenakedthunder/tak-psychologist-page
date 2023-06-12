@@ -17,7 +17,7 @@ export const OpenToggle = styled.div`
   cursor: pointer;
 `;
 
-interface MenuItemWithSubItemsProps {
+interface MobileMenuItemWithSubItemsProps {
   item: MenuItemWithSubItems;
   onMenuItemClicked: () => void;
   isOpen: boolean;
@@ -26,7 +26,7 @@ interface MenuItemWithSubItemsProps {
 
 const MobileMenuItemWithSubItems = ({
   item, onMenuItemClicked, isOpen, onClicked,
-}: MenuItemWithSubItemsProps) => {
+}: MobileMenuItemWithSubItemsProps) => {
   const height: Height = isOpen ? 'auto' : 0;
 
   return (

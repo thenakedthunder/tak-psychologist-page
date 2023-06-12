@@ -5,7 +5,11 @@ import { IoChevronDownCircleOutline } from 'react-icons/io5';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
 import PsychoLink from 'components/atoms/PsychoLink';
-import { menuItemsDesktop } from 'components/NavBar/content/menuItems';
+import { MenuItemWithSubItems, isLinkType, menuItemsDesktop } from 'components/NavBar/content/menuItems';
+import { LinkType } from 'types/LinkType';
+import { useState } from 'react';
+import DesktopMenuItemWithSubItems from '../molecules/DesktopMenuItemWithSubItems';
+import DesktopMenuItem from '../atoms/DesktopMenuItem';
 
 const DesktopMenuContainer = styled.div`
   display: grid;
@@ -13,46 +17,43 @@ const DesktopMenuContainer = styled.div`
   height: 28px;
 `;
 
-const DesktopMenuItem = styled(DefaultParagraph)`
-  height: 62px;
-  line-height: 62px;
-  align-self: center;
-`;
+const DesktopMenu = () => {
+  const [openSubMenuIndex, setOpenSubMenuIndex] = useState(-1);
+  const closeOpenSubmenu = () => setOpenSubMenuIndex(-1);
 
-const ChevronContainer = styled.span`
-  height: 62px;
-  position: relative;
-  top: 8px;
-  padding-left: 8px;
-  cursor: pointer;
-`;
+  const handleSubMenuOpenAndClose = (indexOfItemClicked: number) => {
+    if (indexOfItemClicked === openSubMenuIndex) {
+      closeOpenSubmenu();
+    } else {
+      setOpenSubMenuIndex(indexOfItemClicked);
+    }
+  };
 
-interface DesktopMenuProps {
-  chevronIndex: number;
-  changeChevronIndex: (newIndex: number) => void;
-}
+  return (
+    <DesktopMenuContainer>
+      {menuItemsDesktop.map((item, index) => {
+        if (isLinkType(item)) {
+          return (
+            <PsychoLink href={(item as LinkType).linkHref} key={index}>
+              <DesktopMenuItem
+                textColor={Green050}
+              >
+                {(item as LinkType).linkText}
+              </DesktopMenuItem>
+            </PsychoLink>
+          );
+        }
 
-const DesktopMenu = ({ chevronIndex, changeChevronIndex }: DesktopMenuProps) => (
-  <DesktopMenuContainer>
-    {menuItemsDesktop.map((item, index) => (
-      <PsychoLink href={item.linkHref} key={index}>
-        <DesktopMenuItem
-          textColor={Green050}
-          onClick={(e) => changeChevronIndex(index)}
-        >
-          <>
-            {item.linkText}
-            {(index === chevronIndex)
-              && (
-                <ChevronContainer>
-                  <IoChevronDownCircleOutline size={28} />
-                </ChevronContainer>
-              )}
-          </>
-        </DesktopMenuItem>
-      </PsychoLink>
-    ))}
-  </DesktopMenuContainer>
-);
+        return (
+          <DesktopMenuItemWithSubItems
+            item={item as MenuItemWithSubItems}
+            isOpen={index === openSubMenuIndex}
+            onClicked={() => handleSubMenuOpenAndClose(index)}
+          />
+        );
+      })}
+    </DesktopMenuContainer>
+  );
+};
 
 export default DesktopMenu;

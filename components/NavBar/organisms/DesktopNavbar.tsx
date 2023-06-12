@@ -48,10 +48,7 @@ const DesktopNavbar = ({ colorScheme }: NavBarProps) => {
         <LogoAndNameDesktopWrapper onClick={(e) => setChevronToPosition(1)}>
           <LogoAndNameDesktop colorScheme={colorScheme} />
         </LogoAndNameDesktopWrapper>
-        <DesktopMenu
-          chevronIndex={chevronPosition}
-          changeChevronIndex={changeChevronPosition}
-        />
+        <DesktopMenu />
         <ContactButtonDiv onClick={(e) => setChevronToPosition(-1)}>
           <PsychoLink href="/elerhetosegek">
             <PrimaryCTAButton

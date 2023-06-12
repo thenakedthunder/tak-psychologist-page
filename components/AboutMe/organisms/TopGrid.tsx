@@ -12,8 +12,8 @@ const GridContainer = styled.div`
     display: grid;
     grid-template-areas: 
     "header header header ."
-    "life . image image"
-    "list . . .";
+    "content . image image"
+    "content . . .";
     
     grid-template-columns: 40% 120px 100px auto;
     grid-template-rows: auto; 
@@ -21,7 +21,7 @@ const GridContainer = styled.div`
 `;
 
 const Life = styled.div`
-  grid-area: life;
+  grid-area: content;
   padding-top: 30px;
 
   @media screen and (min-width: 1200px) {
