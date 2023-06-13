@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { H2 } from 'components/atoms/typography.styles';
 
-export const OtherArticlesContainer = styled.div`
+export const ArticlesContainer = styled.div`
   padding-bottom: 80px;
 
   @media screen and (min-width: 768px) {    

@@ -1,9 +1,7 @@
-import { StaticImageData } from 'next/image';
-
 import articles from 'components/Blog/content/articles';
 import { Green100 } from 'components/styling/colors';
 import OtherArticlesListedArticle from 'components/Blog/molecules/OtherArticlesListedArticle';
-import { OtherArticlesContainer as Container, ContentContainer, Header } from 'components/Blog/organisms/OtherArticles.styles';
+import { ArticlesContainer as Container, ContentContainer, Header } from 'components/Blog/organisms/Articles.styles';
 
 const OtherArticles = () => (
   <Container>
