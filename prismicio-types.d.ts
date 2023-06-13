@@ -115,6 +115,16 @@ export interface IndexPageV2DocumentDataServiceGroupItem {
    *
    */
   lean_more_button_text: prismic.KeyTextField;
+  /**
+   * sublink field in *homepage → service group*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: index_page_v2.service_group[].sublink
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  sublink: prismic.KeyTextField;
 }
 /**
  * homepage document from Prismic

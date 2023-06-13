@@ -47,12 +47,12 @@ const Unit = ({
       </StyledDefaultParagraph>
       <LinkContainer>
         <SmallParagraph textColor={Green050}>
-          <PsychoLink href="/">
+          <PsychoLink href={`/${item.subLink}`}>
             {linkText}
           </PsychoLink>
         </SmallParagraph>
         <ArrowIconContainer>
-          <PsychoLink href="/">
+          <PsychoLink href={`/${item.subLink}`}>
             <VscArrowRight size={10} color={Green050} />
           </PsychoLink>
         </ArrowIconContainer>

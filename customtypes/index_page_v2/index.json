@@ -58,6 +58,10 @@
             "lean_more_button_text": {
               "type": "Text",
               "config": { "label": "lean more button text", "placeholder": "" }
+            },
+            "sublink": {
+              "type": "Text",
+              "config": { "label": "sublink", "placeholder": "" }
             }
           }
         }

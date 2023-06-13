@@ -13,18 +13,27 @@ interface BottomProps {
   priceListButtonText: KeyTextField;
 }
 
+const getServiceGroupByLink = (
+  serviceGroups: IndexPageV2DocumentDataServiceGroupItem[],
+  subLink: string,
+) => serviceGroups.find((item) => item.sublink === subLink);
+
 const Bottom = ({ serviceGroups, priceListButtonText }: BottomProps) => (
   <LowerContainer>
     {items.map(
-      (item, index) => (
-        <Unit
-          key={index}
-          item={item}
-          title={serviceGroups[index].service_name ?? ''}
-          description={serviceGroups[index].service_description ?? ''}
-          linkText={serviceGroups[index].lean_more_button_text ?? ''}
-        />
-      ),
+      (item, index) => {
+        const serviceGroup = getServiceGroupByLink(serviceGroups, item.subLink);
+
+        return (
+          <Unit
+            key={index}
+            item={item}
+            title={serviceGroup?.service_name ?? ''}
+            description={serviceGroup?.service_description ?? ''}
+            linkText={serviceGroup?.lean_more_button_text ?? ''}
+          />
+        );
+      },
     )}
     <MobileCTAContainer>
       <PsychoLink href="google.com">
