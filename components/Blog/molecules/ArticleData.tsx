@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { DefaultParagraph, H3 } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
 import ReadOnLink from 'components/Blog/molecules/ReadOnLink';
-import { ArticleProps } from 'components/Blog/organisms/OtherArticles';
+import { ArticleProps } from 'components/Blog/content/articles';
 
 const Container = styled.div`
   margin: 0 auto;
@@ -34,7 +34,7 @@ const ArticleData = ({ data }: Props) => (
     <ArticleDescription textColor={Green050}>
       {data.shortDescription}
     </ArticleDescription>
-    <ReadOnLink />
+    <ReadOnLink href={`/${data.link}`} />
   </Container>
 );
 
