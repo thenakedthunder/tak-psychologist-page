@@ -42,7 +42,7 @@ const Unit = ({ item }: WhatICanHelpYouWithItemProps) => {
       </StyledDefaultParagraph>
       <LinkContainer>
         <SmallParagraph textColor={Green050}>
-          <PsychoLink href="/">
+          <PsychoLink href={`/${item.link}`}>
             Tudjon meg többet
           </PsychoLink>
         </SmallParagraph>

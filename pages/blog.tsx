@@ -1,41 +1,32 @@
-import { Green100, Green050 } from 'components/styling/colors';
-import SocialShare from 'components/Blog/organisms/SocialShare';
-import OtherArticles from 'components/Blog/organisms/OtherArticles';
-import TopSection from 'components/Blog/molecules/TopSection';
-import DividingDots from 'components/Blog/molecules/DividingDots';
-import content from 'components/Blog/content/exampleArticle';
-import ArticleContent from 'components/Blog/templates/ArticleContent';
+import styled from 'styled-components';
+
+import articles from 'components/Blog/content/articles';
+import ArticleListItem from 'components/Blog/molecules/ArticleListItem';
+import { ContentContainer, ArticlesContainer } from 'components/Blog/organisms/Articles.styles';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
-import {
-  BlogMainContentContainer as Container,
-  MainTitle,
-  TopDescription,
-  SocialShareOnlyOnDesktopWrapper,
-  BottomSocialShareWrapper,
-} from 'components/Blog/styling/Blog.styles';
+
+const BlogArticles = styled(ArticlesContainer)`
+  background-position-y: 50%;
+  background-attachment: fixed;
+`;
+
+const ContentContainerStyled = styled(ContentContainer)`
+  padding: 30px 40px;
+  background-attachment: fixed;
+
+  @media screen and (min-width: 768px) {
+    padding: 60px 40px 0;
+  }
+`;
 
 const Blog = () => (
-  <>
-    <TopSection heroImage={content.heroImage} />
-    <BackgroundWrapper>
-      <Container>
-        <MainTitle textColor={Green050}>{content.articleTitle}</MainTitle>
-        <TopDescription textColor={Green100}>
-          {content.topDescription}
-        </TopDescription>
-        <SocialShareOnlyOnDesktopWrapper>
-          <SocialShare />
-        </SocialShareOnlyOnDesktopWrapper>
-        <DividingDots />
-        <ArticleContent blocks={content.blocks} />
-        <DividingDots />
-        <BottomSocialShareWrapper>
-          <SocialShare />
-        </BottomSocialShareWrapper>
-      </Container>
-      <OtherArticles />
-    </BackgroundWrapper>
-  </>
+  <BackgroundWrapper>
+    <BlogArticles>
+      <ContentContainerStyled>
+        {articles.map((item, index) => <ArticleListItem key={index} item={item} />)}
+      </ContentContainerStyled>
+    </BlogArticles>
+  </BackgroundWrapper>
 );
 
 export default Blog;

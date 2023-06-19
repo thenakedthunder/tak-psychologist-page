@@ -9,6 +9,7 @@ export interface ItemData {
   description: string;
   leftPositioning?: string;
   bottomPositioning?: string;
+  link: string;
 }
 
 export const items: ItemData[] = [
@@ -18,6 +19,7 @@ export const items: ItemData[] = [
     description: '„2003-2006 között a jelenleg hemteg 633 cseregő hugyos fántás imbán 420 cseregő bajódos fántás lódásszal szakodik ki.',
     leftPositioning: '4px',
     bottomPositioning: '-2px',
+    link: 'egyeni-konzultacio',
   },
   {
     icon: GiCircleForest,
@@ -25,6 +27,7 @@ export const items: ItemData[] = [
     description: 'Lórum ipse számos máshol nehezen kelégteles malit és ragtalmos körüleget is korít. A szédő melúgokra is szemes pőcsent jól szalatja.',
     leftPositioning: '4px',
     bottomPositioning: '-2px',
+    link: 'csoportok',
   },
   {
     icon: GiButterflyFlower,
@@ -32,6 +35,7 @@ export const items: ItemData[] = [
     description: 'A kográntok banája: az alig laszér serves különcékre is a meteres hajtás metleneit pincolták meg a fejszervek.',
     leftPositioning: '4px',
     bottomPositioning: '-2px',
+    link: 'muveszetterapia',
   },
   {
     icon: BsFlower2,
@@ -39,5 +43,6 @@ export const items: ItemData[] = [
     description: 'Vetőzte sublick spis pegezős és tudott tezet a páteg „opoly tontás” forzális cseményén.',
     leftPositioning: '6px',
     bottomPositioning: '0px',
+    link: 'szervezetfejlesztes-trening',
   },
 ];
