@@ -1,39 +1,37 @@
-import {
-  Blue010, Green100, Grey010,
-} from 'components/styling/colors';
+import { KeyTextField } from '@prismicio/client';
+import { IndexPageV2DocumentDataServiceGroupItem } from 'prismicio-types';
 
-import PrimaryCTAButton from 'components/atoms/PrimaryCTAButton';
-import { items } from 'components/WhatICanHelpYouWith/content/items';
-import Unit from 'components/WhatICanHelpYouWith/molecules/Unit';
 import Top from 'components/WhatICanHelpYouWith/molecules/Top';
+import Bottom from 'components/WhatICanHelpYouWith/organisms/Bottom';
 
+import {
+  Blue010,
+} from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import {
   Container,
-  LowerContainer,
-  MobileCTAContainer,
 } from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith.styles';
-import PsychoLink from 'components/atoms/PsychoLink';
 import getColorWithOpacity from 'components/styling/StylingUtility';
 
-const WhatICanHelpYouWith = () => (
+interface WhatICanHelpYouWithProps {
+  contentHeader: KeyTextField;
+  priceListButtonText: KeyTextField;
+  serviceGroups: IndexPageV2DocumentDataServiceGroupItem[];
+}
+
+const WhatICanHelpYouWith = ({
+  contentHeader, priceListButtonText, serviceGroups,
+}: WhatICanHelpYouWithProps) => (
   <BackgroundWrapper backgroundColor={getColorWithOpacity(Blue010, '50')}>
     <Container>
-      <Top />
-      <LowerContainer>
-        {items.map(
-          (item, index) => <Unit item={item} key={index} />,
-        )}
-      </LowerContainer>
-      <MobileCTAContainer>
-        <PsychoLink href="/arak">
-          <PrimaryCTAButton
-            text="Árlista megtekintése"
-            textColor={Grey010}
-            backgroundColor={Green100}
-          />
-        </PsychoLink>
-      </MobileCTAContainer>
+      <Top
+        contentHeader={contentHeader}
+        priceListButtonText={priceListButtonText}
+      />
+      <Bottom
+        serviceGroups={serviceGroups}
+        priceListButtonText={priceListButtonText}
+      />
     </Container>
   </BackgroundWrapper>
 );
