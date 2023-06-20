@@ -25,13 +25,19 @@ const LinkContainer = styled.div`
   }
 `;
 
-const ReadOnLink = () => (
-  <LinkContainer>
-    <PsychoLink href="">
+interface ReadOnLinkProps {
+  href: string;
+}
+
+const ReadOnLink = ({ href }: ReadOnLinkProps) => (
+  <PsychoLink href={`/blog/${href}`}>
+    <LinkContainer>
       <DefaultParagraph textColor={Green050}>Tovább</DefaultParagraph>
-    </PsychoLink>
-    <IoChevronDownCircleOutline size={28} color={Green050} />
-  </LinkContainer>
+      <span>
+        <IoChevronDownCircleOutline size={28} color={Green050} />
+      </span>
+    </LinkContainer>
+  </PsychoLink>
 );
 
 export default ReadOnLink;

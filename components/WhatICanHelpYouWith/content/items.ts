@@ -7,6 +7,7 @@ export interface ItemData {
   leftPositioning?: string;
   bottomPositioning?: string;
   subLink: string;
+
 }
 
 export const items: ItemData[] = [
@@ -15,6 +16,7 @@ export const items: ItemData[] = [
     leftPositioning: '4px',
     bottomPositioning: '-2px',
     subLink: 'egyeni-konzultacio',
+
   },
   {
     icon: GiCircleForest,

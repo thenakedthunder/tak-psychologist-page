@@ -35,35 +35,24 @@ const ContactButtonDiv = styled.div`
   width: 150px;
 `;
 
-const DesktopNavbar = ({ colorScheme }: NavBarProps) => {
-  const [chevronPosition, changeChevronPosition] = useState(1);
-
-  const setChevronToPosition = (newPosition: number) => {
-    changeChevronPosition(newPosition);
-  };
-
-  return (
-    <BackgroundWrapper backgroundColor={colorScheme === 'light' ? Grey010 : Green010}>
-      <ContainerDiv>
-        <LogoAndNameDesktopWrapper onClick={(e) => setChevronToPosition(1)}>
-          <LogoAndNameDesktop colorScheme={colorScheme} />
-        </LogoAndNameDesktopWrapper>
-        <DesktopMenu
-          chevronIndex={chevronPosition}
-          changeChevronIndex={changeChevronPosition}
-        />
-        <ContactButtonDiv onClick={(e) => setChevronToPosition(-1)}>
-          <PsychoLink href="/elerhetosegek">
-            <PrimaryCTAButton
-              text="Kapcsolat"
-              textColor={Black050}
-              backgroundColor={colorScheme === 'light' ? getColorWithOpacity(Blue010, '50') : Blue050}
-            />
-          </PsychoLink>
-        </ContactButtonDiv>
-      </ContainerDiv>
-    </BackgroundWrapper>
-  );
-};
+const DesktopNavbar = ({ colorScheme }: NavBarProps) => (
+  <BackgroundWrapper backgroundColor={colorScheme === 'light' ? Grey010 : Green010}>
+    <ContainerDiv>
+      <LogoAndNameDesktopWrapper>
+        <LogoAndNameDesktop colorScheme={colorScheme} />
+      </LogoAndNameDesktopWrapper>
+      <DesktopMenu />
+      <ContactButtonDiv>
+        <PsychoLink href="/elerhetosegek">
+          <PrimaryCTAButton
+            text="Kapcsolat"
+            textColor={Black050}
+            backgroundColor={colorScheme === 'light' ? getColorWithOpacity(Blue010, '50') : Blue050}
+          />
+        </PsychoLink>
+      </ContactButtonDiv>
+    </ContainerDiv>
+  </BackgroundWrapper>
+);
 
 export default DesktopNavbar;
