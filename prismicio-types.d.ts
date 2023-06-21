@@ -5,6 +5,146 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
+/** Content for footer documents */
+interface FooterDocumentData {
+  /**
+   * main header field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.main_header
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  main_header: prismic.KeyTextField;
+  /**
+   * name field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismic.KeyTextField;
+  /**
+   * professional title field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: pl. "boszorkánymester"
+   * - **API ID Path**: footer.professional_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  professional_title: prismic.KeyTextField;
+  /**
+   * name placeholder field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.name_placeholder
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name_placeholder: prismic.KeyTextField;
+  /**
+   * email placeholder field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.email_placeholder
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  email_placeholder: prismic.KeyTextField;
+  /**
+   * phone placeholder field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.phone_placeholder
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  phone_placeholder: prismic.KeyTextField;
+  /**
+   * service placeholder field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.service_placeholder
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  service_placeholder: prismic.KeyTextField;
+  /**
+   * service selector field in *footer*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.service_selector
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  service_selector: prismic.SelectField<
+    | "Nincs/Nem tudom"
+    | "Rontás levétele"
+    | "Eggszőrrszájzzbúúkkkhh!"
+    | "Auramasszázs"
+  >;
+  /**
+   * message placeholder field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.message_placeholder
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  message_placeholder: prismic.KeyTextField;
+  /**
+   * checkbox statement field in *footer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.checkbox_statement
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  checkbox_statement: prismic.RichTextField;
+  /**
+   * send button text field in *footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.send_button_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  send_button_text: prismic.KeyTextField;
+}
+/**
+ * footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, 'footer', Lang>;
 /** Content for homepage documents */
 interface IndexPageV2DocumentData {
   /**
@@ -141,7 +281,7 @@ export type IndexPageV2Document<Lang extends string = string> =
     "index_page_v2",
     Lang
   >;
-export type AllDocumentTypes = IndexPageV2Document;
+export type AllDocumentTypes = FooterDocument | IndexPageV2Document;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -151,6 +291,8 @@ declare module "@prismicio/client" {
   }
   namespace Content {
     export type {
+      FooterDocumentData,
+      FooterDocument,
       IndexPageV2DocumentData,
       IndexPageV2DocumentDataHeroItem,
       IndexPageV2DocumentDataServiceGroupItem,

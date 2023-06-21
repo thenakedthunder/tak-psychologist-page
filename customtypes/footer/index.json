@@ -1,0 +1,73 @@
+{
+  "id": "footer",
+  "label": "footer",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "type": "UID", "config": { "label": "uid", "placeholder": "" } },
+      "main_header": {
+        "type": "Text",
+        "config": { "label": "main header", "placeholder": "" }
+      },
+      "name": {
+        "type": "Text",
+        "config": { "label": "name", "placeholder": "" }
+      },
+      "professional_title": {
+        "type": "Text",
+        "config": {
+          "label": "professional title",
+          "placeholder": "pl. \"boszorkánymester\""
+        }
+      },
+      "name_placeholder": {
+        "type": "Text",
+        "config": { "label": "name placeholder", "placeholder": "" }
+      },
+      "email_placeholder": {
+        "type": "Text",
+        "config": { "label": "email placeholder", "placeholder": "" }
+      },
+      "phone_placeholder": {
+        "type": "Text",
+        "config": { "label": "phone placeholder", "placeholder": "" }
+      },
+      "service_placeholder": {
+        "type": "Text",
+        "config": { "label": "service placeholder", "placeholder": "" }
+      },
+      "service_selector": {
+        "type": "Select",
+        "config": {
+          "label": "service selector",
+          "placeholder": "",
+          "options": [
+            "Nincs/Nem tudom",
+            "Rontás levétele",
+            "Eggszőrrszájzzbúúkkkhh!",
+            "Auramasszázs"
+          ]
+        }
+      },
+      "message_placeholder": {
+        "type": "Text",
+        "config": { "label": "message placeholder", "placeholder": "" }
+      },
+      "checkbox_statement": {
+        "type": "StructuredText",
+        "config": {
+          "label": "checkbox statement",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "send_button_text": {
+        "type": "Text",
+        "config": { "label": "send button text", "placeholder": "" }
+      }
+    }
+  }
+}

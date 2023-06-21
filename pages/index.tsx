@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { AllDocumentTypes } from 'prismicio-types.js';
+import { IndexPageV2Document } from 'prismicio-types.js';
 import WhatICanHelpYouWith from 'components/WhatICanHelpYouWith/organisms/WhatICanHelpYouWith';
 import Hero from 'components/organisms/Hero';
 import styles from 'styles/Home.module.css';
@@ -10,7 +10,7 @@ import styles from 'styles/Home.module.css';
 import { createClient } from '../prismicio.ts';
 
 interface HomeProps {
-  page: AllDocumentTypes
+  page: IndexPageV2Document
 }
 
 export default function Home({ page }: HomeProps) {

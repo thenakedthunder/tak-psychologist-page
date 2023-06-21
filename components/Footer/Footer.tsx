@@ -4,17 +4,26 @@ import { WrapperForCollageBackground, FooterContainer, FooterHeader } from 'comp
 import Form from 'components/Footer/Form/Form';
 import LeftInformationDiv from 'components/Footer/organisms/LeftInformationDiv';
 import footerContent from 'components/Footer/content/footerContents';
+import { FooterDocumentData, Simplify } from 'prismicio-types';
+import { PrismicDocument } from '@prismicio/client';
 
-const Footer = () => (
-  <BackgroundWrapper backgroundColor={Green010}>
-    <WrapperForCollageBackground>
-      <FooterContainer>
-        <FooterHeader textColor={Green100}>{footerContent.header}</FooterHeader>
-        <LeftInformationDiv content={footerContent} />
-        <Form />
-      </FooterContainer>
-    </WrapperForCollageBackground>
-  </BackgroundWrapper>
-);
+interface FooterProps {
+  footerContentFromCMS?: FooterDocumentData;
+}
+
+const Footer = ({ footerContentFromCMS }: FooterProps) => {
+  console.log(footerContentFromCMS);
+  return (
+    <BackgroundWrapper backgroundColor={Green010}>
+      <WrapperForCollageBackground>
+        <FooterContainer>
+          <FooterHeader textColor={Green100}>{footerContentFromCMS?.main_header ?? 'FOS'}</FooterHeader>
+          <LeftInformationDiv content={footerContent} />
+          <Form />
+        </FooterContainer>
+      </WrapperForCollageBackground>
+    </BackgroundWrapper>
+  );
+};
 
 export default Footer;
