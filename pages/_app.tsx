@@ -14,7 +14,7 @@ import { createClient, repositoryName } from 'prismicio.ts';
 import { FooterDocument } from 'prismicio-types';
 import { useState, useEffect } from 'react';
 
-export default async function App(this: any, { Component, pageProps }: any) {
+export default function App(this: any, { Component, pageProps }: any) {
   const router = useRouter();
 
   const [footer, setFooter] = useState<FooterDocument<string> | null>(null);
@@ -22,7 +22,9 @@ export default async function App(this: any, { Component, pageProps }: any) {
   useEffect(() => {
     const client = createClient();
 
-    client.getByUID('footer', 'footer').then((res: FooterDocument<string>) => setFooter(res as FooterDocument<string>));
+    client.getByUID('footer', 'footer').then((res: FooterDocument<string>) => {
+      setFooter(res as FooterDocument<string>);
+    });
   }, []);
 
   console.log('SZOPÓROLLER', footer);
@@ -38,7 +40,7 @@ export default async function App(this: any, { Component, pageProps }: any) {
           colorScheme={router.pathname.includes('blog') ? 'dark' : 'light'}
         />
         <Component {...pageProps} />
-        {!router.pathname.includes('gyik') && <Footer footerContentFromCMS={footer?.data ?? undefined} /> }
+        {!router.pathname.includes('gyik') && footer && <Footer footerContentFromCMS={footer.data} /> }
       </PrismicPreview>
     </PrismicProvider>
   );
