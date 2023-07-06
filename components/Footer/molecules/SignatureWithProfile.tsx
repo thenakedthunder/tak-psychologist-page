@@ -4,6 +4,7 @@ import Image from 'next/legacy/image';
 import AvatarImage from 'public/assets/signature-profile.png';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Green100 } from 'components/styling/colors';
+import { KeyTextField } from '@prismicio/client';
 
 const SignatureContainer = styled.div`
   display: grid;
@@ -19,8 +20,8 @@ const ProfilePictureContainer = styled.div`
 `;
 
 interface Props {
-  name: string;
-  title: string;
+  name: KeyTextField;
+  title: KeyTextField;
 }
 
 const SignatureWithProfile = ({ name, title }: Props) => (

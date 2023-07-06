@@ -1,0 +1,28 @@
+{
+  "id": "large_paragraph",
+  "type": "SharedSlice",
+  "name": "HighlightedParagraph",
+  "description": "LargeParagraph",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,em,hyperlink"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

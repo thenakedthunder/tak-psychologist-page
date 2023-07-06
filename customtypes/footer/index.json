@@ -26,9 +26,17 @@
         "type": "Text",
         "config": { "label": "name placeholder", "placeholder": "" }
       },
+      "name_field_error_message": {
+        "type": "Text",
+        "config": { "label": "name field error message", "placeholder": "" }
+      },
       "email_placeholder": {
         "type": "Text",
         "config": { "label": "email placeholder", "placeholder": "" }
+      },
+      "email_field_error_message": {
+        "type": "Text",
+        "config": { "label": "email field error message", "placeholder": "" }
       },
       "phone_placeholder": {
         "type": "Text",
@@ -38,22 +46,13 @@
         "type": "Text",
         "config": { "label": "service placeholder", "placeholder": "" }
       },
-      "service_selector": {
-        "type": "Select",
-        "config": {
-          "label": "service selector",
-          "placeholder": "",
-          "options": [
-            "Nincs/Nem tudom",
-            "Rontás levétele",
-            "Eggszőrrszájzzbúúkkkhh!",
-            "Auramasszázs"
-          ]
-        }
-      },
       "message_placeholder": {
         "type": "Text",
         "config": { "label": "message placeholder", "placeholder": "" }
+      },
+      "message_field_error_message": {
+        "type": "Text",
+        "config": { "label": "message field error message ", "placeholder": "" }
       },
       "checkbox_statement": {
         "type": "StructuredText",
@@ -64,9 +63,25 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
+      "checkbox_error": {
+        "type": "Text",
+        "config": { "label": "checkbox error", "placeholder": "" }
+      },
       "send_button_text": {
         "type": "Text",
         "config": { "label": "send button text", "placeholder": "" }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "large_paragraph": { "type": "SharedSlice" },
+            "default_paragraph": { "type": "SharedSlice" },
+            "bullet_points": { "type": "SharedSlice" },
+            "select": { "type": "SharedSlice" }
+          }
+        }
       }
     }
   }

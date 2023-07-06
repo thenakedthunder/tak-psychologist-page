@@ -1,6 +1,11 @@
 import { AiOutlineCheck } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 
+import {
+  KeyTextField, SliceZone, asText, RichTextField,
+} from '@prismicio/client';
+import { SelectSlice } from 'prismicio-types';
+
 import { SmallParagraph } from 'components/atoms/typography.styles';
 import {
   Green050, Green100, Grey010,
@@ -43,7 +48,36 @@ interface FormStateType {
 
 const emailRegExp = /[^@]+@[^@]+\.[^@]{2,}/;
 
-const Form = () => {
+interface TextField {
+  placeholder: KeyTextField;
+  errorText?: KeyTextField;
+}
+
+interface FormProps {
+  name: TextField;
+  email: TextField;
+  phone: TextField;
+  message: TextField;
+  serviceSelectionValues: {
+    placeHolder: KeyTextField,
+    values: SliceZone<SelectSlice>,
+  };
+  checkBox: {
+    statement: RichTextField;
+    error: KeyTextField;
+  };
+  buttonText: KeyTextField;
+}
+
+const Form = ({
+  name,
+  email,
+  phone,
+  message,
+  serviceSelectionValues,
+  checkBox,
+  buttonText,
+} : FormProps) => {
   const [checked, setIsChecked] = useState(false);
 
   const [formState, setFormState] = useState<FormStateType>({
@@ -93,19 +127,19 @@ const Form = () => {
     };
 
     if (isTouched('name', stateToValidate) && stateToValidate.data.name.trim().length < 3) {
-      errors.name = labelTexts.name.error;
+      errors.name = name.errorText ?? '';
     }
 
     if (isTouched('email', stateToValidate) && !emailRegExp.test(stateToValidate.data.email.trim())) {
-      errors.email = labelTexts.email.error;
+      errors.email = email.errorText ?? '';
     }
 
     if (isTouched('message', stateToValidate) && stateToValidate.data.message.trim().length < 3) {
-      errors.message = labelTexts.message.error;
+      errors.message = message.errorText ?? '';
     }
 
     if ((isTouched('dataHandlingCheckBox', stateToValidate)) && !stateToValidate.data.dataHandlingCheckBox) {
-      errors.dataHandlingCheckBox = labelTexts.checkBoxUncheckedError;
+      errors.dataHandlingCheckBox = checkBox.error?.toString() ?? '';
     }
 
     return errors;
@@ -154,7 +188,7 @@ const Form = () => {
           id="name"
           name="name"
           className={formState.errors.name ? 'has-error' : ''}
-          placeholder={labelTexts.name.placeholder}
+          placeholder={name.placeholder?.toString() ?? ''}
           value={formState.data.name}
           error={formState.errors.name}
           onChanged={(input) => updateData('name', input)}
@@ -163,20 +197,21 @@ const Form = () => {
           id="email"
           name="email"
           className={formState.errors.email ? 'has-error' : ''}
-          placeholder={labelTexts.email.placeholder}
+          placeholder={email.placeholder?.toString() ?? ''}
           value={formState.data.email}
           error={formState.errors.email}
           onChanged={(input) => updateData('email', input)}
         />
-        <input type="text" id="phone" name="phone" placeholder={labelTexts.phoneNumber.placeholder} />
+        <input type="text" id="phone" name="phone" placeholder={phone.placeholder ?? ''} />
         <ServiceSelector
           name="service"
           id="service"
           placeholder={labelTexts.serviceSelection.placeholder}
+          serviceOptions={serviceSelectionValues.values}
         />
         <MessageInput
           className={formState.errors.message ? 'has-error' : ''}
-          placeholder={labelTexts.message.placeholder}
+          placeholder={message.placeholder ?? ''}
           value={formState.data.message}
           error={formState.errors.message}
           onChanged={(input) => updateData('message', input)}
@@ -190,7 +225,7 @@ const Form = () => {
             </CheckMark>
           </CheckBox>
           <SmallParagraph textColor={Green100}>
-            {labelTexts.checkboxStatement}
+            {asText(checkBox.statement)}
           </SmallParagraph>
           {formState.errors.dataHandlingCheckBox
             && (
@@ -203,7 +238,7 @@ const Form = () => {
           <PrimaryCTAButton
             textColor={Grey010}
             backgroundColor={Green100}
-            text="Küldés"
+            text={buttonText ?? ''}
             isDisabled={formState.hasErrors}
           />
         </ButtonContainer>

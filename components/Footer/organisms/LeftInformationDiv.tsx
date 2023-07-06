@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
+import { KeyTextField, SliceZone } from '@prismicio/client';
+import { BulletPointsSlice, DefaultParagraphSlice, LargeParagraphSlice } from 'prismicio-types';
+import { asText } from '@prismicio/helpers';
+
 import { LargeParagraph, DefaultParagraph } from 'components/atoms/typography.styles';
 import BulletedInfoItem from 'components/molecules/BulletedInfoItem';
 import { Green050, Green100 } from 'components/styling/colors';
 import SignatureWithProfile from 'components/Footer/molecules/SignatureWithProfile';
-import { FooterContents } from 'components/Footer/content/footerContents';
 
 const LeftInformationContainer = styled.div`
   display: none;
@@ -25,34 +28,42 @@ const BulletPointsContainer = styled.div`
   row-gap: 20px;
 `;
 
+export type LeftInformationContentType =
+  LargeParagraphSlice | DefaultParagraphSlice | BulletPointsSlice
+
 interface LeftInformationDivProps {
-  content: FooterContents;
+  content: SliceZone<LeftInformationContentType>;
+  name: KeyTextField;
+  professionalTitle: KeyTextField;
 }
 
-const LeftInformationDiv = ({ content }: LeftInformationDivProps) => (
+const LeftInformationDiv = ({ content, name, professionalTitle }: LeftInformationDivProps) => (
   <LeftInformationContainer>
-    {content.texts.map(
+    {content.map(
       (item, index) => {
-        switch (item.type) {
-          case 'highlightedText':
+        console.log(item);
+        switch (item.slice_type) {
+          case 'large_paragraph':
             return (
-              <LargeParagraph key={index} textColor={Green100}>{item.texts}</LargeParagraph>
+              <LargeParagraph key={index} textColor={Green100}>
+                { asText(item.primary.text) }
+              </LargeParagraph>
             );
 
-          case 'paragraph':
+          case 'default_paragraph':
             return (
               <LeftInfoDefaultParagraph key={index} textColor={Green100}>
-                {item.texts}
+                { asText(item.primary.text) }
               </LeftInfoDefaultParagraph>
             );
 
-          case 'bulletPoints':
+          case 'bullet_points':
             return (
               <BulletPointsContainer key={index}>
-                {item.texts.map(
+                {item.items.map(
                   (bulletPoint, itemIndex) => (
                     <BulletedInfoItem key={`${index}_${itemIndex}`} bulletPointColor={Green050} textColor={Green100}>
-                      {bulletPoint}
+                      { asText(bulletPoint.point) }
                     </BulletedInfoItem>
                   ),
                 )}
@@ -64,7 +75,7 @@ const LeftInformationDiv = ({ content }: LeftInformationDivProps) => (
       },
     )}
 
-    <SignatureWithProfile name={content.name} title={content.professionalTitle} />
+    <SignatureWithProfile name={name} title={professionalTitle} />
   </LeftInformationContainer>
 );
 

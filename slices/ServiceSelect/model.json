@@ -1,0 +1,23 @@
+{
+  "id": "select",
+  "type": "SharedSlice",
+  "name": "ServiceSelect",
+  "description": "Select",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "option": {
+          "type": "Text",
+          "config": { "label": "option", "placeholder": "Szolgáltatás neve" }
+        }
+      }
+    }
+  ]
+}

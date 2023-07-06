@@ -27,8 +27,6 @@ export default function App(this: any, { Component, pageProps }: any) {
     });
   }, []);
 
-  console.log('SZOPÓROLLER', footer);
-
   return (
     <PrismicProvider
       internalLinkComponent={({ ...props }) => (
@@ -40,7 +38,7 @@ export default function App(this: any, { Component, pageProps }: any) {
           colorScheme={router.pathname.includes('blog') ? 'dark' : 'light'}
         />
         <Component {...pageProps} />
-        {!router.pathname.includes('gyik') && footer && <Footer footerContentFromCMS={footer.data} /> }
+        {!router.pathname.includes('gyik') && footer && <Footer footerContent={footer.data} /> }
       </PrismicPreview>
     </PrismicProvider>
   );

@@ -1,0 +1,28 @@
+{
+  "id": "bullet_points",
+  "type": "SharedSlice",
+  "name": "BulletPoints",
+  "description": "BulletPoints",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "point": {
+          "type": "StructuredText",
+          "config": {
+            "label": "point",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,em,hyperlink"
+          }
+        }
+      }
+    }
+  ]
+}

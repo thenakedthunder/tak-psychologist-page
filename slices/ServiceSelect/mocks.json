@@ -1,0 +1,22 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"option",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "art",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]
