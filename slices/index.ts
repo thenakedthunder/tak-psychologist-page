@@ -7,6 +7,7 @@ const components = {
   default_paragraph: dynamic(() => import('./LeftInfoDefaultParagraph')),
   large_paragraph: dynamic(() => import('./HighlightedParagraph')),
   select: dynamic(() => import('./ServiceSelect')),
+  text_with_headings: dynamic(() => import('./TextWithHeadings')),
 };
 
 export default components;

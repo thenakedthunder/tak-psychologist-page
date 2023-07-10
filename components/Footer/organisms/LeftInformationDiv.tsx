@@ -41,7 +41,6 @@ const LeftInformationDiv = ({ content, name, professionalTitle }: LeftInformatio
   <LeftInformationContainer>
     {content.map(
       (item, index) => {
-        console.log(item);
         switch (item.slice_type) {
           case 'large_paragraph':
             return (

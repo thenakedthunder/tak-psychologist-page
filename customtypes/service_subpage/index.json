@@ -1,0 +1,27 @@
+{
+  "id": "service_subpage",
+  "label": "Service Subpage",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "page_title": {
+        "type": "Text",
+        "config": { "label": "page title", "placeholder": "" }
+      },
+      "highlighted_text": {
+        "type": "Text",
+        "config": { "label": "highlighted text", "placeholder": "" }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": { "text_with_headings": { "type": "SharedSlice" } }
+        }
+      }
+    }
+  }
+}

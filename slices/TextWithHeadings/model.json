@@ -1,0 +1,33 @@
+{
+  "id": "text_with_headings",
+  "type": "SharedSlice",
+  "name": "TextWithHeadings",
+  "description": "TextWithHeadings",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": { "label": "heading", "placeholder": "" }
+        }
+      },
+      "items": {
+        "text_paragraph": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text paragraph",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,em,hyperlink"
+          }
+        }
+      }
+    }
+  ]
+}
