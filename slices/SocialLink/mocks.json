@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"link_reference": {
+				"__TYPE__": "FieldContent",
+				"value": "mountain",
+				"type": "Text"
+			},
+			"link_text": {
+				"__TYPE__": "FieldContent",
+				"value": "husband",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

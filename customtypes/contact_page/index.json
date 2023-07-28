@@ -1,0 +1,95 @@
+{
+  "id": "contact_page",
+  "label": "Contact Page",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "type": "UID", "config": { "label": "uid", "placeholder": "" } },
+      "page_title": {
+        "type": "Text",
+        "config": { "label": "page title", "placeholder": "" }
+      },
+      "left_text_heading": {
+        "type": "Text",
+        "config": { "label": "left text heading", "placeholder": "" }
+      },
+      "right_subheading": {
+        "type": "Text",
+        "config": { "label": "right subheading", "placeholder": "" }
+      },
+      "pics": {
+        "type": "Group",
+        "config": {
+          "label": "pics",
+          "fields": {
+            "pic1": {
+              "type": "Image",
+              "config": { "label": "pic1", "constraint": {}, "thumbnails": [] }
+            },
+            "pic2": {
+              "type": "Image",
+              "config": { "label": "pic2", "constraint": {}, "thumbnails": [] }
+            },
+            "pic3": {
+              "type": "Image",
+              "config": { "label": "pic3", "constraint": {}, "thumbnails": [] }
+            },
+            "pic4": {
+              "type": "Image",
+              "config": { "label": "pic4", "constraint": {}, "thumbnails": [] }
+            }
+          }
+        }
+      },
+      "organization_name": {
+        "type": "Text",
+        "config": { "label": "organization name", "placeholder": "" }
+      },
+      "and_the_address": {
+        "type": "Text",
+        "config": { "label": "and the address", "placeholder": "" }
+      },
+      "maplink": {
+        "type": "Group",
+        "config": {
+          "label": "maplink",
+          "fields": {
+            "link_text": {
+              "type": "Text",
+              "config": { "label": "link text", "placeholder": "" }
+            },
+            "link": {
+              "type": "Text",
+              "config": { "label": "link reference", "placeholder": "" }
+            }
+          }
+        }
+      },
+      "contect_header": {
+        "type": "Text",
+        "config": { "label": "contect header", "placeholder": "" }
+      },
+      "email": {
+        "type": "Text",
+        "config": { "label": "email", "placeholder": "" }
+      },
+      "phone": {
+        "type": "Text",
+        "config": { "label": "phone", "placeholder": "" }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "default_paragraph": { "type": "SharedSlice" },
+            "bullet_points": { "type": "SharedSlice" },
+            "social_link": { "type": "SharedSlice" }
+          }
+        }
+      }
+    }
+  }
+}

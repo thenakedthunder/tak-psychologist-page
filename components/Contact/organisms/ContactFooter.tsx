@@ -1,10 +1,19 @@
-import LocationDetails from 'components/Contact/molecules/LocationDetails';
-import ContactDetails from 'components/Contact/molecules/ContactDetails';
+import LocationDetails, { LocationDetailsContent } from 'components/Contact/molecules/LocationDetails';
+import ContactDetails, { ContactDetailsContent } from 'components/Contact/molecules/ContactDetails';
 
-const ContactFooter = () => (
+interface Props {
+  locationDetails: LocationDetailsContent;
+  contactDetails: ContactDetailsContent;
+}
+
+const ContactFooter = ({ locationDetails, contactDetails }: Props) => (
   <>
-    <LocationDetails />
-    <ContactDetails />
+    <LocationDetails
+      details={locationDetails}
+    />
+    <ContactDetails
+      details={contactDetails}
+    />
   </>
 );
 

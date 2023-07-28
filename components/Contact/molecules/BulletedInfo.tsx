@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { asText } from '@prismicio/client';
 
-import { reservationInfoContent } from 'components/Contact/content/contactContent';
 import BulletedInfoItem from 'components/molecules/BulletedInfoItem';
 import { Green010, Green050 } from 'components/styling/colors';
+import { BulletPointsSlice } from 'prismicio-types';
 
 const BulletedInfoContainer = styled.div`
   padding: 30px 0 40px;
@@ -14,11 +15,15 @@ const BulletedInfoContainer = styled.div`
   }
 `;
 
-const BulletedInfo = () => (
+interface BulletedInfoProps {
+  points: BulletPointsSlice[];
+}
+
+const BulletedInfo = ({ points }: BulletedInfoProps) => (
   <BulletedInfoContainer>
-    {reservationInfoContent.listedParagraphs.map((item, index) => (
+    {points[0].items.map((item, index) => (
       <BulletedInfoItem key={index} bulletPointColor={Green010} textColor={Green050}>
-        {item}
+        {asText(item.point)}
       </BulletedInfoItem>
     ))}
   </BulletedInfoContainer>

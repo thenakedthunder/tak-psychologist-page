@@ -1,0 +1,27 @@
+{
+  "id": "social_link",
+  "type": "SharedSlice",
+  "name": "SocialLink",
+  "description": "SocialLink",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "link_reference": {
+          "type": "Text",
+          "config": { "label": "link reference", "placeholder": "" }
+        },
+        "link_text": {
+          "type": "Text",
+          "config": { "label": "link text", "placeholder": "" }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

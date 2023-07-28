@@ -7,7 +7,7 @@ import styles from 'styles/Home.module.css';
 
 // @ts-ignore
 // eslint-disable-next-line import/extensions
-import { createClient } from '../prismicio.ts';
+import { createClient } from 'prismicio.ts';
 
 interface HomeProps {
   page: IndexPageV2Document

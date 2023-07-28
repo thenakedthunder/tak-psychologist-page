@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { SliceZone } from '@prismicio/client';
 
 import PsychoLink from 'components/atoms/PsychoLink';
 import SocialItem from 'components/AboutMe/atoms/SocialItem';
-import socialMediaItems from 'components/AboutMe/content/socialMedia';
+import { SocialLinkSlice } from 'prismicio-types';
 
 interface Props {
   breakPoint: number;
@@ -21,11 +22,19 @@ const Container = styled.div`
   }
 `;
 
-const Social = ({ breakPoint }: Props) => (
+interface SocialProps extends Props {
+  socialMediaItems?: SliceZone<SocialLinkSlice>;
+}
+
+const Social = ({ breakPoint, socialMediaItems }: SocialProps) => (
   <Container breakPoint={breakPoint}>
-    {socialMediaItems.map((item, index) => (
-      <PsychoLink key={index} href={item.linkHref}>
-        <SocialItem linkText={item.linkText} />
+    {socialMediaItems?.map((item, index) => (
+      <PsychoLink
+        key={index}
+        href={item.primary.link_reference ?? ''}
+        openOnNewTab
+      >
+        <SocialItem linkText={item.primary.link_text ?? ''} />
       </PsychoLink>
     ))}
   </Container>

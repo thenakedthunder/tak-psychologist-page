@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PsychoLink from 'components/atoms/PsychoLink';
 import { SmallParagraph, BoldSmallParagraph } from 'components/atoms/typography.styles';
 import { Green050 } from 'components/styling/colors';
-import { footerInfoContent } from 'components/Contact/content/contactContent';
+import { LinkType } from 'types/LinkType';
 
 const Location = styled.div`
   padding: 16px 0 20px;
@@ -13,15 +13,25 @@ const Location = styled.div`
   }
 `;
 
-const LocationDetails = () => (
+export interface LocationDetailsContent {
+  organisationName: string;
+  address: string;
+  mapLink: LinkType;
+}
+
+interface Props {
+  details: LocationDetailsContent
+}
+
+const LocationDetails = ({ details }: Props) => (
   <Location>
-    <BoldSmallParagraph textColor={Green050}>Szervezet neve</BoldSmallParagraph>
+    <BoldSmallParagraph textColor={Green050}>{details.organisationName}</BoldSmallParagraph>
     <SmallParagraph textColor={Green050}>
-      {footerInfoContent.address}
+      {details.address}
     </SmallParagraph>
     <SmallParagraph textColor={Green050}>
-      <PsychoLink href="https://www.google.com/maps/place/Budapest,+Bart%C3%B3k+B%C3%A9la+%C3%BAt+12-em.+13,+1111/@47.4822872,19.0529605,17z/data=!4m5!3m4!1s0x4741dc4d9518da53:0x6bccd46420204e21!8m2!3d47.4822872!4d19.0529605">
-        Mutasd térképen
+      <PsychoLink href={details.mapLink.linkHref} openOnNewTab>
+        {details.mapLink.linkText}
       </PsychoLink>
     </SmallParagraph>
   </Location>

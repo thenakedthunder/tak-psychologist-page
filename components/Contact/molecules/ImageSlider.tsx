@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import Slider, { Settings as SlickSettings } from 'react-slick';
 import Image from 'next/legacy/image';
+import { GroupField } from '@prismicio/client';
 
-import Loc1Image from '@/public/assets/location-1.png';
-import Loc2Image from '@/public/assets/location-2.png';
-import Loc3Image from '@/public/assets/location-3.png';
-import Loc4Image from '@/public/assets/location-4.png';
+import { ContactPageDocumentDataPicsItem, Simplify } from 'prismicio-types';
 
 const PsychoSlider = styled(Slider)`
   overflow-x: hidden;
@@ -47,12 +45,24 @@ const settings: SlickSettings = {
   ],
 };
 
-const ImageSlider = () => (
+interface Props {
+  images: GroupField<Simplify<ContactPageDocumentDataPicsItem>>;
+}
+
+const ImageSlider = ({ images }: Props) => (
   <PsychoSlider {...settings}>
-    <ImageWrapper><Image src={Loc1Image} objectFit="contain" alt="location-1" /></ImageWrapper>
-    <ImageWrapper><Image src={Loc2Image} objectFit="contain" alt="location-2" /></ImageWrapper>
-    <ImageWrapper><Image src={Loc3Image} objectFit="contain" alt="location-3" /></ImageWrapper>
-    <ImageWrapper><Image src={Loc4Image} objectFit="contain" alt="location-4" /></ImageWrapper>
+    {(Object.values(images[0] ?? [])).map((image, index) => (
+      <ImageWrapper>
+        <Image
+          key={index}
+          src={image.url ?? ''}
+          objectFit="contain"
+          alt={image.alt ?? `location-${index}`}
+          width={142}
+          height={93}
+        />
+      </ImageWrapper>
+    ))}
   </PsychoSlider>
 );
 
