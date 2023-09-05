@@ -1,0 +1,38 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"listing_type": {
+				"__TYPE__": "FieldContent",
+				"value": "publications and memberships",
+				"type": "Select"
+			},
+			"years": {
+				"__TYPE__": "FieldContent",
+				"value": "material",
+				"type": "Text"
+			},
+			"listing_title": {
+				"__TYPE__": "FieldContent",
+				"value": "driver",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"listing_text_line",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "talk",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

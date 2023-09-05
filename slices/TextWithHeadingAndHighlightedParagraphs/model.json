@@ -1,0 +1,50 @@
+{
+  "id": "text_with_heading_and_highlighted_paragraphs",
+  "type": "SharedSlice",
+  "name": "TextWithHeadingAndHighlightedParagraphs",
+  "description": "TextWithHeadingAndHighlightedParagraphs",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": { "label": "heading", "placeholder": "" }
+        },
+        "highlighted_paragraph": {
+          "type": "StructuredText",
+          "config": {
+            "label": "highlighted paragraph",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "type": {
+          "type": "Select",
+          "config": {
+            "label": "type",
+            "placeholder": "",
+            "options": ["lifeway", "mission"]
+          }
+        }
+      },
+      "items": {
+        "simple_paragraph": {
+          "type": "StructuredText",
+          "config": {
+            "label": "simple paragraph",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "listing",
+  "type": "SharedSlice",
+  "name": "Listing",
+  "description": "Listing",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "years": {
+          "type": "Text",
+          "config": { "label": "years", "placeholder": "" }
+        },
+        "listing_title": {
+          "type": "Text",
+          "config": { "label": "listing title", "placeholder": "" }
+        },
+        "listing_type": {
+          "type": "Select",
+          "config": {
+            "label": "listing type",
+            "placeholder": "",
+            "options": ["education", "publications and memberships"]
+          }
+        }
+      },
+      "items": {
+        "listing_text_line": {
+          "type": "Text",
+          "config": { "label": "listing text line", "placeholder": "" }
+        }
+      }
+    }
+  ]
+}

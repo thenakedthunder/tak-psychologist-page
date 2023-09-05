@@ -1,0 +1,43 @@
+{
+  "id": "about_me_page",
+  "label": "About Me page",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": { "label": "about me page", "placeholder": "" }
+      },
+      "page_title": {
+        "type": "Text",
+        "config": { "label": "page title", "placeholder": "" }
+      },
+      "education": {
+        "type": "Text",
+        "config": { "label": "education title", "placeholder": "" }
+      },
+      "publications_and_memberships_title": {
+        "type": "Text",
+        "config": {
+          "label": "publications and memberships title",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "listing": { "type": "SharedSlice" },
+            "social_link": { "type": "SharedSlice" },
+            "text_with_heading_and_highlighted_paragraphs": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

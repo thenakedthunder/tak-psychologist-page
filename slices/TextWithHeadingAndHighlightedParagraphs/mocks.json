@@ -1,0 +1,50 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "instance",
+				"type": "Text"
+			},
+			"highlighted_paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Proident ad anim magna duis Lorem excepteur magna Lorem. Ut ut amet sit ullamco ex elit laborum eu reprehenderit sint magna mollit laboris non."
+						}
+					}
+				]
+			},
+			"type": {
+				"__TYPE__": "FieldContent",
+				"value": "mission",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"simple_paragraph",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Tempor esse nostrud in. Ex nisi laboris est et id anim culpa duis irure voluptate cupidatat officia ullamco."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]
