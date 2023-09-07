@@ -23,12 +23,12 @@ interface AboutMePageDocumentData {
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: about_me_page.education
+   * - **API ID Path**: about_me_page.education_title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  education: prismic.KeyTextField;
+  education_title: prismic.KeyTextField;
   /**
    * publications and memberships title field in *About Me page*
    *
@@ -40,6 +40,17 @@ interface AboutMePageDocumentData {
    *
    */
   publications_and_memberships_title: prismic.KeyTextField;
+  /**
+   * profile image field in *About Me page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me_page.profile_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  profile_image: prismic.ImageField<never>;
   /**
    * Slice Zone field in *About Me page*
    *
@@ -824,25 +835,25 @@ export type LargeParagraphSlice = prismic.SharedSlice<
  */
 interface ListingSliceDefaultPrimary {
   /**
-   * years field in *Listing → Primary*
+   * date field in *Listing → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: listing.primary.years
+   * - **API ID Path**: listing.primary.date
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  years: prismic.KeyTextField;
+  date: prismic.KeyTextField;
   /**
-   * listing title field in *Listing → Primary*
+   * title field in *Listing → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: listing.primary.listing_title
+   * - **API ID Path**: listing.primary.title
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  listing_title: prismic.KeyTextField;
+  title: prismic.KeyTextField;
   /**
    * listing type field in *Listing → Primary*
    *

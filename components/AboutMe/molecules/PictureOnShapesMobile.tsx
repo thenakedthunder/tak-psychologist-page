@@ -1,19 +1,23 @@
 import Image from 'next/legacy/image';
 
-import ProfileImage from 'public/assets/rolam.png';
 import {
   CollageContainer,
   LargerCircle,
   SmallerCircle,
   ImageContainer,
 } from 'components/AboutMe/molecules/PictureOnShapesMobile.styles';
+import { ImageField } from '@prismicio/client';
 
-const PictureOnShapesMobile = () => (
+interface Props {
+  picture: ImageField<never>;
+}
+
+const PictureOnShapesMobile = ({ picture }: Props) => (
   <CollageContainer>
     <LargerCircle>
       <SmallerCircle />
       <ImageContainer>
-        <Image src={ProfileImage} layout="fill" objectFit="cover" alt="profile" />
+        <Image src={picture.url ?? ''} layout="fill" objectFit="cover" alt="profile" />
       </ImageContainer>
     </LargerCircle>
   </CollageContainer>

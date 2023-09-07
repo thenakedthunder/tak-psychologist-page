@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Image from 'next/legacy/image';
 
 import ProfileImage from 'public/assets/rolam.png';
+import { ImageField } from '@prismicio/client';
 
 export const MainContainer = styled.div`
   display: none;
@@ -35,10 +36,14 @@ export const ProfileImageContainer = styled.div`
   }
 `;
 
-const PictureOnShapesDesktop = () => (
+interface Props {
+  picture: ImageField<never>;
+}
+
+const PictureOnShapesDesktop = ({ picture }: Props) => (
   <MainContainer>
     <ProfileImageContainer>
-      <Image src={ProfileImage} layout="fill" objectFit="cover" alt="profile" />
+      <Image src={picture.url ?? ''} layout="fill" objectFit="cover" alt="profile" />
     </ProfileImageContainer>
   </MainContainer>
 );

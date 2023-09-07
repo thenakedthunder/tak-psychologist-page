@@ -14,7 +14,7 @@
         "type": "Text",
         "config": { "label": "page title", "placeholder": "" }
       },
-      "education": {
+      "education_title": {
         "type": "Text",
         "config": { "label": "education title", "placeholder": "" }
       },
@@ -23,6 +23,14 @@
         "config": {
           "label": "publications and memberships title",
           "placeholder": ""
+        }
+      },
+      "profile_image": {
+        "type": "Image",
+        "config": {
+          "label": "profile image",
+          "constraint": {},
+          "thumbnails": []
         }
       },
       "slices": {

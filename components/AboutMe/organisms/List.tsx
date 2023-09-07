@@ -37,7 +37,7 @@ const List = ({ content }: ListProps) => (
           <ListMoreDetails>
             {item.otherDetails?.map((detailItem, detailIndex) => (
               <DefaultParagraph textColor={Green100} key={detailIndex}>
-                {detailItem}
+                {detailItem.listing_text_line}
               </DefaultParagraph>
             ))}
           </ListMoreDetails>

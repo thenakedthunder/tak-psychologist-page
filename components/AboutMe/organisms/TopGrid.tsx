@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-import { biographyContent, education } from 'components/AboutMe/content/aboutMeContent';
+import { ListType, ProseItemType } from 'components/AboutMe/content/aboutMeContent';
 import HeaderWithSocialLinks from 'components/molecules/HeaderWithSocialLinks';
 import PictureOnShapesDesktop from 'components/AboutMe/molecules/PictureOnShapesDesktop';
 import PictureOnShapesMobile from 'components/AboutMe/molecules/PictureOnShapesMobile';
 import List from 'components/AboutMe/organisms/List';
 import Prose from 'components/AboutMe/organisms/Prose';
+import { ImageField, KeyTextField, SliceZone } from '@prismicio/client';
+import { SocialLinkSlice } from 'prismicio-types';
 
 const GridContainer = styled.div`
   @media screen and (min-width: 1200px) {
@@ -34,13 +36,27 @@ const StyledList = styled.div`
   padding-top: 60px;
 `;
 
-const TopGrid = () => (
+interface Props {
+  title: KeyTextField;
+  lifewayContent: ProseItemType;
+  education: ListType;
+  socialLinks: SocialLinkSlice[];
+  image: ImageField<never>;
+}
+
+const TopGrid = ({
+  title,
+  lifewayContent,
+  education,
+  socialLinks,
+  image,
+}: Props) => (
   <GridContainer>
-    <HeaderWithSocialLinks title="Rólam" breakPoint={576} />
-    <PictureOnShapesMobile />
-    <PictureOnShapesDesktop />
+    <HeaderWithSocialLinks title={title} breakPoint={576} socialMediaItems={socialLinks} />
+    <PictureOnShapesMobile picture={image} />
+    <PictureOnShapesDesktop picture={image} />
     <Life>
-      <Prose content={biographyContent} />
+      <Prose content={lifewayContent} />
     </Life>
     <StyledList>
       <List content={education} />

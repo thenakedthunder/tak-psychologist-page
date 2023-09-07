@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { H3, LargeParagraph, DefaultParagraph } from 'components/atoms/typography.styles';
 import { Green050, Green100 } from 'components/styling/colors';
 import { ProseItemType } from 'components/AboutMe/content/aboutMeContent';
+import { asText } from '@prismicio/client';
 
 const ProseContainer = styled.div`
   display: grid;
@@ -17,14 +18,12 @@ interface ProseProbs {
 const Prose = ({ content }: ProseProbs) => (
   <ProseContainer>
     <H3 textColor={Green050}>{content.header}</H3>
-    {content.highlightedItems?.map((item, index) => (
-      <LargeParagraph textColor={Green100} key={index}>
-        {item}
-      </LargeParagraph>
-    ))}
-    {content.defaultTextItems?.map((item, index) => (
+    <LargeParagraph textColor={Green100}>
+      {asText(content.highlightedItems)}
+    </LargeParagraph>
+    {content.defaultTextItems?.map((defaultTextItem, index) => (
       <DefaultParagraph textColor={Green100} key={index}>
-        {item}
+        {asText(defaultTextItem.simple_paragraph)}
       </DefaultParagraph>
     ))}
   </ProseContainer>

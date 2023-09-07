@@ -8,14 +8,14 @@
 				"value": "publications and memberships",
 				"type": "Select"
 			},
-			"years": {
+			"date": {
 				"__TYPE__": "FieldContent",
-				"value": "material",
+				"value": "blanket",
 				"type": "Text"
 			},
-			"listing_title": {
+			"title": {
 				"__TYPE__": "FieldContent",
-				"value": "driver",
+				"value": "society",
 				"type": "Text"
 			}
 		},

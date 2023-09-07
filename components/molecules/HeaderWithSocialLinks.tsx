@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SliceZone } from '@prismicio/client';
+import { KeyTextField } from '@prismicio/client';
 
 import { H2 } from 'components/atoms/typography.styles';
 import { Green100 } from 'components/styling/colors';
@@ -14,9 +14,9 @@ const HeaderContainer = styled.div`
 `;
 
 interface Props {
-  title: string;
+  title: KeyTextField;
   breakPoint: number;
-  socialMediaItems?: SliceZone<SocialLinkSlice>;
+  socialMediaItems?: SocialLinkSlice[];
 }
 
 const HeaderWithSocialLinks = ({ title, breakPoint, socialMediaItems }: Props) => (

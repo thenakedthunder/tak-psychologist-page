@@ -23,7 +23,7 @@ const Container = styled.div`
 `;
 
 interface SocialProps extends Props {
-  socialMediaItems?: SliceZone<SocialLinkSlice>;
+  socialMediaItems?: SocialLinkSlice[];
 }
 
 const Social = ({ breakPoint, socialMediaItems }: SocialProps) => (

@@ -12,13 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "years": {
+        "date": {
           "type": "Text",
-          "config": { "label": "years", "placeholder": "" }
+          "config": { "label": "date", "placeholder": "" }
         },
-        "listing_title": {
+        "title": {
           "type": "Text",
-          "config": { "label": "listing title", "placeholder": "" }
+          "config": { "label": "title", "placeholder": "" }
         },
         "listing_type": {
           "type": "Select",
