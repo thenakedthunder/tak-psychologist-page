@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/legacy/image';
 
-import ProfileImage from 'public/assets/rolam.png';
 import { ImageField } from '@prismicio/client';
 
 export const MainContainer = styled.div`

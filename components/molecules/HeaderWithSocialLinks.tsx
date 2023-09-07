@@ -4,6 +4,7 @@ import { KeyTextField } from '@prismicio/client';
 import { H2 } from 'components/atoms/typography.styles';
 import { Green100 } from 'components/styling/colors';
 import Social from 'components/AboutMe/molecules/Social';
+
 import { SocialLinkSlice } from 'prismicio-types';
 
 const HeaderContainer = styled.div`

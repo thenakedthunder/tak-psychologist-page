@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { DefaultParagraph, H3, SmallParagraph } from 'components/atoms/typography.styles';
 import { Green050, Green100 } from 'components/styling/colors';
-import { ListType } from 'components/AboutMe/content/aboutMeContent';
+import { ListType } from 'components/AboutMe/types/aboutMeContentTypes';
 
 const ListItemsContainer = styled.div`
   display: grid;

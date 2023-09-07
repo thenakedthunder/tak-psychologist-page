@@ -8,6 +8,7 @@ import List from 'components/AboutMe/organisms/List';
 import TopGrid from 'components/AboutMe/organisms/TopGrid';
 import { Grey010 } from 'components/styling/colors';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
+
 import {
   AboutMePageDocument,
   AboutMePageDocumentDataSlicesSlice,
@@ -48,15 +49,11 @@ interface AboutMeProps {
 }
 
 export default function AboutMe({ page }: AboutMeProps) {
-  const destructureSlicesFromCMS = (slices: SliceZone<AboutMePageDocumentDataSlicesSlice>) => {
-    console.log(slices);
-
-    return {
-      paragraphs: slices.filter((slice) => slice.slice_type === 'text_with_heading_and_highlighted_paragraphs') as TextWithHeadingAndHighlightedParagraphsSlice[],
-      socialLinks: slices.filter((slice) => slice.slice_type === 'social_link') as SocialLinkSlice [],
-      listings: slices.filter((slice) => slice.slice_type === 'listing') as ListingSlice[],
-    };
-  };
+  const destructureSlicesFromCMS = (slices: SliceZone<AboutMePageDocumentDataSlicesSlice>) => ({
+    paragraphs: slices.filter((slice) => slice.slice_type === 'text_with_heading_and_highlighted_paragraphs') as TextWithHeadingAndHighlightedParagraphsSlice[],
+    socialLinks: slices.filter((slice) => slice.slice_type === 'social_link') as SocialLinkSlice [],
+    listings: slices.filter((slice) => slice.slice_type === 'listing') as ListingSlice[],
+  });
 
   const destructureParagraphs = (
     paragraphSlices: TextWithHeadingAndHighlightedParagraphsSlice[],
@@ -92,11 +89,7 @@ export default function AboutMe({ page }: AboutMeProps) {
       <AboutMeMainContainer>
         <TopGrid
           title={page.data.page_title}
-          lifewayContent={{
-            header: biographyContent.primary.heading,
-            highlightedItems: biographyContent.primary.highlighted_paragraph,
-            defaultTextItems: biographyContent.items,
-          }}
+          lifewayContent={biographyContent}
           education={{
             header: page.data.education_title,
             items: education,
@@ -105,12 +98,7 @@ export default function AboutMe({ page }: AboutMeProps) {
           image={page.data.profile_image}
         />
         <PaddingWrapper>
-          <Prose content={{
-            header: mission.primary.heading,
-            highlightedItems: mission.primary.highlighted_paragraph,
-            defaultTextItems: mission.items,
-          }}
-          />
+          <Prose content={mission} />
         </PaddingWrapper>
         <PaddingWrapper>
           <List content={{

@@ -6,6 +6,7 @@ import {
   SmallerCircle,
   ImageContainer,
 } from 'components/AboutMe/molecules/PictureOnShapesMobile.styles';
+
 import { ImageField } from '@prismicio/client';
 
 interface Props {
