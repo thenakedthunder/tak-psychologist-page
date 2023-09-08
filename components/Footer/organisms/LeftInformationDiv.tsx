@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { KeyTextField, SliceZone } from '@prismicio/client';
+import { ImageField, KeyTextField, SliceZone } from '@prismicio/client';
 import { BulletPointsSlice, DefaultParagraphSlice, LargeParagraphSlice } from 'prismicio-types';
 import { asText } from '@prismicio/helpers';
 
@@ -35,9 +35,15 @@ interface LeftInformationDivProps {
   content: SliceZone<LeftInformationContentType>;
   name: KeyTextField;
   professionalTitle: KeyTextField;
+  avatarImage: ImageField<never>;
 }
 
-const LeftInformationDiv = ({ content, name, professionalTitle }: LeftInformationDivProps) => (
+const LeftInformationDiv = ({
+  content,
+  name,
+  professionalTitle,
+  avatarImage,
+}: LeftInformationDivProps) => (
   <LeftInformationContainer>
     {content.map(
       (item, index) => {
@@ -74,7 +80,7 @@ const LeftInformationDiv = ({ content, name, professionalTitle }: LeftInformatio
       },
     )}
 
-    <SignatureWithProfile name={name} title={professionalTitle} />
+    <SignatureWithProfile name={name} title={professionalTitle} profile={avatarImage} />
   </LeftInformationContainer>
 );
 

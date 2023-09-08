@@ -462,6 +462,17 @@ interface FooterDocumentData {
    */
   send_button_text: prismic.KeyTextField;
   /**
+   * avatar image field in *footer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.avatar_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  avatar_image: prismic.ImageField<never>;
+  /**
    * Slice Zone field in *footer*
    *
    * - **Field Type**: Slice Zone

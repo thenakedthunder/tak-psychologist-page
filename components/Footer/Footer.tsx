@@ -20,6 +20,7 @@ const Footer = ({ footerContent }: FooterProps) => (
           content={footerContent.slices.filter((slice) => slice.slice_type !== 'select') as SliceZone<LeftInformationContentType>}
           name={footerContent?.name}
           professionalTitle={footerContent?.professional_title}
+          avatarImage={footerContent.avatar_image}
         />
         <Form
           email={

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Image from 'next/legacy/image';
 
-import AvatarImage from 'public/assets/signature-profile.png';
 import { DefaultParagraph } from 'components/atoms/typography.styles';
 import { Green100 } from 'components/styling/colors';
-import { KeyTextField } from '@prismicio/client';
+
+import { ImageField, KeyTextField } from '@prismicio/client';
 
 const SignatureContainer = styled.div`
   display: grid;
@@ -22,12 +22,13 @@ const ProfilePictureContainer = styled.div`
 interface Props {
   name: KeyTextField;
   title: KeyTextField;
+  profile: ImageField<never>;
 }
 
-const SignatureWithProfile = ({ name, title }: Props) => (
+const SignatureWithProfile = ({ name, title, profile }: Props) => (
   <SignatureContainer>
     <ProfilePictureContainer>
-      <Image src={AvatarImage} alt="avatar" />
+      <Image src={profile.url ?? ''} width={80} height={80} alt="avatar" />
     </ProfilePictureContainer>
     <DefaultParagraph textColor={Green100}>
       {name}

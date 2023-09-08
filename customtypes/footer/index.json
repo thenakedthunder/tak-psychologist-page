@@ -71,6 +71,14 @@
         "type": "Text",
         "config": { "label": "send button text", "placeholder": "" }
       },
+      "avatar_image": {
+        "type": "Image",
+        "config": {
+          "label": "avatar image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
