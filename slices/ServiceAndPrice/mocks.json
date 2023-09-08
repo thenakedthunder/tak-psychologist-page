@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"service_group_name": {
+				"__TYPE__": "FieldContent",
+				"value": "clean",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"service_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "fully",
+							"type": "Text"
+						}
+					],
+					[
+						"price",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "sort",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

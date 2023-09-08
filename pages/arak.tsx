@@ -4,9 +4,13 @@ import DividerLine from 'components/atoms/DividerLine';
 import { H2, H3 } from 'components/atoms/typography.styles';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
 import { Blue010, Green050, Green100 } from 'components/styling/colors';
-import priceListContent from 'components/Prices/content/priceList';
 import ServiceUnit from 'components/Prices/molecules/ServiceUnit';
 import getColorWithOpacity from 'components/styling/StylingUtility';
+
+// @ts-ignore
+// eslint-disable-next-line import/extensions
+import { createClient } from 'prismicio.ts';
+import { PricesDocument } from 'prismicio-types';
 
 const PricesContainer = styled.div`
   padding: 40px 40px 80px;
@@ -22,23 +26,42 @@ const PriceList = styled.div`
   padding-top: 30px;
 `;
 
-const Prices = () => (
+interface PricesProps {
+  page: PricesDocument;
+}
+
+const Prices = ({ page }: PricesProps) => (
   <BackgroundWrapper backgroundColor={getColorWithOpacity(Blue010, '80')}>
     <PricesContainer>
-      <H2 textColor={Green100}>Árak</H2>
+      <H2 textColor={Green100}>{page.data.page_title}</H2>
       <PriceList>
-        {priceListContent.map((priceListItem, priceListIndex) => (
+        {page.data.slices.map((priceListItem, priceListIndex) => (
           <div key={priceListIndex}>
-            <H3 textColor={Green050}>{priceListItem.categoryName}</H3>
-            {priceListItem.services.map((serviceItem, serviceItemIndex) => (
-              <ServiceUnit key={serviceItemIndex} unit={serviceItem} />
+            <H3 textColor={Green050}>{priceListItem.primary.service_group_name}</H3>
+            {priceListItem.items.map((serviceItem, serviceItemIndex) => (
+              <ServiceUnit
+                key={serviceItemIndex}
+                unit={{
+                  name: serviceItem.service_name,
+                  price: serviceItem.price,
+                }}
+              />
             ))}
-            { priceListIndex !== priceListContent.length - 1 && <DividerLine /> }
+            {priceListIndex !== page.data.slices.length - 1 && <DividerLine />}
           </div>
         ))}
       </PriceList>
     </PricesContainer>
   </BackgroundWrapper>
 );
+
+export async function getStaticProps() {
+  const client = createClient();
+  const page = await client.getByUID('prices', 'prices-page');
+
+  return {
+    props: { page },
+  };
+}
 
 export default Prices;

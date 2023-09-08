@@ -1,7 +1,8 @@
+import styled from 'styled-components';
+
 import { LargeParagraph, DefaultParagraph } from 'components/atoms/typography.styles';
 import { Green100, Black050 } from 'components/styling/colors';
-import styled from 'styled-components';
-import { ServiceItem } from 'components/Prices/content/priceList';
+import { KeyTextField } from '@prismicio/client';
 
 const ServiceUnitWrapper = styled.div`
 padding-top: 20px;
@@ -27,6 +28,11 @@ const PriceAndOrder = styled.div`
     padding-top: 0;
   }
 `;
+
+interface ServiceItem {
+  name: KeyTextField;
+  price: KeyTextField;
+}
 
 interface ServiceUnitProps {
   unit: ServiceItem

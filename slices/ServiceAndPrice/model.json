@@ -1,0 +1,32 @@
+{
+  "id": "service_and_price",
+  "type": "SharedSlice",
+  "name": "ServiceAndPrice",
+  "description": "ServiceAndPrice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "service_group_name": {
+          "type": "Text",
+          "config": { "label": "service group name", "placeholder": "" }
+        }
+      },
+      "items": {
+        "service_name": {
+          "type": "Text",
+          "config": { "label": "service name", "placeholder": "" }
+        },
+        "price": {
+          "type": "Text",
+          "config": { "label": "price", "placeholder": "" }
+        }
+      }
+    }
+  ]
+}

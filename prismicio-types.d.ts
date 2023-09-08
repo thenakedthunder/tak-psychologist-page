@@ -640,6 +640,47 @@ export type IndexPageV2Document<Lang extends string = string> =
     "index_page_v2",
     Lang
   >;
+/** Content for prices documents */
+interface PricesDocumentData {
+  /**
+   * page title field in *prices*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prices.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  page_title: prismic.KeyTextField;
+  /**
+   * Slice Zone field in *prices*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prices.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<PricesDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *prices → Slice Zone*
+ *
+ */
+type PricesDocumentDataSlicesSlice = ServiceAndPriceSlice;
+/**
+ * prices document from Prismic
+ *
+ * - **API ID**: `prices`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PricesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PricesDocumentData>, "prices", Lang>;
 /** Content for Service Subpage documents */
 interface ServiceSubpageDocumentData {
   /**
@@ -701,6 +742,7 @@ export type AllDocumentTypes =
   | ContactPageDocument
   | FooterDocument
   | IndexPageV2Document
+  | PricesDocument
   | ServiceSubpageDocument;
 /**
  * Item in BulletPoints → Items
@@ -968,6 +1010,78 @@ type SelectSliceVariation = SelectSliceDefault;
  */
 export type SelectSlice = prismic.SharedSlice<"select", SelectSliceVariation>;
 /**
+ * Primary content in ServiceAndPrice → Primary
+ *
+ */
+interface ServiceAndPriceSliceDefaultPrimary {
+  /**
+   * service group name field in *ServiceAndPrice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_and_price.primary.service_group_name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  service_group_name: prismic.KeyTextField;
+}
+/**
+ * Item in ServiceAndPrice → Items
+ *
+ */
+export interface ServiceAndPriceSliceDefaultItem {
+  /**
+   * service name field in *ServiceAndPrice → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_and_price.items[].service_name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  service_name: prismic.KeyTextField;
+  /**
+   * price field in *ServiceAndPrice → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_and_price.items[].price
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  price: prismic.KeyTextField;
+}
+/**
+ * Default variation for ServiceAndPrice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ServiceAndPriceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceAndPriceSliceDefaultPrimary>,
+  Simplify<ServiceAndPriceSliceDefaultItem>
+>;
+/**
+ * Slice variation for *ServiceAndPrice*
+ *
+ */
+type ServiceAndPriceSliceVariation = ServiceAndPriceSliceDefault;
+/**
+ * ServiceAndPrice Shared Slice
+ *
+ * - **API ID**: `service_and_price`
+ * - **Description**: `ServiceAndPrice`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ServiceAndPriceSlice = prismic.SharedSlice<
+  "service_and_price",
+  ServiceAndPriceSliceVariation
+>;
+/**
  * Primary content in SocialLink → Primary
  *
  */
@@ -1193,6 +1307,9 @@ declare module "@prismicio/client" {
       IndexPageV2DocumentDataHeroItem,
       IndexPageV2DocumentDataServiceGroupItem,
       IndexPageV2Document,
+      PricesDocumentData,
+      PricesDocumentDataSlicesSlice,
+      PricesDocument,
       ServiceSubpageDocumentData,
       ServiceSubpageDocumentDataSlicesSlice,
       ServiceSubpageDocument,
@@ -1218,6 +1335,11 @@ declare module "@prismicio/client" {
       SelectSliceDefault,
       SelectSliceVariation,
       SelectSlice,
+      ServiceAndPriceSliceDefaultPrimary,
+      ServiceAndPriceSliceDefaultItem,
+      ServiceAndPriceSliceDefault,
+      ServiceAndPriceSliceVariation,
+      ServiceAndPriceSlice,
       SocialLinkSliceDefaultPrimary,
       SocialLinkSliceDefault,
       SocialLinkSliceVariation,

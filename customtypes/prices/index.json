@@ -1,0 +1,26 @@
+{
+  "id": "prices",
+  "label": "prices",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": { "label": "page id", "placeholder": "" }
+      },
+      "page_title": {
+        "type": "Text",
+        "config": { "label": "page title", "placeholder": "" }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": { "service_and_price": { "type": "SharedSlice" } }
+        }
+      }
+    }
+  }
+}

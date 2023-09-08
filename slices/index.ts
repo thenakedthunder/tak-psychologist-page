@@ -8,6 +8,7 @@ export const components = {
   large_paragraph: dynamic(() => import("./HighlightedParagraph")),
   listing: dynamic(() => import("./Listing")),
   select: dynamic(() => import("./ServiceSelect")),
+  service_and_price: dynamic(() => import("./ServiceAndPrice")),
   social_link: dynamic(() => import("./SocialLink")),
   text_with_heading_and_highlighted_paragraphs: dynamic(
     () => import("./TextWithHeadingAndHighlightedParagraphs")
