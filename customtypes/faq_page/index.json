@@ -1,0 +1,32 @@
+{
+  "id": "faq_page",
+  "label": "FAQ page",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": { "label": "page id", "placeholder": "" }
+      },
+      "page_title": {
+        "type": "Text",
+        "config": { "label": "page title", "placeholder": "" }
+      },
+      "faq_page_image": {
+        "type": "Image",
+        "config": {
+          "label": "faq page image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "faq_topic": { "type": "SharedSlice" } } }
+      }
+    }
+  }
+}

@@ -1,10 +1,15 @@
 import styled from 'styled-components';
+// @ts-ignore
+// eslint-disable-next-line import/extensions
+import { createClient } from 'prismicio.ts';
 
 import { H2 } from 'components/atoms/typography.styles';
 import { Green010, Green100 } from 'components/styling/colors';
 import Collage from 'components/FAQ/molecules/Collage';
 import QAndASection from 'components/FAQ/organisms/QAndASection';
 import BackgroundWrapper from 'components/styling/BackgroundWrapper';
+
+import { FaqPageDocument } from 'prismicio-types';
 
 const FAQMainContainer = styled.div`
   padding: 40px;
@@ -31,16 +36,31 @@ const Header = styled(H2)`
   grid-area: header;
 `;
 
-export default function FAQ() {
+interface FAQProps {
+  page: FaqPageDocument;
+}
+
+export default function FAQ({ page }: FAQProps) {
   return (
     <BackgroundWrapper backgroundColor={Green010}>
       <FAQMainContainer>
         <Header textColor={Green100}>
-          Gyakran Ismételt Kérdések
+          {page.data.page_title}
         </Header>
-        <Collage />
-        <QAndASection />
+        <Collage faqImage={page.data.faq_page_image} />
+        <QAndASection
+          QAndAContents={page.data.slices}
+        />
       </FAQMainContainer>
     </BackgroundWrapper>
   );
+}
+
+export async function getStaticProps() {
+  const client = createClient();
+  const page = await client.getByUID('faq_page', 'faq-page');
+
+  return {
+    props: { page },
+  };
 }

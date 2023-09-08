@@ -305,6 +305,62 @@ export type ContactPageDocument<Lang extends string = string> =
     "contact_page",
     Lang
   >;
+/** Content for FAQ page documents */
+interface FaqPageDocumentData {
+  /**
+   * page title field in *FAQ page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_page.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  page_title: prismic.KeyTextField;
+  /**
+   * faq page image field in *FAQ page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_page.faq_page_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  faq_page_image: prismic.ImageField<never>;
+  /**
+   * Slice Zone field in *FAQ page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<FaqPageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *FAQ page → Slice Zone*
+ *
+ */
+type FaqPageDocumentDataSlicesSlice = FaqTopicSlice;
+/**
+ * FAQ page document from Prismic
+ *
+ * - **API ID**: `faq_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FaqPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<FaqPageDocumentData>,
+    "faq_page",
+    Lang
+  >;
 /** Content for footer documents */
 interface FooterDocumentData {
   /**
@@ -740,6 +796,7 @@ export type ServiceSubpageDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | AboutMePageDocument
   | ContactPageDocument
+  | FaqPageDocument
   | FooterDocument
   | IndexPageV2Document
   | PricesDocument
@@ -835,6 +892,78 @@ type DefaultParagraphSliceVariation = DefaultParagraphSliceDefault;
 export type DefaultParagraphSlice = prismic.SharedSlice<
   "default_paragraph",
   DefaultParagraphSliceVariation
+>;
+/**
+ * Primary content in FaqTopic → Primary
+ *
+ */
+interface FaqTopicSliceDefaultPrimary {
+  /**
+   * topic name field in *FaqTopic → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_topic.primary.topic_name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  topic_name: prismic.KeyTextField;
+}
+/**
+ * Item in FaqTopic → Items
+ *
+ */
+export interface FaqTopicSliceDefaultItem {
+  /**
+   * question field in *FaqTopic → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_topic.items[].question
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  question: prismic.RichTextField;
+  /**
+   * answer field in *FaqTopic → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq_topic.items[].answer
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  answer: prismic.RichTextField;
+}
+/**
+ * Default variation for FaqTopic Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FaqTopicSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqTopicSliceDefaultPrimary>,
+  Simplify<FaqTopicSliceDefaultItem>
+>;
+/**
+ * Slice variation for *FaqTopic*
+ *
+ */
+type FaqTopicSliceVariation = FaqTopicSliceDefault;
+/**
+ * FaqTopic Shared Slice
+ *
+ * - **API ID**: `faq_topic`
+ * - **Description**: `FaqTopic`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FaqTopicSlice = prismic.SharedSlice<
+  "faq_topic",
+  FaqTopicSliceVariation
 >;
 /**
  * Primary content in HighlightedParagraph → Primary
@@ -1300,6 +1429,9 @@ declare module "@prismicio/client" {
       ContactPageDocumentDataMaplinkItem,
       ContactPageDocumentDataSlicesSlice,
       ContactPageDocument,
+      FaqPageDocumentData,
+      FaqPageDocumentDataSlicesSlice,
+      FaqPageDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
       FooterDocument,
@@ -1322,6 +1454,11 @@ declare module "@prismicio/client" {
       DefaultParagraphSliceDefault,
       DefaultParagraphSliceVariation,
       DefaultParagraphSlice,
+      FaqTopicSliceDefaultPrimary,
+      FaqTopicSliceDefaultItem,
+      FaqTopicSliceDefault,
+      FaqTopicSliceVariation,
+      FaqTopicSlice,
       LargeParagraphSliceDefaultPrimary,
       LargeParagraphSliceDefault,
       LargeParagraphSliceVariation,

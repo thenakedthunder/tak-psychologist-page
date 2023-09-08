@@ -1,0 +1,48 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"topic_name": {
+				"__TYPE__": "FieldContent",
+				"value": "therefore",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"question",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Adipisicing laboris sit labore magna adipisicing aliquip elit aliqua est consequat laboris. Elit aliqua ea cillum minim aute ipsum fugiat pariatur non quis quis pariatur. Eu nulla aute consectetur occaecat proident."
+									}
+								}
+							]
+						}
+					],
+					[
+						"answer",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Velit qui sit proident."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

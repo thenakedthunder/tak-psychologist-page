@@ -1,6 +1,5 @@
 import Image from 'next/legacy/image';
 
-import FaqImage from 'public/assets/gyik.png';
 import {
   CollageContainer,
   LargerCircle,
@@ -8,12 +7,18 @@ import {
   ImageContainer,
 } from 'components/FAQ/molecules/Collage.styles';
 
-const Collage = () => (
+import { ImageField } from '@prismicio/client';
+
+interface Props {
+  faqImage: ImageField<never>;
+}
+
+const Collage = ({ faqImage }: Props) => (
   <CollageContainer>
     <LargerCircle>
       <SmallerCircle />
       <ImageContainer>
-        <Image src={FaqImage} layout="fill" objectFit="cover" alt="faq" />
+        <Image src={faqImage.url ?? ''} layout="fill" objectFit="cover" alt="faq" />
       </ImageContainer>
     </LargerCircle>
   </CollageContainer>

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 export const components = {
   bullet_points: dynamic(() => import("./BulletPoints")),
   default_paragraph: dynamic(() => import("./LeftInfoDefaultParagraph")),
+  faq_topic: dynamic(() => import("./FaqTopic")),
   large_paragraph: dynamic(() => import("./HighlightedParagraph")),
   listing: dynamic(() => import("./Listing")),
   select: dynamic(() => import("./ServiceSelect")),
